@@ -1,0 +1,41 @@
+---
+title: Quarto Overview
+toc: true
+---
+
+What is Quarto? 
+
+What is the purpose of Quarto (and it's equivalent systems)?
+
+- How does Quarto improve reproducibility? What are some examples?
+
+Basic syntax (generate a pdf) 
+
+- A basic CV or "About me" document:
+
+- Formatting: headings, lists, bold and italics
+
+- Embed an image, generate a table, headings, italics and bold face
+
+
+Upgrading to a website
+
+- Minimal changes required due to Quarto's cross-output capabilities
+
+- A website could: be an about page (your elevator pitch - an ideal pinned repo), a lab on-boarding page, or a walkthrough of a method with output ("showcasing your story").
+
+Preview and Render, git and Publishing
+
+- Practice practice practice! Theme, styles (chatgpt), 
+
+    - For styles, exercise where I'll demonstrate using chatgpt for a prompt that creates a basic styles.css, and challenge others to use chatgpt to get something that looks very different. 
+
+
+
+## Practically, what will we do today? 
+
+Everyone will generate a pdf and a published website. 
+
+We will demonstrate how to incorporate code and text notes into a document.
+
+

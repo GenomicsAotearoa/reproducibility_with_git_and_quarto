@@ -1,0 +1,131 @@
+---
+title: Getting Started
+toc: true
+--- 
+
+In this workshop we will need to work publicly (which is *scary*). We will create a public github repo to work from, and in the first stages of this workshop we will generate a local file (for ease, we will create a basic .html file). We will then update this file to become a webpage which to function as an 'about me' page or to showcase your work. I recommend pinning this repo (which we will demonstrate) so that when someone visits your github, they can view useful information about you. 
+
+## Set up new public repo and open an R project
+
+Go to github, under "Repositories", click New, give your new repo a name and description, and make sure the "public" box is checked (this should occur by default). 
+
+Click on the green "Code" button, and copy the url for the repo. 
+
+From RStudio, go File > New Project > Version Control > Git. Paste in the repo URL, provide a project directory name, and select the location for the project. Initialise the project when ready. 
+
+## First quarto doc
+
+We can now create our first quarto (.qmd) file. Under File > New File, click Quarto Document. Alternatively, use the button that looks like a blank page with a white "+" inside a green circle, and select Quarto Document. This will bring up a panel for creating a new quarto document:
+
+![New Quarto doc panel](figures/newQuartoDoc.png)
+
+On the left hand side we can see three options: Document, Presentation, and Interactive, and for each of these we can see there are different outputs. We can change these outputs later, but for now, select Document and HTML (this is the recommended format for working in). Give this document a title, something like "Basic About Page". Before we create the document, we can see a couple of other options: **Engine** (leave this as Knitr), **Editor** (we will keep the visual editor box ticked), and then we can either click **"Create"** or **"Create Empty Document"**. For now, click on Create.
+
+This creates and opens a new document for us to write in. We can note three things:
+
+First, at the very top of our document is something called the Yaml header. The Yaml header is information about the document, and is always contained within two sets of three dashes. The yaml header sets things like the document title, subtitle, author, and the output file, as well as a lot of extra information. 
+
+Second, we can see this document is not blank - it comes pre-populated with some information about Quarto and how to run code (if we don't want to see this information, we could use the Create Empty Document button). These are often useful reminders when you are getting started, but once you are more familiar with Quarto you will delete these. 
+
+Third, this *already looks like a document* - that's because we are currently in the "Visual" editor mode. We can click on the "Source" button to enter editor mode and see the markdown syntax.
+
+![Visual Editor mode is active](figures/visualEditor.png){width=430}
+![Source Editor mode is active](figures/sourceEditor.png){width=467}
+
+You might also notice that within the Yaml header there is a line selecting editor. While this says "visual" in both of the images above, we have manually over-ridden that with the inbuilt buttons in RStudio. 
+
+#### **Exercise:** Note three pieces of markdown syntax in the Source editor and how this translates into the Visual editor.
+
+::: {.callout-tip collapse="true"}
+## Three peices of syntax in the source editor
+
+1. "\#\#" - sets the Header level. Two \# is "level 2", three \# is "level 3" (a smaller header). Note how these appear as headings in the Outline panel in RStudio. 
+
+2. "\*\*" - when a word is surrounded by the double \* it will become **bold**. Using a single \* around a word will be interpreted as *italics*. 
+
+3. "\<\>" - are used to create a link. A word can also be embedded as a hyperlink by surrounding it with square brackets followed by the link itself in round brackets.
+
+We will cover more syntax shortly. Almost anything you would like to do can be achieved and is covered on the [Quarto website](https://quarto.org). 
+
+If \#\# designates a header, why isn't *this* line coming up as a header? When you need to specify something like a \# or an \*, add \\ (a backslash) first. This is known as 'escaping' and means that the next symbol will appear as-is in the document, rather than being translated as markdown.
+:::
+
+## Visual or Source Editor
+
+When I started writing this workshop I was almost exclusively using the Source Editor. During the process of writing this workshop I became more familiar with some of the features of Visual and started using that as a preference. You can use one or the other, and we will try and demonstrate some of each. 
+
+The advantage to working in the Source Editor is that you are learning the markdown language. This is useful if you want to work on your documents while you are away from RStudio (for example, I often work in VisualStudioCode (VSCode), which doesn't have the same visual editor). 
+
+The advantage to working in the Visual Editor is speed and convenience - you can use basic buttons to add bold or italic text, embed links, insert tables *etc.,*.
+
+
+#### Exercise: Visual and Source (five minutes)
+
+To start: in the quarto document highlight everything outside of the yaml header (everything below the bottom three dashes) and delete it.
+
+Move to the Visual Editor, and use the toolbar buttons to:
+
+- Insert a piece of **Bold** font.
+
+- Insert a piece of *italic* font.
+
+- Highlight a piece of text (using the \<\/\> button). 
+
+- Add a heading above these bits of text you have just created (using the drop-down button called Normal).
+
+- Add a numeric list with three different items on it. 
+
+- Embed a link to yesterdays' Github workshop: https://swcarpentry.github.io/git-novice/instructor/index.html (use the chain-link button). 
+
+- Finally, insert an example table with column headers and some example text. 
+
+
+Once you have completed these tasks, switch back and forth between the Visual and Source Editor to see how these different effects are done with markdown. 
+
+As you can see, the Visual editor makes it much easier to work in the Quarto markdown language. 
+
+## Code chunks
+
+When we want to embed code we do so with the use of the \` ("backtick"). Three backticks, followed by a curly bracket, and a symbol for the language our code will be in, signifies the start of a code block. We end the code block with three backticks. When we are within a code chunk we can run any line of code, just the same as we would with a basic R markdown or R script document. Code chunks are automatically executed as part of the rendering process. 
+
+```{r}
+library(palmerpenguins)
+
+# Note: the package contains a data object called penguins, which we can inspect: 
+head(penguins)
+```
+
+**Because code chunks are executed during rendering they need to work.** For example, if I do not have the palmer penguins package installed, this chunk cannot successfully execute and the render process will fail. Using the \# symbol within a code chunk will cause that line of text to be 'commented out' (*i.e.,* it will be interpreted as plain text, rather than code). 
+
+We can also insert a code chunk using an in-built button in RStudio (the "+" and letter "C" in a green box):
+
+![Insert New Code chunk button](figures/newCodeChunkButton.png){width=400}
+
+There are also keyboard shortcuts: shift+command+I for mac, or windows+alt+I for a Windows machine. 
+
+### Controlling code chunks
+
+Within each code chunk we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code chunk with \#\|. 
+
+Here we will use the echo: false command to hide the R code itself from the final doc, while the output is still displayed:
+```{r}
+#| echo: false
+
+tail(penguins)
+```
+
+::: {.callout-note collapse="true"}
+# What is happening above?
+
+In the qmd file used to build the website you are looking at right now, the code above reads:
+"
+\#\| echo: false
+
+tail(penguins)
+"
+
+echo: false means the code itself (`tail(penguins)`) will not be displayed, but the code is still executed and the output embedded into the document.
+:::
+
+
+

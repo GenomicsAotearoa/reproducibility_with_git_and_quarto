@@ -1,0 +1,182 @@
+[
+  {
+    "objectID": "episode_2x_creatingANewDoc.html",
+    "href": "episode_2x_creatingANewDoc.html",
+    "title": "Reproducibility",
+    "section": "",
+    "text": "Note: within RStudio we can either use Terminal and quarto preview, or the Render button, and within that we can either Render to Window or Render to Preview pane",
+    "crumbs": [
+      "Day Two - Quarto",
+      "episode_2x_creatingANewDoc.html"
+    ]
+  },
+  {
+    "objectID": "episode_2x_formatters.html",
+    "href": "episode_2x_formatters.html",
+    "title": "Format matters",
+    "section": "",
+    "text": "Format refers to things like spacing, line breaks, the use of objectNamesLikeThis or ones_named_like_this. Good formatting makes our code much more legible and will save the reader (possibly future you) a lot of time. But, writing in good format can take a lot of practice and it definitely takes time. One option is to bring in a formatter, a package that can do take care of this for you.\nIn R, a more commonly recognised example is the styler package.",
+    "crumbs": [
+      "Day Two - Quarto",
+      "Format matters"
+    ]
+  },
+  {
+    "objectID": "scratchNotes.html",
+    "href": "scratchNotes.html",
+    "title": "Initial notes",
+    "section": "",
+    "text": "Four day workshop block, probably split across two weeks.\nDay 1: Git/github\nDay 2: Quarto\nDay 3: Containers\nDay 4: Nextflow (or more broadly, software managers)"
+  },
+  {
+    "objectID": "scratchNotes.html#overarching-themes",
+    "href": "scratchNotes.html#overarching-themes",
+    "title": "Initial notes",
+    "section": "Overarching themes",
+    "text": "Overarching themes\nTidy data and project organisation\nWhat if….you disappeared\nMik/Paul have a lecture assessment, involving taking a small dataset from the attendee’s own lab, and assessing how it compares with the data practices covered. Option to split this workshop into part a (overview, examples, all the tools) and part b: an afternoon of putting this into practice in an unstructured way - attendees in breakout rooms (“quiet”, “group work”), re-join main room when you want discussion.\nRichar Littauer is writing a manuscript “10 simple rules for making your code last beyond your current job”."
+  },
+  {
+    "objectID": "scratchNotes.html#gitgithub",
+    "href": "scratchNotes.html#gitgithub",
+    "title": "Initial notes",
+    "section": "Git/Github",
+    "text": "Git/Github\nMurray has expressed interest in collaborating on this, and has loose plans in place for a git/github workshop. He will handle git/github, and I’ll build a quarto workshop, and the two will run back-to-back 28/29.05.25"
+  },
+  {
+    "objectID": "scratchNotes.html#quarto",
+    "href": "scratchNotes.html#quarto",
+    "title": "Initial notes",
+    "section": "Quarto",
+    "text": "Quarto\nWill involve exercise that will be continued throughout the day where we build up a website. Starting from very basic, single pdf about me/CV/cover page, which we upgrade to a multi-section website with embedded images and code. This website will be an ‘about me’, which will then be pinned as a repo, for the purpose of self-advertising/so that github can be used as a link in your physical CV.\n\nNeed to have a good example of what this might look like for other people (i.e., I need to create an example of my own).\n\nQuarto has an inherent tie to the world of Open Access and the concept of the Public Garden (which is scary)."
+  },
+  {
+    "objectID": "quarto_overview.html",
+    "href": "quarto_overview.html",
+    "title": "Quarto Overview",
+    "section": "",
+    "text": "What is Quarto?\nWhat is the purpose of Quarto (and it’s equivalent systems)?\nBasic syntax (generate a pdf)\nUpgrading to a website\nPreview and Render, git and Publishing",
+    "crumbs": [
+      "Day Two - Quarto"
+    ]
+  },
+  {
+    "objectID": "quarto_overview.html#practically-what-will-we-do-today",
+    "href": "quarto_overview.html#practically-what-will-we-do-today",
+    "title": "Quarto Overview",
+    "section": "Practically, what will we do today?",
+    "text": "Practically, what will we do today?\nEveryone will generate a pdf and a published website.\nWe will demonstrate how to incorporate code and text notes into a document.",
+    "crumbs": [
+      "Day Two - Quarto"
+    ]
+  },
+  {
+    "objectID": "episode_22_gettingStarted.html",
+    "href": "episode_22_gettingStarted.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "In this workshop we will need to work publicly (which is scary). We will create a public github repo to work from, and in the first stages of this workshop we will generate a local file (for ease, we will create a basic .html file). We will then update this file to become a webpage which to function as an ‘about me’ page or to showcase your work. I recommend pinning this repo (which we will demonstrate) so that when someone visits your github, they can view useful information about you.",
+    "crumbs": [
+      "Day Two - Quarto",
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "episode_22_gettingStarted.html#set-up-new-public-repo-and-open-an-r-project",
+    "href": "episode_22_gettingStarted.html#set-up-new-public-repo-and-open-an-r-project",
+    "title": "Getting Started",
+    "section": "Set up new public repo and open an R project",
+    "text": "Set up new public repo and open an R project\nGo to github, under “Repositories”, click New, give your new repo a name and description, and make sure the “public” box is checked (this should occur by default).\nClick on the green “Code” button, and copy the url for the repo.\nFrom RStudio, go File &gt; New Project &gt; Version Control &gt; Git. Paste in the repo URL, provide a project directory name, and select the location for the project. Initialise the project when ready.",
+    "crumbs": [
+      "Day Two - Quarto",
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "episode_22_gettingStarted.html#first-quarto-doc",
+    "href": "episode_22_gettingStarted.html#first-quarto-doc",
+    "title": "Getting Started",
+    "section": "First quarto doc",
+    "text": "First quarto doc\nWe can now create our first quarto (.qmd) file. Under File &gt; New File, click Quarto Document. Alternatively, use the button that looks like a blank page with a white “+” inside a green circle, and select Quarto Document. This will bring up a panel for creating a new quarto document:\n\n\n\nNew Quarto doc panel\n\n\nOn the left hand side we can see three options: Document, Presentation, and Interactive, and for each of these we can see there are different outputs. We can change these outputs later, but for now, select Document and HTML (this is the recommended format for working in). Give this document a title, something like “Basic About Page”. Before we create the document, we can see a couple of other options: Engine (leave this as Knitr), Editor (we will keep the visual editor box ticked), and then we can either click “Create” or “Create Empty Document”. For now, click on Create.\nThis creates and opens a new document for us to write in. We can note three things:\nFirst, at the very top of our document is something called the Yaml header. The Yaml header is information about the document, and is always contained within two sets of three dashes. The yaml header sets things like the document title, subtitle, author, and the output file, as well as a lot of extra information.\nSecond, we can see this document is not blank - it comes pre-populated with some information about Quarto and how to run code (if we don’t want to see this information, we could use the Create Empty Document button). These are often useful reminders when you are getting started, but once you are more familiar with Quarto you will delete these.\nThird, this already looks like a document - that’s because we are currently in the “Visual” editor mode. We can click on the “Source” button to enter editor mode and see the markdown syntax.\n \nYou might also notice that within the Yaml header there is a line selecting editor. While this says “visual” in both of the images above, we have manually over-ridden that with the inbuilt buttons in RStudio.\n\nExercise: Note three pieces of markdown syntax in the Source editor and how this translates into the Visual editor.\n\n\n\n\n\n\nThree peices of syntax in the source editor\n\n\n\n\n\n\n“##” - sets the Header level. Two # is “level 2”, three # is “level 3” (a smaller header). Note how these appear as headings in the Outline panel in RStudio.\n“**” - when a word is surrounded by the double * it will become bold. Using a single * around a word will be interpreted as italics.\n“&lt;&gt;” - are used to create a link. A word can also be embedded as a hyperlink by surrounding it with square brackets followed by the link itself in round brackets.\n\nWe will cover more syntax shortly. Almost anything you would like to do can be achieved and is covered on the Quarto website.\nIf ## designates a header, why isn’t this line coming up as a header? When you need to specify something like a # or an *, add \\ (a backslash) first. This is known as ‘escaping’ and means that the next symbol will appear as-is in the document, rather than being translated as markdown.",
+    "crumbs": [
+      "Day Two - Quarto",
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "episode_22_gettingStarted.html#visual-or-source-editor",
+    "href": "episode_22_gettingStarted.html#visual-or-source-editor",
+    "title": "Getting Started",
+    "section": "Visual or Source Editor",
+    "text": "Visual or Source Editor\nWhen I started writing this workshop I was almost exclusively using the Source Editor. During the process of writing this workshop I became more familiar with some of the features of Visual and started using that as a preference. You can use one or the other, and we will try and demonstrate some of each.\nThe advantage to working in the Source Editor is that you are learning the markdown language. This is useful if you want to work on your documents while you are away from RStudio (for example, I often work in VisualStudioCode (VSCode), which doesn’t have the same visual editor).\nThe advantage to working in the Visual Editor is speed and convenience - you can use basic buttons to add bold or italic text, embed links, insert tables etc.,.\n\nExercise: Visual and Source (five minutes)\nTo start: in the quarto document highlight everything outside of the yaml header (everything below the bottom three dashes) and delete it.\nMove to the Visual Editor, and use the toolbar buttons to:\n\nInsert a piece of Bold font.\nInsert a piece of italic font.\nHighlight a piece of text (using the &lt;/&gt; button).\nAdd a heading above these bits of text you have just created (using the drop-down button called Normal).\nAdd a numeric list with three different items on it.\nEmbed a link to yesterdays’ Github workshop: https://swcarpentry.github.io/git-novice/instructor/index.html (use the chain-link button).\nFinally, insert an example table with column headers and some example text.\n\nOnce you have completed these tasks, switch back and forth between the Visual and Source Editor to see how these different effects are done with markdown.\nAs you can see, the Visual editor makes it much easier to work in the Quarto markdown language.",
+    "crumbs": [
+      "Day Two - Quarto",
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "episode_22_gettingStarted.html#code-chunks",
+    "href": "episode_22_gettingStarted.html#code-chunks",
+    "title": "Getting Started",
+    "section": "Code chunks",
+    "text": "Code chunks\nWhen we want to embed code we do so with the use of the ` (“backtick”). Three backticks, followed by a curly bracket, and a symbol for the language our code will be in, signifies the start of a code block. We end the code block with three backticks. When we are within a code chunk we can run any line of code, just the same as we would with a basic R markdown or R script document. Code chunks are automatically executed as part of the rendering process.\n\nlibrary(palmerpenguins)\n\n# Note: the package contains a data object called penguins, which we can inspect: \nhead(penguins)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\nBecause code chunks are executed during rendering they need to work. For example, if I do not have the palmer penguins package installed, this chunk cannot successfully execute and the render process will fail. Using the # symbol within a code chunk will cause that line of text to be ‘commented out’ (i.e., it will be interpreted as plain text, rather than code).\nWe can also insert a code chunk using an in-built button in RStudio (the “+” and letter “C” in a green box):\n\n\n\nInsert New Code chunk button\n\n\nThere are also keyboard shortcuts: shift+command+I for mac, or windows+alt+I for a Windows machine.\n\nControlling code chunks\nWithin each code chunk we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code chunk with #|.\nHere we will use the echo: false command to hide the R code itself from the final doc, while the output is still displayed:\n\n\n# A tibble: 6 × 8\n  species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Chinstrap Dream            45.7          17                 195        3650\n2 Chinstrap Dream            55.8          19.8               207        4000\n3 Chinstrap Dream            43.5          18.1               202        3400\n4 Chinstrap Dream            49.6          18.2               193        3775\n5 Chinstrap Dream            50.8          19                 210        4100\n6 Chinstrap Dream            50.2          18.7               198        3775\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\n\n\n\n\n\nWhat is happening above?\n\n\n\n\n\nIn the qmd file used to build the website you are looking at right now, the code above reads: ” #| echo: false\ntail(penguins) ”\necho: false means the code itself (tail(penguins)) will not be displayed, but the code is still executed and the output embedded into the document.",
+    "crumbs": [
+      "Day Two - Quarto",
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "episode_21_introduction.html",
+    "href": "episode_21_introduction.html",
+    "title": "Introduction to Quarto",
+    "section": "",
+    "text": "We propose using Quarto based on the assertion that that code alone is not enough to ensure reproducibility. A complete copy of all code, and an example dataset, can be used to accurately reproduce a result - however, it does not convey the logic, the reasoning, the intent of the work*.\nQuarto is a system for producing documents which contain all code, comments from the author, and embedded outputs. The system is easy to use and wraps around the code you will already be writing, with the aim of making this documentation part of your every day workflow.\n*An often-told story is about a cook who used to cut the ends off the meatloaf, not knowing why other than it’s how their mother used to do it. The story goes first to the mother, who explains that she learned to cut the ends off the loaf from her mother, and then we learn from the grandmother that she used to use one tray for baking the meatloaf, and a shorter tray for serving - the ends were cut off to fit the serving tray.\n\n\n\nall code involved in viewing, manipulating, and storing data.\na snapshot of the input format, so that we know what our data should look like going in.\nthe outcome (tables, figures, saved files), so that we can independently re-run the analysis and ensure we get the same result, and demonstrate the format of the outcome so that we can use the method on our own data.\nthe mindset and logic used at each step, so that we can understand why certain methods and thresholds were chosen and determine for ourselves whether to apply or modify those steps for our own analysis.",
+    "crumbs": [
+      "Day Two - Quarto",
+      "Introduction to Quarto"
+    ]
+  },
+  {
+    "objectID": "episode_21_introduction.html#what-are-we-trying-to-achieve",
+    "href": "episode_21_introduction.html#what-are-we-trying-to-achieve",
+    "title": "Introduction to Quarto",
+    "section": "",
+    "text": "We propose using Quarto based on the assertion that that code alone is not enough to ensure reproducibility. A complete copy of all code, and an example dataset, can be used to accurately reproduce a result - however, it does not convey the logic, the reasoning, the intent of the work*.\nQuarto is a system for producing documents which contain all code, comments from the author, and embedded outputs. The system is easy to use and wraps around the code you will already be writing, with the aim of making this documentation part of your every day workflow.\n*An often-told story is about a cook who used to cut the ends off the meatloaf, not knowing why other than it’s how their mother used to do it. The story goes first to the mother, who explains that she learned to cut the ends off the loaf from her mother, and then we learn from the grandmother that she used to use one tray for baking the meatloaf, and a shorter tray for serving - the ends were cut off to fit the serving tray.\n\n\n\nall code involved in viewing, manipulating, and storing data.\na snapshot of the input format, so that we know what our data should look like going in.\nthe outcome (tables, figures, saved files), so that we can independently re-run the analysis and ensure we get the same result, and demonstrate the format of the outcome so that we can use the method on our own data.\nthe mindset and logic used at each step, so that we can understand why certain methods and thresholds were chosen and determine for ourselves whether to apply or modify those steps for our own analysis.",
+    "crumbs": [
+      "Day Two - Quarto",
+      "Introduction to Quarto"
+    ]
+  },
+  {
+    "objectID": "episode_21_introduction.html#what-is-quarto",
+    "href": "episode_21_introduction.html#what-is-quarto",
+    "title": "Introduction to Quarto",
+    "section": "What is Quarto?",
+    "text": "What is Quarto?\nQuarto is a system that facilitates the easy creation of documents that wrap and store our code, the outputs, and notes. With a small bit of extra effort when writing our code, Quarto can generate pdfs, word docs, slideshow presentations, and websites. This website is built using Quarto. It is designed for scientific publishing, and works with multiple languages (R, Julia, Python) - the outcome from these code blocks can be easily embedded (e.g., if code produces a figure, that figure will appear in the document). Quarto itself uses “markdown language”, and will be familiar for anyone already using RMarkdown. Markdown is meant to be readable even before it’s published, which means our day-to-day working documents are not a chore to work with.\nSimply, with Quarto, you will add small pieces of code to define headers, insert code blocks, embed links and figures. This code is then rendered into a document for distribution or storage.\n\nWhat is the purpose of Quarto?\nQuarto exists to make publishing scientific documents easy, and to facilitate the creation of flexible, high quality outputs.\n\n\nWhat can we do with Quarto?\nLots! It’s worth noting that we write our document using Quarto’s markdown language, and this is then translated into the final document, and it’s very easy to switch the output types (e.g., the same working document can be used to produce a word doc, a pdf, and a slideshow). Beyond simple documents, Quarto is an easy way to create websites, blogs, dashboards, and books (even a PhD thesis).\nQuarto places a premium on quality - the online community of people using quarto are creating stylistic, clear, well-designed documents that emphasise the importance of science communication.\n\n\nHow does it work?\n\n\n\nThe Quarto render process\n\n\nThis visual comes directly from a Quarto workshop presented at posit::conf(2023) by Andrew Bray, Amelia McNamara, Emil Hvitfeldt, and Mouna Belaid. I highly recommend this workshop, which covers a lot of background detail and specifics that we won’t have time to go over.\nIn brief, we produce a .qmd file (a Quarto file), which will include some mix of text, code, and the markdown language required to format and control the file. The code can be R, Python, Julia, etc.,. The code is converted into output (*e.g., figures are generated, sums calculated), and this is then converted into one or more output documents.",
+    "crumbs": [
+      "Day Two - Quarto",
+      "Introduction to Quarto"
+    ]
+  },
+  {
+    "objectID": "episode_21_introduction.html#working-in-quarto",
+    "href": "episode_21_introduction.html#working-in-quarto",
+    "title": "Introduction to Quarto",
+    "section": "Working in Quarto",
+    "text": "Working in Quarto\nWe will start by creating some basic documents, building up our working knowledge of the quarto language.",
+    "crumbs": [
+      "Day Two - Quarto",
+      "Introduction to Quarto"
+    ]
+  },
+  {
+    "objectID": "episode_2x_StoryRepo.html",
+    "href": "episode_2x_StoryRepo.html",
+    "title": "Story Repo",
+    "section": "",
+    "text": "“Elevator pitch”, “About Me” page, “Your Story”. These are some of the terms you might hear to describe a presentation (either spoken or in document form) that you use to promote yourself and your career. This might be a cold call/email while you are job hunting or something you do while meeting people at a conference to make a connection and an impression. If you make it past that first stage and do make an impression, for anyone working in the field of bioinformatics you can expect prospective employers to ask for a link to your github. Having a set of tidy repos that document your workflow is the minimum you should aim for.\nFor the rest of this workshop we will take the time to create something to support those repos: a dedicated repo that provides an overview of your career skills and highlights. To get a better understanding of why I am recommending this and what we are trying to do, I recommend this talk from posit::conf(2024) titled “Github - How to tell your professional story”. In this talk, Dr. Abigail Haddad outlines how Github can be used to demonstrate not just the raw coding skills you use frequently, but also the auxilliary skills that define how you work - your problem solving skills, your practices, and how you communicate.\nWe are going to take some of the advice from that talk, which says that all of your github should be used to actively demonstrate your skills and tell your story, and we are going to compress it down to a single github repo which will convey (or at least introduce) your story. We will Pin this repo so that it’s the first thing people see when they visit your github page, and publish it as a working website so that you also have a link you can drop into LinkedIn or Bluesky posts, incorporate into your email signatures, whenever you feel it’s appropriate to do some self-marketing.",
+    "crumbs": [
+      "Day Two - Quarto",
+      "Story Repo"
+    ]
+  }
+]
