@@ -203,10 +203,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#set-up-new-public-repo-and-open-an-r-project" id="toc-set-up-new-public-repo-and-open-an-r-project" class="nav-link active" data-scroll-target="#set-up-new-public-repo-and-open-an-r-project">Set up new public repo and open an R project</a></li>
   <li><a href="#first-quarto-doc" id="toc-first-quarto-doc" class="nav-link" data-scroll-target="#first-quarto-doc">First quarto doc</a></li>
   <li><a href="#visual-or-source-editor" id="toc-visual-or-source-editor" class="nav-link" data-scroll-target="#visual-or-source-editor">Visual or Source Editor</a></li>
-  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code chunks</a>
+  <li><a href="#yaml-headers" id="toc-yaml-headers" class="nav-link" data-scroll-target="#yaml-headers">YAML headers</a>
   <ul class="collapse">
-  <li><a href="#controlling-code-chunks" id="toc-controlling-code-chunks" class="nav-link" data-scroll-target="#controlling-code-chunks">Controlling code chunks</a></li>
+  <li><a href="#document-metadata" id="toc-document-metadata" class="nav-link" data-scroll-target="#document-metadata">Document metadata</a></li>
+  <li><a href="#output-format" id="toc-output-format" class="nav-link" data-scroll-target="#output-format">Output format</a></li>
+  <li><a href="#code-options-global" id="toc-code-options-global" class="nav-link" data-scroll-target="#code-options-global">Code options (global)</a></li>
+  <li><a href="#useful-features" id="toc-useful-features" class="nav-link" data-scroll-target="#useful-features">Useful features</a></li>
   </ul></li>
+  <li><a href="#code-cells" id="toc-code-cells" class="nav-link" data-scroll-target="#code-cells">Code cells</a>
+  <ul class="collapse">
+  <li><a href="#controlling-code-cells" id="toc-controlling-code-cells" class="nav-link" data-scroll-target="#controlling-code-cells">Controlling code cells</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -232,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In this workshop we will need to work publicly (which is <em>scary</em>). We will create a public github repo to work from, and in the first stages of this workshop we will generate a local file (for ease, we will create a basic .html file). We will then update this file to become a webpage which to function as an ‘about me’ page or to showcase your work. I recommend pinning this repo (which we will demonstrate) so that when someone visits your github, they can view useful information about you.</p>
+<p>In this workshop we will need to work publicly (which is <em>scary</em>). We will create a public github repo to work from, and in the first stages of this workshop we will generate a local file (for ease, we will create a basic .html file, but the concepts will be the same as for creating a word doc or pdf). We will then update this file to become a webpage which to function as an ‘about me’ page or to showcase your work. I recommend pinning this repo (which we will demonstrate) so that when someone visits your github, they can view useful information about you.</p>
 <section id="set-up-new-public-repo-and-open-an-r-project" class="level2">
 <h2 class="anchored" data-anchor-id="set-up-new-public-repo-and-open-an-r-project">Set up new public repo and open an R project</h2>
 <p>Go to github, under “Repositories”, click New, give your new repo a name and description, and make sure the “public” box is checked (this should occur by default).</p>
@@ -303,9 +311,33 @@ Three peices of syntax in the source editor
 <p>As you can see, the Visual editor makes it much easier to work in the Quarto markdown language.</p>
 </section>
 </section>
-<section id="code-chunks" class="level2">
-<h2 class="anchored" data-anchor-id="code-chunks">Code chunks</h2>
-<p>When we want to embed code we do so with the use of the ` (“backtick”). Three backticks, followed by a curly bracket, and a symbol for the language our code will be in, signifies the start of a code block. We end the code block with three backticks. When we are within a code chunk we can run any line of code, just the same as we would with a basic R markdown or R script document. Code chunks are automatically executed as part of the rendering process.</p>
+<section id="yaml-headers" class="level2">
+<h2 class="anchored" data-anchor-id="yaml-headers">YAML headers</h2>
+<p>At the top of each .qmd document we create, we will need a YAML header. YAML (<strong>Y</strong>et <strong>A</strong>nother <strong>M</strong>arkup <strong>L</strong>anguage or <strong>Y</strong>AML <strong>A</strong>in’t <strong>M</strong>arkup <strong>L</strong>anguage) is placed at the very top of the document and is used to define the document metadata and output settings.</p>
+<p>One thing to note about YAML headers: they are <em>fussy</em>. You must comply with the formatting rules such as indentations.</p>
+<section id="document-metadata" class="level3">
+<h3 class="anchored" data-anchor-id="document-metadata">Document metadata</h3>
+<p>Title, author, date.</p>
+<p>Why are we doing this? What impact does this have on reproducibility?</p>
+</section>
+<section id="output-format" class="level3">
+<h3 class="anchored" data-anchor-id="output-format">Output format</h3>
+<p>Can output to a single format (e.g., HTML, PDF, word, slideJS) or multiple outputs (HTML + PDF).</p>
+</section>
+<section id="code-options-global" class="level3">
+<h3 class="anchored" data-anchor-id="code-options-global">Code options (global)</h3>
+<p>Code options included in the YAML header are global - they will be applied to all code cells in this document. As we will cover below, individual code cells (chunks or blocks of code) can be controlled separately.</p>
+<p>Useful examples: code-fold. Mention other examples.</p>
+</section>
+<section id="useful-features" class="level3">
+<h3 class="anchored" data-anchor-id="useful-features">Useful features</h3>
+<p>Table of contents</p>
+</section>
+</section>
+<section id="code-cells" class="level2">
+<h2 class="anchored" data-anchor-id="code-cells">Code cells</h2>
+<p>When we want to embed code we do so with the use of the ` (“backtick”). Three backticks, followed by a curly bracket, and a symbol for the language our code will be in, signifies the start of a code block. We end the code block with three backticks. When we are within a code cell we can run any line of code, just the same as we would with a basic R markdown or R script document. Code cells are automatically executed as part of the rendering process.</p>
+<p><em>Note:</em> In RMarkdown we call these ‘code cells’ and in Quarto they are referred to as code cells.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -324,19 +356,21 @@ Three peices of syntax in the source editor
 # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 </div>
-<p><strong>Because code chunks are executed during rendering they need to work.</strong> For example, if I do not have the palmer penguins package installed, this chunk cannot successfully execute and the render process will fail. Using the # symbol within a code chunk will cause that line of text to be ‘commented out’ (<em>i.e.,</em> it will be interpreted as plain text, rather than code).</p>
-<p>We can also insert a code chunk using an in-built button in RStudio (the “+” and letter “C” in a green box):</p>
+<p><strong>Because code cells are executed during rendering they need to work.</strong> For example, if I do not have the palmer penguins package installed, this cell cannot successfully execute and the render process will fail. Using the # symbol within a code cell will cause that line of text to be ‘commented out’ (<em>i.e.,</em> it will be interpreted as plain text, rather than code).</p>
+<p>We can also insert a code cell using an in-built button in RStudio (the “+” and letter “C” in a green box):</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/newCodeChunkButton.png" class="img-fluid figure-img" width="400"></p>
-<figcaption>Insert New Code chunk button</figcaption>
+<figcaption>Insert New Code cell button</figcaption>
 </figure>
 </div>
 <p>There are also keyboard shortcuts: shift+command+I for mac, or windows+alt+I for a Windows machine.</p>
-<section id="controlling-code-chunks" class="level3">
-<h3 class="anchored" data-anchor-id="controlling-code-chunks">Controlling code chunks</h3>
-<p>Within each code chunk we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code chunk with #|.</p>
-<p>Here we will use the echo: false command to hide the R code itself from the final doc, while the output is still displayed:</p>
+<section id="controlling-code-cells" class="level3">
+<h3 class="anchored" data-anchor-id="controlling-code-cells">Controlling code cells</h3>
+<p>Within each code cell we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code cell with #| (called the hash pipe).</p>
+<section id="echo-and-eval" class="level4">
+<h4 class="anchored" data-anchor-id="echo-and-eval">Echo and Eval</h4>
+<p>Here we will use the <strong>echo: false</strong> command to hide the R code itself from the final doc, while the output is still displayed:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
@@ -369,9 +403,74 @@ What is happening above?
 </div>
 </div>
 </div>
-
-
+<p>Alternatively, we can display the code but not the output with <strong>#| eval: false</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
+<section id="warnings" class="level4">
+<h4 class="anchored" data-anchor-id="warnings">Warnings</h4>
+<p><strong>warning: false</strong> will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. I recommend printing the warning once and noting that it will be suppressed in all future cases.</p>
+</section>
+<section id="cross-referencing" class="level4">
+<h4 class="anchored" data-anchor-id="cross-referencing">Cross-referencing</h4>
+<p>Quarto allows easy cross-referencing. This can be done in two ways:</p>
+<p>We can attach a label to a code block with <strong>#| label:</strong>, followed by a given label. We can then use <strong>@label</strong> to cross-reference. For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_depth_mm,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_length_mm,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">colour =</span> species,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-penguinBills" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-penguinBills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="episode_22_gettingStarted_files/figure-html/fig-penguinBills-1.png" id="fig-penguinBills" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-penguinBills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>See <a href="#fig-penguinBills" class="quarto-xref">Figure&nbsp;1</a> for a positive correlation between bill depth and bill length.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What is happening above?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In the qmd file used to build the website you are looking at right now, the code block above contains two #| lines: ” #| label: fig-penguinBills #| warning: false ”</p>
+<p>Below the code block the text reads:</p>
+<p>“See @fig-penguinBills for a positve correlation between bill depth and bill length.”</p>
+<p>The warning: false argument is added because the penguins dataset includes NAs which we are warned about.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>What have we covered?</p>
+<ul>
+<li><p>Initiating a .qmd file.</p></li>
+<li><p>The Visual and Source Editor windows.</p></li>
+<li><p>An introduction to the qmd syntax: italics, bold, hyperlinks, headings.</p></li>
+<li><p>Controlling code cells: echo, eval, warnings, labels.</p></li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->

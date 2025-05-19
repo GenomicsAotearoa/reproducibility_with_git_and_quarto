@@ -3,7 +3,7 @@ title: Getting Started
 toc: true
 --- 
 
-In this workshop we will need to work publicly (which is *scary*). We will create a public github repo to work from, and in the first stages of this workshop we will generate a local file (for ease, we will create a basic .html file). We will then update this file to become a webpage which to function as an 'about me' page or to showcase your work. I recommend pinning this repo (which we will demonstrate) so that when someone visits your github, they can view useful information about you. 
+In this workshop we will need to work publicly (which is *scary*). We will create a public github repo to work from, and in the first stages of this workshop we will generate a local file (for ease, we will create a basic .html file, but the concepts will be the same as for creating a word doc or pdf). We will then update this file to become a webpage which to function as an 'about me' page or to showcase your work. I recommend pinning this repo (which we will demonstrate) so that when someone visits your github, they can view useful information about you. 
 
 ## Set up new public repo and open an R project
 
@@ -84,9 +84,38 @@ Once you have completed these tasks, switch back and forth between the Visual an
 
 As you can see, the Visual editor makes it much easier to work in the Quarto markdown language. 
 
-## Code chunks
 
-When we want to embed code we do so with the use of the \` ("backtick"). Three backticks, followed by a curly bracket, and a symbol for the language our code will be in, signifies the start of a code block. We end the code block with three backticks. When we are within a code chunk we can run any line of code, just the same as we would with a basic R markdown or R script document. Code chunks are automatically executed as part of the rendering process. 
+## YAML headers
+
+At the top of each .qmd document we create, we will need a YAML header. YAML (**Y**et **A**nother **M**arkup **L**anguage or **Y**AML **A**in't **M**arkup **L**anguage) is placed at the very top of the document and is used to define the document metadata and output settings. 
+
+One thing to note about YAML headers: they are *fussy*. You must comply with the formatting rules such as indentations. 
+
+### Document metadata
+
+Title, author, date.
+
+Why are we doing this? What impact does this have on reproducibility?
+
+### Output format
+
+Can output to a single format (e.g., HTML, PDF, word, slideJS) or multiple outputs (HTML + PDF).
+
+### Code options (global)
+
+Code options included in the YAML header are global - they will be applied to all code cells in this document. As we will cover below, individual code cells (chunks or blocks of code) can be controlled separately.
+
+Useful examples: code-fold. Mention other examples.
+
+### Useful features
+
+Table of contents
+
+## Code cells
+
+When we want to embed code we do so with the use of the \` ("backtick"). Three backticks, followed by a curly bracket, and a symbol for the language our code will be in, signifies the start of a code block. We end the code block with three backticks. When we are within a code cell we can run any line of code, just the same as we would with a basic R markdown or R script document. Code cells are automatically executed as part of the rendering process. 
+
+*Note:* In RMarkdown we call these 'code cells' and in Quarto they are referred to as code cells. 
 
 ```{r}
 library(palmerpenguins)
@@ -95,19 +124,21 @@ library(palmerpenguins)
 head(penguins)
 ```
 
-**Because code chunks are executed during rendering they need to work.** For example, if I do not have the palmer penguins package installed, this chunk cannot successfully execute and the render process will fail. Using the \# symbol within a code chunk will cause that line of text to be 'commented out' (*i.e.,* it will be interpreted as plain text, rather than code). 
+**Because code cells are executed during rendering they need to work.** For example, if I do not have the palmer penguins package installed, this cell cannot successfully execute and the render process will fail. Using the \# symbol within a code cell will cause that line of text to be 'commented out' (*i.e.,* it will be interpreted as plain text, rather than code). 
 
-We can also insert a code chunk using an in-built button in RStudio (the "+" and letter "C" in a green box):
+We can also insert a code cell using an in-built button in RStudio (the "+" and letter "C" in a green box):
 
-![Insert New Code chunk button](figures/newCodeChunkButton.png){width=400}
+![Insert New Code cell button](figures/newCodeChunkButton.png){width=400}
 
 There are also keyboard shortcuts: shift+command+I for mac, or windows+alt+I for a Windows machine. 
 
-### Controlling code chunks
+### Controlling code cells
 
-Within each code chunk we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code chunk with \#\|. 
+Within each code cell we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code cell with \#\| (called the hash pipe). 
 
-Here we will use the echo: false command to hide the R code itself from the final doc, while the output is still displayed:
+#### Echo and Eval
+
+Here we will use the **echo: false** command to hide the R code itself from the final doc, while the output is still displayed:
 ```{r}
 #| echo: false
 
@@ -127,5 +158,64 @@ tail(penguins)
 echo: false means the code itself (`tail(penguins)`) will not be displayed, but the code is still executed and the output embedded into the document.
 :::
 
+Alternatively, we can display the code but not the output with **\#\| eval: false**.
+
+```{r}
+#| eval: false
+
+tail(penguins)
+```
+
+#### Warnings
+
+**warning: false** will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. I recommend printing the warning once and noting that it will be suppressed in all future cases. 
+
+#### Cross-referencing
+
+Quarto allows easy cross-referencing. This can be done in two ways: 
+
+We can attach a label to a code block with **\#\| label:**, followed by a given label. We can then use **\@label** to cross-reference. For example: 
+
+```{r}
+#| label: fig-penguinBills
+#| warning: false
+
+library(ggplot2)
+ggplot(data = penguins,
+       mapping = aes(x = bill_depth_mm,
+                     y = bill_length_mm,
+                     colour = species,
+                     shape = species)) +
+         geom_point()
+```
+
+See @fig-penguinBills for a positive correlation between bill depth and bill length. 
+
+::: {.callout-note collapse="true"}
+# What is happening above?
+
+In the qmd file used to build the website you are looking at right now, the code block above contains two \#\| lines:
+"
+\#\| label: fig-penguinBills
+\#\| warning: false
+"
+
+Below the code block the text reads:
+
+"See \@fig-penguinBills for a positve correlation between bill depth and bill length."
+
+The warning: false argument is added because the penguins dataset includes NAs which we are warned about.
+:::
 
 
+## Summary
+
+What have we covered?
+
+- Initiating a .qmd file.
+
+- The Visual and Source Editor windows. 
+
+- An introduction to the qmd syntax: italics, bold, hyperlinks, headings.
+
+- Controlling code cells: echo, eval, warnings, labels.

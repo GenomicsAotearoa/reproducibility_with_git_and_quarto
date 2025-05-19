@@ -31,9 +31,13 @@ Quarto is a system that facilitates the easy creation of documents that wrap and
 
 Simply, with Quarto, you will add small pieces of code to define headers, insert code blocks, embed links and figures. This code is then rendered into a document for distribution or storage. 
 
+This website was built with Quarto. As an example, it has clear structure, embedded images and code, and a format that was very easy to create and replicate across documents. The same content could be easily redirected into a pdf or even a slideshow with very little effort. 
+
 ### What is the purpose of Quarto? 
 
 Quarto exists to make publishing scientific documents easy, and to facilitate the creation of flexible, high quality outputs. 
+
+Having the ability to create one or more documents with all code, comments, and output together is highly beneficial. Compare this to having individual R scripts, figures saved to a folder, and a word document with notes. 
 
 ### What can we do with Quarto? 
 
@@ -49,6 +53,16 @@ This visual comes directly from a [Quarto workshop presented at posit::conf(2023
 
 In brief, we produce a .qmd file (a Quarto file), which will include some mix of text, code, and the markdown language required to format and control the file. The code can be R, Python, Julia, *etc.,*. The code is converted into output (*e.g., figures are generated, sums calculated), and this is then converted into one or more output documents. 
 
+### Isn't this just RMarkdown? 
+
+If you are familiar with RMarkdown this will all look and sound familiar, and these systems both aim to capture information and improve reproducibility. In fact, if you have RMarkdown documents you can rename them as .qmd files and they will render. 
+
+However, note that RMarkdown is R-specific. Quarto is language agnostic and can be used by people who work in Python. 
+
+In addition, Quarto has a strong focus on output documents and you will have an easier time with formatting and making high quality documents. 
+
 ## Working in Quarto
 
 We will start by creating some basic documents, building up our working knowledge of the quarto language. 
+
+Quarto is a part of RStudio and this is how we will be working with it today. There is a Quarto R package that can be run separately from RStudio, and there is a Quarto extension for VisualStudioCode. 
