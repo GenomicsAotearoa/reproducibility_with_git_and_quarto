@@ -19,6 +19,7 @@ website:
         contents:
           - episode_21_introduction.qmd
           - episode_22_gettingStarted.qmd
+          - episode_23_codeBlocks.qmd
           - episode_2x_formatters.qmd
           - episode_2x_creatingANewDoc.qmd
           - episode_2x_StoryRepo.qmd

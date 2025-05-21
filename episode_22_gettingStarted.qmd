@@ -23,7 +23,7 @@ On the left hand side we can see three options: Document, Presentation, and Inte
 
 This creates and opens a new document for us to write in. We can note three things:
 
-First, at the very top of our document is something called the Yaml header. The Yaml header is information about the document, and is always contained within two sets of three dashes. The yaml header sets things like the document title, subtitle, author, and the output file, as well as a lot of extra information. 
+First, at the very top of our document is something called the YAML header. The YAML header is information about the document, and is always contained within two sets of three dashes. The YAML header sets things like the document title, subtitle, author, and the output file, as well as a lot of extra information. We will cover the YAML header in more detail shortly.
 
 Second, we can see this document is not blank - it comes pre-populated with some information about Quarto and how to run code (if we don't want to see this information, we could use the Create Empty Document button). These are often useful reminders when you are getting started, but once you are more familiar with Quarto you will delete these. 
 
@@ -32,7 +32,7 @@ Third, this *already looks like a document* - that's because we are currently in
 ![Visual Editor mode is active](figures/visualEditor.png){width=430}
 ![Source Editor mode is active](figures/sourceEditor.png){width=467}
 
-You might also notice that within the Yaml header there is a line selecting editor. While this says "visual" in both of the images above, we have manually over-ridden that with the inbuilt buttons in RStudio. 
+You might also notice that within the YAML header there is a line selecting editor. While this says "visual" in both of the images above, we have manually over-ridden that with the inbuilt buttons in RStudio. 
 
 #### **Exercise:** Note three pieces of markdown syntax in the Source editor and how this translates into the Visual editor.
 
@@ -69,7 +69,7 @@ Move to the Visual Editor, and use the toolbar buttons to:
 
 - Insert a piece of *italic* font.
 
-- Highlight a piece of text (using the \<\/\> button). 
+- Select and highlight a piece of text (using the \<\/\> button). 
 
 - Add a heading above these bits of text you have just created (using the drop-down button called Normal).
 
@@ -87,125 +87,138 @@ As you can see, the Visual editor makes it much easier to work in the Quarto mar
 
 ## YAML headers
 
-At the top of each .qmd document we create, we will need a YAML header. YAML (**Y**et **A**nother **M**arkup **L**anguage or **Y**AML **A**in't **M**arkup **L**anguage) is placed at the very top of the document and is used to define the document metadata and output settings. 
+At the top of each .qmd document we create, we will need a YAML header. YAML (**Y**et **A**nother **M**arkup **L**anguage or **Y**AML **A**in't **M**arkup **L**anguage) is placed at the very top of the document and is used to define the document metadata and output settings. For a single document, like we have here, we will provide all of our information in this YAML header. For a larger project like a book or webpage we will provide a separate document with global information and the individual page YAML headers will be minimal. 
 
-One thing to note about YAML headers: they are *fussy*. You must comply with the formatting rules such as indentations. 
+One thing to note about YAML headers: they are *fussy*. Information within the YAML header must be stored between two lines each containing three dashes. When providing arguments you must provide both parts of the key-value pair, must use nesting where appropriate, and you must pay attention to indentation.  
 
 ### Document metadata
 
-Title, author, date.
+Arguments are provided in key-value pairs with a specific format.
 
-Why are we doing this? What impact does this have on reproducibility?
+#### Title
+
+`title: "A grand yet succint paper title"`
+
+Note that technically you do not need to put the title itself in quotation marks, but you need them if you want to include things a colon (otherwise, the YAML header will attempt to interpret the colon). 
+
+#### Author
+
+**Exercise: Adding one or more authors**
+
+To list an author on the document, we use the following key-value pair:
+
+`author: T.McInnes`
+
+Add your own name as the author of the document, render the document and confirm it has worked.
+
+Now add the initials of the people sitting next to you (or the intials of the Instructors, if online) as authors. *Note* - this might not work how you think it will. You may find the authors don't appear how you expected, or the document may fail to render. This is a good demonstration of how YAML headers can be fussy.
+
+::: {.callout-tip collapse="true"}
+## Adding multiple authors
+
+There are two ways for this to work, and more ways for it to fail. 
+
+One way to add authors is to include them on the same line, separated by commas:
+
+`author: T.McInnes, McInnes.T`
+
+Note that in this case, while we can read them as separate authors, it would be more accurate to call this a single author with a long and confusing name. 
+
+The correct way to include multiple authors is to list each author on a separate line under author, with each line starting with a dash:
+
+`author:`
+
+`- T.McInnes`
+
+`- McInnes.T`
+
+This is an example of nesting, where we are providing multiple input sources under a single key. If we break the format (*e.g.,* by having author: name on one line and -name on the next line) we will get an error message and the document will not render. 
+
+:::
+
+#### Date
+
+The basic format for date is: 
+ 
+`date: 29-05-25`
+
+There are a lot of different formats we can use for date formats:
+
+
+    MM/dd/yyyy
+    MM-dd-yyyy
+    MM/dd/yy
+    MM-dd-yy
+    yyyy-MM-dd
+    dd MM yyyy
+    MM dd, yyyy
+    YYYY-MM-DDTHH:mm:ssZ
+
+These options have a *hierarchy*. That means that Quarto will attempt to interpret the date in the order of formats above. In practice, this means that 
+
+`date: 05/06/2025`
+
+Will be interpreted as May 6th, 2025. 
+
+For the date:
+
+`date: 13/07/2025`
+
+Quarto will first attempt to read it as month/date/year, but since that doesn't work it will be intepreted as "The 7th day, 13 months from the start of 2025" - January 7th, 2026. 
+
+For this reason I strongly recommend using one of two options: 
+
+`date: today` The current local date.
+
+`date: last-modified` The last date the input file was modified.
+
+
+#### What impact does this have on reproducibility?
+
+It's important to include this information in even our most basic documents. Clear authoring is required for fair attribution and for directing readers in terms of who to contact. 
+
+Using a last-modified date format helps the reader to understand the timeline of the file, such as what public data or software versions were available at the time of last render. 
+
 
 ### Output format
 
-Can output to a single format (e.g., HTML, PDF, word, slideJS) or multiple outputs (HTML + PDF).
+When we want to output our document as a single format we use the basic key-value pair:
 
-### Code options (global)
+`format: html`
 
-Code options included in the YAML header are global - they will be applied to all code cells in this document. As we will cover below, individual code cells (chunks or blocks of code) can be controlled separately.
+We can easily change the format after rendering to create a new document which duplicates the format *e.g.,* you could generate a slideshow and a static pdf/html as a backup (this is recommended if you might be presenting on a shared machine). 
 
-Useful examples: code-fold. Mention other examples.
+#### **Exercise:** Exploring revealjs
+
+Add a new heading in the .qmd document (either set the line to Header 2 in Visual Editor or type two \# symbols) and call it "Section 3".
+
+Change the format of the output from html to "revealjs" and render. 
+
+Explore the revealjs (slideshow) format. 
+
+
+### Global code options
+
+Code options included in the YAML header are global - they will be applied to all code cells in this document. As we will cover below, individual code cells (chunks or blocks of code) can be controlled separately. Some useful global options we might want to set in the YAML header are:
+
+`code-fold: true`
+
+`code-tools: true`
+
+When code-fold is set to true, all code blocks will be automatically collapsed. This is useful when you want code to be available but would otherwise distract from the flow of the document *e.g.,* when teaching/training, presenting at lab meetings. Code-tools provides a simple button at the top of the html that can then be used to toggle all code to open/closed (an easy 'reset' of all code blocks). 
 
 ### Useful features
 
-Table of contents
+There are other useful features we can control through the YAML header. Some examples:
 
-## Code cells
+`toc: true` will autogenerate a table of contents (for multi-page websites or documents).
 
-When we want to embed code we do so with the use of the \` ("backtick"). Three backticks, followed by a curly bracket, and a symbol for the language our code will be in, signifies the start of a code block. We end the code block with three backticks. When we are within a code cell we can run any line of code, just the same as we would with a basic R markdown or R script document. Code cells are automatically executed as part of the rendering process. 
+`bibliography: references.bib` autogenerates a bibliography from a bib file. 
 
-*Note:* In RMarkdown we call these 'code cells' and in Quarto they are referred to as code cells. 
+`csl: nature.csl` sets the citation style.
 
-```{r}
-library(palmerpenguins)
+`number-sections: true` adds auto-numbering for each section. 
 
-# Note: the package contains a data object called penguins, which we can inspect: 
-head(penguins)
-```
-
-**Because code cells are executed during rendering they need to work.** For example, if I do not have the palmer penguins package installed, this cell cannot successfully execute and the render process will fail. Using the \# symbol within a code cell will cause that line of text to be 'commented out' (*i.e.,* it will be interpreted as plain text, rather than code). 
-
-We can also insert a code cell using an in-built button in RStudio (the "+" and letter "C" in a green box):
-
-![Insert New Code cell button](figures/newCodeChunkButton.png){width=400}
-
-There are also keyboard shortcuts: shift+command+I for mac, or windows+alt+I for a Windows machine. 
-
-### Controlling code cells
-
-Within each code cell we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code cell with \#\| (called the hash pipe). 
-
-#### Echo and Eval
-
-Here we will use the **echo: false** command to hide the R code itself from the final doc, while the output is still displayed:
-```{r}
-#| echo: false
-
-tail(penguins)
-```
-
-::: {.callout-note collapse="true"}
-# What is happening above?
-
-In the qmd file used to build the website you are looking at right now, the code above reads:
-"
-\#\| echo: false
-
-tail(penguins)
-"
-
-echo: false means the code itself (`tail(penguins)`) will not be displayed, but the code is still executed and the output embedded into the document.
-:::
-
-Alternatively, we can display the code but not the output with **\#\| eval: false**.
-
-```{r}
-#| eval: false
-
-tail(penguins)
-```
-
-#### Warnings
-
-**warning: false** will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. I recommend printing the warning once and noting that it will be suppressed in all future cases. 
-
-#### Cross-referencing
-
-Quarto allows easy cross-referencing. This can be done in two ways: 
-
-We can attach a label to a code block with **\#\| label:**, followed by a given label. We can then use **\@label** to cross-reference. For example: 
-
-```{r}
-#| label: fig-penguinBills
-#| warning: false
-
-library(ggplot2)
-ggplot(data = penguins,
-       mapping = aes(x = bill_depth_mm,
-                     y = bill_length_mm,
-                     colour = species,
-                     shape = species)) +
-         geom_point()
-```
-
-See @fig-penguinBills for a positive correlation between bill depth and bill length. 
-
-::: {.callout-note collapse="true"}
-# What is happening above?
-
-In the qmd file used to build the website you are looking at right now, the code block above contains two \#\| lines:
-"
-\#\| label: fig-penguinBills
-\#\| warning: false
-"
-
-Below the code block the text reads:
-
-"See \@fig-penguinBills for a positve correlation between bill depth and bill length."
-
-The warning: false argument is added because the penguins dataset includes NAs which we are warned about.
-:::
 
 
 ## Summary
@@ -218,4 +231,4 @@ What have we covered?
 
 - An introduction to the qmd syntax: italics, bold, hyperlinks, headings.
 
-- Controlling code cells: echo, eval, warnings, labels.
+- The YAML header controls global options, such as author/date/document type metadata as well as a whole series of additional tools. If you are creating a single document (pdf, slideshow, standalone HTML) all of this information will be within the header at the top of the document. If you are creating a complex project (like the webpage you are reading now) most of that information will be stored in a separate document which we will cover later. As you will see below, you can over-ride the global options for certain blocks of code.

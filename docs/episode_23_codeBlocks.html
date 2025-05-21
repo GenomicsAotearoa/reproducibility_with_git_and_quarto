@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Getting Started – Reproducibility</title>
+<title>Code in qmd files – Reproducibility</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -80,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_overview.html">Day Two - Quarto</a></li><li class="breadcrumb-item"><a href="./episode_22_gettingStarted.html">Getting Started</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_overview.html">Day Two - Quarto</a></li><li class="breadcrumb-item"><a href="./episode_23_codeBlocks.html">Code in qmd files</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -132,14 +166,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_22_gettingStarted.html" class="sidebar-item-text sidebar-link active">
+  <a href="./episode_22_gettingStarted.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting Started</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_23_codeBlocks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">episode_23_codeBlocks.html</span></a>
+  <a href="./episode_23_codeBlocks.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Code in qmd files</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -172,26 +206,30 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#set-up-new-public-repo-and-open-an-r-project" id="toc-set-up-new-public-repo-and-open-an-r-project" class="nav-link active" data-scroll-target="#set-up-new-public-repo-and-open-an-r-project">Set up new public repo and open an R project</a></li>
-  <li><a href="#first-quarto-doc" id="toc-first-quarto-doc" class="nav-link" data-scroll-target="#first-quarto-doc">First quarto doc</a></li>
-  <li><a href="#visual-or-source-editor" id="toc-visual-or-source-editor" class="nav-link" data-scroll-target="#visual-or-source-editor">Visual or Source Editor</a></li>
-  <li><a href="#yaml-headers" id="toc-yaml-headers" class="nav-link" data-scroll-target="#yaml-headers">YAML headers</a>
+  <li><a href="#aims" id="toc-aims" class="nav-link active" data-scroll-target="#aims">Aims</a>
   <ul class="collapse">
-  <li><a href="#document-metadata" id="toc-document-metadata" class="nav-link" data-scroll-target="#document-metadata">Document metadata</a></li>
-  <li><a href="#output-format" id="toc-output-format" class="nav-link" data-scroll-target="#output-format">Output format</a></li>
-  <li><a href="#global-code-options" id="toc-global-code-options" class="nav-link" data-scroll-target="#global-code-options">Global code options</a></li>
-  <li><a href="#useful-features" id="toc-useful-features" class="nav-link" data-scroll-target="#useful-features">Useful features</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives:</a></li>
+  </ul></li>
+  <li><a href="#code-cells" id="toc-code-cells" class="nav-link" data-scroll-target="#code-cells">Code cells</a>
+  <ul class="collapse">
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
+  </ul></li>
+  <li><a href="#code-cell-options" id="toc-code-cell-options" class="nav-link" data-scroll-target="#code-cell-options">Code cell options</a></li>
+  <li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code">Inline code</a>
+  <ul class="collapse">
+  <li><a href="#why-use-inline-code" id="toc-why-use-inline-code" class="nav-link" data-scroll-target="#why-use-inline-code">Why use inline code?</a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#exit-exercises" id="toc-exit-exercises" class="nav-link" data-scroll-target="#exit-exercises">Exit exercises</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_overview.html">Day Two - Quarto</a></li><li class="breadcrumb-item"><a href="./episode_22_gettingStarted.html">Getting Started</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_overview.html">Day Two - Quarto</a></li><li class="breadcrumb-item"><a href="./episode_23_codeBlocks.html">Code in qmd files</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Getting Started</h1>
+<h1 class="title">Code in qmd files</h1>
 </div>
 
 
@@ -208,187 +246,229 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In this workshop we will need to work publicly (which is <em>scary</em>). We will create a public github repo to work from, and in the first stages of this workshop we will generate a local file (for ease, we will create a basic .html file, but the concepts will be the same as for creating a word doc or pdf). We will then update this file to become a webpage which to function as an ‘about me’ page or to showcase your work. I recommend pinning this repo (which we will demonstrate) so that when someone visits your github, they can view useful information about you.</p>
-<section id="set-up-new-public-repo-and-open-an-r-project" class="level2">
-<h2 class="anchored" data-anchor-id="set-up-new-public-repo-and-open-an-r-project">Set up new public repo and open an R project</h2>
-<p>Go to github, under “Repositories”, click New, give your new repo a name and description, and make sure the “public” box is checked (this should occur by default).</p>
-<p>Click on the green “Code” button, and copy the url for the repo.</p>
-<p>From RStudio, go File &gt; New Project &gt; Version Control &gt; Git. Paste in the repo URL, provide a project directory name, and select the location for the project. Initialise the project when ready.</p>
+<section id="aims" class="level2">
+<h2 class="anchored" data-anchor-id="aims">Aims</h2>
+<p>The aims of this section are to:</p>
+<ul>
+<li><p>Learn the fundamentals of code cells in Quarto documents.</p></li>
+<li><p>Become familiar with inline coding.</p></li>
+<li><p>Generate an html document with well-documented code and embedded output.</p></li>
+<li><p>Reinforce and expand the syntax skills from the previous episode.</p></li>
+</ul>
+<section id="learning-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives:</h3>
+<p>By the end of this section you should be able to:</p>
+<ul>
+<li><p>Write and execute code chunks.</p></li>
+<li><p>Use inline code to create dynamic content.</p></li>
+<li><p>Create an HTML report from your .qmd file.</p></li>
+<li><p>Apply good commenting/documentation habits when working in Quarto.</p></li>
+</ul>
 </section>
-<section id="first-quarto-doc" class="level2">
-<h2 class="anchored" data-anchor-id="first-quarto-doc">First quarto doc</h2>
-<p>We can now create our first quarto (.qmd) file. Under File &gt; New File, click Quarto Document. Alternatively, use the button that looks like a blank page with a white “+” inside a green circle, and select Quarto Document. This will bring up a panel for creating a new quarto document:</p>
+</section>
+<section id="code-cells" class="level2">
+<h2 class="anchored" data-anchor-id="code-cells">Code cells</h2>
+<p>When we want to embed code we do so with the use of the ` (“backtick”). Three backticks, followed by a curly bracket, and a symbol for the language our code will be in, signifies the start of a code block. We end the code block with three backticks. When we are within a code cell we can run any line of code, just the same as we would with a basic R markdown or R script document. Code cells are automatically executed as part of the rendering process.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/newQuartoDoc.png" class="img-fluid figure-img"></p>
-<figcaption>New Quarto doc panel</figcaption>
+<p><img src="figures/codeChunk.png" class="img-fluid figure-img"></p>
+<figcaption>R Code cell</figcaption>
 </figure>
 </div>
-<p>On the left hand side we can see three options: Document, Presentation, and Interactive, and for each of these we can see there are different outputs. We can change these outputs later, but for now, select Document and HTML (this is the recommended format for working in). Give this document a title, something like “Basic About Page”. Before we create the document, we can see a couple of other options: <strong>Engine</strong> (leave this as Knitr), <strong>Editor</strong> (we will keep the visual editor box ticked), and then we can either click <strong>“Create”</strong> or <strong>“Create Empty Document”</strong>. For now, click on Create.</p>
-<p>This creates and opens a new document for us to write in. We can note three things:</p>
-<p>First, at the very top of our document is something called the YAML header. The YAML header is information about the document, and is always contained within two sets of three dashes. The YAML header sets things like the document title, subtitle, author, and the output file, as well as a lot of extra information. We will cover the YAML header in more detail shortly.</p>
-<p>Second, we can see this document is not blank - it comes pre-populated with some information about Quarto and how to run code (if we don’t want to see this information, we could use the Create Empty Document button). These are often useful reminders when you are getting started, but once you are more familiar with Quarto you will delete these.</p>
-<p>Third, this <em>already looks like a document</em> - that’s because we are currently in the “Visual” editor mode. We can click on the “Source” button to enter editor mode and see the markdown syntax.</p>
-<p><img src="figures/visualEditor.png" class="img-fluid" width="430" alt="Visual Editor mode is active"> <img src="figures/sourceEditor.png" class="img-fluid" width="467" alt="Source Editor mode is active"></p>
-<p>You might also notice that within the YAML header there is a line selecting editor. While this says “visual” in both of the images above, we have manually over-ridden that with the inbuilt buttons in RStudio.</p>
-<section id="exercise-note-three-pieces-of-markdown-syntax-in-the-source-editor-and-how-this-translates-into-the-visual-editor." class="level4">
-<h4 class="anchored" data-anchor-id="exercise-note-three-pieces-of-markdown-syntax-in-the-source-editor-and-how-this-translates-into-the-visual-editor."><strong>Exercise:</strong> Note three pieces of markdown syntax in the Source editor and how this translates into the Visual editor.</h4>
-<div class="callout callout-style-default callout-tip callout-titled">
+<p><em>Note:</em> In RMarkdown we call these ‘code chunks’ and in Quarto they are referred to as code cells.</p>
+<p>We can also insert a code cell using an in-built button in RStudio (the “+” and letter “C” in a green box):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/newCodeChunkButton.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>Insert New Code cell button</figcaption>
+</figure>
+</div>
+<p>There are also keyboard shortcuts: shift+command+I for mac, or windows+alt+I for a Windows machine.</p>
+<section id="exercise" class="level3">
+<h3 class="anchored" data-anchor-id="exercise">Exercise</h3>
+<p>Create a new quarto document (File &gt; New File &gt; Quarto Document) and give it the title “Code in Quarto”.</p>
+<p>Highlight and delete everything below the YAML header, then insert a new R code chunk (<em>e.g.,</em> with the chunk option in Visual editor, the keyboard shortcut, or by manually adding backticks and curly braces in the Source editor).</p>
+<p>Within the code chunk add the two lines:</p>
+<p><code>library(palmerpenguins)</code></p>
+<p><code>head(penguins)</code></p>
+<p><em>Note</em> the palmerpenguins R package has a built-in object called penguins, which is what we are viewing with the head function.</p>
+<p>Within the code chunk use the # symbol to add comments that explain what each line of code is doing.</p>
+<p>Render the document. You may be prompted to save the file first.</p>
+<p><strong>Because code cells are executed during rendering they need to work.</strong> For example, if you do not have the palmerpenguins package installed, this cell cannot successfully execute and the render process will fail. Using the # symbol within a code cell will cause that line of text to be ‘commented out’ (<em>i.e.,</em> it will be interpreted as plain text, rather than code).</p>
+<p>In the output document you should see both the code <em>and</em> the output of that code - in this case, the first six rows of the penguin object:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+1 Adelie  Torgersen           39.1          18.7               181        3750
+2 Adelie  Torgersen           39.5          17.4               186        3800
+3 Adelie  Torgersen           40.3          18                 195        3250
+4 Adelie  Torgersen           NA            NA                  NA          NA
+5 Adelie  Torgersen           36.7          19.3               193        3450
+6 Adelie  Torgersen           39.3          20.6               190        3650
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="code-cell-options" class="level2">
+<h2 class="anchored" data-anchor-id="code-cell-options">Code cell options</h2>
+<p>Within each code cell we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code cell with #| (called the hash pipe).</p>
+<section id="echo-and-eval" class="level4">
+<h4 class="anchored" data-anchor-id="echo-and-eval">Echo and Eval</h4>
+<p>Here we will use the <strong>echo: false</strong> command to hide the R code itself from the final doc, while the output is still displayed:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+1 Chinstrap Dream            45.7          17                 195        3650
+2 Chinstrap Dream            55.8          19.8               207        4000
+3 Chinstrap Dream            43.5          18.1               202        3400
+4 Chinstrap Dream            49.6          18.2               193        3775
+5 Chinstrap Dream            50.8          19                 210        4100
+6 Chinstrap Dream            50.2          18.7               198        3775
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Three peices of syntax in the source editor
+What is happening above?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li><p>“##” - sets the Header level. Two # is “level 2”, three # is “level 3” (a smaller header). Note how these appear as headings in the Outline panel in RStudio.</p></li>
-<li><p>“**” - when a word is surrounded by the double * it will become <strong>bold</strong>. Using a single * around a word will be interpreted as <em>italics</em>.</p></li>
-<li><p>“&lt;&gt;” - are used to create a link. A word can also be embedded as a hyperlink by surrounding it with square brackets followed by the link itself in round brackets.</p></li>
-</ol>
-<p>We will cover more syntax shortly. Almost anything you would like to do can be achieved and is covered on the <a href="https://quarto.org">Quarto website</a>.</p>
-<p>If ## designates a header, why isn’t <em>this</em> line coming up as a header? When you need to specify something like a # or an *, add \ (a backslash) first. This is known as ‘escaping’ and means that the next symbol will appear as-is in the document, rather than being translated as markdown.</p>
+<p>In the qmd file used to build the website you are looking at right now, the code above reads:</p>
+<p>#| echo: false</p>
+<p>tail(penguins)</p>
+<p>echo: false means the code itself (<code>tail(penguins)</code>) will not be displayed, but the code is still executed and the output embedded into the document.</p>
 </div>
 </div>
 </div>
+<p>Alternatively, we can display the code but not the output with <strong>#| eval: false</strong>. When eval is set to false we see the code used but the code is not evaluated and no output is embedded into the final document. This is useful for when you want to demonstrate code but not run something that could take a long time or you do not want to over-write the original file.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Note</strong> normally the hashpipe and key-value statement is not normally visible. If we copy the code above into a code chunk and render the document we do not see the code cell arguments. I have made them visible for the purpose of teaching.</p>
 </section>
+<section id="warnings" class="level4">
+<h4 class="anchored" data-anchor-id="warnings">Warnings</h4>
+<p><strong>warning: false</strong> will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. I recommend printing the warning once and noting that it will be suppressed in all future cases.</p>
 </section>
-<section id="visual-or-source-editor" class="level2">
-<h2 class="anchored" data-anchor-id="visual-or-source-editor">Visual or Source Editor</h2>
-<p>When I started writing this workshop I was almost exclusively using the Source Editor. During the process of writing this workshop I became more familiar with some of the features of Visual and started using that as a preference. You can use one or the other, and we will try and demonstrate some of each.</p>
-<p>The advantage to working in the Source Editor is that you are learning the markdown language. This is useful if you want to work on your documents while you are away from RStudio (for example, I often work in VisualStudioCode (VSCode), which doesn’t have the same visual editor).</p>
-<p>The advantage to working in the Visual Editor is speed and convenience - you can use basic buttons to add bold or italic text, embed links, insert tables <em>etc.,</em>.</p>
-<section id="exercise-visual-and-source-five-minutes" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-visual-and-source-five-minutes">Exercise: Visual and Source (five minutes)</h4>
-<p>To start: in the quarto document highlight everything outside of the yaml header (everything below the bottom three dashes) and delete it.</p>
-<p>Move to the Visual Editor, and use the toolbar buttons to:</p>
-<ul>
-<li><p>Insert a piece of <strong>Bold</strong> font.</p></li>
-<li><p>Insert a piece of <em>italic</em> font.</p></li>
-<li><p>Select and highlight a piece of text (using the &lt;/&gt; button).</p></li>
-<li><p>Add a heading above these bits of text you have just created (using the drop-down button called Normal).</p></li>
-<li><p>Add a numeric list with three different items on it.</p></li>
-<li><p>Embed a link to yesterdays’ Github workshop: https://swcarpentry.github.io/git-novice/instructor/index.html (use the chain-link button).</p></li>
-<li><p>Finally, insert an example table with column headers and some example text.</p></li>
-</ul>
-<p>Once you have completed these tasks, switch back and forth between the Visual and Source Editor to see how these different effects are done with markdown.</p>
-<p>As you can see, the Visual editor makes it much easier to work in the Quarto markdown language.</p>
-</section>
-</section>
-<section id="yaml-headers" class="level2">
-<h2 class="anchored" data-anchor-id="yaml-headers">YAML headers</h2>
-<p>At the top of each .qmd document we create, we will need a YAML header. YAML (<strong>Y</strong>et <strong>A</strong>nother <strong>M</strong>arkup <strong>L</strong>anguage or <strong>Y</strong>AML <strong>A</strong>in’t <strong>M</strong>arkup <strong>L</strong>anguage) is placed at the very top of the document and is used to define the document metadata and output settings. For a single document, like we have here, we will provide all of our information in this YAML header. For a larger project like a book or webpage we will provide a separate document with global information and the individual page YAML headers will be minimal.</p>
-<p>One thing to note about YAML headers: they are <em>fussy</em>. Information within the YAML header must be stored between two lines each containing three dashes. When providing arguments you must provide both parts of the key-value pair, must use nesting where appropriate, and you must pay attention to indentation.</p>
-<section id="document-metadata" class="level3">
-<h3 class="anchored" data-anchor-id="document-metadata">Document metadata</h3>
-<p>Arguments are provided in key-value pairs with a specific format.</p>
-<section id="title" class="level4">
-<h4 class="anchored" data-anchor-id="title">Title</h4>
-<p><code>title: "A grand yet succint paper title"</code></p>
-<p>Note that technically you do not need to put the title itself in quotation marks, but you need them if you want to include things a colon (otherwise, the YAML header will attempt to interpret the colon).</p>
-</section>
-<section id="author" class="level4">
-<h4 class="anchored" data-anchor-id="author">Author</h4>
-<p><strong>Exercise: Adding one or more authors</strong></p>
-<p>To list an author on the document, we use the following key-value pair:</p>
-<p><code>author: T.McInnes</code></p>
-<p>Add your own name as the author of the document, render the document and confirm it has worked.</p>
-<p>Now add the initials of the people sitting next to you (or the intials of the Instructors, if online) as authors. <em>Note</em> - this might not work how you think it will. You may find the authors don’t appear how you expected, or the document may fail to render. This is a good demonstration of how YAML headers can be fussy.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<section id="cross-referencing" class="level4">
+<h4 class="anchored" data-anchor-id="cross-referencing">Cross-referencing</h4>
+<p>Quarto allows easy cross-referencing. This can be done in two ways:</p>
+<p>We can attach a label to a code block with <strong>#| label:</strong>, followed by a given label. We can then use <strong>@label</strong> to cross-reference. For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-penguinBills</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_depth_mm,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_length_mm,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">colour =</span> species,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-penguinBills" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-penguinBills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="episode_23_codeBlocks_files/figure-html/fig-penguinBills-1.png" id="fig-penguinBills" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-penguinBills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>See <a href="#fig-penguinBills" class="quarto-xref">Figure&nbsp;1</a> for a positive correlation between bill depth and bill length.</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Adding multiple authors
+What is happening above?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>There are two ways for this to work, and more ways for it to fail.</p>
-<p>One way to add authors is to include them on the same line, separated by commas:</p>
-<p><code>author: T.McInnes, McInnes.T</code></p>
-<p>Note that in this case, while we can read them as separate authors, it would be more accurate to call this a single author with a long and confusing name.</p>
-<p>The correct way to include multiple authors is to list each author on a separate line under author, with each line starting with a dash:</p>
-<p><code>author:</code></p>
-<p><code>- T.McInnes</code></p>
-<p><code>- McInnes.T</code></p>
-<p>This is an example of nesting, where we are providing multiple input sources under a single key. If we break the format (<em>e.g.,</em> by having author: name on one line and -name on the next line) we will get an error message and the document will not render.</p>
+<p>In the qmd file used to build the website you are looking at right now, the code block above contains two #| lines:</p>
+<p>#| label: fig-penguinBills</p>
+<p>#| warning: false</p>
+<p>Below the code block the text reads:</p>
+<p>“See @fig-penguinBills for a positve correlation between bill depth and bill length.”</p>
+<p>The warning: false argument is added because the penguins dataset includes NAs which we are warned about.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="date" class="level4">
-<h4 class="anchored" data-anchor-id="date">Date</h4>
-<p>The basic format for date is:</p>
-<p><code>date: 29-05-25</code></p>
-<p>There are a lot of different formats we can use for date formats:</p>
-<pre><code>MM/dd/yyyy
-MM-dd-yyyy
-MM/dd/yy
-MM-dd-yy
-yyyy-MM-dd
-dd MM yyyy
-MM dd, yyyy
-YYYY-MM-DDTHH:mm:ssZ</code></pre>
-<p>These options have a <em>hierarchy</em>. That means that Quarto will attempt to interpret the date in the order of formats above. In practice, this means that</p>
-<p><code>date: 05/06/2025</code></p>
-<p>Will be interpreted as May 6th, 2025.</p>
-<p>For the date:</p>
-<p><code>date: 13/07/2025</code></p>
-<p>Quarto will first attempt to read it as month/date/year, but since that doesn’t work it will be intepreted as “The 7th day, 13 months from the start of 2025” - January 7th, 2026.</p>
-<p>For this reason I strongly recommend using one of two options:</p>
-<p><code>date: today</code> The current local date.</p>
-<p><code>date: last-modified</code> The last date the input file was modified.</p>
 </section>
-<section id="what-impact-does-this-have-on-reproducibility" class="level4">
-<h4 class="anchored" data-anchor-id="what-impact-does-this-have-on-reproducibility">What impact does this have on reproducibility?</h4>
-<p>It’s important to include this information in even our most basic documents. Clear authoring is required for fair attribution and for directing readers in terms of who to contact.</p>
-<p>Using a last-modified date format helps the reader to understand the timeline of the file, such as what public data or software versions were available at the time of last render.</p>
+<section id="inline-code" class="level2">
+<h2 class="anchored" data-anchor-id="inline-code">Inline code</h2>
+<p>Inline code refers to code that is used within the document but is not stored separately in a code cell. The purpose of inline code is to embed the output directly into the document text.</p>
+<p>For example, if we wanted to describe the mean bill length for the Adelie species of penguins in the penguins object, we could manually calculate the value and then add a written statement:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(<span class="fu">na.omit</span>(penguins<span class="sc">$</span>bill_length_mm)),<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 43.92</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The mean bill length of penguins in the dataset is 43.92mm.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To streamline the above with inline code we need to do three things:</p>
+<ol type="1">
+<li><p>Write the text statement.</p></li>
+<li><p>Open a set of backticks (`).</p></li>
+<li><p>Specify the language (in this case, R).</p></li>
+</ol>
+<p>This is demonstrated below, using quotation marks in place of backticks so that it is human readable:</p>
+<p>The mean bill length of penguins in the dataset is “r round(mean(na.omit(penguins$bill_length_mm)),2)”mm.</p>
+<p>The same line of code above but with backticks in place of quotation marks is rendered as:</p>
+<p>The mean bill length of penguins in the dataset is 43.92mm.</p>
+<section id="why-use-inline-code" class="level3">
+<h3 class="anchored" data-anchor-id="why-use-inline-code">Why use inline code?</h3>
+<p>The key reason for using inline code is reproducibility. If you need to re-run your analysis, or update an input file, your statements will automatically be updated to reflect the new data. This has the additional benefit of reducing human error: avoids copy-paste errors (or copy and writing errors) between the calculated values and the value stated in text and ensures that all instances of this value are identical (<em>e.g.,</em> if this value is referred to repeatedly).</p>
+<section id="good-practice-for-inline-code" class="level4">
+<h4 class="anchored" data-anchor-id="good-practice-for-inline-code"><strong>Good practice for inline code</strong></h4>
+<ul>
+<li><p>Remember that while the final document will have the evaluated output, the document you (or a collaborator) are working on will have the code embedded. Therefore, keep inline code simple and short. If the code required is lengthy, consider moving this to a code cell and storing the output as an object. Then use the object as part of the inline code.</p></li>
+<li><p>Do not use inline code in Quarto headings (it will not be evaluated).</p></li>
+<li><p>Make use of the <code>round()</code> function to control the number of decimal places.</p></li>
+<li><p>Remember to include <code>na.omit()</code> if appropriate. Data may not currently include NAs, but if you think the data could be updated in future this may cause issues.</p></li>
+<li><p>Add comments within code cells or as appropriate so that readers know where the values are coming from.</p></li>
+</ul>
 </section>
-</section>
-<section id="output-format" class="level3">
-<h3 class="anchored" data-anchor-id="output-format">Output format</h3>
-<p>When we want to output our document as a single format we use the basic key-value pair:</p>
-<p><code>format: html</code></p>
-<p>We can easily change the format after rendering to create a new document which duplicates the format <em>e.g.,</em> you could generate a slideshow and a static pdf/html as a backup (this is recommended if you might be presenting on a shared machine).</p>
-<section id="exercise-exploring-revealjs" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-exploring-revealjs"><strong>Exercise:</strong> Exploring revealjs</h4>
-<p>Add a new heading in the .qmd document (either set the line to Header 2 in Visual Editor or type two # symbols) and call it “Section 3”.</p>
-<p>Change the format of the output from html to “revealjs” and render.</p>
-<p>Explore the revealjs (slideshow) format.</p>
-</section>
-</section>
-<section id="global-code-options" class="level3">
-<h3 class="anchored" data-anchor-id="global-code-options">Global code options</h3>
-<p>Code options included in the YAML header are global - they will be applied to all code cells in this document. As we will cover below, individual code cells (chunks or blocks of code) can be controlled separately. Some useful global options we might want to set in the YAML header are:</p>
-<p><code>code-fold: true</code></p>
-<p><code>code-tools: true</code></p>
-<p>When code-fold is set to true, all code blocks will be automatically collapsed. This is useful when you want code to be available but would otherwise distract from the flow of the document <em>e.g.,</em> when teaching/training, presenting at lab meetings. Code-tools provides a simple button at the top of the html that can then be used to toggle all code to open/closed (an easy ‘reset’ of all code blocks).</p>
-</section>
-<section id="useful-features" class="level3">
-<h3 class="anchored" data-anchor-id="useful-features">Useful features</h3>
-<p>There are other useful features we can control through the YAML header. Some examples:</p>
-<p><code>toc: true</code> will autogenerate a table of contents (for multi-page websites or documents).</p>
-<p><code>bibliography: references.bib</code> autogenerates a bibliography from a bib file.</p>
-<p><code>csl: nature.csl</code> sets the citation style.</p>
-<p><code>number-sections: true</code> adds auto-numbering for each section.</p>
 </section>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>What have we covered?</p>
+<p>In this section we have:</p>
 <ul>
-<li><p>Initiating a .qmd file.</p></li>
-<li><p>The Visual and Source Editor windows.</p></li>
-<li><p>An introduction to the qmd syntax: italics, bold, hyperlinks, headings.</p></li>
-<li><p>The YAML header controls global options, such as author/date/document type metadata as well as a whole series of additional tools. If you are creating a single document (pdf, slideshow, standalone HTML) all of this information will be within the header at the top of the document. If you are creating a complex project (like the webpage you are reading now) most of that information will be stored in a separate document which we will cover later. As you will see below, you can over-ride the global options for certain blocks of code.</p></li>
+<li><p>Embedded code cells and modified their behaviour with the hash-pipe.</p></li>
+<li><p>Embedded output, including figures, and made this output cross-referencable with the use of the label option.</p></li>
+<li><p>Used inline code to improve reproducibility in our document.</p></li>
 </ul>
+</section>
+<section id="exit-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exit-exercises">Exit exercises</h2>
+<ol type="1">
+<li><p>What are the three methods for inserting a new code cell?</p></li>
+<li><p>What symbols do we add to set the code cell options?</p></li>
+<li><p>If a code cell has echo: false and eval: true, what will happen when the document is rendered?</p></li>
+<li><p>List one other code cell option we have used today.</p></li>
+</ol>
 
 
 </section>
