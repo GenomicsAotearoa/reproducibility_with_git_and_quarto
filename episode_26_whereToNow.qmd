@@ -1,0 +1,14 @@
+---
+title: Where to go from here?
+toc: true
+---
+
+You have now seen the basics of using Quarto for creating documents. Quarto is a relatively new product from posit (the group behind RStudio) and there are regular, exciting updates on the project. 
+
+The key resource is the Quarto webiste.
+
+The posit::conf(2023) and 2024 Youtube Playlists have a number of talks on the use of Quarto. Key examples include automated reporting and scrollytelling. 
+
+The R4DS 2nd edition book was published using Quarto. Hadley Wickham's github repo includes the raw .qmd files and is an excellent resource.
+
+These blog sites were built with Quarto and demonstrate some interesting ideas:

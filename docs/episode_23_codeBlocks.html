@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./figures/nesi_ga.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -124,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -139,25 +140,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./episode_11_introduction.qmd" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Day One - Git</span></span>
-  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./quarto_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Day Two - Quarto</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./episode_21_introduction.html" class="sidebar-item-text sidebar-link">
@@ -178,20 +169,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_2x_formatters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Format matters</span></a>
+  <a href="./episode_24_projects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projects: books and websites</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_2x_creatingANewDoc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">episode_2x_creatingANewDoc.html</span></a>
+  <a href="./episode_25_researchPortfolio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Building our own research porfolio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_2x_StoryRepo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Story Repo</span></a>
+  <a href="./episode_26_whereToNow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Where to go from here?</span></a>
   </div>
 </li>
       </ul>
@@ -214,7 +205,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
   </ul></li>
-  <li><a href="#code-cell-options" id="toc-code-cell-options" class="nav-link" data-scroll-target="#code-cell-options">Code cell options</a></li>
+  <li><a href="#code-cell-options" id="toc-code-cell-options" class="nav-link" data-scroll-target="#code-cell-options">Code cell options</a>
+  <ul class="collapse">
+  <li><a href="#set-figure-dimensions" id="toc-set-figure-dimensions" class="nav-link" data-scroll-target="#set-figure-dimensions">Set figure dimensions</a></li>
+  </ul></li>
   <li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code">Inline code</a>
   <ul class="collapse">
   <li><a href="#why-use-inline-code" id="toc-why-use-inline-code" class="nav-link" data-scroll-target="#why-use-inline-code">Why use inline code?</a></li>
@@ -225,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_overview.html">Day Two - Quarto</a></li><li class="breadcrumb-item"><a href="./episode_23_codeBlocks.html">Code in qmd files</a></li></ol></nav>
 <div class="quarto-title">
@@ -234,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -268,6 +262,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="code-cells" class="level2">
 <h2 class="anchored" data-anchor-id="code-cells">Code cells</h2>
+<p>Code cells are the ‘working unit’ of code within Quarto. Each code cell will be evaluated and output will be embedded into the document immediately below the code cell. For this reason, it is worth thinking about the size and organisation of the code cell. A reasonable code cell might include loading all the libraries you will use in the analysis, or the generation of a single figure.</p>
 <p>When we want to embed code we do so with the use of the ` (“backtick”). Three backticks, followed by a curly bracket, and a symbol for the language our code will be in, signifies the start of a code block. We end the code block with three backticks. When we are within a code cell we can run any line of code, just the same as we would with a basic R markdown or R script document. Code cells are automatically executed as part of the rendering process.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -335,6 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 </div>
+<p>Note that hash pipe arguments are <em>not</em> displayed - this makes code cleaner in the document, but it does make it difficult to demonstrate or teach. The drop-down note below has a figure to demonstrate the hash pipe.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -348,8 +344,12 @@ What is happening above?
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In the qmd file used to build the website you are looking at right now, the code above reads:</p>
-<p>#| echo: false</p>
-<p>tail(penguins)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/hashpipe.png" class="img-fluid figure-img"></p>
+<figcaption>The hash pipe</figcaption>
+</figure>
+</div>
 <p>echo: false means the code itself (<code>tail(penguins)</code>) will not be displayed, but the code is still executed and the output embedded into the document.</p>
 </div>
 </div>
@@ -359,11 +359,7 @@ What is happening above?
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Note</strong> normally the hashpipe and key-value statement is not normally visible. If we copy the code above into a code chunk and render the document we do not see the code cell arguments. I have made them visible for the purpose of teaching.</p>
-</section>
-<section id="warnings" class="level4">
-<h4 class="anchored" data-anchor-id="warnings">Warnings</h4>
-<p><strong>warning: false</strong> will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. I recommend printing the warning once and noting that it will be suppressed in all future cases.</p>
+<p><strong>Note</strong> although the the hashpipe and key-value statement is not normally visible, I’ve made it visible here by including the line twice in the .qmd document.</p>
 </section>
 <section id="cross-referencing" class="level4">
 <h4 class="anchored" data-anchor-id="cross-referencing">Cross-referencing</h4>
@@ -371,7 +367,7 @@ What is happening above?
 <p>We can attach a label to a code block with <strong>#| label:</strong>, followed by a given label. We can then use <strong>@label</strong> to cross-reference. For example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-penguinBills</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_depth_mm,</span>
@@ -379,6 +375,10 @@ What is happening above?
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">colour =</span> species,</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">shape =</span> species)) <span class="sc">+</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
 <div class="cell-output-display">
 <div id="fig-penguinBills" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
 <figure class="quarto-float quarto-float-fig figure">
@@ -407,13 +407,59 @@ What is happening above?
 <div class="callout-body-container callout-body">
 <p>In the qmd file used to build the website you are looking at right now, the code block above contains two #| lines:</p>
 <p>#| label: fig-penguinBills</p>
-<p>#| warning: false</p>
 <p>Below the code block the text reads:</p>
 <p>“See @fig-penguinBills for a positve correlation between bill depth and bill length.”</p>
-<p>The warning: false argument is added because the penguins dataset includes NAs which we are warned about.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="warnings" class="level4">
+<h4 class="anchored" data-anchor-id="warnings">Warnings</h4>
+<p><strong>warning: false</strong> will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. I recommend printing the warning once and noting that it will be suppressed in all future cases.</p>
+<p><strong>Exercise:</strong> Add warning: false to the ggplot code cell above, and re-render the document to confirm warnings have disappeared.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-penguinBillsNoWarning</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_depth_mm,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_length_mm,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">colour =</span> species,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-penguinBillsNoWarning" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-penguinBillsNoWarning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="episode_23_codeBlocks_files/figure-html/fig-penguinBillsNoWarning-1.png" id="fig-penguinBillsNoWarning" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-penguinBillsNoWarning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Note that we cannot use the same label twice within a document, so we need to use a new label (penguinBillsNoWarning) or the render will fail.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="set-figure-dimensions" class="level3">
+<h3 class="anchored" data-anchor-id="set-figure-dimensions">Set figure dimensions</h3>
+<p><strong>fig-width: x</strong> and <strong>fig-length: y</strong> can be used to manually set the dimension of embedded figures.</p>
 </section>
 </section>
 <section id="inline-code" class="level2">
@@ -421,21 +467,21 @@ What is happening above?
 <p>Inline code refers to code that is used within the document but is not stored separately in a code cell. The purpose of inline code is to embed the output directly into the document text.</p>
 <p>For example, if we wanted to describe the mean bill length for the Adelie species of penguins in the penguins object, we could manually calculate the value and then add a written statement:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(<span class="fu">na.omit</span>(penguins<span class="sc">$</span>bill_length_mm)),<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(<span class="fu">na.omit</span>(penguins<span class="sc">$</span>bill_length_mm)),<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 43.92</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The mean bill length of penguins in the dataset is 43.92mm.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The mean bill length of penguins in the dataset is 43.92mm.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To streamline the above with inline code we need to do three things:</p>
 <ol type="1">
-<li><p>Write the text statement.</p></li>
-<li><p>Open a set of backticks (`).</p></li>
+<li><p>Write the text statement and open a set of backticks (`).</p></li>
 <li><p>Specify the language (in this case, R).</p></li>
+<li><p>Include the code to be evaluated.</p></li>
 </ol>
 <p>This is demonstrated below, using quotation marks in place of backticks so that it is human readable:</p>
 <p>The mean bill length of penguins in the dataset is “r round(mean(na.omit(penguins$bill_length_mm)),2)”mm.</p>
-<p>The same line of code above but with backticks in place of quotation marks is rendered as:</p>
+<p><strong>The same line of code above but with backticks in place of quotation marks is rendered as:</strong></p>
 <p>The mean bill length of penguins in the dataset is 43.92mm.</p>
 <section id="why-use-inline-code" class="level3">
 <h3 class="anchored" data-anchor-id="why-use-inline-code">Why use inline code?</h3>
@@ -468,6 +514,7 @@ What is happening above?
 <li><p>What symbols do we add to set the code cell options?</p></li>
 <li><p>If a code cell has echo: false and eval: true, what will happen when the document is rendered?</p></li>
 <li><p>List one other code cell option we have used today.</p></li>
+<li><p>Give two reasons you might use to convince a co-worker to use inline code.</p></li>
 </ol>
 
 

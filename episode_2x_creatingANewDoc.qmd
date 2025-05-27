@@ -1,5 +1,0 @@
-
-
-
-
-Note: within RStudio we can either use Terminal and quarto preview, or the Render button, and within that we can either Render to Window or Render to Preview pane

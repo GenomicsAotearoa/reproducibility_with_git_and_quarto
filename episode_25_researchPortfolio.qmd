@@ -1,0 +1,134 @@
+---
+title: Building our own research porfolio
+toc: true
+---
+
+In this section we will all build and publish our own website with the aim of giving you:
+
+1. Hands-on experience with writing the Quarto documents required for a website.
+
+2. A website that highlights your capabilities as a researcher and bioinformatician. 
+
+
+#### Aims
+
+- Learn how to publish a website.
+
+- Gain experience with Quarto, explore options around format, theme, styles.css, *etc.,* to create a polished website.
+
+- Pin a repo to showcase your capabilities.
+
+- Gain confidence in working publicly. 
+
+
+\* As an alternative to creating a research portfolio website, you may instead choose to focus on creating a website that documents one of your particular projects, or some other form of website. While we recommend the concept of a pinned github repo to highlight your abilities as a researcher and bioinformatician, how you do this is up to you. 
+
+
+## Why a portfolio website? 
+
+If you want to progress in bioinformatics, you should assume that people (future employers) will look at your github. Having a set of tidy repos that document your workflow is the minimum you should aim for. In addition to these tidy repos, we can build a single repo that directs and guides viewers through our github and highlights our key skills. 
+
+To get a better understanding of why I am recommending this and what we are trying to do, I recommend this talk from posit::conf(2024) titled "[Github - How to tell your professional story](https://www.youtube.com/watch?v=R-bPjavai5A&list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn&index=20)". In this talk, Dr. Abigail Haddad outlines how Github can be used to demonstrate not just the raw coding skills you use frequently, but also the auxilliary skills that define how you work - your problem solving skills, your practices, and how you communicate. 
+
+We are going to take some of the advice from that talk, which says that all of your github should be used to *actively* demonstrate your skills and tell your story, and we are going to compress it down to a single github repo which will convey (or at least introduce) your story. We will Pin this repo so that it's the first thing people see when they visit your github page, and publish it as a working website so that you also have a link you can drop into LinkedIn or Bluesky posts, incorporate into your email signatures, whenever you feel it's appropriate to do some self-marketing. 
+
+
+## Initial setup (5-10 minutes)
+
+Using skills from yesterday and today's workshops:
+
+- Initiate a new, public github repo with a name like Work Portfolio or equivalent. 
+
+- In RStudio, start a New Project and use the Version Control option to link it to the new repo. 
+
+- Create three .qmd files. For each file, set the YAML header to include an appropriate title and add at least one header and a piece of sample text to each document: 
+
+    - index.qmd. Index.qmd will work as the landing page for the site, and could include something like the short blurb found at the top of a CV.
+    
+    - portfolio.qmd. Portfolio will contain hyperlinks to your work - either to other github repos, publications, google scholar account, LinkedIn account *etc.,* (it will be the definitive, exhaustive set of your work).
+    
+    - research_focus.qmd. Research_focus.qmd will include a written statement about your focus as a researcher.
+
+\* **Note** these initial files are templates only, and will be populated later. 
+
+- Create a _quarto.yml file using the template from the previous section. Under contents, include index.qmd first, then portfolio.qmd and research_focus.qmd.
+
+## Refining the site
+
+Here we will look at a number of options through the _quarto.yml file to improve the look of the website. 
+
+### Improved navigation and layout
+
+#### Sidebar navigation
+
+In the last section we added a navbar along the top of the page for website navigation. An alternative to this is sidebar navigation:
+
+- In the _quarto.yml document, replace 'navbar:' with 'sidebar:'. 
+
+- Add a new line below sidebar, indent and add style: "docked". 
+
+- Add a new line and (same indentation level as style, because it is an argument under sidebar) add contents:, then add individual .qmd documents with text and href as before. 
+
+#### Sections
+
+We can group pages under a header in sidebar navigation. Clicking on the header will open a drop-down menu. Each section can be given it's own name, and can have any number of individual pages nested below it through the "contents:" key. 
+
+Sections are very useful for *e.g.,* a website that focuses on discrete aspects (two day protocols, wetlab and drylab sections *etc.,*)
+
+
+::: {.callout-tip collapse="true"}
+## Example sidebar and section .yml
+
+![Sidebar and sections example](figures/sidebar_and_sections.png)
+
+:::
+
+### Adding personal details: github icons, footer, light and dark
+
+#### Site icons
+
+We can add a range of icons to our navigation menu and provide links for these icons. This provides an easy and clear way for site visitors to view your other, more commonly used accounts. Commonly used icons include github/linkedIn/bluesky, with [thousands of icons](https://icons.getbootstrap.com/) available for use. Add the code below to a new line in the website section of the _quarto.yml file. Note that navbar should be at the same indentation level as sidebar. You can swap the href link (which is currently to the generic github site) to your own github. 
+
+  navbar:
+
+    right:
+
+      - icon: github
+
+        href: https://github.com/
+
+        aria-label: GitHub
+
+#### Footer
+
+Add a footer with: 
+
+  page-footer:
+
+    center:
+
+      - text: "Built with love and Quarto"
+
+      - href: https://quarto.org
+
+
+#### Themes light and dark
+
+In addition to selecting a single theme as we have done in the previous section of this workshop, we can enable both a light and dark mode using themes. The easiest way to do this is to choose the simple themes "flatly" and "darkly", but you can select any themes you prefer. 
+
+To do this, under theme, add two new lines with the key-value pairs "light: flatly" and "dark: darkly". After rendering we can now switch between light and dark modes. 
+
+### styles.css
+
+In addition to the pre-built format that themes can provide we can also customise our sites with a styles.css file. The .css file is a "Cascading Style Sheets" document, which can be used to override all of the Quarto defaults for HTML documents. The .css file is used to manipulate fonts, choose colours, layout, background for code cells, side and navbar aesthetics, table text alignment - *almost every visual aspect* can be changed with a styles.css file. 
+
+The styles.css file is written in css - it is not Quarto specific, and requires reasonably detailed knowledge. I recommend using templates sourced online or chatGPT equivalents for building a styles.css template which you can then work from.
+
+
+## Pinning a repo and publishing the site using github
+
+
+
+
+## Summary
+

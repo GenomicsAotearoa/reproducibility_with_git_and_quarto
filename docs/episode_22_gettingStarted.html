@@ -35,10 +35,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-604720bb1232338eff9fd4a651e86bdf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-604720bb1232338eff9fd4a651e86bdf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-8cc9c89086c5b38805b3cd3739cfc442.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -90,12 +92,15 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Reproducibility</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -105,25 +110,15 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./episode_11_introduction.qmd" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Day One - Git</span></span>
-  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./quarto_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Day Two - Quarto</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./episode_21_introduction.html" class="sidebar-item-text sidebar-link">
@@ -139,25 +134,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./episode_23_codeBlocks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">episode_23_codeBlocks.html</span></a>
+ <span class="menu-text">Code in qmd files</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_2x_formatters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Format matters</span></a>
+  <a href="./episode_24_projects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projects: books and websites</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_2x_creatingANewDoc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">episode_2x_creatingANewDoc.html</span></a>
+  <a href="./episode_25_researchPortfolio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Building our own research porfolio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_2x_StoryRepo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Story Repo</span></a>
+  <a href="./episode_26_whereToNow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Where to go from here?</span></a>
   </div>
 </li>
       </ul>
@@ -174,7 +169,11 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#set-up-new-public-repo-and-open-an-r-project" id="toc-set-up-new-public-repo-and-open-an-r-project" class="nav-link active" data-scroll-target="#set-up-new-public-repo-and-open-an-r-project">Set up new public repo and open an R project</a></li>
   <li><a href="#first-quarto-doc" id="toc-first-quarto-doc" class="nav-link" data-scroll-target="#first-quarto-doc">First quarto doc</a></li>
-  <li><a href="#visual-or-source-editor" id="toc-visual-or-source-editor" class="nav-link" data-scroll-target="#visual-or-source-editor">Visual or Source Editor</a></li>
+  <li><a href="#rendering-a-document" id="toc-rendering-a-document" class="nav-link" data-scroll-target="#rendering-a-document">Rendering a document</a></li>
+  <li><a href="#visual-or-source-editor" id="toc-visual-or-source-editor" class="nav-link" data-scroll-target="#visual-or-source-editor">Visual or Source Editor</a>
+  <ul class="collapse">
+  <li><a href="#other-syntax-options-and-notes" id="toc-other-syntax-options-and-notes" class="nav-link" data-scroll-target="#other-syntax-options-and-notes">Other syntax options and notes:</a></li>
+  </ul></li>
   <li><a href="#yaml-headers" id="toc-yaml-headers" class="nav-link" data-scroll-target="#yaml-headers">YAML headers</a>
   <ul class="collapse">
   <li><a href="#document-metadata" id="toc-document-metadata" class="nav-link" data-scroll-target="#document-metadata">Document metadata</a></li>
@@ -187,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_overview.html">Day Two - Quarto</a></li><li class="breadcrumb-item"><a href="./episode_22_gettingStarted.html">Getting Started</a></li></ol></nav>
 <div class="quarto-title">
@@ -196,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -257,6 +256,10 @@ Three peices of syntax in the source editor
 </div>
 </section>
 </section>
+<section id="rendering-a-document" class="level2">
+<h2 class="anchored" data-anchor-id="rendering-a-document">Rendering a document</h2>
+<p>The RStudio visual editor has a built in button for rendering a document, which will simultaneously open up a Preview. The Preview can either be viewed in a new window or in a panel in RStudio.</p>
+</section>
 <section id="visual-or-source-editor" class="level2">
 <h2 class="anchored" data-anchor-id="visual-or-source-editor">Visual or Source Editor</h2>
 <p>When I started writing this workshop I was almost exclusively using the Source Editor. During the process of writing this workshop I became more familiar with some of the features of Visual and started using that as a preference. You can use one or the other, and we will try and demonstrate some of each.</p>
@@ -277,6 +280,12 @@ Three peices of syntax in the source editor
 </ul>
 <p>Once you have completed these tasks, switch back and forth between the Visual and Source Editor to see how these different effects are done with markdown.</p>
 <p>As you can see, the Visual editor makes it much easier to work in the Quarto markdown language.</p>
+</section>
+<section id="other-syntax-options-and-notes" class="level3">
+<h3 class="anchored" data-anchor-id="other-syntax-options-and-notes">Other syntax options and notes:</h3>
+<p>We can also use super<sup>script</sup> and sub<sub>script</sub>, by surrounding text with ^ or ~ respectively, and <del>strikeout</del> strikethrough text using double ~~ on either side of the word.</p>
+<p>Paragraphs (and items in lists) need to be separated by an <em>empty line</em>. If there is no empty line between paragraphs, they will be interpreted as having a space between them.</p>
+<p>If you are writing lists manually (<em>i.e.,</em> not using the Visual editor option) you can either add unnumbered lists with an *, or you can add numbered lists with any number followed by a fullstop at the start of the line. Note that any number works (try writing a bullet point list with 1. 2. 2. 4. 5. to start each line, remembering to separate lines with an empty line). Quarto will automatically sort the numbers, which means you can number lists and then easily add additional points anywhere along the list.</p>
 </section>
 </section>
 <section id="yaml-headers" class="level2">
@@ -319,6 +328,7 @@ Adding multiple authors
 <p><code>- T.McInnes</code></p>
 <p><code>- McInnes.T</code></p>
 <p>This is an example of nesting, where we are providing multiple input sources under a single key. If we break the format (<em>e.g.,</em> by having author: name on one line and -name on the next line) we will get an error message and the document will not render.</p>
+<p>You can also list multiple authors within [], with each author separated by commas.</p>
 </div>
 </div>
 </div>
@@ -414,6 +424,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {

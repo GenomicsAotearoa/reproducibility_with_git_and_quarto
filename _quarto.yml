@@ -1,39 +1,31 @@
 project: 
   type: website
   output-dir: docs
+  resources:
+    - figures
 
 website:
   title: "Reproducibility"
+  favicon: figures/socialImage.png
   sidebar:
     style: "docked"
     contents:
-      - text: "Introduction"
-        href: "episode_11_introduction.qmd"
-        # "11" refers to day 1, episode 1.
-      - section: "Day One - Git"
-        href: git_overview.qmd
-        contents:
-#          - git_1.qmd
       - section: "Day Two - Quarto"
         href: quarto_overview.qmd
         contents:
           - episode_21_introduction.qmd
           - episode_22_gettingStarted.qmd
           - episode_23_codeBlocks.qmd
-          - episode_2x_formatters.qmd
-          - episode_2x_creatingANewDoc.qmd
-          - episode_2x_StoryRepo.qmd
-          # Syntax
-          # Preview, render
-          # adding new pages, adding pages to _quarto.yml
-          # Git, publish, 
+          - episode_24_projects.qmd
+          - episode_25_researchPortfolio.qmd
+          - episode_26_whereToNow.qmd
 
-          # embed images, links
-          # theme (test a bunch), styles (use chatgpt)
 
 
 format:
   html:
+    page-layout: full
     theme: zephyr
     css: styles.css
     navigation: true
+

@@ -30,6 +30,8 @@ By the end of this section you should be able to:
 
 ## Code cells
 
+Code cells are the 'working unit' of code within Quarto. Each code cell will be evaluated and output will be embedded into the document immediately below the code cell. For this reason, it is worth thinking about the size and organisation of the code cell. A reasonable code cell might include loading all the libraries you will use in the analysis, or the generation of a single figure. 
+
 When we want to embed code we do so with the use of the \` ("backtick"). Three backticks, followed by a curly bracket, and a symbol for the language our code will be in, signifies the start of a code block. We end the code block with three backticks. When we are within a code cell we can run any line of code, just the same as we would with a basic R markdown or R script document. Code cells are automatically executed as part of the rendering process. 
 
 ![R Code cell](figures/codeChunk.png)
@@ -89,14 +91,14 @@ Here we will use the **echo: false** command to hide the R code itself from the 
 tail(penguins)
 ```
 
+Note that hash pipe arguments are *not* displayed - this makes code cleaner in the document, but it does make it difficult to demonstrate or teach. The drop-down note below has a figure to demonstrate the hash pipe. 
+
 ::: {.callout-note collapse="true"}
 # What is happening above?
 
 In the qmd file used to build the website you are looking at right now, the code above reads:
 
-\#\| echo: false
-
-tail(penguins)
+![The hash pipe](figures/hashpipe.png)
 
 
 echo: false means the code itself (`tail(penguins)`) will not be displayed, but the code is still executed and the output embedded into the document.
@@ -111,11 +113,8 @@ Alternatively, we can display the code but not the output with **\#\| eval: fals
 tail(penguins)
 ```
 
-**Note** normally the hashpipe and key-value statement is not normally visible. If we copy the code above into a code chunk and render the document we do not see the code cell arguments. I have made them visible for the purpose of teaching. 
+**Note** although the the hashpipe and key-value statement is not normally visible, I've made it visible here by including the line twice in the .qmd document.
 
-#### Warnings
-
-**warning: false** will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. I recommend printing the warning once and noting that it will be suppressed in all future cases. 
 
 #### Cross-referencing
 
@@ -125,10 +124,9 @@ We can attach a label to a code block with **\#\| label:**, followed by a given 
 
 ```{r}
 #| label: fig-penguinBills
-#| warning: false
 
 #| label: fig-penguinBills
-#| warning: false
+
 library(ggplot2)
 ggplot(data = penguins,
        mapping = aes(x = bill_depth_mm,
@@ -147,16 +145,44 @@ In the qmd file used to build the website you are looking at right now, the code
 
 \#\| label: fig-penguinBills
 
-\#\| warning: false
 
 
 Below the code block the text reads:
 
 "See \@fig-penguinBills for a positve correlation between bill depth and bill length."
 
-The warning: false argument is added because the penguins dataset includes NAs which we are warned about.
 :::
 
+#### Warnings
+
+**warning: false** will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. I recommend printing the warning once and noting that it will be suppressed in all future cases. 
+
+**Exercise:** Add warning: false to the ggplot code cell above, and re-render the document to confirm warnings have disappeared.
+
+::: {.callout-note collapse="true"}
+# Solution
+
+```{r}
+#| label: fig-penguinBillsNoWarning
+#| warning: false
+
+#| label: fig-penguinBillsNoWarning
+#| warning: false
+library(ggplot2)
+ggplot(data = penguins,
+       mapping = aes(x = bill_depth_mm,
+                     y = bill_length_mm,
+                     colour = species,
+                     shape = species)) +
+         geom_point()
+```
+
+Note that we cannot use the same label twice within a document, so we need to use a new label (penguinBillsNoWarning) or the render will fail. 
+:::
+
+### Set figure dimensions
+
+**fig-width: x** and **fig-length: y** can be used to manually set the dimension of embedded figures. 
 
 ## Inline code
 
@@ -171,17 +197,17 @@ round(mean(na.omit(penguins$bill_length_mm)),2)
 
 To streamline the above with inline code we need to do three things:
 
-1. Write the text statement. 
+1. Write the text statement and open a set of backticks (\`). 
 
-2. Open a set of backticks (\`).
+2. Specify the language (in this case, R).
 
-3. Specify the language (in this case, R). 
+3. Include the code to be evaluated. 
 
 This is demonstrated below, using quotation marks in place of backticks so that it is human readable:
 
 The mean bill length of penguins in the dataset is "r round(mean(na.omit(penguins$bill_length_mm)),2)"mm. 
 
-The same line of code above but with backticks in place of quotation marks is rendered as:
+**The same line of code above but with backticks in place of quotation marks is rendered as:**
 
 The mean bill length of penguins in the dataset is `r round(mean(na.omit(penguins$bill_length_mm)),2)`mm.
 
@@ -221,5 +247,8 @@ In this section we have:
 3. If a code cell has echo: false and eval: true, what will happen when the document is rendered?
 
 4. List one other code cell option we have used today.
+
+5. Give two reasons you might use to convince a co-worker to use inline code. 
+
 
 

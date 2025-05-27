@@ -50,6 +50,10 @@ We will cover more syntax shortly. Almost anything you would like to do can be a
 If \#\# designates a header, why isn't *this* line coming up as a header? When you need to specify something like a \# or an \*, add \\ (a backslash) first. This is known as 'escaping' and means that the next symbol will appear as-is in the document, rather than being translated as markdown.
 :::
 
+## Rendering a document
+
+The RStudio visual editor has a built in button for rendering a document, which will simultaneously open up a Preview. The Preview can either be viewed in a new window or in a panel in RStudio. 
+
 ## Visual or Source Editor
 
 When I started writing this workshop I was almost exclusively using the Source Editor. During the process of writing this workshop I became more familiar with some of the features of Visual and started using that as a preference. You can use one or the other, and we will try and demonstrate some of each. 
@@ -83,6 +87,15 @@ Move to the Visual Editor, and use the toolbar buttons to:
 Once you have completed these tasks, switch back and forth between the Visual and Source Editor to see how these different effects are done with markdown. 
 
 As you can see, the Visual editor makes it much easier to work in the Quarto markdown language. 
+
+### Other syntax options and notes:
+
+We can also use super^script^ and sub~script~, by surrounding text with \^ or \~ respectively, and ~~strikeout~~ strikethrough text using double \~\~ on either side of the word. 
+
+Paragraphs (and items in lists) need to be separated by an *empty line*. If there is no empty line between paragraphs, they will be interpreted as having a space between them.
+
+If you are writing lists manually (*i.e.,* not using the Visual editor option) you can either add unnumbered lists with an \*, or you can add numbered lists with any number followed by a fullstop at the start of the line. Note that any number works (try writing a bullet point list with 1. 2. 2. 4. 5. to start each line, remembering to separate lines with an empty line). Quarto will automatically sort the numbers, which means you can number lists and then easily add additional points anywhere along the list.
+
 
 
 ## YAML headers
@@ -133,6 +146,9 @@ The correct way to include multiple authors is to list each author on a separate
 `- McInnes.T`
 
 This is an example of nesting, where we are providing multiple input sources under a single key. If we break the format (*e.g.,* by having author: name on one line and -name on the next line) we will get an error message and the document will not render. 
+
+You can also list multiple authors within \[\], with each author separated by commas. 
+
 
 :::
 
