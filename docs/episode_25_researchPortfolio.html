@@ -311,7 +311,8 @@ Example sidebar and section .yml
 <section id="styles.css" class="level3">
 <h3 class="anchored" data-anchor-id="styles.css">styles.css</h3>
 <p>In addition to the pre-built format that themes can provide we can also customise our sites with a styles.css file. The .css file is a “Cascading Style Sheets” document, which can be used to override all of the Quarto defaults for HTML documents. The .css file is used to manipulate fonts, choose colours, layout, background for code cells, side and navbar aesthetics, table text alignment - <em>almost every visual aspect</em> can be changed with a styles.css file.</p>
-<p>The styles.css file is written in css - it is not Quarto specific, and requires reasonably detailed knowledge. I recommend using templates sourced online or chatGPT equivalents for building a styles.css template which you can then work from.</p>
+<p>The styles.css file is written in css - it is not Quarto specific, and requires reasonably detailed knowledge. I recommend using templates sourced online or chatGPT equivalents for building a styles.css template which you can then work from. Using chatGPT I selected colours (blue and gold for Otago), specified that I wanted those to be gentle (not harsh, lower contrast) and asked for a clean, clear look. I took the template and added it a new document call styles.css.</p>
+<p>Styles.css is stored in the top level of the directory. In the _quarto.yml document under format, I added a new line at the same indentation level as theme and added “css: styles.css”.</p>
 </section>
 </section>
 <section id="pinning-a-repo-and-publishing-the-site-using-github" class="level2">
