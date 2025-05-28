@@ -26,9 +26,11 @@ Upgrading to a website
 
 Preview and Render, git and Publishing
 
-- Practice practice practice! Theme, styles (chatgpt), 
+- Practice practice practice! Theme, styles.
 
-    - For styles, exercise where I'll demonstrate using chatgpt for a prompt that creates a basic styles.css, and challenge others to use chatgpt to get something that looks very different. 
+- Publishing with github pages.
+
+
 
 
 

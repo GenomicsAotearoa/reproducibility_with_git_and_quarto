@@ -28,6 +28,8 @@ In this section we will all build and publish our own website with the aim of gi
 
 If you want to progress in bioinformatics, you should assume that people (future employers) will look at your github. Having a set of tidy repos that document your workflow is the minimum you should aim for. In addition to these tidy repos, we can build a single repo that directs and guides viewers through our github and highlights our key skills. 
 
+Aside from github repos it can be useful to create websites as a way to market either yourself and your work, or the work of your lab group. Quarto can make this easy. [Jadey Ryan](https://jadeyryan.com/) has a great website that really showcases what a Quarto website can look like.
+
 To get a better understanding of why I am recommending this and what we are trying to do, I recommend this talk from posit::conf(2024) titled "[Github - How to tell your professional story](https://www.youtube.com/watch?v=R-bPjavai5A&list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn&index=20)". In this talk, Dr. Abigail Haddad outlines how Github can be used to demonstrate not just the raw coding skills you use frequently, but also the auxilliary skills that define how you work - your problem solving skills, your practices, and how you communicate. 
 
 We are going to take some of the advice from that talk, which says that all of your github should be used to *actively* demonstrate your skills and tell your story, and we are going to compress it down to a single github repo which will convey (or at least introduce) your story. We will Pin this repo so that it's the first thing people see when they visit your github page, and publish it as a working website so that you also have a link you can drop into LinkedIn or Bluesky posts, incorporate into your email signatures, whenever you feel it's appropriate to do some self-marketing. 
@@ -166,3 +168,8 @@ Refresh the page to see the url for the new site and a button to Visit the site.
 
 ## Summary
 
+You can reasonably expect people to look at your github repos. Creating a repo to guide viewers through your portfolio of research is a a good way to influence what people will see. 
+
+With quarto we have a great level of control over the documents we create with arguments in the _quarto.yml file, through the use of themes, and a dedicated styles.css file.
+
+There are multiple ways to freely publish your documents as websites. Github pages works well with quarto docs and the method shown here is simple and easy to follow. 
