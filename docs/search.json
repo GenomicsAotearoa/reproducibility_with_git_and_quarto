@@ -513,7 +513,7 @@
     "href": "episode_25_researchPortfolio.html#pinning-a-repo-and-publishing-the-site-using-github",
     "title": "Building our own research porfolio",
     "section": "Pinning a repo and publishing the site using github",
-    "text": "Pinning a repo and publishing the site using github",
+    "text": "Pinning a repo and publishing the site using github\nOn the github website you can pin up to six repos as visible on your main landing page, with the remaining repos being visible under the repos tab. Once your research portfolio website is underway I recommend pinning it, alongside your most completed and well-documented repos, so that they will be the first thing visitors will see.\nTo publish a website - that is, to take it from the local-only html file to a hosted site that is accessible via url - there are a number of options. Today we will focus on publishing through github pages. Within github pages there are three options for publishing (render to docs and publish, using the quarto publish command, or using a Github Action). We will use the simplest option, render to docs and then instruct github to publish from the docs directory.\n\nRender to docs",
     "crumbs": [
       "Day Two - Quarto",
       "Building our own research porfolio"
