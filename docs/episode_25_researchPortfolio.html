@@ -173,7 +173,9 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#pinning-a-repo-and-publishing-the-site-using-github" id="toc-pinning-a-repo-and-publishing-the-site-using-github" class="nav-link" data-scroll-target="#pinning-a-repo-and-publishing-the-site-using-github">Pinning a repo and publishing the site using github</a>
   <ul class="collapse">
-  <li><a href="#render-to-docs" id="toc-render-to-docs" class="nav-link" data-scroll-target="#render-to-docs">Render to docs</a></li>
+  <li><a href="#setting-up" id="toc-setting-up" class="nav-link" data-scroll-target="#setting-up">Setting up</a></li>
+  <li><a href="#render-add-commit-push" id="toc-render-add-commit-push" class="nav-link" data-scroll-target="#render-add-commit-push">Render, add, commit, push</a></li>
+  <li><a href="#deploy-from-maindocs" id="toc-deploy-from-maindocs" class="nav-link" data-scroll-target="#deploy-from-maindocs">Deploy from main/docs</a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
@@ -322,8 +324,31 @@ Example sidebar and section .yml
 <h2 class="anchored" data-anchor-id="pinning-a-repo-and-publishing-the-site-using-github">Pinning a repo and publishing the site using github</h2>
 <p>On the github website you can pin up to six repos as visible on your main landing page, with the remaining repos being visible under the repos tab. Once your research portfolio website is underway I recommend pinning it, alongside your most completed and well-documented repos, so that they will be the first thing visitors will see.</p>
 <p>To publish a website - that is, to take it from the local-only html file to a hosted site that is accessible via url - <a href="https://quarto.org/docs/publishing/">there are a number of options</a>. Today we will focus on publishing through github pages. Within github pages there are three options for publishing (render to docs and publish, using the quarto publish command, or using a Github Action). We will use the simplest option, render to docs and then instruct github to publish from the docs directory.</p>
-<section id="render-to-docs" class="level3">
-<h3 class="anchored" data-anchor-id="render-to-docs">Render to docs</h3>
+<section id="setting-up" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up">Setting up</h3>
+<p>In the _quarto.yml file, make sure that we have “output-dir: docs” under project. Quarto render will then output all files to the docs directory.</p>
+<p>We need to add a specific file that tells github pages <em>not</em> to do additional processing of our site (github has built in methods for publishing, which we do not want to use here). Under the Terminal tab in RStudio, run “touch .nojekyll”. Just like how the underscore at the start of a _quarto.yml file means the file is not rendered, starting with a “.” means that the file is not rendered and is instead treated as a high-level argument.</p>
+</section>
+<section id="render-add-commit-push" class="level3">
+<h3 class="anchored" data-anchor-id="render-add-commit-push">Render, add, commit, push</h3>
+<p>While still in the Terminal window of RStudio, run:</p>
+<p><code>quarto render</code></p>
+<p><code>git add docs</code></p>
+<p><code>git commit -m "publish to docs/"</code></p>
+<p><code>git push</code></p>
+<p>Our new rendered docs should now be stored safely in our repo.</p>
+</section>
+<section id="deploy-from-maindocs" class="level3">
+<h3 class="anchored" data-anchor-id="deploy-from-maindocs">Deploy from main/docs</h3>
+<p>Navigate to the github repo for the page you wish to deploy. Under Settings &gt; Pages, use the dropdown menus under the Branch header to select “Main” branch, and then switch the directory from “root” to “docs”. When ready, click “Save”.</p>
+<p>The page should refresh with a new note saying “Your Github pages site is currently being built…”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/deployPage.png" class="img-fluid figure-img"></p>
+<figcaption>Deploying the github page</figcaption>
+</figure>
+</div>
+<p>Refresh the page to see the url for the new site and a button to Visit the site. Copy this url, return to the main page for the repo, and use the buttons on the github site to edit the About and/or Readme. Alternatively, back in RStudio open the README.md file and add the url there.</p>
 </section>
 </section>
 <section id="summary" class="level2">
