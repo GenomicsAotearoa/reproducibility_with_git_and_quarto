@@ -1,2 +1,4 @@
 # reproducibility_block
-A four-part block on reproducibility
+
+
+A two day workshop on reproducibility with git and Quarto
