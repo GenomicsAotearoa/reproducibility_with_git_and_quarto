@@ -153,6 +153,30 @@ Below the code block the text reads:
 
 :::
 
+For cross referencing tables it is very similar to figures, but instead we use the `tbl` prefix
+
+```{r}
+#| message: false # hide the messages from loading dplyr
+#| label: 'tbl-penguin-mass-summary'
+#| tbl-cap: 'Penguin Mean Body Weights'
+
+library(dplyr)
+library(gt)
+
+penguins |> 
+  group_by(island) |>
+  summarise(mean_body_mass_g = mean(body_mass_g, na.rm = TRUE)) |>
+  gt() |>
+  fmt_number(mean_body_mass_g) |>
+  cols_label(island ="Island", 
+              mean_body_mass_g = "Mean Body Mass (g)") |>
+  cols_align(columns = island, align = "left")
+  
+  
+```
+
+And cross referencing is done in a similar matter by using the label, e.g. using `\@tbl-penguin-mass-summary` gives us the reference @tbl-penguin-mass-summary.
+
 #### Warnings
 
 **warning: false** will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. I recommend printing the warning once and noting that it will be suppressed in all future cases. 
