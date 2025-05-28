@@ -7,7 +7,7 @@ You have now seen the basics of using Quarto for creating documents. Quarto is a
 
 The key resource is the [Quarto webiste](https://quarto.org/). If you have completed everything in this workshop then you may want to skip to the Guide tab, or use the Get Started tab to introduce you to using Quarto in a different tool (*e.g.,* VSCode instead of RStudio). 
 
-The [posit::conf(2023)(https://www.youtube.com/playlist?list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp) YouTube playlist has recordings from 14 talks (!!!) that mention Quarto, and in 2024 the conference organisers [created a specific Quarto playlist](https://www.youtube.com/playlist?list=PLNUVZZ6hfXX1Y4Is-SbbMF_HutRDJBwiO). If nothing else, this should show you how important the community things Quarto is for bioinformatics. Key examples I can recommend include talks on automated reporting and scrollytelling. 
+The [posit::conf(2023)](https://www.youtube.com/playlist?list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp) YouTube playlist has recordings from 14 talks (!!!) that mention Quarto, and in 2024 the conference organisers [created a specific Quarto playlist](https://www.youtube.com/playlist?list=PLNUVZZ6hfXX1Y4Is-SbbMF_HutRDJBwiO). If nothing else, this should show you how important the community things Quarto is for bioinformatics. Key examples I can recommend include talks on automated reporting and scrollytelling. 
 
 The [R4DS 2nd edition book](https://r4ds.hadley.nz/) was published using Quarto. Hadley Wickham's github repo includes the raw .qmd files and is an excellent resource.
 
