@@ -149,7 +149,7 @@ In the qmd file used to build the website you are looking at right now, the code
 
 Below the code block the text reads:
 
-"See \@fig-penguinBills for a positve correlation between bill depth and bill length."
+"See \@fig-penguinBills for a positive correlation between bill depth and bill length."
 
 :::
 
