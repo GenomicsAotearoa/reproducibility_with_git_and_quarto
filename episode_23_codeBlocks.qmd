@@ -160,6 +160,7 @@ For cross referencing tables it is very similar to figures, but instead we use t
 #| label: 'tbl-penguin-mass-summary'
 #| tbl-cap: 'Penguin Mean Body Weights'
 
+#| tbl-cap: 'Penguin Mean Body Weights'
 
 library(dplyr)
 library(gt)
