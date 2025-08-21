@@ -10,7 +10,7 @@ website:
   sidebar:
     style: "docked"
     contents:
-      - section: "Day Two - Quarto"
+      - section: "Part Two - Quarto"
         href: quarto_overview.qmd
         contents:
           - episode_21_introduction.qmd
@@ -19,6 +19,10 @@ website:
           - episode_24_projects.qmd
           - episode_25_researchPortfolio.qmd
           - episode_26_whereToNow.qmd
+    tools:
+      - icon: github
+        href: https://github.com/GenomicsAotearoa/reproducibility_with_git_and_quarto
+
 
 
 
