@@ -1,149 +1,157 @@
+/* Import Roboto and mukta font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;700&display=swap');
+
+
+/* Apply font globally */
+body, h1, h2, h3, h4, h5, h6, p, a, button, table, blockquote {
+    font-family: 'Mukta', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+/* global font bigger */
+html, body {
+  font-size: 20px;   /* default is ~16px, so this is slightly bigger */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1.4em;  /* scale headings too */
+}
+
+
+
 /* General page styling */
 body {
-    background-color: #f7f9fc;  /* Very light blue background for a soft feel */
-    color: #4a4a4a;  /* Dark gray text color for good readability */
-    font-family: Arial, sans-serif;  /* Font family for a clean, modern look */
+    background-color: #F5F3FA;  /* Light lavender background */
+    color: #3B3A3D;  /* Dark gray text for readability */
     line-height: 1.6;
     margin: 0;
     padding: 0;
-  }
-  
-  /* Section styling for visual separation */
-  section {
-    border: 1px solid #e0e0e0;  /* Light gray border for separation */
-    background-color: #ffffff;  /* White background for sections */
+}
+
+
+/* Section styling */
+section {
+    border: 1px solid #D0C8E0;  /* Soft purple-gray border */
+    background-color: #FFFFFF;   /* White section background */
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);  /* Subtle shadow for depth */
-  }
-  
-  /* Heading styles with background highlight */
-  h1, h2, h3 {
-    color: #3b5998;  /* Soft blue for headings */
-    padding: 5px;
-    background-color: #eaf1fb;  /* Very light blue background for heading highlights */
-    border-radius: 5px;
-  }
-  
-  /* Link styles */
-  a {
-    color: #3b5998;  /* Muted yellow color for links */
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #6B5B95;  /* Deep purple */
+    border-bottom: 2px solid #A084CA;  /* subtle underline instead of box */
+    padding-bottom: 5px;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    background: none;
+    border-radius: 0;
+}
+
+/* Links */
+a {
+    color: #6B5B95;
     text-decoration: none;
-  }
-  
-  a:hover {
-    color: #3b5998;  /* Darker blue on hover for a subtle effect */
+}
+a:hover {
+    color: #8C52FF;
     text-decoration: underline;
-  }
-  
-  /* Button styles with gradient and shadow */
-  button {
-    background: linear-gradient(to bottom, #f4d03f, #e2be33);  /* Gradient yellow for buttons */
-    color: #3b5998;  /* Soft blue text for contrast */
+}
+
+/* Buttons */
+button, .nav-button {
+    background-color: #8C52FF;
+    color: #FFFFFF;
     border: none;
+    border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Shadow for depth */
     transition: background 0.3s, transform 0.2s;
-  }
-  
-  button:hover {
-    background: linear-gradient(to bottom, #f5e26f, #d1a920);  /* Lighter yellow on hover */
-    transform: translateY(-2px);  /* Slight lift effect on hover */
-  }
-  
-  /* Callout block styles */
-  .callout-note {
-    background-color: #eaf1fb;  /* Very light blue for callout background */
-    border-left: 5px solid #3b5998;  /* Soft blue border to highlight the callout */
+}
+button:hover, .nav-button:hover {
+    background-color: #A084CA;
+    transform: translateY(-2px);
+}
+
+/* Callouts */
+.callout-note,
+.callout-tip,
+.callout-warning,
+.callout-important {
+    background-color: #FFFFFF;   /* white internal background */
+    border-left: 4px solid #6B5B95;  /* purple accent for all callouts */
     padding: 15px;
     margin: 20px 0;
-  }
-  
-  /* Footer styling */
-  footer {
-    background-color: #3b5998;  /* Soft blue footer background */
-    color: #ffffff;  /* White text color */
-    padding: 10px;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  /* Table styles with improved visual interest */
-  table {
+    border-radius: 5px;
+}
+
+
+/* Tables */
+table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);  /* Subtle shadow for the table */
-  }
-  
-  table th, table td {
-    border: 1px solid #3b5998;  /* Soft blue borders */
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+}
+table th, table td {
+    border: 1px solid #D0C8E0;
     padding: 10px;
     text-align: left;
-  }
-  
-  table th {
-    background-color: #f4d03f;  /* Muted yellow header background */
-    color: #3b5998;  /* Soft blue text */
-  }
-  
-  table tr:nth-child(even) {
-    background-color: #f7f9fc;  /* Light blue for alternating rows */
-  }
-  
-  /* Blockquote styles with subtle enhancement */
-  blockquote {
-    border-left: 5px solid #3b5998;  /* Soft blue border to emphasize blockquote */
-    background: #eaf1fb;  /* Light blue background */
+}
+table th {
+    background-color: #EDE7F6;
+    color: #6B5B95;
+}
+table tr:nth-child(even) {
+    background-color: #F5F3FA;
+}
+table tr:hover {
+    background-color: #EDE7F6;
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 4px solid #6B5B95;
+    background: #F5F3FA;
     padding: 15px;
     margin: 20px 0;
-    color: #4a4a4a;
+    color: #3B3A3D;
     font-style: italic;
-  }
-  
-  /* Content box styling */
-  .content-box {
-    background-color: #ffffff;  /* White background for contrast */
-    border: 1px solid #e0e0e0;  /* Light gray border */
+}
+
+/* Content boxes */
+.content-box {
+    background-color: #FFFFFF;
+    border: 1px solid #D0C8E0;
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
-  }
-  
-  /* Navigation button styling */
+}
+
+/* Footer */
+footer {
+    background-color: #6B5B95;
+    color: #FFFFFF;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Navigation buttons */
 .navigation-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
-  }
-  
-  .navigation-buttons a {
+}
+.navigation-buttons a {
     text-decoration: none;
-  }
-  
-  .nav-button {
-    background: linear-gradient(to bottom, #f4d03f, #e2be33);  /* Gradient yellow for buttons */
-    color: #3b5998;  /* Soft blue text for contrast */
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Shadow for depth */
-    transition: background 0.3s, transform 0.2s;
-  }
-  
-  .nav-button:hover {
-    background: linear-gradient(to bottom, #f5e26f, #d1a920);  /* Lighter yellow on hover */
-    transform: translateY(-2px);  /* Slight lift effect on hover */
-  }
-  
-  .prev-button {
-    margin-right: auto;  /* Aligns the Previous button to the left */
-  }
-  
-  .next-button {
-    margin-left: auto;  /* Aligns the Next button to the right */
-  }
+}
+.prev-button {
+    margin-right: auto;
+}
+.next-button {
+    margin-left: auto;
+}

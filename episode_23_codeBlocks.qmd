@@ -15,17 +15,14 @@ The aims of this section are to:
 
 - Reinforce and expand the syntax skills from the previous episode.
 
-### Learning Objectives:
+### Learning Objectives 
 
 By the end of this section you should be able to:
 
-- Write and execute code chunks.
-
-- Use inline code to create dynamic content.
-
-- Create an HTML report from your .qmd file.
-
-- Apply good commenting/documentation habits when working in Quarto.
+- Write and execute code chunks.  
+- Use inline code to create dynamic content.  
+- Create an HTML report from your .qmd file. 
+- Apply good commenting/documentation habits when working in Quarto.  
 
 
 ## Code cells

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Projects: books and websites – Reproducibility with Git and Quarto</title>
+<title>Automated version control – Reproducibility with Git and Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_overview.html">Part Two - Quarto</a></li><li class="breadcrumb-item"><a href="./episode_24_projects.html">Projects: books and websites</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git_overview.html">Part One - Git</a></li><li class="breadcrumb-item"><a href="./episode_01_AutomatedVersionControl.html">Automated version control</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -118,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_01_AutomatedVersionControl.html" class="sidebar-item-text sidebar-link">
+  <a href="./episode_01_AutomatedVersionControl.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Automated version control</span></a>
   </div>
 </li>
@@ -153,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_24_projects.html" class="sidebar-item-text sidebar-link active">
+  <a href="./episode_24_projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projects: books and websites</span></a>
   </div>
 </li>
@@ -176,35 +176,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#aims" id="toc-aims" class="nav-link active" data-scroll-target="#aims">Aims</a></li>
-  <li><a href="#project-directory-structure" id="toc-project-directory-structure" class="nav-link" data-scroll-target="#project-directory-structure">Project Directory Structure</a>
-  <ul class="collapse">
-  <li><a href="#key-practices-for-project-layout" id="toc-key-practices-for-project-layout" class="nav-link" data-scroll-target="#key-practices-for-project-layout">Key practices for project layout</a></li>
-  </ul></li>
-  <li><a href="#quarto-projects" id="toc-quarto-projects" class="nav-link" data-scroll-target="#quarto-projects">Quarto Projects</a>
-  <ul class="collapse">
-  <li><a href="#quarto-projects-and-_quarto.yml" id="toc-quarto-projects-and-_quarto.yml" class="nav-link" data-scroll-target="#quarto-projects-and-_quarto.yml">Quarto Projects and _quarto.yml</a></li>
-  </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_overview.html">Part Two - Quarto</a></li><li class="breadcrumb-item"><a href="./episode_24_projects.html">Projects: books and websites</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git_overview.html">Part One - Git</a></li><li class="breadcrumb-item"><a href="./episode_01_AutomatedVersionControl.html">Automated version control</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Projects: books and websites</h1>
+<h1 class="title">Automated version control</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-body">
+<div class="quarto-title-meta column-page-right">
 
     
   
@@ -216,197 +199,24 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="challenge" class="level4">
-<h4 class="anchored" data-anchor-id="challenge"><strong>Challenge</strong></h4>
-<p>First, a challenge: What’s special about this page title? Specifically, what do I need to do when creating this .qmd file to make sure this renders?</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+Note
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>This page title contains a colon. Since colons are used to separate the key-value pair in the page YAML header, I need to make sure that the title is wrapped in quotation marks.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="aims" class="level2">
-<h2 class="anchored" data-anchor-id="aims">Aims</h2>
-<p>Recognise sensible directory structure and appreciate how consistent structure aids reproducibility and collaboration.</p>
-<p>Understand what a Quarto project is and when to use one.</p>
-<p>Create and configure a basic Quarto project with _quarto.yml.</p>
-<p>Learn how _quarto.yml controls project-wide behavior (rendering, format, options).</p>
-</section>
-<section id="project-directory-structure" class="level2">
-<h2 class="anchored" data-anchor-id="project-directory-structure">Project Directory Structure</h2>
-<p>Project structure and management are an important aspect of reproducible research. We want to build habits that support:</p>
-<p><strong>Transparency</strong>: Other people (and of course - future you) must be able to understand your workflow.</p>
-<p><strong>Reproducibility</strong>: Define and clearly show what the expected inputs and outputs are.</p>
-<p><strong>Collaboration</strong>: Having a consistent structure makes it easier for collaborators and teams to work together.</p>
-<p><strong>Modularity</strong>: Each component of a workflow should be something that can be isolated, tested, and reused in new contexts.</p>
-<section id="key-practices-for-project-layout" class="level3">
-<h3 class="anchored" data-anchor-id="key-practices-for-project-layout">Key practices for project layout</h3>
-<p>Some key practices to keep in mind include:</p>
-<ol type="1">
-<li><p>Separate directories for Raw and Processed Data.</p>
 <ul>
-<li>Raw and Processed Data will probably be included in your .gitignore file so that it is not uploaded to github.</li>
-</ul></li>
-<li><p>Scripts directories could be split by work stage (<em>e.g.,</em> preprocessing/analysis/visualisation) or by type (<em>e.g.,</em> R/Bash).</p></li>
-<li><p>Output directories should contain subdirectories for each type of output (figures/tables).</p></li>
-<li><p>Configuration files (_quarto.yml, styles.css, README) should sit in the main project directory.</p></li>
-<li><p>Global naming convention across projects.</p></li>
-</ol>
-<section id="an-example-directory-structure" class="level4">
-<h4 class="anchored" data-anchor-id="an-example-directory-structure">An example directory structure</h4>
-<p>my-genomics-project/</p>
-<p>├── _quarto.yml</p>
-<p>├── index.qmd # Project overview or README</p>
-<p>├── about.qmd # Team/project info</p>
-<p>├── data/</p>
-<pre><code>   ├── raw/
-
-   └── processed/</code></pre>
-<p>├── scripts/</p>
-<pre><code>   ├── qc/
-
-   ├── analysis/
-
-   └── visualizations/</code></pre>
-<p>├── results/</p>
-<pre><code>   ├── figures/
-
-   └── tables/</code></pre>
-<p>├── images/ # Diagrams, logos</p>
-<p>└── docs/ # Optional: exported PDFs or other formats</p>
-</section>
-<section id="group-discussion-exercise" class="level4">
-<h4 class="anchored" data-anchor-id="group-discussion-exercise">Group discussion exercise</h4>
-<p>Have you ever inherited a project that did (or did not) adhere to the above principles? How did this impact you?</p>
-<p>Consider your own current projects. If you (or a supervisor) were to leave work at 5pm and not return, what would the inheritors of this project think?</p>
-<p>How much work would be involved in getting your current or previous projects from where they are now to a point where you would be happy to receive them?</p>
-</section>
-</section>
-</section>
-<section id="quarto-projects" class="level2">
-<h2 class="anchored" data-anchor-id="quarto-projects">Quarto Projects</h2>
-<p>So far we have worked under the assumption that we are creating a single, brief document (<em>e.g.,</em> a 10-page pdf, short html document <em>etc.,</em>). A <strong>project</strong> is a larger structure and will usually contain multiple individual documents all linked together. Examples of projects are books or multi-page websites.</p>
-<p>We should also think about projects in terms of directory structure. We want to develop the habit of creating a clear and consistent directory structure for each of our projects, one that will be easy for other users to navigate and interpret.</p>
-<section id="quarto-projects-and-_quarto.yml" class="level3">
-<h3 class="anchored" data-anchor-id="quarto-projects-and-_quarto.yml">Quarto Projects and _quarto.yml</h3>
-<p>Specifically, a project is a directory that contains a high level file that provides information and structure to the other files: the _quarto.yml file. The _quarto.yml file is required to link individual pages together and provides options for navigation menus. Once a _quarto.yml file is in place in a directory, rendering any .qmd file in the directory will render all files in that directory - but only those that are linked through the _quarto.yml file will appear in the document.</p>
-<p>If you have been following along you should have two .qmd files (Getting Started and Code Blocks). We will now build a new _quarto.yml file and use it to link the two existing pages into a single site. We will break this simple _quarto.yml into three sections: project information, website information, and format information.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-What if we <strong>don’t</strong> want to render a doc in the directory?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Sometimes a directory will contain files we don’t want to render - they may be large, or basic scratch notes, <em>etc.,</em>. To exclude files from the render process, rename them to start with an underscore (like with the _quarto.yml file).</p>
+<li>Version control is like an unlimited ‘undo’.</li>
+<li>Version control also allows many people to work in parallel.</li>
+</ul>
 </div>
 </div>
-</div>
-<section id="project-information" class="level4">
-<h4 class="anchored" data-anchor-id="project-information">Project information</h4>
-<p>This file is essentially a YAML header for the whole project. Options here will be global for all files. We can see three discrete blocks of information in the above example:</p>
-<ol type="1">
-<li><p>First we specify information about the project itself. This will include specifying the <em>type</em> of project, in this case website but alternatively a book/article/<em>etc.,</em>. Also nested under the project key we are going to specify the output directory for all rendering - we could render straight into the working directory, but we want to abide by good project structure and specify where our output files are going. We need to specify the output dir as “docs” to be able to publish the website later.</p></li>
-<li><p>Second we have a block containing information about the output document. Because we are working on a website, we used the “website:” key and will use this to set the title and add a navigation bar. Under the navigation bar we link all the .qmd files we want to include with this website. When we are manually selecting .qmd files to include we must set both the title with the text argument and the filename with the href argument. There are <em>a lot</em> of additional options available to us in this block such as: top/side navigation bars of different styles, auto-generated contents, LinkedIn/Github icons <em>etc.,</em> which we will cover later.</p></li>
-<li><p>Third we can control the look of the website with format options. We specify that we are working with an html-type output and can choose from a set of pre-built themes to customise the look of the document. We can also specify a css file, where we provide a styles.css file that further customises our website (<em>e.g.,</em> brand colours, hyperlink visuals). We will look at creating a styles.css file later.</p></li>
-</ol>
-<p>Remember, the _quarto.yml file is essentially a YAML header for the whole document and is very fussy about indentation, spacing (between key-value pairs), and all format arguments.</p>
-<p>Render this document from one of the existing .qmd files. You cannot render from the _quarto.yml file itself.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-An example _quarto.yml file
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/quartoYML.png" class="img-fluid figure-img"></p>
-<figcaption>_quarto.yml</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>We will look at the _quarto.yml options in more detail in the next section.</p>
-</section>
-<section id="exercise-_quarto.yml-themes-and-options" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-_quarto.yml-themes-and-options"><strong>Exercise:</strong> _quarto.yml themes and options</h4>
-<p>Change the theme in the _quarto.yml file to one of the 25 pre-built options (listed below). Render the document and view the outcome.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<strong>Pre-constructed themes</strong>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<pre><code>default
-cerulean
-cosmo
-cyborg
-darkly
-flatly
-journal
-litera
-lumen
-lux
-materia
-minty
-morph
-pulse
-quartz
-sandstone
-simplex
-sketchy
-slate
-solar
-spacelab
-superhero
-united
-vapor
-yeti
-zephyr</code></pre>
-</div>
-</div>
-</div>
-<p>Immediately under the navbar line, add a new line (indented from navbar) and add “pinned: true”. What effect does this have?</p>
-</section>
-</section>
-</section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>Sensible directory structures enhance reproducibility and make collaboration easier.</p>
-<p>Quarto projects are a directory containing multiple .qmd files linked by a _quarto.yml document.</p>
-<p>Basic _quarto.yml files control the structure of the output website/book, and can control all visual elements.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

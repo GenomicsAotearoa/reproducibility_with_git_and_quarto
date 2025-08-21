@@ -1,0 +1,9 @@
+---
+title: "Automated version control"
+format: html
+---
+
+::: {.callout-note}
+- Version control is like an unlimited ‘undo’.
+- Version control also allows many people to work in parallel.
+:::

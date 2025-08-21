@@ -1,0 +1,18 @@
+---
+title: "Part One - Git"
+toc: true
+---
+
+# What is Git/Github and why do I want to use it? 
+
+git is...
+
+
+github is ...
+
+::: {.callout-warning appearance="default"}
+## Setup on local machine  
+  
+For this workshop, we will run everything locally.
+Refer to the [software carpentry page](https://swcarpentry.github.io/git-novice/index.html#installing-git) on how to install git locally.  
+:::

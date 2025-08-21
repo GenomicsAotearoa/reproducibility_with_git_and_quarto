@@ -5,12 +5,16 @@ project:
     - figures
 
 website:
-  title: "Reproducibility"
+  title: "Reproducibility with Git and Quarto"
   favicon: figures/socialImage.png
   sidebar:
     style: "docked"
     contents:
-      - section: "Day Two - Quarto"
+      - section: "Part One - Git"
+        href: git_overview.qmd
+        contents:
+          - episode_01_AutomatedVersionControl.qmd
+      - section: "Part Two - Quarto"
         href: quarto_overview.qmd
         contents:
           - episode_21_introduction.qmd
@@ -25,7 +29,6 @@ website:
 format:
   html:
     page-layout: full
-    theme: zephyr
     css: styles.css
     navigation: true
 
