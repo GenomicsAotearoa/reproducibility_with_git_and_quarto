@@ -1,0 +1,10 @@
+---
+title: ""
+format: html
+---
+
+# *Reproducibility with Git and Quarto ...*
+
+The git part of this workshop is under construction, please [see this link here](https://swcarpentry.github.io/git-novice/) for instructions on how to use git / github by the Carpentries.
+
+The Quarto part of this workshop is complete, please feel free to peruse :)
