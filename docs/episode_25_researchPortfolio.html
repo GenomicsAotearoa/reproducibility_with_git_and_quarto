@@ -30,7 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./figures/socialImage.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -40,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b2c493fdd487b110f6b1348dfd6a5174.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-709f788519238433456b39eacb8aeed0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,6 +70,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Building our own research porfolio – Reproducibility with Git and Quarto">
+<meta property="og:description" content="">
+<meta property="og:image" content="figures/sidebar_and_sections.png">
+<meta property="og:site_name" content="Reproducibility with Git and Quarto">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -107,6 +110,18 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">test styling</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./git_overview.html" class="sidebar-item-text sidebar-link">
@@ -120,6 +135,36 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./episode_01_AutomatedVersionControl.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Automated version control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_02_SettingUpGit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting up Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_03_CreatingARepository.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Create a repository</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_04_TrackingChanges.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tracking, adding and committing changes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_05_Branches-pull-merge.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Branches, pulling and merging</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_05_Collaborating.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Collaborating</span></a>
   </div>
 </li>
       </ul>
@@ -181,16 +226,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-a-portfolio-website" id="toc-why-a-portfolio-website" class="nav-link active" data-scroll-target="#why-a-portfolio-website">Why a portfolio website?</a></li>
+  <li><a href="#aims" id="toc-aims" class="nav-link active" data-scroll-target="#aims">Aims</a></li>
+  <li><a href="#why-a-portfolio-website" id="toc-why-a-portfolio-website" class="nav-link" data-scroll-target="#why-a-portfolio-website">Why a portfolio website?</a></li>
   <li><a href="#initial-setup-5-10-minutes" id="toc-initial-setup-5-10-minutes" class="nav-link" data-scroll-target="#initial-setup-5-10-minutes">Initial setup (5-10 minutes)</a></li>
   <li><a href="#refining-the-site" id="toc-refining-the-site" class="nav-link" data-scroll-target="#refining-the-site">Refining the site</a>
+  <ul>
+  <li><a href="#improved-navigation-and-layout" id="toc-improved-navigation-and-layout" class="nav-link" data-scroll-target="#improved-navigation-and-layout">Improved navigation and layout</a>
   <ul class="collapse">
-  <li><a href="#improved-navigation-and-layout" id="toc-improved-navigation-and-layout" class="nav-link" data-scroll-target="#improved-navigation-and-layout">Improved navigation and layout</a></li>
-  <li><a href="#adding-personal-details-github-icons-footer-light-and-dark" id="toc-adding-personal-details-github-icons-footer-light-and-dark" class="nav-link" data-scroll-target="#adding-personal-details-github-icons-footer-light-and-dark">Adding personal details: github icons, footer, light and dark</a></li>
+  <li><a href="#sidebar-navigation" id="toc-sidebar-navigation" class="nav-link" data-scroll-target="#sidebar-navigation">Sidebar navigation</a></li>
+  <li><a href="#sections" id="toc-sections" class="nav-link" data-scroll-target="#sections">Sections</a></li>
+  </ul></li>
+  <li><a href="#adding-personal-details-github-icons-footer-light-and-dark" id="toc-adding-personal-details-github-icons-footer-light-and-dark" class="nav-link" data-scroll-target="#adding-personal-details-github-icons-footer-light-and-dark">Adding personal details: github icons, footer, light and dark</a>
+  <ul class="collapse">
+  <li><a href="#site-icons" id="toc-site-icons" class="nav-link" data-scroll-target="#site-icons">Site icons</a></li>
+  <li><a href="#footer" id="toc-footer" class="nav-link" data-scroll-target="#footer">Footer</a></li>
+  <li><a href="#themes-light-and-dark" id="toc-themes-light-and-dark" class="nav-link" data-scroll-target="#themes-light-and-dark">Themes light and dark</a></li>
+  </ul></li>
   <li><a href="#styles.css" id="toc-styles.css" class="nav-link" data-scroll-target="#styles.css">styles.css</a></li>
   </ul></li>
   <li><a href="#pinning-a-repo-and-publishing-the-site-using-github" id="toc-pinning-a-repo-and-publishing-the-site-using-github" class="nav-link" data-scroll-target="#pinning-a-repo-and-publishing-the-site-using-github">Pinning a repo and publishing the site using github</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#setting-up" id="toc-setting-up" class="nav-link" data-scroll-target="#setting-up">Setting up</a></li>
   <li><a href="#render-add-commit-push" id="toc-render-add-commit-push" class="nav-link" data-scroll-target="#render-add-commit-push">Render, add, commit, push</a></li>
   <li><a href="#deploy-from-maindocs" id="toc-deploy-from-maindocs" class="nav-link" data-scroll-target="#deploy-from-maindocs">Deploy from main/docs</a></li>

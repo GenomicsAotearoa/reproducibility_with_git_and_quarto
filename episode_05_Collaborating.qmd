@@ -1,0 +1,12 @@
+---
+title: ""
+format: html
+---
+
+# Collaborating
+
+::: {.callout-note appearance="simple"}
+# Key points
+- `git clone` copies a remote repository to create a local repository with a remote called origin automatically set up.
+:::
+

@@ -1,0 +1,12 @@
+---
+title: ""
+format: html
+---
+
+# Branches, pulling and merging
+
+::: {.callout-note appearance="simple"}
+# Key points
+- `git pull origin main`
+
+:::

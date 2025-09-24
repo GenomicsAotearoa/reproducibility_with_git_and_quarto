@@ -30,7 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./figures/socialImage.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -40,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b2c493fdd487b110f6b1348dfd6a5174.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-709f788519238433456b39eacb8aeed0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,6 +70,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Getting Started – Reproducibility with Git and Quarto">
+<meta property="og:description" content="">
+<meta property="og:image" content="figures/newQuartoDoc.png">
+<meta property="og:site_name" content="Reproducibility with Git and Quarto">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -107,6 +110,18 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">test styling</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./git_overview.html" class="sidebar-item-text sidebar-link">
@@ -120,6 +135,36 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./episode_01_AutomatedVersionControl.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Automated version control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_02_SettingUpGit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting up Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_03_CreatingARepository.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Create a repository</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_04_TrackingChanges.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tracking, adding and committing changes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_05_Branches-pull-merge.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Branches, pulling and merging</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_05_Collaborating.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Collaborating</span></a>
   </div>
 </li>
       </ul>
@@ -182,16 +227,29 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#set-up-new-public-repo-and-open-an-r-project" id="toc-set-up-new-public-repo-and-open-an-r-project" class="nav-link active" data-scroll-target="#set-up-new-public-repo-and-open-an-r-project">Set up new public repo and open an R project</a></li>
-  <li><a href="#first-quarto-doc" id="toc-first-quarto-doc" class="nav-link" data-scroll-target="#first-quarto-doc">First quarto doc</a></li>
+  <li><a href="#first-quarto-doc" id="toc-first-quarto-doc" class="nav-link" data-scroll-target="#first-quarto-doc">First quarto doc</a>
+  <ul>
+  <li><a href="#exercise-note-three-pieces-of-markdown-syntax-in-the-source-editor-and-how-this-translates-into-the-visual-editor." id="toc-exercise-note-three-pieces-of-markdown-syntax-in-the-source-editor-and-how-this-translates-into-the-visual-editor." class="nav-link" data-scroll-target="#exercise-note-three-pieces-of-markdown-syntax-in-the-source-editor-and-how-this-translates-into-the-visual-editor."><strong>Exercise:</strong> Note three pieces of markdown syntax in the Source editor and how this translates into the Visual editor.</a></li>
+  </ul></li>
   <li><a href="#rendering-a-document" id="toc-rendering-a-document" class="nav-link" data-scroll-target="#rendering-a-document">Rendering a document</a></li>
   <li><a href="#visual-or-source-editor" id="toc-visual-or-source-editor" class="nav-link" data-scroll-target="#visual-or-source-editor">Visual or Source Editor</a>
-  <ul class="collapse">
+  <ul>
+  <li><a href="#exercise-visual-and-source-five-minutes" id="toc-exercise-visual-and-source-five-minutes" class="nav-link" data-scroll-target="#exercise-visual-and-source-five-minutes">Exercise: Visual and Source (five minutes)</a></li>
   <li><a href="#other-syntax-options-and-notes" id="toc-other-syntax-options-and-notes" class="nav-link" data-scroll-target="#other-syntax-options-and-notes">Other syntax options and notes:</a></li>
   </ul></li>
   <li><a href="#yaml-headers" id="toc-yaml-headers" class="nav-link" data-scroll-target="#yaml-headers">YAML headers</a>
+  <ul>
+  <li><a href="#document-metadata" id="toc-document-metadata" class="nav-link" data-scroll-target="#document-metadata">Document metadata</a>
   <ul class="collapse">
-  <li><a href="#document-metadata" id="toc-document-metadata" class="nav-link" data-scroll-target="#document-metadata">Document metadata</a></li>
-  <li><a href="#output-format" id="toc-output-format" class="nav-link" data-scroll-target="#output-format">Output format</a></li>
+  <li><a href="#title" id="toc-title" class="nav-link" data-scroll-target="#title">Title</a></li>
+  <li><a href="#author" id="toc-author" class="nav-link" data-scroll-target="#author">Author</a></li>
+  <li><a href="#date" id="toc-date" class="nav-link" data-scroll-target="#date">Date</a></li>
+  <li><a href="#what-impact-does-this-have-on-reproducibility" id="toc-what-impact-does-this-have-on-reproducibility" class="nav-link" data-scroll-target="#what-impact-does-this-have-on-reproducibility">What impact does this have on reproducibility?</a></li>
+  </ul></li>
+  <li><a href="#output-format" id="toc-output-format" class="nav-link" data-scroll-target="#output-format">Output format</a>
+  <ul class="collapse">
+  <li><a href="#exercise-exploring-revealjs" id="toc-exercise-exploring-revealjs" class="nav-link" data-scroll-target="#exercise-exploring-revealjs"><strong>Exercise:</strong> Exploring revealjs</a></li>
+  </ul></li>
   <li><a href="#global-code-options" id="toc-global-code-options" class="nav-link" data-scroll-target="#global-code-options">Global code options</a></li>
   <li><a href="#useful-features" id="toc-useful-features" class="nav-link" data-scroll-target="#useful-features">Useful features</a></li>
   </ul></li>

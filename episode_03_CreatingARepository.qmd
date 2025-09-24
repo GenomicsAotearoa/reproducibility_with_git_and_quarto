@@ -1,0 +1,83 @@
+---
+format: html
+---
+
+# Create a repository  
+
+::: {.callout-note appearance="simple"}
+# Key points
+- `git init` initializes a repository.  
+- Git stores all of its repository data in the .git directory.  
+:::
+
+Once Git is configured, we can start using it.
+
+We will help Alfredo with his new project, create a repository with all his recipes.
+
+First, let’s create a new directory in the Desktop folder for our work and then change the current working directory to the newly created one:
+
+```bash
+cd ~/Desktop
+mkdir recipes
+cd recipes
+```
+
+Then we tell Git to make recipes a repository -- a place where Git can store versions of our files:
+
+```bash
+git init
+```
+
+It is important to note that `git init` will create a repository that can include subdirectories and their files—there is no need to create separate repositories nested within the recipes repository, whether subdirectories are present from the beginning or added later. Also, note that the creation of the recipes directory and its initialization as a repository are completely separate processes.
+
+If we use `ls -a` to show everything, we can see that Git has created a hidden directory within recipes called .git:
+
+```
+. .. .git
+```
+
+Git uses this special subdirectory to store all the information about the project, including the tracked files and sub-directories located within the project’s directory. If we ever delete the .git subdirectory, we will lose the project’s history.
+
+#### Nested subdirectories
+
+You do not need to initialise a repository in a subdirectory of a directory that is already a repository -- in fact, it is best not to!
+
+::: {.callout-warning collapse="true" appearance="minimal"}
+## How to undo nested subdirectories
+
+Removing files from a Git repository needs to be done with caution. But we have not learned yet how to tell Git to track a particular file; we will learn this in the next episode. Files that are not tracked by Git can easily be removed like any other “ordinary” files with:
+
+```bash
+rm filename
+```
+
+Similarly a directory can be removed using 
+```bash
+rm -r dirname
+```
+ If the files or folder being removed in this fashion are tracked by Git, then their removal becomes another change that we will need to track, as we will see in the next episode.
+
+Git keeps all of its files in the .git directory. To recover from this little mistake,  remove the .git folder in the  subdirectory by running the following command from inside the parent directory:
+
+```bash
+rm -rf subdirectory/.git
+```
+:::
+
+
+We can now start using one of the most important git commands, which is particularly helpful to beginners. git status tells us the status of our project, and better, a list of changes in the project and options on what to do with those changes. We can use it as often as we want, whenever we want to understand what is going on.
+
+We can now start using one of the most important `git` commands, which is particularly helpful to beginners. `git status` tells us the status of our project, and better, a list of changes in the project and options on what to do with those changes. We can use it as often as we want, whenever we want to understand what is going on.
+
+```bash
+git status
+```
+
+```
+On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+```
+

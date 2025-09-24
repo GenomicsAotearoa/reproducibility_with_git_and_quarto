@@ -1,0 +1,93 @@
+---
+title: "test styling"
+format: html
+---
+
+::: {.callout-note}
+stuff in note
+:::
+
+::: {.callout-warning}
+stuff in warning
+:::
+
+::: {.callout-tip}
+stuff in tip
+:::
+
+::: {.callout-important}
+stuff in importnat
+:::
+
+::: {.callout-caution}
+stuff in caution
+:::
+
+::: {.callout-note collapse="true"}
+stuff in note
+:::
+
+::: {.callout-warning collapse="true"}
+stuff in warning
+:::
+
+::: {.callout-tip collapse="true"}
+stuff in tip
+:::
+
+::: {.callout-important collapse="true"}
+stuff in importnat
+:::
+
+::: {.callout-caution collapse="true"}
+stuff in caution
+:::
+
+
+
+# Header 1
+
+text
+
+## Header 2
+
+text
+
+### Header 3
+
+text
+
+#### Header 4
+
+text
+
+##### Header 5
+
+text
+
+
+# code blocks
+
+```bash
+bash code block
+```
+
+```{r}
+# r code block
+getwd()
+```
+
+
+# stuff to add
+
+If you have changed multiple files and want to `git add` them all ready to be committed, you can use the command:
+```bash
+git add . 
+```
+
+`git add -A`
+
+deleting/adding untracked files
+
+merge and pull
+and branches

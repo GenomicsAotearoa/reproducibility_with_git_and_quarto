@@ -1,0 +1,101 @@
+---
+title: ""
+format: html
+---
+
+# Setting up Git  
+
+::: {.callout-note appearance="simple"}
+# Key points
+- Use `git config` with the `--global` option to configure a user name, email address, editor, and other preferences once per machine.
+:::
+
+### Configuring for the first time 
+
+When we use Git on a new computer for the first time, we need to configure a few things. Below are a few examples of configurations we will set as we get started with Git:
+
+- our name and email address,
+- what our preferred text editor is,
+- and that we want to use these settings globally (i.e. for every project).
+
+On a command line, Git commands are written as git verb options, where verb is what we actually want to do and options is additional optional information which may be needed for the verb. So here is how Alfredo sets up his new laptop:
+
+```bash
+git config --global user.name "Alfredo Linguini"
+git config --global user.email "a.linguini@ratatouille.fr"
+```
+
+Please use your own name and email address instead of Alfredo’s. This user name and email will be associated with your subsequent Git activity, which means that any changes pushed to GitHub, BitBucket, GitLab or another Git host server after this lesson will include this information.
+
+For this lesson, we will be interacting with GitHub and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review GitHub’s instructions for keeping your email address private.
+
+::: {.callout-tip collapse="true"}
+## Optional: configure your favourite text editor
+
+| Editor                              | Configuration command |
+|-------------------------------------|------------------------|
+| Atom                                | ```
+git config --global core.editor "atom --wait"
+``` |
+| nano                                | ```
+git config --global core.editor "nano -w"
+``` |
+| BBEdit (Mac, with command line tools)| ```
+git config --global core.editor "bbedit -w"
+``` |
+| Sublime Text (Mac)                  | ```
+git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n -w"
+``` |
+| Sublime Text (Win, 32-bit install)  | ```
+git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"
+``` |
+| Sublime Text (Win, 64-bit install)  | ```
+git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"
+``` |
+| Notepad (Win)                       | ```
+git config --global core.editor "c:/Windows/System32/notepad.exe"
+``` |
+| Notepad++ (Win, 32-bit install)     | ```
+git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+``` |
+| Notepad++ (Win, 64-bit install)     | ```
+git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+``` |
+| Kate (Linux)                        | ```
+git config --global core.editor "kate"
+``` |
+| Gedit (Linux)                       | ```
+git config --global core.editor "gedit --wait --new-window"
+``` |
+| Scratch (Linux)                     | ```
+git config --global core.editor "scratch-text-editor"
+``` |
+| Emacs                               | ```
+git config --global core.editor "emacs"
+``` |
+| Vim                                 | ```
+git config --global core.editor "vim"
+``` |
+| VS Code                             | ```
+git config --global core.editor "code --wait"
+``` |
+
+It is possible to reconfigure the text editor for Git whenever you want to change it.
+:::
+
+Git (2.28+) allows configuration of the name of the branch created when you initialize any new repository. Alfredo decides to use that feature to set it to main so it matches the cloud service he will eventually use.
+
+```bash
+git config --global init.defaultBranch main
+```
+
+::: {.callout-important}
+## Branches
+Source file changes are associated with a “branch.” In 2020, most Git code hosting services transitioned to using `main` as the default branch. As an example, any new repository that is opened in GitHub and GitLab default to `main`. However, Git has not yet made the same change. As a result, local repositories must be manually configured have the same main branch name as most cloud services. Otherwise by default, Git will create a branch called `master` when you create a new repository with `git init` (as explained in the next Episode). Read more on why master is now called main and the inclusive language decisions behind it [here]  
+
+More on branches in episode ...
+:::
+
+
+
+

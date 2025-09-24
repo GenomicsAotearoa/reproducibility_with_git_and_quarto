@@ -6,14 +6,23 @@ project:
 
 website:
   title: "Reproducibility with Git and Quarto"
-  favicon: figures/socialImage.png
+  open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
   sidebar:
     style: "docked"
     contents:
+      - text: "Home"
+        href: index.qmd
+      - text: "test styling"
+        href: test.qmd
       - section: "Part One - Git"
         href: git_overview.qmd
         contents:
           - episode_01_AutomatedVersionControl.qmd
+          - episode_02_SettingUpGit.qmd
+          - episode_03_CreatingARepository.qmd
+          - episode_04_TrackingChanges.qmd
+          - episode_05_Branches-pull-merge.qmd
+          - episode_05_Collaborating.qmd   
       - section: "Part Two - Quarto"
         href: quarto_overview.qmd
         contents:
@@ -24,11 +33,22 @@ website:
           - episode_25_researchPortfolio.qmd
           - episode_26_whereToNow.qmd
 
+tools:
+   - icon: github
+     text: Github
+     href: https://github.com/GenomicsAotearoa/reproducibility_with_git_and_quarto
+
 
 
 format:
   html:
+    code-tools: false
+    code-block-bg: true
+    code-block-title: true
+    code-overflow: wrap
     page-layout: full
+    toc: true
+    toc-depth: 4
     css: styles.css
     navigation: true
 

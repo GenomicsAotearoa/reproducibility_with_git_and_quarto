@@ -14,10 +14,6 @@ html, body {
   font-size: 20px;   /* default is ~16px, so this is slightly bigger */
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 1.4em;  /* scale headings too */
-}
-
 
 
 /* General page styling */
@@ -45,7 +41,26 @@ h1, h2, h3 {
     color: #6B5B95;  /* Deep purple */
     border-bottom: 2px solid #A084CA;  /* subtle underline instead of box */
     padding-bottom: 5px;
-    margin-top: 0.5em;
+    padding-top: 5px;
+    margin-top: 0em;
+    margin-bottom: 1em;
+    background: none;
+    border-radius: 0;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.7em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.2em; }
+h5 { font-size: 1em; }
+h6 { font-size: 0.9em; }
+
+h4, h5, h6 {
+    color: #6B5B95;  /* Deep purple */
+    border-bottom: 0px;  /* no underline */
+    padding-bottom: 5px;
+    padding-top: 0px;
+    margin-top: 0em;
     margin-bottom: 1em;
     background: none;
     border-radius: 0;
@@ -77,15 +92,64 @@ button:hover, .nav-button:hover {
 }
 
 /* Callouts */
-.callout-note,
-.callout-tip,
-.callout-warning,
+/* Callouts: Lighter than Quarto default colors */
+.callout-note {
+    background-color: #FFFFFF;   /* white background for notes */
+    border-left: 4px solid #2C7BE5;  /* Quarto note: blue */
+}
+
+.callout-tip {
+    background-color: #F3FCF3;   /* lighter green */
+    border-left: 4px solid #4CAF50;
+}
+
+.callout-warning {
+    background-color: #FFF9F0;   /* lighter orange */
+    border-left: 4px solid #FFA500;
+}
+
 .callout-important {
-    background-color: #FFFFFF;   /* white internal background */
-    border-left: 4px solid #6B5B95;  /* purple accent for all callouts */
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 5px;
+    background-color: #FFF7F7;   /* lighter red */
+    border-left: 4px solid #FF4C4C;
+}
+
+.callout-caution {
+    background-color: #FFF9F0;   /* lighter orange */
+    border-left: 4px solid #FFA500;
+}
+
+/* Tables inside callouts: always white */
+.callout-note table,
+.callout-tip table,
+.callout-warning table,
+.callout-important table,
+.callout-caution table,
+.callout-note table th,
+.callout-tip table th,
+.callout-warning table th,
+.callout-important table th,
+.callout-caution table th,
+.callout-note table td,
+.callout-tip table td,
+.callout-warning table td,
+.callout-important table td,
+.callout-caution table td,
+.callout-note table tr,
+.callout-tip table tr,
+.callout-warning table tr,
+.callout-important table tr,
+.callout-caution table tr,
+.callout-note table tr:nth-child(even),
+.callout-tip table tr:nth-child(even),
+.callout-warning table tr:nth-child(even),
+.callout-important table tr:nth-child(even),
+.callout-caution table tr:nth-child(even),
+.callout-note table tr:nth-child(odd),
+.callout-tip table tr:nth-child(odd),
+.callout-warning table tr:nth-child(odd),
+.callout-important table tr:nth-child(odd),
+.callout-caution table tr:nth-child(odd) {
+    background-color: #FFFFFF !important;
 }
 
 
@@ -154,4 +218,14 @@ footer {
 }
 .next-button {
     margin-left: auto;
+}
+
+.code-block-title, .quarto-code-title {
+  display: block;
+  color: #6B5B95;
+  background: #F5F3FA;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px 6px 0 0;
+  font-size: 1em;
 }

@@ -1,0 +1,16 @@
+---
+title: "Reproducibility with git and quarto"
+format: html
+---
+
+
+workshop on git and quarto
+ two days
+
+ first day git
+
+ second day quarto
+
+ Set up:
+
+- need to install rstudio, R, git, make git account etc. refer to page.

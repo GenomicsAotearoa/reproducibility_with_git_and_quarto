@@ -30,7 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./figures/socialImage.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -40,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b2c493fdd487b110f6b1348dfd6a5174.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-709f788519238433456b39eacb8aeed0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,6 +70,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Projects: books and websites – Reproducibility with Git and Quarto">
+<meta property="og:description" content="">
+<meta property="og:image" content="figures/quartoYML.png">
+<meta property="og:site_name" content="Reproducibility with Git and Quarto">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -107,6 +110,18 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">test styling</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./git_overview.html" class="sidebar-item-text sidebar-link">
@@ -120,6 +135,36 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./episode_01_AutomatedVersionControl.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Automated version control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_02_SettingUpGit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting up Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_03_CreatingARepository.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Create a repository</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_04_TrackingChanges.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tracking, adding and committing changes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_05_Branches-pull-merge.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Branches, pulling and merging</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_05_Collaborating.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Collaborating</span></a>
   </div>
 </li>
       </ul>
@@ -181,14 +226,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#aims" id="toc-aims" class="nav-link active" data-scroll-target="#aims">Aims</a></li>
+  <li><a href="#challenge" id="toc-challenge" class="nav-link active" data-scroll-target="#challenge"><strong>Challenge</strong></a></li>
+  <li><a href="#aims" id="toc-aims" class="nav-link" data-scroll-target="#aims">Aims</a></li>
   <li><a href="#project-directory-structure" id="toc-project-directory-structure" class="nav-link" data-scroll-target="#project-directory-structure">Project Directory Structure</a>
+  <ul>
+  <li><a href="#key-practices-for-project-layout" id="toc-key-practices-for-project-layout" class="nav-link" data-scroll-target="#key-practices-for-project-layout">Key practices for project layout</a>
   <ul class="collapse">
-  <li><a href="#key-practices-for-project-layout" id="toc-key-practices-for-project-layout" class="nav-link" data-scroll-target="#key-practices-for-project-layout">Key practices for project layout</a></li>
+  <li><a href="#an-example-directory-structure" id="toc-an-example-directory-structure" class="nav-link" data-scroll-target="#an-example-directory-structure">An example directory structure</a></li>
+  <li><a href="#group-discussion-exercise" id="toc-group-discussion-exercise" class="nav-link" data-scroll-target="#group-discussion-exercise">Group discussion exercise</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#quarto-projects" id="toc-quarto-projects" class="nav-link" data-scroll-target="#quarto-projects">Quarto Projects</a>
+  <ul>
+  <li><a href="#quarto-projects-and-_quarto.yml" id="toc-quarto-projects-and-_quarto.yml" class="nav-link" data-scroll-target="#quarto-projects-and-_quarto.yml">Quarto Projects and _quarto.yml</a>
   <ul class="collapse">
-  <li><a href="#quarto-projects-and-_quarto.yml" id="toc-quarto-projects-and-_quarto.yml" class="nav-link" data-scroll-target="#quarto-projects-and-_quarto.yml">Quarto Projects and _quarto.yml</a></li>
+  <li><a href="#project-information" id="toc-project-information" class="nav-link" data-scroll-target="#project-information">Project information</a></li>
+  <li><a href="#exercise-_quarto.yml-themes-and-options" id="toc-exercise-_quarto.yml-themes-and-options" class="nav-link" data-scroll-target="#exercise-_quarto.yml-themes-and-options"><strong>Exercise:</strong> _quarto.yml themes and options</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
