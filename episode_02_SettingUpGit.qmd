@@ -25,9 +25,7 @@ git config --global user.name "Alfredo Linguini"
 git config --global user.email "a.linguini@ratatouille.fr"
 ```
 
-Please use your own name and email address instead of Alfredo’s. This user name and email will be associated with your subsequent Git activity, which means that any changes pushed to GitHub, BitBucket, GitLab or another Git host server after this lesson will include this information.
-
-For this lesson, we will be interacting with GitHub and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review GitHub’s instructions for keeping your email address private.
+Please use your own name and email address instead of Alfredo’s. This user name and email will be associated with your subsequent Git activity, which means that any changes pushed to GitHub after this lesson will include this information. **The email address used should be the same as the one used when setting up your GitHub account.** If you are concerned about privacy, please review GitHub’s instructions for keeping your email address private.
 
 ::: {.callout-tip collapse="true"}
 ## Optional: configure your favourite text editor
@@ -97,5 +95,15 @@ More on branches in episode ...
 :::
 
 
+---
+
+<footer class="navigation-buttons">
+  <a href="episode_01_AutomatedVersionControl.qmd">
+    <button class="nav-button prev-button">Previous: Automated version control</button>
+  </a>
+  <a href="episode_03_CreatingARepository.qmd">
+    <button class="nav-button next-button">Next: Create a repository</button>
+  </a>
+</footer>
 
 

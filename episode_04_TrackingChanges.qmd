@@ -226,3 +226,14 @@ git add -A
 ```
 
 Don't forget to then `commit` your staged changes!
+
+---
+
+<footer class="navigation-buttons">
+  <a href="episode_03_CreatingARepository.qmd">
+    <button class="nav-button prev-button">Previous: Create a repository</button>
+  </a>
+  <a href="episode_05_Branches-pull-merge.qmd">
+    <button class="nav-button next-button">Next: Branches, pulling and merging</button>
+  </a>
+</footer>

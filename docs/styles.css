@@ -195,14 +195,7 @@ blockquote {
     border-radius: 10px;
 }
 
-/* Footer */
-footer {
-    background-color: #6B5B95;
-    color: #FFFFFF;
-    padding: 10px;
-    text-align: center;
-    margin-top: 20px;
-}
+
 
 /* Navigation buttons */
 .navigation-buttons {
