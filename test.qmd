@@ -91,3 +91,6 @@ deleting/adding untracked files
 
 merge and pull
 and branches
+
+puttign it all together
+- using visual studio for git and quarto https://github.com/GenomicsAotearoa/ga-workshop-tutorial/tree/main/0.GettingStarted
