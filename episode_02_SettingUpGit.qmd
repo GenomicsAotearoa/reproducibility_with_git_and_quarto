@@ -87,7 +87,7 @@ Git (2.28+) allows configuration of the name of the branch created when you init
 git config --global init.defaultBranch main
 ```
 
-::: {.callout-important}
+::: {.callout-tip}
 ## Branches
 Source file changes are associated with a “branch.” In 2020, most Git code hosting services transitioned to using `main` as the default branch. As an example, any new repository that is opened in GitHub and GitLab default to `main`. However, Git has not yet made the same change. As a result, local repositories must be manually configured have the same main branch name as most cloud services. Otherwise by default, Git will create a branch called `master` when you create a new repository with `git init` (as explained in the next Episode). Read more on why master is now called main and the inclusive language decisions behind it [here]  
 

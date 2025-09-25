@@ -18,3 +18,15 @@ format: html
 # projects
 
 # organisations
+
+
+---
+
+<footer class="navigation-buttons">
+  <a href="episode_06_Branches-pull-merge.qmd">
+    <button class="nav-button prev-button">Previous: Branches, pulling and merging</button>
+  </a>
+  <a href="">
+    <button class="nav-button next-button">Next: </button>
+  </a>
+</footer>

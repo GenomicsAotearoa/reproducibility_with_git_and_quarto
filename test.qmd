@@ -94,3 +94,8 @@ and branches
 
 puttign it all together
 - using visual studio for git and quarto https://github.com/GenomicsAotearoa/ga-workshop-tutorial/tree/main/0.GettingStarted
+
+
+making changes on github - need to pull back down readme gitignore and licence.
+
+using git restore to recover old versions of files. 

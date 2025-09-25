@@ -213,6 +213,14 @@ blockquote {
     margin-left: auto;
 }
 
+.nav-button {
+    font-size: 0.85rem;      /* smaller text */
+    padding: 0.4em 0.8em;    /* less padding = smaller buttons */
+    border-radius: 6px;      /* optional: softer corners */
+    cursor: pointer;         /* keep pointer behaviour */
+}
+
+
 .code-block-title, .quarto-code-title {
   display: block;
   color: #6B5B95;

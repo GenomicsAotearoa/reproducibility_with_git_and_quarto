@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>test styling – Reproducibility with Git and Quarto</title>
+<title>episode_06_branches-pull-merge – Reproducibility with Git and Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,8 +105,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="test styling – Reproducibility with Git and Quarto">
-<meta property="og:description" content="">
+<meta property="og:title" content="– Reproducibility with Git and Quarto">
+<meta property="og:image" content="images_git/github-pull-01.png">
 <meta property="og:site_name" content="Reproducibility with Git and Quarto">
 </head>
 
@@ -119,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./test.html">test styling</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git_overview.html">Part One - Git</a></li><li class="breadcrumb-item"><a href="./episode_06_Branches-pull-merge.html">Branches, pulling and merging</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -152,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./test.html" class="sidebar-item-text sidebar-link active">
+  <a href="./test.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test styling</span></a>
   </div>
 </li>
@@ -197,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_06_Branches-pull-merge.html" class="sidebar-item-text sidebar-link">
+  <a href="./episode_06_Branches-pull-merge.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Branches, pulling and merging</span></a>
   </div>
 </li>
@@ -266,231 +266,98 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#header-1" id="toc-header-1" class="nav-link active" data-scroll-target="#header-1">Header 1</a>
+  <li><a href="#branches-pulling-and-merging" id="toc-branches-pulling-and-merging" class="nav-link active" data-scroll-target="#branches-pulling-and-merging">Branches, pulling and merging</a>
   <ul>
-  <li><a href="#header-2" id="toc-header-2" class="nav-link" data-scroll-target="#header-2">Header 2</a>
+  <li><a href="#pulling-repositories-from-the-server-to-our-local-computer" id="toc-pulling-repositories-from-the-server-to-our-local-computer" class="nav-link" data-scroll-target="#pulling-repositories-from-the-server-to-our-local-computer">Pulling repositories from the server to our local computer</a>
   <ul class="collapse">
-  <li><a href="#header-3" id="toc-header-3" class="nav-link" data-scroll-target="#header-3">Header 3</a>
-  <ul class="collapse">
-  <li><a href="#header-4" id="toc-header-4" class="nav-link" data-scroll-target="#header-4">Header 4</a></li>
+  <li><a href="#add-a-readme-file" id="toc-add-a-readme-file" class="nav-link" data-scroll-target="#add-a-readme-file">1. Add a README file</a></li>
+  <li><a href="#pull-changes-down" id="toc-pull-changes-down" class="nav-link" data-scroll-target="#pull-changes-down">2. Pull changes down</a></li>
   </ul></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#code-blocks" id="toc-code-blocks" class="nav-link" data-scroll-target="#code-blocks">code blocks</a></li>
-  <li><a href="#stuff-to-add" id="toc-stuff-to-add" class="nav-link" data-scroll-target="#stuff-to-add">stuff to add</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">test styling</h1>
-</div>
+<main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git_overview.html">Part One - Git</a></li><li class="breadcrumb-item"><a href="./episode_06_Branches-pull-merge.html">Branches, pulling and merging</a></li></ol></nav></header>
 
 
 
-<div class="quarto-title-meta column-body">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="branches-pulling-and-merging" class="level1">
+<h1>Branches, pulling and merging</h1>
+<div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Key points
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>stuff in note</p>
+<ul>
+<li><code>git pull origin main</code></li>
+</ul>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>stuff in warning</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>stuff in tip</p>
-</div>
-</div>
+<section id="pulling-repositories-from-the-server-to-our-local-computer" class="level2">
+<h2 class="anchored" data-anchor-id="pulling-repositories-from-the-server-to-our-local-computer">Pulling repositories from the server to our local computer</h2>
+<p>Pulling takes changes made on a remote repository and brings them down into your local repository. For example, say you are collaborating on a project and your partner has made some changes and pushed them up to the github repo. You now want to pull down all those changes and keep working on the project locally.</p>
+<p>Let’s have a go at this.</p>
+<section id="add-a-readme-file" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-readme-file">1. Add a README file</h3>
+<p>Go to the recipes repository page on github. You will see an option to add a “README” file.</p>
+<p><img src="images_git/github-pull-01.png" class="img-fluid"></p>
+<p>Click “Add a README” and add some info, e.g.:</p>
+<pre><code>This repo is to house all my favourite recipes :)</code></pre>
+<p>By adding this file directly on the GitHub server, we have simulated the same scenario as if someone had pushed this file to the repo instead.</p>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>stuff in importnat</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>stuff in caution</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
+But what if I don’t want people to be able to push to my repo?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>stuff in note</p>
+<p>By default, noone can push to a repo that you have made under your own GitHub account. But, anyone can clone or fork them. To restrict or modify acccess, under general settings you can add collaborators, or you can change the visibility of your repo from public to private.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>stuff in warning</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>stuff in tip</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>stuff in importnat</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>stuff in caution</p>
-</div>
-</div>
-</div>
-<section id="header-1" class="level1">
-<h1>Header 1</h1>
-<p>text</p>
-<section id="header-2" class="level2">
-<h2 class="anchored" data-anchor-id="header-2">Header 2</h2>
-<p>text</p>
-<section id="header-3" class="level3">
-<h3 class="anchored" data-anchor-id="header-3">Header 3</h3>
-<p>text</p>
-<section id="header-4" class="level4">
-<h4 class="anchored" data-anchor-id="header-4">Header 4</h4>
-<p>text</p>
-<section id="header-5" class="level5">
-<h5 class="anchored" data-anchor-id="header-5">Header 5</h5>
-<p>text</p>
+<p>Click commit changes:</p>
+<p><img src="images_git/github-pull-02.png" class="img-fluid"></p>
+<p>Then you will be prompted to add a commit message. Add something sensible such as “Add initial README” and click commit changes.</p>
+<p><img src="images_git/github-pull-03.png" class="img-fluid"></p>
+<p>You will then see your new file in your recipes repo with the new commit message:</p>
+<p><img src="images_git/github-pull-04.png" class="img-fluid"></p>
 </section>
-</section>
-</section>
-</section>
-</section>
-<section id="code-blocks" class="level1">
-<h1>code blocks</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> code block</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># r code block</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "/Users/vanch93p/Library/CloudStorage/OneDrive-UniversityofOtago/GenomicsAotearoa/Github_local_repos/reproducibility_with_git_and_quarto"</code></pre>
-</div>
-</div>
-</section>
-<section id="stuff-to-add" class="level1">
-<h1>stuff to add</h1>
-<p>If you have changed multiple files and want to <code>git add</code> them all ready to be committed, you can use the command:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add . </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>git add -A</code></p>
-<p>deleting/adding untracked files</p>
-<p>merge and pull and branches</p>
-<p>puttign it all together - using visual studio for git and quarto https://github.com/GenomicsAotearoa/ga-workshop-tutorial/tree/main/0.GettingStarted</p>
-<p>making changes on github - need to pull back down readme gitignore and licence.</p>
-<p>using git restore to recover old versions of files.</p>
+<section id="pull-changes-down" class="level3">
+<h3 class="anchored" data-anchor-id="pull-changes-down">2. Pull changes down</h3>
+<p>Back on your local command line, navigate to your recipes directory:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now run the following to pull changes to your local computer:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And you’ll see an output like this:</p>
+<pre><code>From github.com:username/recipes
+ * branch            main       -&gt; FETCH_HEAD
+Updating 1fecf68..7ae1866
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md</code></pre>
+<p>Run <code>ls</code> to see the files in your directory and confirm we now have the README file locally.</p>
+<p>How does pull work? <code>git pull</code> does not blindly overwrite uncommitted local changes.</p>
+<p>Note that when we pull everythig from the server like this. most common scenairo is teh fast forward. different scenarios if your local file is behind and if there are merghe conflicts.</p>
+<footer class="navigation-buttons">
+<a href="./episode_05_push-github.html"> <button class="nav-button prev-button">Previous: Pushing local changes to github</button> </a> <a href="./episode_07_Collaborating.html"> <button class="nav-button next-button">Next: Collaborating</button> </a>
+</footer>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

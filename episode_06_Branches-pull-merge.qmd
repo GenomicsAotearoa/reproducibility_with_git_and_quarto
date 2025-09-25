@@ -1,0 +1,92 @@
+---
+title: ""
+format: html
+---
+
+# Branches, pulling and merging
+
+::: {.callout-note appearance="simple"}
+# Key points
+- `git pull origin main`
+
+:::
+
+
+## Pulling repositories from the server to our local computer
+
+Pulling takes changes made on a remote repository and brings them down into your local repository. For example, say you are collaborating on a project and your partner has made some changes and pushed them up to the github repo. You now want to pull down all those changes and keep working on the project locally.
+
+Let's have a go at this.
+
+### 1. Add a README file
+
+Go to the recipes repository page on github. You will see an option to add a "README" file.
+
+![](images_git/github-pull-01.png)
+
+Click "Add a README" and add some info, e.g.:
+
+```
+This repo is to house all my favourite recipes :)
+```
+
+By adding this file directly on the GitHub server, we have simulated the same scenario as if someone had pushed this file to the repo instead.
+
+::: {.callout-important collapse="true"}
+# But what if I don't want people to be able to push to my repo?
+By default, noone can push to a repo that you have made under your own GitHub account. But, anyone can clone or fork them. To restrict or modify acccess, under general settings you can add collaborators, or you can change the visibility of your repo from public to private.   
+:::
+
+Click commit changes:
+
+![](images_git/github-pull-02.png)
+
+Then you will be prompted to add a commit message. Add something sensible such as "Add initial README" and click commit changes.
+
+![](images_git/github-pull-03.png)
+
+You will then see your new file in your recipes repo with the new commit message:
+
+![](images_git/github-pull-04.png)
+
+### 2. Pull changes down
+
+Back on your local command line, navigate to your recipes directory:
+
+```bash
+cd ~/Desktop/recipes
+```
+
+Now run the following to pull changes to your local computer:
+
+```bash
+git pull origin main
+```
+And you'll see an output like this:
+
+```
+From github.com:username/recipes
+ * branch            main       -> FETCH_HEAD
+Updating 1fecf68..7ae1866
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+```
+
+Run `ls` to see the files in your directory and confirm we now have the README file locally.
+
+How does pull work? `git pull` does not blindly overwrite uncommitted local changes.
+
+Note that when we pull everythig from the server like this. most common scenairo is teh fast forward. 
+different scenarios if your local file is behind and if there are merghe conflicts. 
+
+
+<footer class="navigation-buttons">
+  <a href="episode_05_push-github.qmd">
+    <button class="nav-button prev-button">Previous: Pushing local changes to github</button>
+  </a>
+  <a href="episode_07_Collaborating.qmd">
+    <button class="nav-button next-button">Next: Collaborating</button>
+  </a>
+</footer>

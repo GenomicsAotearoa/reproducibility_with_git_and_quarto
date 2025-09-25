@@ -21,8 +21,9 @@ website:
           - episode_02_SettingUpGit.qmd
           - episode_03_CreatingARepository.qmd
           - episode_04_TrackingChanges.qmd
-          - episode_05_Branches-pull-merge.qmd
-          - episode_05_Collaborating.qmd   
+          - episode_05_push-github.qmd
+          - episode_06_Branches-pull-merge.qmd
+          - episode_07_Collaborating.qmd   
       - section: "Part Two - Quarto"
         href: quarto_overview.qmd
         contents:
