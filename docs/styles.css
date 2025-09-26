@@ -25,6 +25,15 @@ body {
     padding: 0;
 }
 
+/* image align */
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 
 /* Section styling */
 section {
@@ -197,27 +206,13 @@ blockquote {
 
 
 
-/* Navigation buttons */
-.navigation-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-}
-.navigation-buttons a {
-    text-decoration: none;
-}
-.prev-button {
-    margin-right: auto;
-}
-.next-button {
-    margin-left: auto;
-}
-
-.nav-button {
-    font-size: 0.85rem;      /* smaller text */
-    padding: 0.4em 0.8em;    /* less padding = smaller buttons */
-    border-radius: 6px;      /* optional: softer corners */
-    cursor: pointer;         /* keep pointer behaviour */
+/* Navigation container */
+.page-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #D0C8E0; /* matches content-box border */
 }
 
 

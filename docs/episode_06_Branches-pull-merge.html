@@ -65,6 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./episode_07_Collaborating.html" rel="next">
+<link href="./episode_05_push-github.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -273,6 +275,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#add-a-readme-file" id="toc-add-a-readme-file" class="nav-link" data-scroll-target="#add-a-readme-file">1. Add a README file</a></li>
   <li><a href="#pull-changes-down" id="toc-pull-changes-down" class="nav-link" data-scroll-target="#pull-changes-down">2. Pull changes down</a></li>
   </ul></li>
+  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a>
+  <ul class="collapse">
+  <li><a href="#merging-compare-and-pull-our-branch-into-main" id="toc-merging-compare-and-pull-our-branch-into-main" class="nav-link" data-scroll-target="#merging-compare-and-pull-our-branch-into-main">merging (compare and pull?) our branch into main</a>
+  <ul class="collapse">
+  <li><a href="#merge-conflicts" id="toc-merge-conflicts" class="nav-link" data-scroll-target="#merge-conflicts">merge conflicts</a></li>
+  </ul></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -285,6 +294,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="branches-pulling-and-merging" class="level1">
 <h1>Branches, pulling and merging</h1>
+<ul>
+<li>possilby re name this file Pulling, branches and merging?</li>
+</ul>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -296,7 +308,9 @@ Key points
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><code>git pull origin main</code></li>
+<li><code>git pull origin main</code><br>
+</li>
+<li>Can make new branches to work on major issues, then merge them into main</li>
 </ul>
 </div>
 </div>
@@ -351,11 +365,22 @@ Fast-forward
 <p>Run <code>ls</code> to see the files in your directory and confirm we now have the README file locally.</p>
 <p>How does pull work? <code>git pull</code> does not blindly overwrite uncommitted local changes.</p>
 <p>Note that when we pull everythig from the server like this. most common scenairo is teh fast forward. different scenarios if your local file is behind and if there are merghe conflicts.</p>
+</section>
+</section>
+<section id="branches" class="level2">
+<h2 class="anchored" data-anchor-id="branches">Branches</h2>
+<p>So far, we have been workng on one branch, called main. We can add more branches to our tree and generally we want to so this when we are doing bug fixes of our code or testing out major restructuring or styling and we don’t want these to be pushed to the main branch just yet.</p>
+<p>Let’s practise making a new branch.</p>
+<section id="merging-compare-and-pull-our-branch-into-main" class="level3">
+<h3 class="anchored" data-anchor-id="merging-compare-and-pull-our-branch-into-main">merging (compare and pull?) our branch into main</h3>
+<section id="merge-conflicts" class="level4">
+<h4 class="anchored" data-anchor-id="merge-conflicts">merge conflicts</h4>
 <footer class="navigation-buttons">
 <a href="./episode_05_push-github.html"> <button class="nav-button prev-button">Previous: Pushing local changes to github</button> </a> <a href="./episode_07_Collaborating.html"> <button class="nav-button next-button">Next: Collaborating</button> </a>
 </footer>
 
 
+</section>
 </section>
 </section>
 </section>
@@ -760,6 +785,18 @@ Fast-forward
     }
   });
   </script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./episode_05_push-github.html" class="pagination-link" aria-label="Pushing local changes to github">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Pushing local changes to github</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./episode_07_Collaborating.html" class="pagination-link" aria-label="Collaborating">
+        <span class="nav-page-text">Collaborating</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

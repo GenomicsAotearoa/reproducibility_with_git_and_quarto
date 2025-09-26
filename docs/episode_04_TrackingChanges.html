@@ -65,6 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./episode_05_push-github.html" rel="next">
+<link href="./episode_03_CreatingARepository.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -307,10 +309,10 @@ Key points
 </div>
 <p>First let’s make sure we’re still in the right directory. You should be in the recipes directory.</p>
 <div class="sourceCode" id="cb1" title="Bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Let’s create a file called <code>guacamole.qmd</code> that contains the basic structure of our first recipe. We’ll use nano to edit the file; you can use whatever editor you like. In particular, this does not have to be the core.editor you set globally earlier. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out “Which Editor?” in The Unix Shell lesson.</p>
+<p>Let’s create a file called <code>guacamole.qmd</code> that contains the basic structure of our first recipe. We’ll use nano to edit the file; you can use whatever editor you like. In particular, this does not have to be the core.editor you set globally earlier. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out <a href="https://swcarpentry.github.io/shell-novice/03-create.html#which-editor">“Which Editor?”</a> in The Carpentries Unix Shell lesson.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Put some text in your <code>guacamole.qmd</code> file, for example:<br>
-(I am leaving instructions blank to add in an example later of file modification)</p>
+<em>(I am leaving instructions blank here to add in an example later of file modification)</em></p>
 <pre><code># Guacamole recipe
 
 ## Ingredients
@@ -358,7 +360,7 @@ Changes to be committed:
 <pre><code>On branch main
 nothing to commit, working tree clean</code></pre>
 <p>it tells us everything is up to date. If we want to know what we’ve done recently, we can ask Git to show us the project’s history using <code>git log</code>, it will list all commits made to a repository in reverse chronological order. The listing for each commit includes the commit’s full identifier (which starts with the same characters as the short identifier printed by the git commit command earlier), the commit’s author, when it was created, and the log message Git was given when the commit was created.</p>
-<p>Now suppose Alfredo adds more information to the file. (Again, we’ll edit with <code>nano</code> and then <code>cat</code> the file to show its contents; you may use a different editor, and don’t need to <code>cat</code>)</p>
+<p>Now suppose we add more information to the file. (Again, we’ll edit with <code>nano</code> and then <code>cat</code> the file to show its contents; you may use a different editor, and don’t need to <code>cat</code>)</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Add some text (here I have now added instructions):</p>
 <pre><code># Guacamole recipe
@@ -438,10 +440,6 @@ index ad0d963..6249f4c 100644
 <p>Or, by using <code>git add -A</code> to add all files (new, modified, deleted files) in the <strong>entire repository</strong> to the staging area:</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">-A</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Don’t forget to then <code>commit</code> your staged changes!</p>
-<hr>
-<footer class="navigation-buttons">
-<a href="./episode_03_CreatingARepository.html"> <button class="nav-button prev-button">Previous: Create a repository</button> </a> <a href="./episode_05_push-github.html"> <button class="nav-button next-button">Next: Pushing local changes to github</button> </a>
-</footer>
 
 
 </section>
@@ -847,6 +845,18 @@ index ad0d963..6249f4c 100644
     }
   });
   </script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./episode_03_CreatingARepository.html" class="pagination-link" aria-label="Create a repository">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Create a repository</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./episode_05_push-github.html" class="pagination-link" aria-label="Pushing local changes to github">
+        <span class="nav-page-text">Pushing local changes to github</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

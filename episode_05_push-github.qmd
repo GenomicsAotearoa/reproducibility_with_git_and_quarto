@@ -284,15 +284,3 @@ To https://github.com/username/recipes.git
 
 Now go to your github and have a look - your new recipe repository with the `guacamole.qmd` file should be online!
 
-
-
----
-
-<footer class="navigation-buttons">
-  <a href="episode_04_TrackingChanges.qmd">
-    <button class="nav-button prev-button">Previous: Tracking, adding and committing changes</button>
-  </a>
-  <a href="episode_06_Branches-pull-merge.qmd">
-    <button class="nav-button next-button">Next: Branches, pulling and merging</button>
-  </a>
-</footer>

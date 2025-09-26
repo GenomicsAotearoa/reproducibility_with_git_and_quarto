@@ -65,6 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./episode_04_TrackingChanges.html" rel="next">
+<link href="./episode_02_SettingUpGit.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -293,22 +295,22 @@ Key points
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><code>git init</code> initializes a repository.<br>
+<li><code>git init</code> initialises a repository.<br>
 </li>
-<li>Git stores all of its repository data in the .git directory.<br>
+<li>Git stores all of its repository data in the <code>.git</code> directory.<br>
 </li>
 </ul>
 </div>
 </div>
 <p>Once Git is configured, we can start using it.</p>
-<p>We will help Alfredo with his new project, create a repository with all his recipes.</p>
+<p>We will create a repository with all our favourite recipes.</p>
 <p>First, let’s create a new directory in the Desktop folder for our work and then change the current working directory to the newly created one:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> recipes</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then we tell Git to make recipes a repository – a place where Git can store versions of our files:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>It is important to note that <code>git init</code> will create a repository that can include subdirectories and their files—there is no need to create separate repositories nested within the recipes repository, whether subdirectories are present from the beginning or added later. Also, note that the creation of the recipes directory and its initialization as a repository are completely separate processes.</p>
+<p>It is important to note that <code>git init</code> will create a repository that can include subdirectories and their files—there is no need to create separate repositories nested within the recipes repository, whether subdirectories are present from the beginning or added later. Also, note that the creation of the recipes directory and its initialisation as a repository are completely separate processes.</p>
 <p>If we use <code>ls -a</code> to show everything, we can see that Git has created a hidden directory within recipes called .git:</p>
 <pre><code>. .. .git</code></pre>
 <p>Git uses this special subdirectory to store all the information about the project, including the tracked files and sub-directories located within the project’s directory. If we ever delete the .git subdirectory, we will lose the project’s history.</p>
@@ -348,10 +350,6 @@ How to undo nested subdirectories
 No commits yet
 
 nothing to commit (create/copy files and use "git add" to track)</code></pre>
-<hr>
-<footer class="navigation-buttons">
-<a href="./episode_02_SettingUpGit.html"> <button class="nav-button prev-button">Previous: Setting Up Git</button> </a> <a href="./episode_04_TrackingChanges.html"> <button class="nav-button next-button">Next: Tracking, adding and committing changes</button> </a>
-</footer>
 
 
 </section>
@@ -757,6 +755,18 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
     }
   });
   </script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./episode_02_SettingUpGit.html" class="pagination-link" aria-label="Setting up Git">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setting up Git</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./episode_04_TrackingChanges.html" class="pagination-link" aria-label="Tracking, adding and committing changes">
+        <span class="nav-page-text">Tracking, adding and committing changes</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

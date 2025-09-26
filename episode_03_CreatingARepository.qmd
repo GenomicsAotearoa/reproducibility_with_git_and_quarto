@@ -6,13 +6,13 @@ format: html
 
 ::: {.callout-note appearance="simple"}
 # Key points
-- `git init` initializes a repository.  
-- Git stores all of its repository data in the .git directory.  
+- `git init` initialises a repository.  
+- Git stores all of its repository data in the `.git` directory.  
 :::
 
 Once Git is configured, we can start using it.
 
-We will help Alfredo with his new project, create a repository with all his recipes.
+We will create a repository with all our favourite recipes.
 
 First, let’s create a new directory in the Desktop folder for our work and then change the current working directory to the newly created one:
 
@@ -28,7 +28,7 @@ Then we tell Git to make recipes a repository -- a place where Git can store ver
 git init
 ```
 
-It is important to note that `git init` will create a repository that can include subdirectories and their files—there is no need to create separate repositories nested within the recipes repository, whether subdirectories are present from the beginning or added later. Also, note that the creation of the recipes directory and its initialization as a repository are completely separate processes.
+It is important to note that `git init` will create a repository that can include subdirectories and their files—there is no need to create separate repositories nested within the recipes repository, whether subdirectories are present from the beginning or added later. Also, note that the creation of the recipes directory and its initialisation as a repository are completely separate processes.
 
 If we use `ls -a` to show everything, we can see that Git has created a hidden directory within recipes called .git:
 
@@ -81,15 +81,3 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
----
-
-
-
-<footer class="navigation-buttons">
-  <a href="episode_02_SettingUpGit.qmd">
-    <button class="nav-button prev-button">Previous: Setting Up Git</button>
-  </a>
-  <a href="episode_04_TrackingChanges.qmd">
-    <button class="nav-button next-button">Next: Tracking, adding and committing changes</button>
-  </a>
-</footer>

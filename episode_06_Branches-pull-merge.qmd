@@ -5,9 +5,12 @@ format: html
 
 # Branches, pulling and merging
 
+- possilby re name this file Pulling, branches and merging?
+
 ::: {.callout-note appearance="simple"}
 # Key points
-- `git pull origin main`
+- `git pull origin main`  
+- Can make new branches to work on major issues, then merge them into main
 
 :::
 
@@ -80,6 +83,18 @@ How does pull work? `git pull` does not blindly overwrite uncommitted local chan
 
 Note that when we pull everythig from the server like this. most common scenairo is teh fast forward. 
 different scenarios if your local file is behind and if there are merghe conflicts. 
+
+## Branches
+
+So far, we have been workng on one branch, called main. We can add more branches to our tree and generally we want to so this when we are doing bug fixes of our code or testing out major restructuring or styling and we don't want these to be pushed to the main branch just yet.
+
+Let's practise making a new branch. 
+
+### merging (compare and pull?) our branch into main
+
+#### merge conflicts
+
+
 
 
 <footer class="navigation-buttons">

@@ -1,16 +1,31 @@
 ---
-title: "Reproducibility with git and quarto"
+title: "Reproducibility with Git and Quarto"
 format: html
 ---
 
+![](theme-images/github_quarto.png){width="70%" .center}
 
-workshop on git and quarto
- two days
+### What is this workshop about?
 
- first day git
+Good research goes beyond running analyses, it’s about making your work reproducible, transparent, and accessible to your supervisor, colleagues, and the wider scientific community.
 
- second day quarto
+This two-day workshop will show you not only how to make your research more reproducible, but also how to more easily collaborate on projects with other researchers and how to generate polished reports to share with others. 
 
- Set up:
+With Git and GitHub, you’ll learn not only how to manage and host your own code, but also how to download, adapt, and build on code that others share - whether that’s custom scripts, small programs, or entire projects. 
 
-- need to install rstudio, R, git, make git account etc. refer to page.
+Using Quarto, you’ll then learn how to turn your analysis into clear, self-contained documents, create polished HTML outputs with embedded results, and publish your work online as a website.
+
+
+### Setup
+
+For this workshop you will need to have a number of different software installed on your local computer, as well as an account made with GitHub. 
+
+See [Part One - Git: Setup on local machine](git_overview.qmd#setup-on-local-machine) for setup instructions. Quarto is a part of Rstudio, therefore you will not need to setup anything extra for Part Two - Quarto. 
+
+
+### Attribution
+
+The Git part of this workshop was re-worked from and heavily inspired by content from The Carpentries lesson on [Version Control with Git.](https://swcarpentry.github.io/git-novice/) 
+
+The Quarto part of this workshop was written by [Tyler McInnes](https://github.com/tylermcinnes/reproducibility_block) while he worked for Genomics Aotearoa as a [Bioinformatics Training Coordinator.](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/meetTheTeam.html#past-team-members)
+

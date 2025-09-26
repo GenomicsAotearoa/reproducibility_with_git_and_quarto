@@ -99,3 +99,7 @@ puttign it all together
 making changes on github - need to pull back down readme gitignore and licence.
 
 using git restore to recover old versions of files. 
+
+adding extra stuff on logs etc
+
+can link to carpentries - must link to carpenrtries

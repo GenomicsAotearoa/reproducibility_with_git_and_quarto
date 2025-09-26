@@ -18,14 +18,14 @@ First let’s make sure we’re still in the right directory. You should be in t
 cd ~/Desktop/recipes
 ```
 
-Let’s create a file called `guacamole.qmd` that contains the basic structure of our first recipe. We’ll use nano to edit the file; you can use whatever editor you like. In particular, this does not have to be the core.editor you set globally earlier. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out “Which Editor?” in The Unix Shell lesson.
+Let’s create a file called `guacamole.qmd` that contains the basic structure of our first recipe. We’ll use nano to edit the file; you can use whatever editor you like. In particular, this does not have to be the core.editor you set globally earlier. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out [“Which Editor?”](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in The Carpentries Unix Shell lesson.
 
 ```bash
 nano guacamole.qmd
 ```
 
 Put some text in your `guacamole.qmd` file, for example:   
-(I am leaving instructions blank to add in an example later of file modification)
+*(I am leaving instructions blank here to add in an example later of file modification)*
 
 ```
 # Guacamole recipe
@@ -112,7 +112,7 @@ nothing to commit, working tree clean
 it tells us everything is up to date. If we want to know what we’ve done recently, we can ask Git to show us the project’s history using `git log`, it will list all commits made to a repository in reverse chronological order. The listing for each commit includes the commit’s full identifier (which starts with the same characters as the short identifier printed by the git commit command earlier), the commit’s author, when it was created, and the log message Git was given when the commit was created.
 
 
-Now suppose Alfredo adds more information to the file. (Again, we’ll edit with `nano` and then `cat` the file to show its contents; you may use a different editor, and don’t need to `cat`)
+Now suppose we add more information to the file. (Again, we’ll edit with `nano` and then `cat` the file to show its contents; you may use a different editor, and don’t need to `cat`)
 
 ```bash
 nano guacamole.qmd
@@ -228,13 +228,4 @@ git add -A
 
 Don't forget to then `commit` your staged changes!
 
----
 
-<footer class="navigation-buttons">
-  <a href="episode_03_CreatingARepository.qmd">
-    <button class="nav-button prev-button">Previous: Create a repository</button>
-  </a>
-  <a href="episode_05_push-github.qmd">
-    <button class="nav-button next-button">Next: Pushing local changes to github</button>
-  </a>
-</footer>

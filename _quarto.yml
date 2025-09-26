@@ -52,4 +52,5 @@ format:
     toc-depth: 4
     css: styles.css
     navigation: true
+    page-navigation: true
 

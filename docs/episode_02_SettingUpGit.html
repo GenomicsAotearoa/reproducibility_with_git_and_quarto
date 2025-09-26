@@ -65,6 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./episode_03_CreatingARepository.html" rel="next">
+<link href="./episode_01_AutomatedVersionControl.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -301,12 +303,12 @@ Key points
 <ul>
 <li>our name and email address,</li>
 <li>what our preferred text editor is,</li>
-<li>and that we want to use these settings globally (i.e.&nbsp;for every project).</li>
+<li>and that we want to use these settings globally (<em>i.e.,</em> for every project).</li>
 </ul>
-<p>On a command line, Git commands are written as git verb options, where verb is what we actually want to do and options is additional optional information which may be needed for the verb. So here is how Alfredo sets up his new laptop:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Alfredo Linguini"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"a.linguini@ratatouille.fr"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Please use your own name and email address instead of Alfredo’s. This user name and email will be associated with your subsequent Git activity, which means that any changes pushed to GitHub after this lesson will include this information. <strong>The email address used should be the same as the one used when setting up your GitHub account.</strong> If you are concerned about privacy, please review GitHub’s instructions for keeping your email address private.</p>
+<p>On a command line, Git commands are written as git verb options, where verb is what we actually want to do and options is additional optional information which may be needed for the verb. So here is how you could set up your computer:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"User Name"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your_email@example.com"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Please use your own name and email address. This user name and email will be associated with your subsequent Git activity, which means that any changes pushed to GitHub after this lesson will include this information. <strong>The email address used should be the same as the one used when setting up your GitHub account.</strong> If you are concerned about privacy, please review <a href="https://help.github.com/articles/keeping-your-email-address-private/">GitHub’s instructions for keeping your email address private.</a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -397,26 +399,63 @@ Optional: configure your favourite text editor
 </div>
 </div>
 </div>
-<p>Git (2.28+) allows configuration of the name of the branch created when you initialize any new repository. Alfredo decides to use that feature to set it to main so it matches the cloud service he will eventually use.</p>
+<p>Git (2.28+) allows configuration of the name of the branch created when you initialize any new repository. We will use that feature to set it to main so it matches the cloud service we will eventually use.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultBranch main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Branches
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Source file changes are associated with a “branch.” In 2020, most Git code hosting services transitioned to using <code>main</code> as the default branch. As an example, any new repository that is opened in GitHub and GitLab default to <code>main</code>. However, Git has not yet made the same change. As a result, local repositories must be manually configured have the same main branch name as most cloud services. Otherwise by default, Git will create a branch called <code>master</code> when you create a new repository with <code>git init</code> (as explained in the next Episode). Read more on why master is now called main and the inclusive language decisions behind it [here]</p>
-<p>More on branches in episode …</p>
+<p>Source file changes are associated with a “branch.” In 2020, most Git code hosting services transitioned to using <code>main</code> as the default branch. As an example, any new repository that is opened in GitHub and GitLab default to <code>main</code>. However, Git has not yet made the same change. As a result, local repositories must be manually configured have the same main branch name as most cloud services. Otherwise by default, Git will create a branch called <code>master</code> when you create a new repository with <code>git init</code> (as explained in the next Episode). Read more on why master is now called main and the <a href="https://github.com/github/renaming">inclusive language decisions behind it here.</a></p>
+<p><a href="./episode_06_Branches-pull-merge.html">Branches</a> are covered later in this workshop.</p>
 </div>
 </div>
-<hr>
-<footer class="navigation-buttons">
-<a href="./episode_01_AutomatedVersionControl.html"> <button class="nav-button prev-button">Previous: Automated version control</button> </a> <a href="./episode_03_CreatingARepository.html"> <button class="nav-button next-button">Next: Create a repository</button> </a>
-</footer>
+</div>
+<p>The commands we just ran above only need to be run once: the flag <code>--global</code> tells Git to use the settings for every project, in your user account, on this computer</p>
+<p>We can review these settings and change the configuration if needed.</p>
+<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Re-configuring
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To view your configuration, type into the terminal:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span> <span class="at">--global</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will give you an output like this:</p>
+<pre><code>user.name=yourusername
+user.email=your_email@example.com
+user.emaill=your_email@example.com
+init.defaultbranch=main
+core.editor=nano -w</code></pre>
+<p>We can make edits using:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--edit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or, if we need to use a proxy, we can tell Git about that:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> http.proxy proxy-url</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> https.proxy proxy-url</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To disable the proxy, use:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--unset</span> http.proxy</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--unset</span> https.proxy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To get further help with configuring, use either <code>-h</code> or <code>--help</code>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">-h</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>More generally, Git help can be found here:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> help</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -822,6 +861,18 @@ Branches
     }
   });
   </script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./episode_01_AutomatedVersionControl.html" class="pagination-link" aria-label="Automated version control">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Automated version control</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./episode_03_CreatingARepository.html" class="pagination-link" aria-label="Create a repository">
+        <span class="nav-page-text">Create a repository</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
