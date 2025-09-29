@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Part One - Git – Reproducibility with Git and Quarto</title>
+<title>Git Overview – Reproducibility with Git and Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Part One - Git – Reproducibility with Git and Quarto">
+<meta property="og:title" content="Git Overview – Reproducibility with Git and Quarto">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Reproducibility with Git and Quarto">
 </head>
@@ -206,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./episode_07_Collaborating.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Collaborating</span></a>
+ <span class="menu-text">Collaborating and organising your workflow</span></a>
   </div>
 </li>
       </ul>
@@ -286,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Part One - Git</h1>
+<h1 class="title">Git Overview</h1>
 </div>
 
 
@@ -344,7 +344,7 @@ Some cool examples of how people use git/github:
 </div>
 <section id="setup-on-local-machine" class="level3">
 <h3 class="anchored" data-anchor-id="setup-on-local-machine">Setup on local machine</h3>
-<p>We will run everything locally in RStudio. You could also use any command line shell you like instead (<em>e.g.,</em> Terminal (macOS), Warp, GitBash for Windows, Visual Studio Code). Please have the following installed <strong>before the workshop</strong>.</p>
+<p>We will run everything locally in RStudio. If you are confident using the command line, you could also use any command line shell you like instead (<em>e.g.,</em> Terminal (macOS), Warp, GitBash for Windows, Visual Studio Code). Please have the following installed <strong>before the workshop</strong>.</p>
 <p>If you already have these tools installed, make sure they are <strong>up to date</strong>.</p>
 <section id="install-the-latest-version-of-r" class="level4">
 <h4 class="anchored" data-anchor-id="install-the-latest-version-of-r">1. Install the latest version of R</h4>
@@ -377,8 +377,52 @@ Some cool examples of how people use git/github:
 <p><strong>Note:</strong> If it is not already installed, <a href="https://git-scm.com/downloads/mac">follow instructions here for macOS</a></p>
 </blockquote>
 <ul>
-<li><strong>Windows:</strong> Follow the “Installing Git for Windows” instructions <a href="https://carpentries.github.io/workshop-template/install_instructions/#shell-install-gitbash">here on the software carpentry page</a> (Instructions may be hiding under “The Bash Shell” section, tab for “Git for Windows”.)</li>
+<li><strong>Windows:</strong> Follow the “Installing Git for Windows” instructions <a href="https://carpentries.github.io/workshop-template/install_instructions/#the-bash-shell">here on the software carpentry page</a> (Instructions may be hiding under “The Bash Shell” section, tab for “Git for Windows”.)</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+If you can’t find it, the instructions are copy-pasted here:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Installing Git for Windows<br>
+If you are unable to use WSL 2, please use the following instructions to install Git for Windows (“Git Bash”).</p>
+<ol type="1">
+<li>Download the <a href="https://gitforwindows.org/">Git for Windows installer.</a></li>
+<li>Run the installer and follow the steps below:
+<ol type="1">
+<li>Click on “Next” four times (two times if you’ve previously installed Git). You don’t need to change anything in the Information, location, components, and start menu screens.</li>
+<li><strong>From the dropdown menu, “Choosing the default editor used by Git”, select “Use the Nano editor by default” (NOTE: you will need to scroll up to find it) and click on “Next”.</strong></li>
+<li>On the page that says “Adjusting the name of the initial branch in new repositories”, ensure that “Let Git decide” is selected. This will ensure the highest level of compatibility for our lessons.</li>
+<li>Ensure that “Git from the command line and also from 3rd-party software” is selected and click on “Next”. (If you don’t do this Git Bash will not work properly, requiring you to remove the Git Bash installation, re-run the installer and to select the “Git from the command line and also from 3rd-party software” option.)</li>
+<li>Select “Use bundled OpenSSH”.</li>
+<li>Ensure that “Use the native Windows Secure Channel Library” is selected and click on “Next”.</li>
+<li>Ensure that “Checkout Windows-style, commit Unix-style line endings” is selected and click on “Next”.</li>
+<li><strong>Ensure that “Use Windows’ default console window” is selected and click on “Next”.</strong></li>
+<li>Ensure that “Default (fast-forward or merge) is selected and click”Next”</li>
+<li>Ensure that “Git Credential Manager” is selected and click on “Next”.</li>
+<li>Ensure that “Enable file system caching” is selected and click on “Next”.</li>
+<li>Click on “Install”.</li>
+<li>Click on “Finish” or “Next”.</li>
+</ol></li>
+<li>If your “HOME” environment variable is not set (or you don’t know what this is):
+<ol type="1">
+<li>Open command prompt (Open Start Menu then type <code>cmd</code> and press Enter)</li>
+<li>Type the following line into the command prompt window exactly as shown: <code>setx HOME "%USERPROFILE%"</code></li>
+<li>Press Enter, you should see SUCCESS: Specified value was saved.</li>
+<li>Quit command prompt by typing <code>exit</code> then pressing Enter</li>
+</ol></li>
+</ol>
+<p>This will provide you with both Git and Bash in the Git Bash program.</p>
+</div>
+</div>
+</div>
 <blockquote class="blockquote">
 <p><strong>Note:</strong> If you have previously completed the carpentries lesson on <a href="https://swcarpentry.github.io/shell-novice/01-intro.html">Introduction to Shell</a> on your windows computer, you would have already downloaded Git.</p>
 </blockquote>

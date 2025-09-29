@@ -79,16 +79,25 @@ Fast-forward
 
 Run `ls` to see the files in your directory and confirm we now have the README file locally.
 
-How does pull work? `git pull` does not blindly overwrite uncommitted local changes.
+#### How does pull work? 
 
-Note that when we pull everythig from the server like this. most common scenairo is teh fast forward. 
-different scenarios if your local file is behind and if there are merghe conflicts. 
+`git pull` does not blindly overwrite uncommitted local changes. When we pull everything from the server, the  most common scenario is the "fast-forward", such as we have done here. Git checks if you have changes that haven’t been committed yet. If you do, Git will try to merge the changes from the server with your local changes. If there’s a conflict (for example, if you and someone else changed the same line in a file), Git will stop and ask you to resolve the conflict before continuing. In the most common case (when you haven’t made any local changes or your local changes are already committed) Git can just add the new changes from the server on top of your work. This is called a “fast-forward” update, and it’s what happened in our example. Our local directory now matches the content in the Github server. There are different scenarios if your local file is behind and if there are merge conflicts. In this workshop, we will not get in to how to deal with conflicts; you can [read more about it here](https://swcarpentry.github.io/git-novice/09-conflict.html) and more on recovering files and [exploring history here.](https://swcarpentry.github.io/git-novice/05-history.html)
+
+To avoid conflicts, we can manage our workflow with branches and by utlising handy functionality such as issues and projects when collaborating with others (see episode 07 ["Collaborating"](episode_07_Collaborating.qmd))
+
 
 ## Branches
 
-So far, we have been workng on one branch, called main. We can add more branches to our tree and generally we want to so this when we are doing bug fixes of our code or testing out major restructuring or styling and we don't want these to be pushed to the main branch just yet.
+So far, we have been workng on one branch, called main. We can add more branches to our tree, make any changes we wish safely wohtout affecting the mnain branchm and when we are ready we can 'Compare and pull' these chnages into the main branch. Generally, we want to make brnaches to work on when we are doing bug fixes of our code or testing out major restructuring or styling and we don't want these to be pushed to the main branch just yet.
 
 Let's practise making a new branch. 
+
+Back in RStudio, we will intialise a new branch
+
+testing new recipe formulation
+
+
+
 
 ### merging (compare and pull?) our branch into main
 
@@ -96,12 +105,3 @@ Let's practise making a new branch.
 
 
 
-
-<footer class="navigation-buttons">
-  <a href="episode_05_push-github.qmd">
-    <button class="nav-button prev-button">Previous: Pushing local changes to github</button>
-  </a>
-  <a href="episode_07_Collaborating.qmd">
-    <button class="nav-button next-button">Next: Collaborating</button>
-  </a>
-</footer>

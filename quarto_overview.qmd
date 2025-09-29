@@ -3,7 +3,7 @@ title: Quarto Overview
 toc: true
 ---
 
-What is Quarto? 
+## What is Quarto? 
 
 What is the purpose of Quarto (and it's equivalent systems)?
 
@@ -29,8 +29,6 @@ Preview and Render, git and Publishing
 - Practice practice practice! Theme, styles.
 
 - Publishing with github pages.
-
-
 
 
 

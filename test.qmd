@@ -80,20 +80,11 @@ getwd()
 
 # stuff to add
 
-If you have changed multiple files and want to `git add` them all ready to be committed, you can use the command:
-```bash
-git add . 
-```
-
-`git add -A`
 
 deleting/adding untracked files
 
 merge and pull
 and branches
-
-puttign it all together
-- using visual studio for git and quarto https://github.com/GenomicsAotearoa/ga-workshop-tutorial/tree/main/0.GettingStarted
 
 
 making changes on github - need to pull back down readme gitignore and licence.
@@ -103,3 +94,11 @@ using git restore to recover old versions of files.
 adding extra stuff on logs etc
 
 can link to carpentries - must link to carpenrtries
+
+
+### extended functionality 
+supplementary - linking in github and visual studio code
+
+https://swcarpentry.github.io/git-novice/instructor/14-supplemental-rstudio.html
+
+https://github.com/GenomicsAotearoa/ga-workshop-tutorial/tree/main/0.GettingStarted

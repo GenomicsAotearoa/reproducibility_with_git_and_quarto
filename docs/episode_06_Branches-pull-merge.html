@@ -206,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./episode_07_Collaborating.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Collaborating</span></a>
+ <span class="menu-text">Collaborating and organising your workflow</span></a>
   </div>
 </li>
       </ul>
@@ -273,7 +273,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#pulling-repositories-from-the-server-to-our-local-computer" id="toc-pulling-repositories-from-the-server-to-our-local-computer" class="nav-link" data-scroll-target="#pulling-repositories-from-the-server-to-our-local-computer">Pulling repositories from the server to our local computer</a>
   <ul class="collapse">
   <li><a href="#add-a-readme-file" id="toc-add-a-readme-file" class="nav-link" data-scroll-target="#add-a-readme-file">1. Add a README file</a></li>
-  <li><a href="#pull-changes-down" id="toc-pull-changes-down" class="nav-link" data-scroll-target="#pull-changes-down">2. Pull changes down</a></li>
+  <li><a href="#pull-changes-down" id="toc-pull-changes-down" class="nav-link" data-scroll-target="#pull-changes-down">2. Pull changes down</a>
+  <ul class="collapse">
+  <li><a href="#how-does-pull-work" id="toc-how-does-pull-work" class="nav-link" data-scroll-target="#how-does-pull-work">How does pull work?</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a>
   <ul class="collapse">
@@ -363,21 +366,23 @@ Fast-forward
  1 file changed, 2 insertions(+)
  create mode 100644 README.md</code></pre>
 <p>Run <code>ls</code> to see the files in your directory and confirm we now have the README file locally.</p>
-<p>How does pull work? <code>git pull</code> does not blindly overwrite uncommitted local changes.</p>
-<p>Note that when we pull everythig from the server like this. most common scenairo is teh fast forward. different scenarios if your local file is behind and if there are merghe conflicts.</p>
+<section id="how-does-pull-work" class="level4">
+<h4 class="anchored" data-anchor-id="how-does-pull-work">How does pull work?</h4>
+<p><code>git pull</code> does not blindly overwrite uncommitted local changes. When we pull everything from the server, the most common scenario is the “fast-forward”, such as we have done here. Git checks if you have changes that haven’t been committed yet. If you do, Git will try to merge the changes from the server with your local changes. If there’s a conflict (for example, if you and someone else changed the same line in a file), Git will stop and ask you to resolve the conflict before continuing. In the most common case (when you haven’t made any local changes or your local changes are already committed) Git can just add the new changes from the server on top of your work. This is called a “fast-forward” update, and it’s what happened in our example. Our local directory now matches the content in the Github server. There are different scenarios if your local file is behind and if there are merge conflicts. In this workshop, we will not get in to how to deal with conflicts; you can <a href="https://swcarpentry.github.io/git-novice/09-conflict.html">read more about it here</a> and more on recovering files and <a href="https://swcarpentry.github.io/git-novice/05-history.html">exploring history here.</a></p>
+<p>To avoid conflicts, we can manage our workflow with branches and by utlising handy functionality such as issues and projects when collaborating with others (see episode 07 <a href="./episode_07_Collaborating.html">“Collaborating”</a>)</p>
+</section>
 </section>
 </section>
 <section id="branches" class="level2">
 <h2 class="anchored" data-anchor-id="branches">Branches</h2>
-<p>So far, we have been workng on one branch, called main. We can add more branches to our tree and generally we want to so this when we are doing bug fixes of our code or testing out major restructuring or styling and we don’t want these to be pushed to the main branch just yet.</p>
+<p>So far, we have been workng on one branch, called main. We can add more branches to our tree, make any changes we wish safely wohtout affecting the mnain branchm and when we are ready we can ‘Compare and pull’ these chnages into the main branch. Generally, we want to make brnaches to work on when we are doing bug fixes of our code or testing out major restructuring or styling and we don’t want these to be pushed to the main branch just yet.</p>
 <p>Let’s practise making a new branch.</p>
+<p>Back in RStudio, we will intialise a new branch</p>
+<p>testing new recipe formulation</p>
 <section id="merging-compare-and-pull-our-branch-into-main" class="level3">
 <h3 class="anchored" data-anchor-id="merging-compare-and-pull-our-branch-into-main">merging (compare and pull?) our branch into main</h3>
 <section id="merge-conflicts" class="level4">
 <h4 class="anchored" data-anchor-id="merge-conflicts">merge conflicts</h4>
-<footer class="navigation-buttons">
-<a href="./episode_05_push-github.html"> <button class="nav-button prev-button">Previous: Pushing local changes to github</button> </a> <a href="./episode_07_Collaborating.html"> <button class="nav-button next-button">Next: Collaborating</button> </a>
-</footer>
 
 
 </section>
@@ -792,8 +797,8 @@ Fast-forward
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./episode_07_Collaborating.html" class="pagination-link" aria-label="Collaborating">
-        <span class="nav-page-text">Collaborating</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./episode_07_Collaborating.html" class="pagination-link" aria-label="Collaborating and organising your workflow">
+        <span class="nav-page-text">Collaborating and organising your workflow</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

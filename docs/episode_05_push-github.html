@@ -207,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./episode_07_Collaborating.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Collaborating</span></a>
+ <span class="menu-text">Collaborating and organising your workflow</span></a>
   </div>
 </li>
       </ul>
@@ -342,7 +342,27 @@ drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ../</code></pre>
 Enter file in which to save the key (/Users/username/.ssh/id_ed25519):</code></pre>
 <p>We want to use the default file, so just press Enter.</p>
 <pre><code>Enter passphrase (empty for no passphrase): </code></pre>
-<p>Be sure to use something memorable or save your passphrase somewhere, as there is no “reset my password” option. Note that, when typing a passphrase on a terminal, there won’t be any visual feedback of your typing. This is normal: your passphrase will be recorded even if you see nothing changing on your screen.</p>
+<p>Be sure to use something memorable or write down your passphrase somewhere, as there is no “reset my password” option. Note that, when typing a passphrase on a terminal, there won’t be any visual feedback of your typing. This is normal: your passphrase will be recorded even if you see nothing changing on your screen.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What is a passphrase?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A passphrase is a phrase of four or more random unrelated words, generally a length of at least 15 characters. You can also include upper/lowercase and numbers/symbols to make it more secure.</p>
+<p>Some examples are:</p>
+<p><strong>purpleduck!potatoboat</strong><br>
+<strong>redhou5eSkytrain</strong><br>
+<strong>sl33pfreeHardidea</strong></p>
+</div>
+</div>
+</div>
 <pre><code>Enter same passphrase again:</code></pre>
 <p>After entering the same passphrase a second time, we receive the confirmation:</p>
 <pre><code>Your identification has been saved in /Users/username/.ssh/id_ed25519
@@ -381,7 +401,7 @@ drwxr-xr-x 1 username   197121   0 Jul 16 14:48 ../
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>Hi username! You've successfully authenticated, but GitHub does not provide shell access.</code></pre>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -390,7 +410,7 @@ See a “The authenticity of host…can’t be established” message?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If you see a message like this:</p>
 <pre><code>The authenticity of host 'github.com (4.237.22.38)' can't be established.
@@ -419,7 +439,7 @@ Enter passphrase for key '/Users/username/.ssh/id_ed25519': </code></pre>
 <div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Since we set up a passphrase, it will prompt us for it every time we push or pull. This is more secure, but can be a nuisance.</p>
 <div class="callout callout-style-simple callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -428,7 +448,7 @@ Want to remove the passphrase or avoid typing it?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Remove the passphrase entirely:</strong></p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-p</span> <span class="at">-f</span> ~/.ssh/id_ed25519</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

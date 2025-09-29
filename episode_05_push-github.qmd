@@ -110,7 +110,20 @@ We want to use the default file, so just press Enter.
 Enter passphrase (empty for no passphrase): 
 ```
 
-Be sure to use something memorable or save your passphrase somewhere, as there is no “reset my password” option. Note that, when typing a passphrase on a terminal, there won’t be any visual feedback of your typing. This is normal: your passphrase will be recorded even if you see nothing changing on your screen.
+Be sure to use something memorable or write down your passphrase somewhere, as there is no “reset my password” option. Note that, when typing a passphrase on a terminal, there won’t be any visual feedback of your typing. This is normal: your passphrase will be recorded even if you see nothing changing on your screen.
+
+
+::: {.callout-note collapse="true" appearance="simple"}
+## What is a passphrase?  
+A passphrase is a phrase of four or more random unrelated words, generally a length of at least 15 characters. You can also include upper/lowercase and numbers/symbols to make it more secure. 
+
+Some examples are:
+
+**purpleduck!potatoboat**  
+**redhou5eSkytrain**  
+**sl33pfreeHardidea**  
+:::
+
 
 ```
 Enter same passphrase again:

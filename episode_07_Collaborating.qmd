@@ -3,14 +3,14 @@ title: ""
 format: html
 ---
 
-# Collaborating
+# Collaborating and organising your workflow
 
 ::: {.callout-note appearance="simple"}
 # Key points
 - `git clone` copies a remote repository to create a local repository with a remote called origin automatically set up.
-- use issues to track and fix any issues in a transparent way
-- use projects to collaboratively track tasks
-- organisaitons have differnt roles and access levels
+- use 'Issues' to track and fix any issues in a transparent way
+- use 'Projects' to collaboratively track tasks
+- 'Organisations' have different roles and access levels
 :::
 
 
