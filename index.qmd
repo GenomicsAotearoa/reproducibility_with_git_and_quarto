@@ -19,11 +19,45 @@ Using Quarto, you’ll then learn how to turn your analysis into clear, self-con
 
 One of the great things you can do with both of these tools together is create material in quarto documents, that can then be displayed as a webpage using github. In fact, this workshop itself is written in quarto and displayed online using github pages! Check out the [github repo here.](https://github.com/GenomicsAotearoa/reproducibility_with_git_and_quarto)
 
+#### What this workshop does and does not cover:
+
+***For Part One - Git***   
+
+This workshop **does** cover:
+
+* Setting up git, creating a new repository and connecting your local repo to the GitHub Server.
+* Tracking, adding and committing files.  
+* Basic pushing, pulling and merging new branches. 
+* Collaboration and workflow tools (issues, projects).
+
+This workshop **does not** cover:  
+
+* Merge conflicts and different kinds of merges.  
+* Forking.  
+* Extended file recovery, log details and commit history.    
+* Using `git rebase` and `git ignore`.  
+* How to connect Git/GitHub and RStudio (see [The Carpentries lesson here](https://swcarpentry.github.io/git-novice/14-supplemental-rstudio.html) or the Chapter from Happy Git with R on [connecting these tools here.](https://happygitwithr.com/connect-intro)) 
+* Further GitHub tools such as Releases, Actions, Pages   
+
+
+***For Part Two - Quarto***   
+
+This workshop **does** cover:   
+
+* lorem ipsum 
+
+This workshop **does not** cover: 
+
+* lorem ipsum
+
+
+
 ### Setup
 
 For this workshop you will need to have a number of different software installed on your local computer, as well as an account made with GitHub. 
 
 See [Part One - Git: Setup on local machine](git_overview.qmd#setup-on-local-machine) for setup instructions. Quarto is a part of RStudio, therefore you will not need to setup anything extra for Part Two - Quarto. 
+  
 
 
 ### Attribution

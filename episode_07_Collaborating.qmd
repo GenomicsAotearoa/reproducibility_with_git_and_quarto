@@ -10,11 +10,24 @@ format: html
 - `git clone` copies a remote repository to create a local repository with a remote called origin automatically set up.
 - use 'Issues' to track and fix any issues in a transparent way
 - use 'Projects' to collaboratively track tasks
-- 'Organisations' have different roles and access levels
+- 'Organisations' share repos and have different roles and access levels for members
 :::
 
+## Cloning remote repositories
 
-cloning forking and collaborating
+Often we want to download other people's repositories to our local machine. One main reaosn for this can be because you want to use a set of scripts developed for a workflow. 
+
+To do this, we use `git clone`.
+
+First, navigate on GitHub to a repository that you want to download.  If you have one in mind already go ahead and use that; for this example we will use the Kākāpo Genome project repo.
+
+[Click this link here.](https://github.com/GenomicsAotearoa/Kakapo/tree/master)
+
+
+
+
+
+
 
 github pages - get to in quarto workshop.
 
@@ -26,10 +39,21 @@ github pages - get to in quarto workshop.
 
 ## Final thoughts
 
+### Best practises 
+
+To avoid conflicts (and headaches!) we can manage our workflow by always:  
+- Checking our file status with `git status`  
+- At the end of each day, remember to save your work by running `git add`, `git commit` and `git push`.  
+- At the start of each day, check if there have been any changes to the repo on the server, and `git pull` as necessary.  
+- Utilise branches and handy functionality such as 'Issues' and 'Projects' when collaborating with others -- or even just for yourself!  
+
 ### Burn it all down
 
-In this workshop we have laid out some options for best practice when working in Git/GitHub. However, sometimes our repos get too big and complicated. 
+Sometimes our repos get too messy and complicated, and we just want to burn it all down. 
 
 This website called [Happy git with R](https://happygitwithr.com) by Jenny Bryan and Jim Hester is a fantastic guide on how to make Git/GitHub work with RStudio. If all else fails, they suggest in [section 37](https://happygitwithr.com/burn) to simply "Burn it all down". In short, make a copy of all the files you want to keep locally, delete your repo on GitHub and start anew.
 
 [![XKCD Comic 1597](https://imgs.xkcd.com/comics/git.png)](https://xkcd.com/1597/)
+
+
+

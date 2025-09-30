@@ -102,3 +102,4 @@ supplementary - linking in github and visual studio code
 https://swcarpentry.github.io/git-novice/instructor/14-supplemental-rstudio.html
 
 https://github.com/GenomicsAotearoa/ga-workshop-tutorial/tree/main/0.GettingStarted
+

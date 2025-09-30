@@ -5,13 +5,10 @@ format: html
 
 # Branches, pulling and merging
 
-- possilby re name this file Pulling, branches and merging?
-
 ::: {.callout-note appearance="simple"}
 # Key points
-- `git pull origin main`  
-- Can make new branches to work on major issues, then merge them into main
-
+- `git pull origin main` will download changes on the server to your local directory 
+- We can make new branches to work on major issues, then merge these into our main branch
 :::
 
 
@@ -37,7 +34,7 @@ By adding this file directly on the GitHub server, we have simulated the same sc
 
 ::: {.callout-important collapse="true"}
 # But what if I don't want people to be able to push to my repo?
-By default, noone can push to a repo that you have made under your own GitHub account. But, anyone can clone or fork them. To restrict or modify acccess, under general settings you can add collaborators, or you can change the visibility of your repo from public to private.   
+By default, noone can push to a repo that you have made under your own GitHub account. But, anyone can [clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) or [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks) them. To restrict or modify acccess, under general settings you can add collaborators, or you can change the visibility of your repo from public to private.   
 :::
 
 Click commit changes:
@@ -81,9 +78,7 @@ Run `ls` to see the files in your directory and confirm we now have the README f
 
 #### How does pull work? 
 
-`git pull` does not blindly overwrite uncommitted local changes. When we pull everything from the server, the  most common scenario is the "fast-forward", such as we have done here. Git checks if you have changes that haven’t been committed yet. If you do, Git will try to merge the changes from the server with your local changes. If there’s a conflict (for example, if you and someone else changed the same line in a file), Git will stop and ask you to resolve the conflict before continuing. In the most common case (when you haven’t made any local changes or your local changes are already committed) Git can just add the new changes from the server on top of your work. This is called a “fast-forward” update, and it’s what happened in our example. Our local directory now matches the content in the Github server. There are different scenarios if your local file is behind and if there are merge conflicts. In this workshop, we will not get in to how to deal with conflicts; you can [read more about it here](https://swcarpentry.github.io/git-novice/09-conflict.html) and more on recovering files and [exploring history here.](https://swcarpentry.github.io/git-novice/05-history.html)
-
-To avoid conflicts, we can manage our workflow with branches and by utlising handy functionality such as issues and projects when collaborating with others (see episode 07 ["Collaborating"](episode_07_Collaborating.qmd))
+`git pull` does not blindly overwrite uncommitted local changes. When we pull everything from the server, the  most common scenario is the "fast-forward", such as we have done here. Git checks if you have changes that haven’t been committed yet. If you do, Git will try to merge the changes from the server with your local changes. If there’s a conflict (for example, if you and someone else changed the same line in a file), Git will stop and ask you to resolve the conflict before continuing. In the most common case (when you haven’t made any local changes or your local changes are already committed) Git can just add the new changes from the server on top of your work. This is called a “fast-forward” update, and it’s what happened in our example. Our local directory now matches the content in the Github server. There are different scenarios if your local file is behind and if there are merge conflicts. In this workshop, we will not cover how to deal with conflicts; you can [read more about it here](https://swcarpentry.github.io/git-novice/09-conflict.html) and more on recovering files and [exploring history here.](https://swcarpentry.github.io/git-novice/05-history.html)
 
 
 ## Branches
@@ -212,7 +207,9 @@ This is GitHub asking if we want to 'pull' our new branch into our main branch. 
 
 ![](images_git/github-pullrequest-02.png)
 
-You can now see what changes made in the file, and are given the option to 'Create a pull request'. The title will default to the commit message you used and you can add further description if you like. Click 'Create a pull request'. 
+You can now see what changes were made in the file, and are given the option to 'Create pull request'. The title will default to the commit message you used and you can add further description if you like. Click 'Create pull request'. 
+
+The pull request is now made, but our new branch has not been merged into main yet, it is waiting for us to merge it. There are different kinds of merges, but today we will do the default merge.
 
 ![](images_git/github-pullrequest-03.png)
 
@@ -228,10 +225,10 @@ Have a look back at your main repo now. You'll see the commit message has update
 
 
 
-By default, other people cannot make branches directly on your repository, unless you have added them as collaborators. You can assign roles to collaborators to control if they are able to push directly onto main, or if you want to personally approve all pull requests via new branches. Other people **can** however fork your public repository (making a copy on their own account) and submit a pull request back to your original repository, which you can then decide to merge or not. You can switch your repository to private in settings -- note that you cannot turn private repositories into a website via GitHub pages.
+By default, other people cannot make branches directly on your repository, unless you have added them as collaborators. You can assign roles to collaborators to control if they are able to push directly onto main, or if you want to personally approve all pull requests. Other people **can** however fork your public repository (making a copy on their own account) and submit a pull request back to your original repository, which you can then decide to merge or not. You can switch your repository to private in settings -- note that you cannot turn private repositories into a website via GitHub pages.
  
 
-#### merge conflicts
+##### Merge conflicts
 
-
+In this workshop we will not be covering how to deal with merge conflicts *i.e.,* when the remote repository has changes that have not been incorporated into the local repository. Git will reject the push/pull if it detects merge conflicts, and you may then need to tell Git how to resolve these. The Carpentries lesson has a section on how to deal with [Conflicts.](https://swcarpentry.github.io/git-novice/09-conflict.html)
 
