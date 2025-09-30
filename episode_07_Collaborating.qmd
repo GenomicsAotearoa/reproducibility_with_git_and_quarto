@@ -18,8 +18,18 @@ cloning forking and collaborating
 
 github pages - get to in quarto workshop.
 
-# issues
+## issues
 
-# projects
+## projects
 
-# organisations
+## organisations
+
+## Final thoughts
+
+### Burn it all down
+
+In this workshop we have laid out some options for best practice when working in Git/GitHub. However, sometimes our repos get too big and complicated. 
+
+This website called [Happy git with R](https://happygitwithr.com) by Jenny Bryan and Jim Hester is a fantastic guide on how to make Git/GitHub work with RStudio. If all else fails, they suggest in [section 37](https://happygitwithr.com/burn) to simply "Burn it all down". In short, make a copy of all the files you want to keep locally, delete your repo on GitHub and start anew.
+
+[![XKCD Comic 1597](https://imgs.xkcd.com/comics/git.png)](https://xkcd.com/1597/)

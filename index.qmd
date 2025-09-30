@@ -28,7 +28,29 @@ See [Part One - Git: Setup on local machine](git_overview.qmd#setup-on-local-mac
 
 ### Attribution
 
-The Git part of this workshop was re-worked from and heavily inspired by content from The Carpentries lesson on [Version Control with Git.](https://swcarpentry.github.io/git-novice/) 
+**Need to extend this section and be more specific!** 
+
+The Git part of this workshop was adapted from and heavily inspired by content from The Carpentries lesson on [Version Control with Git.](https://swcarpentry.github.io/git-novice/) 
+
+::: {.callout-note collapse="true" appearance="simple"}
+## Copyright information:
+All Carpentries instructional material is made available under the Creative Commons Attribution license CC BY 4.0.
+The material in this workshop is not endorsed by the Carpentries and has been adapted by Genomics Aotearoa for our own teaching purposes.  
+
+The license information for The Carpentries lesson "Version Control with Git", from which this workshop was adapted, can be [found here.](https://github.com/swcarpentry/git-novice/blob/main/LICENSE.md)
+
+In this workshop, the following episodes were adapted from The Carpentries lesson "Version Control with Git" in the manner stated below:
+
+**Re-used material** (*i.e.,* almost word for word, including images, with minor wording or styling modifications):  
+- [Automated Version Control episode](episode_01_AutomatedVersionControl.qmd)  
+- [Collaborating episode](episode_07_Collaborating.qmd), section on using `git clone`
+
+**Material minimally adapted** (*i.e.,* inspired by stylistic choices and general workflow):  
+
+**Material not adapted from The Carpentries** (*i.e.,* developed by Genomics Aotearoa):  
+- [Collaborating episode](episode_07_Collaborating.qmd), sections on issues, projects and organisations. 
+
+:::
 
 The Quarto part of this workshop was written by [Tyler McInnes](https://github.com/tylermcinnes/reproducibility_block) while he worked for Genomics Aotearoa as a [Bioinformatics Training Coordinator.](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/meetTheTeam.html#past-team-members)
 

@@ -280,7 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a>
   <ul class="collapse">
-  <li><a href="#merging-compare-and-pull-our-branch-into-main" id="toc-merging-compare-and-pull-our-branch-into-main" class="nav-link" data-scroll-target="#merging-compare-and-pull-our-branch-into-main">merging (compare and pull?) our branch into main</a>
+  <li><a href="#merging-into-our-main-branch" id="toc-merging-into-our-main-branch" class="nav-link" data-scroll-target="#merging-into-our-main-branch">Merging into our main branch</a>
   <ul class="collapse">
   <li><a href="#merge-conflicts" id="toc-merge-conflicts" class="nav-link" data-scroll-target="#merge-conflicts">merge conflicts</a></li>
   </ul></li>
@@ -375,12 +375,94 @@ Fast-forward
 </section>
 <section id="branches" class="level2">
 <h2 class="anchored" data-anchor-id="branches">Branches</h2>
-<p>So far, we have been workng on one branch, called main. We can add more branches to our tree, make any changes we wish safely wohtout affecting the mnain branchm and when we are ready we can ‘Compare and pull’ these chnages into the main branch. Generally, we want to make brnaches to work on when we are doing bug fixes of our code or testing out major restructuring or styling and we don’t want these to be pushed to the main branch just yet.</p>
+<p>So far, we have been working on one branch, called main. We can add more branches to our tree, make any changes we wish safely without affecting the main branch and when we are ready we can ‘Compare and pull’ these changes into the main branch. Generally, we want to make brnaches to work on when we are doing bug fixes of our code or testing out major restructuring or styling and we don’t want these to be pushed to the main branch just yet.</p>
 <p>Let’s practise making a new branch.</p>
-<p>Back in RStudio, we will intialise a new branch</p>
-<p>testing new recipe formulation</p>
-<section id="merging-compare-and-pull-our-branch-into-main" class="level3">
-<h3 class="anchored" data-anchor-id="merging-compare-and-pull-our-branch-into-main">merging (compare and pull?) our branch into main</h3>
+<p>Back in RStudio, type the following into terminal to see what branch you are currently on:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>As we have been working on one branch, main, you should see this output:</p>
+<pre><code>* main</code></pre>
+<p>Now we can make a new branch and switch to it. You can name it anything you like, but its best to pick something that describes what you are doing with that branch. You may even want to name it after the ‘Issue’ you are addressing – more on ‘Issues’ in the <a href="./episode_07_Collaborating.html#issues">next episode!</a></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> test-new-recipe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>Switched to a new branch 'test-new-recipe'</code></pre>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What does <code>git checkout</code> do?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If you run <code>git checkout -b branch-name</code>, it switches your working directory to the specified branch.<br>
+If you run <code>git checkout file.txt</code>, it restores that file to its last committed state (discarding changes).<br>
+If you run <code>git checkout</code> with no arguments, it will show you which files have been modified since the last commit.</p>
+<p><a href="https://git-scm.com/docs/git-checkout">More info here.</a></p>
+</div>
+</div>
+</div>
+<p>Now run <code>git branch</code> again:</p>
+<pre><code>  main
+* test-new-recipe</code></pre>
+<p>And you can see we are now on a new branch, indicated with an asterisk. We haven’t pushed our changes yet to the GitHUb server, so you won’t see the branch there yet. Let’s make some modifications, then push those up to the server.</p>
+<p>Open your guacamole recipe with <code>nano</code> and make a new change to the recipe.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>I’m going to edit mine to add lime juice, you can do any change you like :)</p>
+<pre><code># Guacamole recipe
+
+## Ingredients
+- Avocado  
+- Coriander  
+- Red onion  
+- Lemon juice
+- Lime juice  
+- Salt  
+
+## Instructions
+1. Mash the avocado
+2. Finely chop the coriander and red onion
+3. Add salt,lemon and lime juice to taste  
+4. Enjoy!</code></pre>
+<p>Now, add, commit and push your new changes:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.qmd</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>On branch test-new-recipe
+Changes to be committed:
+  (use "git restore --staged &lt;file&gt;..." to unstage)
+        modified:   guacamole.qmd</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"recipe updates"</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin test-new-recipe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 338 bytes | 338.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'test-new-recipe' on GitHub by visiting:
+remote:      https://github.com/username/recipes/pull/new/test-new-recipe
+remote: 
+To github.com:username/recipes.git
+ * [new branch]      test-new-recipe -&gt; test-new-recipe</code></pre>
+<section id="merging-into-our-main-branch" class="level3">
+<h3 class="anchored" data-anchor-id="merging-into-our-main-branch">Merging into our main branch</h3>
+<p>You may notice in the output it says:</p>
+<pre><code>remote: Create a pull request for 'test-new-recipe'</code></pre>
+<p>We can now review this pull request in github. You’ll see a button “Compare &amp; pull request”</p>
+<p><img src="images_git/github-pullrequest-01.png" class="img-fluid"></p>
+<p>This is GitHub asking if we want to ‘pull’ our new branch into our main branch. Click the button.</p>
+<p><img src="images_git/github-pullrequest-02.png" class="img-fluid"></p>
+<p>You can now see what changes made in the file, and are given the option to ‘Create a pull request’. The title will default to the commit message you used and you can add further description if you like. Click ‘Create a pull request’.</p>
+<p><img src="images_git/github-pullrequest-03.png" class="img-fluid"></p>
+<p>Optionally add a comment, or otherwise click ‘Merge pull request’ to merge your <code>test-new-recipe</code> branch into <code>main</code>. GitHub will give you a default commit message, which you can leave as is. Click ‘Confirm merge’.</p>
+<p><img src="images_git/github-pullrequest-04.png" class="img-fluid"></p>
+<p>It’s good practice to ‘trim your tree’ and remove branches that you no longer need. You can click through to branches and safely delete the <code>test-new-recipe</code> branch.</p>
+<p>Have a look back at your main repo now. You’ll see the commit message has updated to the most recent one you used when you committed the changes to guacamole.qmd on the new branch.</p>
+<p><img src="images_git/github-pullrequest-05.png" class="img-fluid"></p>
+<p>By default, other people cannot make branches directly on your repository, unless you have added them as collaborators. You can assign roles to collaborators to control if they are able to push directly onto main, or if you want to personally approve all pull requests via new branches. Other people <strong>can</strong> however fork your public repository (making a copy on their own account) and submit a pull request back to your original repository, which you can then decide to merge or not. You can switch your repository to private in settings – note that you cannot turn private repositories into a website via GitHub pages.</p>
 <section id="merge-conflicts" class="level4">
 <h4 class="anchored" data-anchor-id="merge-conflicts">merge conflicts</h4>
 
