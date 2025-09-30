@@ -31,6 +31,17 @@
     ]
   },
   {
+    "objectID": "episode_07_Collaborating.html#final-thoughts",
+    "href": "episode_07_Collaborating.html#final-thoughts",
+    "title": "Collaborating and organising your workflow",
+    "section": "",
+    "text": "In this workshop we have laid out some options for best practice when working in Git/GitHub. However, sometimes our repos get too big and complicated.\nThis website called Happy git with R by Jenny Bryan and Jim Hester is a fantastic guide on how to make Git/GitHub work with RStudio. If all else fails, they suggest in section 37 to simply “Burn it all down”. In short, make a copy of all the files you want to keep locally, delete your repo on GitHub and start anew.\n\n\n\nXKCD Comic 1597",
+    "crumbs": [
+      "Part One - Git",
+      "Collaborating and organising your workflow"
+    ]
+  },
+  {
     "objectID": "episode_03_CreatingARepository.html",
     "href": "episode_03_CreatingARepository.html",
     "title": "Create a repository",
@@ -540,28 +551,6 @@
     "crumbs": [
       "Part Two - Quarto",
       "Building our own research porfolio"
-    ]
-  },
-  {
-    "objectID": "episode_07_Collaborating.html#burn-it-all-down",
-    "href": "episode_07_Collaborating.html#burn-it-all-down",
-    "title": "Collaborating and organising your workflow",
-    "section": "",
-    "text": "In this workshop we have layed out some options for best practice when working in Git/GitHub. However, sometimes our repos get big and complicated.\nThis website called Happy git with R by Jenny Bryan and Jim Hester is a fantastic guide on how to make Git/GitHub work with RStudio. If all else fails, they suggest in section 37 to simply “Burn it all down”. In short, make a copy of all the files you want to keep locally, delete your repo on GitHub and start anew.",
-    "crumbs": [
-      "Part One - Git",
-      "Collaborating and organising your workflow"
-    ]
-  },
-  {
-    "objectID": "episode_07_Collaborating.html#final-thoughts",
-    "href": "episode_07_Collaborating.html#final-thoughts",
-    "title": "Collaborating and organising your workflow",
-    "section": "",
-    "text": "In this workshop we have laid out some options for best practice when working in Git/GitHub. However, sometimes our repos get too big and complicated.\nThis website called Happy git with R by Jenny Bryan and Jim Hester is a fantastic guide on how to make Git/GitHub work with RStudio. If all else fails, they suggest in section 37 to simply “Burn it all down”. In short, make a copy of all the files you want to keep locally, delete your repo on GitHub and start anew.\n\n\n\nXKCD Comic 1597",
-    "crumbs": [
-      "Part One - Git",
-      "Collaborating and organising your workflow"
     ]
   }
 ]
