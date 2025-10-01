@@ -12,18 +12,16 @@ website:
     contents:
       - text: "Home"
         href: index.qmd
-      - text: "test styling"
-        href: test.qmd
       - section: "Part One - Git"
         href: git_overview.qmd
         contents:
           - episode_01_AutomatedVersionControl.qmd
           - episode_02_SettingUpGit.qmd
           - episode_03_CreatingARepository.qmd
-          - episode_04_TrackingChanges.qmd
-          - episode_05_push-github.qmd
-          - episode_06_Branches-pull-merge.qmd
-          - episode_07_Collaborating.qmd   
+          - episode_04_Track-Add-Commit-Changes.qmd 
+          - episode_05_Push-Github.qmd 
+          - episode_06_Branches-Pull-Merge.qmd
+          - episode_07_Collaborate-Organise.qmd   
       - section: "Part Two - Quarto"
         href: quarto_overview.qmd
         contents:

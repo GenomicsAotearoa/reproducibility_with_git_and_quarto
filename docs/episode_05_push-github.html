@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./episode_06_Branches-pull-merge.html" rel="next">
-<link href="./episode_04_TrackingChanges.html" rel="prev">
+<link href="./episode_06_Branches-Pull-Merge.html" rel="next">
+<link href="./episode_04_Track-Add-Commit-Changes.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -122,7 +122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git_overview.html">Part One - Git</a></li><li class="breadcrumb-item"><a href="./episode_05_push-github.html">Pushing local changes to github</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git_overview.html">Part One - Git</a></li><li class="breadcrumb-item"><a href="./episode_05_Push-Github.html">Pushing local changes to GitHub</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -151,12 +151,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">test styling</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -188,25 +182,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_04_TrackingChanges.html" class="sidebar-item-text sidebar-link">
+  <a href="./episode_04_Track-Add-Commit-Changes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tracking, adding and committing changes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_05_push-github.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Pushing local changes to github</span></a>
+  <a href="./episode_05_Push-Github.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Pushing local changes to GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_06_Branches-pull-merge.html" class="sidebar-item-text sidebar-link">
+  <a href="./episode_06_Branches-Pull-Merge.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Branches, pulling and merging</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_07_Collaborating.html" class="sidebar-item-text sidebar-link">
+  <a href="./episode_07_Collaborate-Organise.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Collaborating and organising your workflow</span></a>
   </div>
 </li>
@@ -269,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pushing-local-changes-to-github" id="toc-pushing-local-changes-to-github" class="nav-link active" data-scroll-target="#pushing-local-changes-to-github">Pushing local changes to github</a>
+  <li><a href="#pushing-local-changes-to-github" id="toc-pushing-local-changes-to-github" class="nav-link active" data-scroll-target="#pushing-local-changes-to-github">Pushing local changes to GitHub</a>
   <ul>
   <li><a href="#create-a-remote-repository" id="toc-create-a-remote-repository" class="nav-link" data-scroll-target="#create-a-remote-repository">1. Create a remote repository</a></li>
   <li><a href="#connect-local-to-remote-repository" id="toc-connect-local-to-remote-repository" class="nav-link" data-scroll-target="#connect-local-to-remote-repository">2. Connect local to remote repository</a></li>
@@ -284,13 +278,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git_overview.html">Part One - Git</a></li><li class="breadcrumb-item"><a href="./episode_05_push-github.html">Pushing local changes to github</a></li></ol></nav></header>
+<main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git_overview.html">Part One - Git</a></li><li class="breadcrumb-item"><a href="./episode_05_Push-Github.html">Pushing local changes to GitHub</a></li></ol></nav></header>
 
 
 
 
 <section id="pushing-local-changes-to-github" class="level1">
-<h1>Pushing local changes to github</h1>
+<h1>Pushing local changes to GitHub</h1>
 <p>Now that we have added and committed our changes, we need to push the changes from our local computer, on to the Github server.</p>
 <p>First, we need to set up the <strong>remote repository on Github</strong> which is linked to our <strong>local repository.</strong></p>
 <section id="create-a-remote-repository" class="level2">
@@ -312,7 +306,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="images_git/github-connect-local-01.png" class="img-fluid"></p>
 <p>Go into the local <code>recipes</code> repository, and run this command:<br>
 (<em>Make sure to use the URL for your repository!</em>)</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin git@github.com:username/recipes.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin <span class="op">&lt;</span>git@github.com:username/recipes.git<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Hint: don’t type the &lt;&gt; around the URL.</p>
 <p>We can check that the command has worked by running git remote -v:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>origin  git@github.com:githubusername/recipes.git (fetch)
@@ -330,7 +325,7 @@ origin  git@github.com:githubusername/recipes.git (push)</code></pre>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-al</span> ~/.ssh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Your output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using. It may look like this:</p>
 <pre><code>ls: cannot access '/c/Users/username/.ssh': No such file or directory</code></pre>
-<p>If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either <code>id_ed25519</code>/<code>id_ed25519.pub</code> or <code>id_rsa</code>/<code>id_rsa.pub</code> depending on how the key pairs were set up.</p>
+<p>If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either <code style="color:blue">id_ed25519</code>/<code style="color:blue">id_ed25519.pub</code> or <code style="color:blue">id_rsa</code>/<code style="color:blue">id_rsa.pub</code> depending on how the key pairs were set up.</p>
 <pre><code>drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ./
 drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ../</code></pre>
 <section id="create-an-ssh-key-pair" class="level3">
@@ -492,7 +487,7 @@ Total 16 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), done.
 To https://github.com/username/recipes.git
  * [new branch]      main -&gt; main</code></pre>
-<p>Now go to your github and have a look - your new recipe repository with the <code>guacamole.qmd</code> file should be online!</p>
+<p>Now go to your github and have a look - your new recipe repository with the <code style="color:blue">guacamole.qmd</code> file should be online!</p>
 
 
 </section>
@@ -900,12 +895,12 @@ To https://github.com/username/recipes.git
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./episode_04_TrackingChanges.html" class="pagination-link" aria-label="Tracking, adding and committing changes">
+      <a href="./episode_04_Track-Add-Commit-Changes.html" class="pagination-link" aria-label="Tracking, adding and committing changes">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Tracking, adding and committing changes</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./episode_06_Branches-pull-merge.html" class="pagination-link" aria-label="Branches, pulling and merging">
+      <a href="./episode_06_Branches-Pull-Merge.html" class="pagination-link" aria-label="Branches, pulling and merging">
         <span class="nav-page-text">Branches, pulling and merging</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

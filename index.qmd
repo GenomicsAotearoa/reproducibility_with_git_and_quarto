@@ -15,9 +15,9 @@ With Git and GitHub, you’ll learn how to manage and host your own code, and ho
 
 Using Quarto, you’ll then learn how to turn your analysis into clear, self-contained documents, create polished HTML outputs with embedded results, and publish your work online as a website.
 
-#### How are git/github and quarto linked?
+#### How are Git/GitHub and quarto linked?
 
-One of the great things you can do with both of these tools together is create material in quarto documents, that can then be displayed as a webpage using github. In fact, this workshop itself is written in quarto and displayed online using github pages! Check out the [github repo here.](https://github.com/GenomicsAotearoa/reproducibility_with_git_and_quarto)
+One of the great things you can do with both of these tools together is create material in quarto documents, that can then be displayed as a webpage using GitHub. In fact, this workshop itself is written in quarto and displayed online using GitHub pages! Check out the [github repo here.](https://github.com/GenomicsAotearoa/reproducibility_with_git_and_quarto)
 
 #### What this workshop does and does not cover:
 
@@ -32,8 +32,7 @@ This workshop **does** cover:
 
 This workshop **does not** cover:  
 
-* Merge conflicts and different kinds of merges.  
-* Forking.  
+* Forking, merge conflicts and different kinds of merges.  
 * Extended file recovery, log details and commit history.    
 * Using `git rebase` and `git ignore`.  
 * How to connect Git/GitHub and RStudio (see [The Carpentries lesson here](https://swcarpentry.github.io/git-novice/14-supplemental-rstudio.html) or the Chapter from Happy Git with R on [connecting these tools here.](https://happygitwithr.com/connect-intro)) 
@@ -62,7 +61,6 @@ See [Part One - Git: Setup on local machine](git_overview.qmd#setup-on-local-mac
 
 ### Attribution
 
-**Need to extend this section and be more specific!** 
 
 The Git part of this workshop was adapted from and heavily inspired by content from The Carpentries lesson on [Version Control with Git.](https://swcarpentry.github.io/git-novice/) 
 
@@ -75,14 +73,16 @@ The license information for The Carpentries lesson "Version Control with Git", f
 
 In this workshop, the following episodes were adapted from The Carpentries lesson "Version Control with Git" in the manner stated below:
 
-**Re-used material** (*i.e.,* almost word for word, including images, with minor wording or styling modifications):  
+**Re-used material** (*i.e.,* almost word-for-word, including images, with minor wording or styling modifications):  
 - [Automated Version Control episode](episode_01_AutomatedVersionControl.qmd)  
-- [Collaborating episode](episode_07_Collaborating.qmd), section on using `git clone`
+- [Creating a repository episode](episode_03_CreatingARepository.qmd)  
+- [Tracking, adding and committing changes episode](episode_04_Track-Add-Commit-Changes.qmd)  
+- [Pushing local changes to GitHub episode](episode_05_Push-Github.qmd)  
 
-**Material minimally adapted** (*i.e.,* inspired by stylistic choices and general workflow):  
 
-**Material not adapted from The Carpentries** (*i.e.,* developed by Genomics Aotearoa):  
-- [Collaborating episode](episode_07_Collaborating.qmd), sections on issues, projects and organisations. 
+**Minimally-adapted material** (*i.e.,* inspired by stylistic choices and general workflow, but material is primarily developed by Genomics Aotearoa):  
+- [Branches, pulling and merging episode](episode_06_Branches-Pull-Merge.qmd); continuing with The Carpentries recipe repo theme, but content is developed by Genomics Aotearoa.  
+- [Collaborating and organising your workflow episode](episode_07_Collaborate-Organise.qmd); content is developed by Genomics Aotearoa.  
 
 :::
 

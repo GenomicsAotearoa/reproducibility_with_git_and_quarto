@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>episode_04_trackingchanges – Reproducibility with Git and Quarto</title>
+<title>episode_07_collaborate-organise – Reproducibility with Git and Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./episode_05_push-github.html" rel="next">
-<link href="./episode_03_CreatingARepository.html" rel="prev">
+<link href="./quarto_overview.html" rel="next">
+<link href="./episode_06_Branches-Pull-Merge.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -107,8 +107,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Reproducibility with Git and Quarto">
-<meta property="og:description" content="">
+<meta property="og:title" content="– Reproducibility with Git and Quarto">
+<meta property="og:image" content="images_git/github-gitclone-02.png">
 <meta property="og:site_name" content="Reproducibility with Git and Quarto">
 </head>
 
@@ -121,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git_overview.html">Part One - Git</a></li><li class="breadcrumb-item"><a href="./episode_04_TrackingChanges.html">Tracking, adding and committing changes</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git_overview.html">Part One - Git</a></li><li class="breadcrumb-item"><a href="./episode_07_Collaborate-Organise.html">Collaborating and organising your workflow</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -150,12 +150,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">test styling</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -187,25 +181,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_04_TrackingChanges.html" class="sidebar-item-text sidebar-link active">
+  <a href="./episode_04_Track-Add-Commit-Changes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tracking, adding and committing changes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_05_push-github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pushing local changes to github</span></a>
+  <a href="./episode_05_Push-Github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pushing local changes to GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_06_Branches-pull-merge.html" class="sidebar-item-text sidebar-link">
+  <a href="./episode_06_Branches-Pull-Merge.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Branches, pulling and merging</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./episode_07_Collaborating.html" class="sidebar-item-text sidebar-link">
+  <a href="./episode_07_Collaborate-Organise.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Collaborating and organising your workflow</span></a>
   </div>
 </li>
@@ -268,21 +262,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tracking-adding-and-committing-changes" id="toc-tracking-adding-and-committing-changes" class="nav-link active" data-scroll-target="#tracking-adding-and-committing-changes">Tracking, adding and committing changes</a>
+  <li><a href="#collaborating-and-organising-your-workflow" id="toc-collaborating-and-organising-your-workflow" class="nav-link active" data-scroll-target="#collaborating-and-organising-your-workflow">Collaborating and organising your workflow</a>
   <ul>
-  <li><a href="#other-options-for-adding-files" id="toc-other-options-for-adding-files" class="nav-link" data-scroll-target="#other-options-for-adding-files">Other options for adding files</a></li>
+  <li><a href="#cloning-remote-repositories" id="toc-cloning-remote-repositories" class="nav-link" data-scroll-target="#cloning-remote-repositories">Cloning remote repositories</a></li>
+  <li><a href="#improving-your-workflow" id="toc-improving-your-workflow" class="nav-link" data-scroll-target="#improving-your-workflow">Improving your workflow</a>
+  <ul class="collapse">
+  <li><a href="#issues" id="toc-issues" class="nav-link" data-scroll-target="#issues">Issues</a></li>
+  <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects">Projects</a></li>
+  <li><a href="#organisations" id="toc-organisations" class="nav-link" data-scroll-target="#organisations">Organisations</a></li>
+  </ul></li>
+  <li><a href="#final-thoughts" id="toc-final-thoughts" class="nav-link" data-scroll-target="#final-thoughts">Final thoughts</a>
+  <ul class="collapse">
+  <li><a href="#best-practises" id="toc-best-practises" class="nav-link" data-scroll-target="#best-practises">Best practises</a></li>
+  <li><a href="#burn-it-all-down" id="toc-burn-it-all-down" class="nav-link" data-scroll-target="#burn-it-all-down">Burn it all down</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git_overview.html">Part One - Git</a></li><li class="breadcrumb-item"><a href="./episode_04_TrackingChanges.html">Tracking, adding and committing changes</a></li></ol></nav></header>
+<main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git_overview.html">Part One - Git</a></li><li class="breadcrumb-item"><a href="./episode_07_Collaborate-Organise.html">Collaborating and organising your workflow</a></li></ol></nav></header>
 
 
 
 
-<section id="tracking-adding-and-committing-changes" class="level1">
-<h1>Tracking, adding and committing changes</h1>
+<section id="collaborating-and-organising-your-workflow" class="level1">
+<h1>Collaborating and organising your workflow</h1>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -294,154 +299,213 @@ Key points
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><code>git status</code> shows the status of a repository.<br>
-</li>
-<li>Files can be stored in a project’s working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded).<br>
-</li>
-<li><code>git add</code> puts files in the staging area.<br>
-</li>
-<li><code>git commit</code> saves the staged content as a new commit in the local repository.<br>
-</li>
-<li>Write a commit message that accurately describes your changes.<br>
-</li>
+<li><code>git clone</code> copies a remote repository to create a local repository with a remote called origin automatically set up.</li>
+<li>use ‘Issues’ to track and fix any issues in a transparent way</li>
+<li>use ‘Projects’ to collaboratively track tasks</li>
+<li>‘Organisations’ share repos and have different roles and access levels for members</li>
 </ul>
 </div>
 </div>
-<p>First let’s make sure we’re still in the right directory. You should be in the recipes directory.</p>
-<div class="sourceCode" id="cb1" title="Bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Let’s create a file called <code>guacamole.qmd</code> that contains the basic structure of our first recipe. We’ll use nano to edit the file; you can use whatever editor you like. In particular, this does not have to be the core.editor you set globally earlier. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out <a href="https://swcarpentry.github.io/shell-novice/03-create.html#which-editor">“Which Editor?”</a> in The Carpentries Unix Shell lesson.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Put some text in your <code>guacamole.qmd</code> file, for example:<br>
-<em>(I am leaving instructions blank here to add in an example later of file modification)</em></p>
+<section id="cloning-remote-repositories" class="level2">
+<h2 class="anchored" data-anchor-id="cloning-remote-repositories">Cloning remote repositories</h2>
+<p>Often we want to download other people’s repositories to our local machine. One main reason for this can be because you want to use a set of scripts developed for a workflow.</p>
+<p>To do this, we use <code>git clone</code>.</p>
+<p>First, navigate on GitHub to a repository that you want to download. If you have one in mind already go ahead and use that; for this example we will use the Kākāpo Genome project repo.</p>
+<p><a href="https://github.com/GenomicsAotearoa/Kakapo/tree/master">Click this link here to go to the Kākāpo Genome project repository.</a></p>
+<p>You’ll now see the repository for the Kākāpo Genome project on GitHub. Go to the green button in the top right that says “&lt;&gt; Code” and click it.</p>
+<p><img src="images_git/github-gitclone-02.png" class="img-fluid"></p>
+<p>Now, copy the SSH URL. For the Kākāpo Genome project repository this is:</p>
+<pre><code>git@github.com:GenomicsAotearoa/Kakapo.git</code></pre>
+<p>Back in your RStudio on the terminal, check first which dir you are in:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>/Users/username/Desktop/recipes</code></pre>
+<p>I am still in my recipes dir. It is best to <strong>not</strong> put a cloned repository into a local repository directory!</p>
+<p>You will want to <code>cd</code> into a different directory. Either run <code>cd ..</code> to move back to your desktop, or <code>cd /PATH/TO/DIR</code> into a new dir of your choosing.</p>
+<p>Once you are happy where you are in your file system, type the following:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:GenomicsAotearoa/Kakapo.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You’ll see an output like this as git downloads all the files (shortened here for visual clarity):</p>
+<pre><code>Cloning into 'Kakapo'...
+remote: Enumerating objects: 1713, done.
+remote: Counting objects: 100% (54/54), done.
+remote: Compressing objects: 100% (42/42), done.
+Receiving objects:   5% (88/1713), 15.61 MiB | 4.92 MiB
+....  
+Receiving objects: 100% (1713/1713), 45.63 MiB | 6.00 MiB/s, done.
+Resolving deltas: 100% (938/938), done.</code></pre>
+<p>And now you will find the full repository on your computer and you can use the scripts for your own purposes.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Can I push changes I have made locally to this repo back to the GitHub server?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Short answer no, you will not have write access (unless you are a collaborator on the repo!) and you will get a permission denied error.</p>
+<p>Long answer, yes you can with additional steps:<br>
+1. You can fork the repo to your own GitHub account.<br>
+2. Clone your fork and make your changes.<br>
+3. Push changes to your own forked repo.<br>
+4. Then, you can create a pull request and suggest changes to the original repo - the owner may or may not accept and merge your changes!</p>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Hint: If you don’t want this on your computer anymore after this workshop type: <code>rm -r Kakapo</code></p>
+</blockquote>
+</section>
+<section id="improving-your-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="improving-your-workflow">Improving your workflow</h2>
+<section id="issues" class="level3">
+<h3 class="anchored" data-anchor-id="issues">Issues</h3>
+<p>Issues are a fantastic way to track what you want to change. You can open an issue for each change you want to make (<em>i.e.,</em> typos, bug fixes, adding images, stylisation - anything!) and when you commit changes you can reference the issue number (<em>e.g.,</em> <code>git commit -m "Bug fixes issue #1"</code>) which links up the commit with the addressed issue automatically. Other people can also see and add issues to your repo – a great way to track progress!</p>
+<p>There are a few other tips and tricks with ‘Issues’, but one of the most useful ones is being able to reference exact lines where you want to make changes using ‘permalinks’.</p>
+<blockquote class="blockquote">
+<p>Note: If you cannot see the ‘Issues’ tab on your repo, you may need to go to General Settings and enable the tickbox for ‘Issues’.</p>
+</blockquote>
+<p>Have a go at adding an issue for a change you want to make in your guacamole recipe, then make the change locally, add and commit the change, referencing the issue in the commit message.</p>
+<p>Go to your recipes repo on GitHub, find ‘Issues’ tab and click “New issue”.</p>
+<p><img src="images_git/github-issues-01.png" class="img-fluid"></p>
+<p>Then add a title, e.g.,:</p>
+<p><img src="images_git/github-issue-02.png" class="img-fluid"></p>
+<p>Before you create the issue, right click your recipes repo in the top left, and open it in a new tab. Then, click on <code style="color:blue">guacamole.qmd</code> to bring up the code. On the left of the line you want to change, click to get the three dots to appear, click the dots, and click ‘Copy permalink’.</p>
+<p><img src="images_git/github-issue-03.png" class="img-fluid"></p>
+<p>Now go back to your issue, paste the permalink in the description, and add whatever descriptive text you want and create the issue:</p>
+<p><img src="images_git/github-issue-04.png" class="img-fluid"></p>
+<p>Our <code style="color:blue">guacamole.qmd</code> file is not very big, so specifying the exact line is not really necessary, but if you have a file with hundreds of lines of code then being able to track and note exactly where typos are is really handy!</p>
+<p>Now, go back to your terminal, make the changes locally, add, commit and push the changes, then go back to your GitHub repo and explore what happens!</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Quick safety checks:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Before you go any further, are you on the right branch? To change existing branches:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now we are back on main. But wait, we merged a pull request earlier on GitHub, but these changes were made locally on a new branch before pushing to GitHub. Now that we are back on main, what does our <code style="color:blue">guacamole.qmd</code> file look like locally?</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code># Guacamole recipe
 
 ## Ingredients
 - Avocado  
 - Coriander  
 - Red onion  
-- Lemon juice  
-- Salt  
-
-## Instructions
-
-</code></pre>
-<p>Verify that the file was made, using <code>ls</code> and <code>cat</code> commands to explore the file.</p>
-<p>If we check the status of our project again, Git tells us that it’s noticed the new file:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>On branch main
-
-No commits yet
-
-Untracked files:
-   (use "git add &lt;file&gt;..." to include in what will be committed)
-
-    guacamole.qmd
-
-nothing added to commit but untracked files present (use "git add" to track)</code></pre>
-<p>The “untracked files” message means that there’s a file in the directory that Git isn’t keeping track of. We can tell Git to track a file using <code>git add</code>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>and then check that the right thing happened:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>On branch main
-
-No commits yet
-
-Changes to be committed:
-  (use "git rm --cached &lt;file&gt;..." to unstage)
-
-    new file:   guacamole.qmd</code></pre>
-<p>Git now knows that it’s supposed to keep track of guacamole.md, but it hasn’t recorded these changes as a commit yet. To get it to do that, we need to run one more command:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Create initial structure for a Guacamole recipe"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>When we run <code>git commit</code>, Git takes everything we have told it to save by using <code>git add</code> and stores a copy permanently inside the special <code>.git</code> directory. This permanent copy is called a commit (or revision) and its short identifier is f22b25e. Your commit may have another identifier.</p>
-<p>We use the <code>-m</code> flag (for “message”) to record a short, descriptive, and specific comment that will help us remember later on what we did and why. If we just run <code>git commit</code> without the <code>-m</code> option, Git will launch nano (or whatever other editor we configured as core.editor) so that we can write a longer message.</p>
-<p>Good commit messages start with a brief (&lt;50 characters) statement about the changes made in the commit. Generally, the message should complete the sentence “If applied, this commit will” . If you want to go into more detail, add a blank line between the summary line and your additional notes. Use this additional space to explain why you made changes and/or what their impact will be.</p>
-<p>If we run <code>git status</code> now:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>On branch main
-nothing to commit, working tree clean</code></pre>
-<p>it tells us everything is up to date. If we want to know what we’ve done recently, we can ask Git to show us the project’s history using <code>git log</code>, it will list all commits made to a repository in reverse chronological order. The listing for each commit includes the commit’s full identifier (which starts with the same characters as the short identifier printed by the git commit command earlier), the commit’s author, when it was created, and the log message Git was given when the commit was created.</p>
-<p>Now suppose we add more information to the file. (Again, we’ll edit with <code>nano</code> and then <code>cat</code> the file to show its contents; you may use a different editor, and don’t need to <code>cat</code>)</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Add some text (here I have now added instructions):</p>
-<pre><code># Guacamole recipe
-
-## Ingredients
-- Avocado  
-- Coriander  
-- Red onion  
-- Lemon juice  
+- Lemon juice
 - Salt  
 
 ## Instructions
 1. Mash the avocado
 2. Finely chop the coriander and red onion
 3. Add salt and lemon juice to taste  
-4. Enjoy!  </code></pre>
-<p>When we run <code>git status</code> now, it tells us that a file it already knows about has been modified:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>On branch main
-Changes not staged for commit:
-  (use "git add &lt;file&gt;..." to update what will be committed)
-  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+4. Enjoy!</code></pre>
+<p>It’s our original recipe, without the added lime juice. We need the new one!</p>
+<p>We can use <code>git fetch</code> to fetch information about files from the server (<em>i.e.,</em> origin/main) and compare to our local files (<em>i.e.,</em> main) to see if we need to pull down new copies of the files:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch origin</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff main origin/main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>diff --git a/guacamole.qmd b/guacamole.qmd
+index 6249f4c..2dc69fb 100644
+--- a/guacamole.qmd
++++ b/guacamole.qmd
+@@ -4,11 +4,12 @@
+ - Avocado  
+ - Coriander  
+ - Red onion  
+-- Lemon juice  
++- Lemon juice
++- Lime juice  
+ - Salt  
+ 
+ ## Instructions
+ 1. Mash the avocado
+ 2. Finely chop the coriander and red onion
+-3. Add salt and lemon juice to taste  
++3. Add salt,lemon and lime juice to taste  
+ 4. Enjoy!</code></pre>
+<p>The output shows there are lines that are different between our local <code style="color:blue">main</code> and our server <code style="color:blue">origin/main</code>.<br>
+<code>git fetch</code> does not touch your local files, so we now need to pull down the new file:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Double check your local files match the server:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch origin</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff main origin/main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>git diff</code> gave no output - so all good to continue!</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code># Guacamole recipe
 
-    modified:   guacamole.qmd
+## Ingredients
+- Avocado x 2
+- Coriander
+- Red onion
+- Lemon juice
+- Lime juice
+- Salt
 
-no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
-<p>The last line is the key phrase: “no changes added to commit”. We have changed this file, but we haven’t told Git we will want to save those changes (which we do with <code>git add</code>) nor have we saved them (which we do with <code>git commit</code>). So let’s do that now.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+## Instructions
+1. Mash the avocado
+2. Finely chop the coriander and red onion
+3. Add salt,lemon and lime juice to taste
+4. Enjoy!</code></pre>
+<p>In the above file I have now specified the number of avocados. Write out and close nano.</p>
+<p>Check the file is now ‘modified’:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now add and commit the file, importantly, reference the issue!:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"specified number of avos #2"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Review changes with <code>git diff</code>
+Wait, why is it #2 if this was my first issue?
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>It is good practice to always review our changes before saving them. We do this using <code>git diff</code>. This shows us the differences between the current state of the file and the most recently saved version:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>diff --git a/guacamole.qmd b/guacamole.qmd
-index ad0d963..6249f4c 100644
---- a/guacamole.qmd
-+++ b/guacamole.qmd
-@@ -8,3 +8,7 @@
- - Salt  
- 
- ## Instructions
-+1. Mash the avocado
-+2. Finely chop the coriander and red onion
-+3. Add salt and lemon juice to taste  
-+4. Enjoy!</code></pre>
-<p>The output is cryptic because it is actually a series of commands for tools like editors and patch telling them how to reconstruct one file given the other. If we break it down into pieces:</p>
-<ol type="1">
-<li>The first line tells us that Git is producing output similar to the Unix diff command comparing the old and new versions of the file.</li>
-<li>The second line tells exactly which versions of the file Git is comparing; ad0d963 and 6249f4c are unique computer-generated labels for those versions.</li>
-<li>The third and fourth lines once again show the name of the file being changed.</li>
-<li>The remaining lines are the most interesting, they show us the actual differences and the lines on which they occur. In particular, the + marker in the first column shows where we added a line.</li>
-</ol>
+<p>Issues and pull requests share a numbering system. Because we did a pull request earlier, that got designated as #1. Therefore GitHub has automatically named this issue #2.</p>
 </div>
 </div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Go back to your GitHub repo and have a look at the commit message - you’ll see the issue number is automatically linked. You can now click through and “Close issue”.</p>
+</section>
+<section id="projects" class="level3">
+<h3 class="anchored" data-anchor-id="projects">Projects</h3>
+<p>Projects are a workflow management tool within GitHub, that allows us to plan and track issues and pull requests for multiple repositories in a single board. You can assign issues to collaborators and together use a single Project to track progress and who is working on what. You can designate tasks as “Todo”, “In Progress”, or “Done” (or use custom columns) and even set up automatic actions, so that issues are automatically moved from “In Progress” to “Done” when the issue is mentioned in a commit.</p>
+<p>Projects have many customisable options – you can <a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects">read more about them here.</a></p>
+<p>Here is an example of the Project we use at Genomics Aotearoa to track workshop material repos:</p>
+<p><img src="images_git/github-projects-01.png" class="img-fluid"></p>
+</section>
+<section id="organisations" class="level3">
+<h3 class="anchored" data-anchor-id="organisations">Organisations</h3>
+<p><em>“Organisations are shared accounts where businesses and open-source projects can collaborate across many projects at once, with sophisticated security and administrative features.”</em><br>
+- GitHub docs</p>
+<p>There are many great features of using an Organisation account. You can view the <a href="https://github.com/GenomicsAotearoa">Genomics Aotearoa Organisation account here.</a> This is where we house all our workshop material and research project repos for workflows or scripts associated with a project. Members are assigned different roles, which allow different levels of read/write permissions and other things such as admin access or security management.</p>
+<p>For further information on Organisations, see the <a href="https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations">GitHub docs here.</a></p>
+</section>
+</section>
+<section id="final-thoughts" class="level2">
+<h2 class="anchored" data-anchor-id="final-thoughts">Final thoughts</h2>
+<section id="best-practises" class="level3">
+<h3 class="anchored" data-anchor-id="best-practises">Best practises</h3>
+<p>To avoid conflicts (and headaches!) we can manage our workflow by always:<br>
+- Checking our file and branch status with <code>git status</code>, <code>git branch</code> and <code>git diff</code><br>
+- At the end of each day, remember to save your work by running <code>git add</code>, <code>git commit</code> and <code>git push</code>.<br>
+- At the start of each day, check if there have been any changes to the repo on the server, and <code>git pull</code> as necessary.<br>
+- Utilise branches and handy functionality such as ‘Issues’ and ‘Projects’ when collaborating with others – or even just for yourself!</p>
+</section>
+<section id="burn-it-all-down" class="level3">
+<h3 class="anchored" data-anchor-id="burn-it-all-down">Burn it all down</h3>
+<p>Sometimes our repos get too messy and complicated, and we just want to burn it all down.</p>
+<p>This website called <a href="https://happygitwithr.com">Happy git with R</a> by Jenny Bryan and Jim Hester is a fantastic guide on how to make Git/GitHub work with RStudio. If all else fails, they suggest in <a href="https://happygitwithr.com/burn">section 37</a> to simply “Burn it all down”. In short, make a copy of all the files you want to keep locally, delete your repo on GitHub and start anew.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://xkcd.com/1597/"><img src="https://imgs.xkcd.com/comics/git.png" class="img-fluid figure-img"></a></p>
+<figcaption>XKCD Comic 1597</figcaption>
+</figure>
 </div>
-<p>It’s time to commit the modified version. Except remember, we need to <code>git add</code> the file again first:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.qmd</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add ingredients for basic guacamole"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>[main 8a8041c] Add ingredients for basic guacamole
- 1 file changed, 4 insertions(+)</code></pre>
-<p>Git insists that we add files to the set we want to commit before actually committing anything. This allows us to commit our changes in stages and capture changes in logical portions rather than only large batches. For example, suppose we’re adding a few citations to relevant research to our thesis. We might want to commit those additions, and the corresponding bibliography entries, but not commit some of our work drafting the conclusion (which we haven’t finished yet).</p>
-<p>To allow for this, Git has a special staging area where it keeps track of things that have been added to the current changeset but not yet committed.</p>
-<section id="other-options-for-adding-files" class="level3">
-<h3 class="anchored" data-anchor-id="other-options-for-adding-files">Other options for adding files</h3>
-<p>We can also add multiple files at once to the staging area, by specifiying all the files in one command:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.qmd groceries.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Or, by using <code>git add .</code> to add all files (new, modified, deleted files) in the <strong>current directory and subdirectories</strong> to the staging area:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Or, by using <code>git add -A</code> to add all files (new, modified, deleted files) in the <strong>entire repository</strong> to the staging area:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">-A</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Don’t forget to then <code>commit</code> your staged changes!</p>
 
 
+</section>
 </section>
 </section>
 
@@ -847,13 +911,13 @@ index ad0d963..6249f4c 100644
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./episode_03_CreatingARepository.html" class="pagination-link" aria-label="Create a repository">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Create a repository</span>
+      <a href="./episode_06_Branches-Pull-Merge.html" class="pagination-link" aria-label="Branches, pulling and merging">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Branches, pulling and merging</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./episode_05_push-github.html" class="pagination-link" aria-label="Pushing local changes to github">
-        <span class="nav-page-text">Pushing local changes to github</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./quarto_overview.html" class="pagination-link" aria-label="Part Two - Quarto">
+        <span class="nav-page-text">Part Two - Quarto</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

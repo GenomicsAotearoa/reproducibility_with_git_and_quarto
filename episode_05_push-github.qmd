@@ -4,7 +4,7 @@ format: html
 ---
 
 
-# Pushing local changes to github
+# Pushing local changes to GitHub
 
 Now that we have added and committed our changes, we need to push the changes from our local computer, on to the Github server.
 
@@ -42,8 +42,9 @@ Go into the local `recipes` repository, and run this command:
 (*Make sure to use the URL for your repository!*)
 
 ```bash
-git remote add origin git@github.com:username/recipes.git
+git remote add origin <git@github.com:username/recipes.git>
 ```
+Hint: don't type the <> around the URL.
 
 We can check that the command has worked by running git remote -v:
 
@@ -82,7 +83,7 @@ Your output is going to look a little different depending on whether or not SSH 
 ls: cannot access '/c/Users/username/.ssh': No such file or directory
 ```
 
-If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up. 
+If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either `id_ed25519`{style="color:blue"}/`id_ed25519.pub`{style="color:blue"} or `id_rsa`{style="color:blue"}/`id_rsa.pub`{style="color:blue"} depending on how the key pairs were set up. 
 
 ```
 drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ./
@@ -295,5 +296,5 @@ To https://github.com/username/recipes.git
  * [new branch]      main -> main
 ```
 
-Now go to your github and have a look - your new recipe repository with the `guacamole.qmd` file should be online!
+Now go to your github and have a look - your new recipe repository with the `guacamole.qmd`{style="color:blue"} file should be online!
 
