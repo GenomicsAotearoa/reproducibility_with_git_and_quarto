@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Getting Started – Reproducibility with Git and Quarto</title>
+<title>episode_22_gettingstarted – Reproducibility with Git and Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -72,9 +107,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Getting Started – Reproducibility with Git and Quarto">
+<meta property="og:title" content="– Reproducibility with Git and Quarto">
 <meta property="og:description" content="">
-<meta property="og:image" content="figures/newQuartoDoc.png">
+<meta property="og:image" content="images-quarto/quarto-setup-01.png">
 <meta property="og:site_name" content="Reproducibility with Git and Quarto">
 </head>
 
@@ -116,6 +151,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">test styling</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -228,19 +269,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#set-up-new-public-repo-and-open-an-r-project" id="toc-set-up-new-public-repo-and-open-an-r-project" class="nav-link active" data-scroll-target="#set-up-new-public-repo-and-open-an-r-project">Set up new public repo and open an R project</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a>
+  <ul>
+  <li><a href="#set-up-new-public-repo-and-open-an-r-project" id="toc-set-up-new-public-repo-and-open-an-r-project" class="nav-link" data-scroll-target="#set-up-new-public-repo-and-open-an-r-project">Set up new public repo and open an R project</a></li>
   <li><a href="#first-quarto-doc" id="toc-first-quarto-doc" class="nav-link" data-scroll-target="#first-quarto-doc">First quarto doc</a>
-  <ul>
-  <li><a href="#exercise-note-three-pieces-of-markdown-syntax-in-the-source-editor-and-how-this-translates-into-the-visual-editor." id="toc-exercise-note-three-pieces-of-markdown-syntax-in-the-source-editor-and-how-this-translates-into-the-visual-editor." class="nav-link" data-scroll-target="#exercise-note-three-pieces-of-markdown-syntax-in-the-source-editor-and-how-this-translates-into-the-visual-editor."><strong>Exercise:</strong> Note three pieces of markdown syntax in the Source editor and how this translates into the Visual editor.</a></li>
+  <ul class="collapse">
+  <li><a href="#exercise-syntax-2-min" id="toc-exercise-syntax-2-min" class="nav-link" data-scroll-target="#exercise-syntax-2-min"><strong>Exercise: Syntax</strong> (2 min)</a></li>
   </ul></li>
-  <li><a href="#rendering-a-document" id="toc-rendering-a-document" class="nav-link" data-scroll-target="#rendering-a-document">Rendering a document</a></li>
   <li><a href="#visual-or-source-editor" id="toc-visual-or-source-editor" class="nav-link" data-scroll-target="#visual-or-source-editor">Visual or Source Editor</a>
-  <ul>
-  <li><a href="#exercise-visual-and-source-five-minutes" id="toc-exercise-visual-and-source-five-minutes" class="nav-link" data-scroll-target="#exercise-visual-and-source-five-minutes">Exercise: Visual and Source (five minutes)</a></li>
+  <ul class="collapse">
+  <li><a href="#exercise-visual-and-source-editors-5-min" id="toc-exercise-visual-and-source-editors-5-min" class="nav-link" data-scroll-target="#exercise-visual-and-source-editors-5-min"><strong>Exercise: Visual and Source Editors</strong> (5 min)</a></li>
   <li><a href="#other-syntax-options-and-notes" id="toc-other-syntax-options-and-notes" class="nav-link" data-scroll-target="#other-syntax-options-and-notes">Other syntax options and notes:</a></li>
+  <li><a href="#save-and-render-document" id="toc-save-and-render-document" class="nav-link" data-scroll-target="#save-and-render-document">Save and Render document</a></li>
   </ul></li>
   <li><a href="#yaml-headers" id="toc-yaml-headers" class="nav-link" data-scroll-target="#yaml-headers">YAML headers</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#document-metadata" id="toc-document-metadata" class="nav-link" data-scroll-target="#document-metadata">Document metadata</a>
   <ul class="collapse">
   <li><a href="#title" id="toc-title" class="nav-link" data-scroll-target="#title">Title</a></li>
@@ -256,133 +299,201 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#useful-features" id="toc-useful-features" class="nav-link" data-scroll-target="#useful-features">Useful features</a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_overview.html">Part Two - Quarto</a></li><li class="breadcrumb-item"><a href="./episode_22_gettingStarted.html">Getting Started</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Getting Started</h1>
-</div>
+<main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_overview.html">Part Two - Quarto</a></li><li class="breadcrumb-item"><a href="./episode_22_gettingStarted.html">Getting Started</a></li></ol></nav></header>
 
 
 
-<div class="quarto-title-meta column-body">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>In this workshop we will need to work publicly (which is <em>scary</em>). We will create a public github repo to work from, and in the first stages of this workshop we will generate a local file (for ease, we will create a basic .html file, but the concepts will be the same as for creating a word doc or pdf). We will then update this file to become a webpage which to function as an ‘about me’ page or to showcase your work. I recommend pinning this repo (which we will demonstrate) so that when someone visits your github, they can view useful information about you.</p>
+<section id="getting-started" class="level1">
+<h1>Getting Started</h1>
+<p>In this workshop we will need to work publicly (which is <em>scary</em>). We will create a public GitHub repo to work from, and in the first stages of this workshop we will generate a local file (for ease, we will create a basic <code style="color:blue">.html</code> file, but the concepts will be the same as for creating a word doc or pdf). We will then update this file to become a webpage which to function as an ‘about me’ page or to showcase your work. We recommend pinning this repo (which we will demonstrate) so that when someone visits your GitHub, they can view useful information about you.</p>
 <section id="set-up-new-public-repo-and-open-an-r-project" class="level2">
 <h2 class="anchored" data-anchor-id="set-up-new-public-repo-and-open-an-r-project">Set up new public repo and open an R project</h2>
-<p>Go to github, under “Repositories”, click New, give your new repo a name and description, and make sure the “public” box is checked (this should occur by default).</p>
+<p>Go to GitHub, under “Repositories”, click New, give your new repo a name and description.</p>
+<p>We won’t need this beyond today, so you can call it something like <code style="color:blue">my-test-repo</code> if you like. Make sure the “public” box is checked (this should occur by default).</p>
 <p>Click on the green “Code” button, and copy the url for the repo.</p>
-<p>From RStudio, go File &gt; New Project &gt; Version Control &gt; Git. Paste in the repo URL, provide a project directory name, and select the location for the project. Initialise the project when ready.</p>
+<p>From RStudio, go File &gt; New Project &gt; Version Control &gt; Git. Paste in the repo URL, provide a project directory name, and select the location for the project. Click “Create Project”.</p>
+<p><img src="images-quarto/quarto-setup-01.png" class="img-fluid" style="width:80.0%"></p>
 </section>
 <section id="first-quarto-doc" class="level2">
 <h2 class="anchored" data-anchor-id="first-quarto-doc">First quarto doc</h2>
-<p>We can now create our first quarto (.qmd) file. Under File &gt; New File, click Quarto Document. Alternatively, use the button that looks like a blank page with a white “+” inside a green circle, and select Quarto Document. This will bring up a panel for creating a new quarto document:</p>
+<p>We can now create our first quarto (<code style="color:blue">.qmd</code>) file.</p>
+<p>Under File &gt; New File, click Quarto Document. Alternatively, use the button that looks like a blank page with a white “+” inside a green circle, and select Quarto Document. This will bring up a panel for creating a new quarto document:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/newQuartoDoc.png" class="img-fluid figure-img"></p>
 <figcaption>New Quarto doc panel</figcaption>
 </figure>
 </div>
-<p>On the left hand side we can see three options: Document, Presentation, and Interactive, and for each of these we can see there are different outputs. We can change these outputs later, but for now, select Document and HTML (this is the recommended format for working in). Give this document a title, something like “Basic About Page”. Before we create the document, we can see a couple of other options: <strong>Engine</strong> (leave this as Knitr), <strong>Editor</strong> (we will keep the visual editor box ticked), and then we can either click <strong>“Create”</strong> or <strong>“Create Empty Document”</strong>. For now, click on Create.</p>
+<p>On the left hand side we can see three options: Document, Presentation, and Interactive, and for each of these we can see there are different outputs. We can change these outputs later, but for now, select Document and HTML (this is the recommended format for working in). Give this document a title, something like “Basic About Page”. Before we create the document, we can see a couple of other options: <strong>Engine</strong> (leave this as Knitr), <strong>Editor</strong> (we will keep the visual editor box ticked), and then we can either click <strong>“Create”</strong> or <strong>“Create Empty Document”</strong>. For now, click on <strong>“Create”.</strong></p>
 <p>This creates and opens a new document for us to write in. We can note three things:</p>
 <p>First, at the very top of our document is something called the YAML header. The YAML header is information about the document, and is always contained within two sets of three dashes. The YAML header sets things like the document title, subtitle, author, and the output file, as well as a lot of extra information. We will cover the YAML header in more detail shortly.</p>
-<p>Second, we can see this document is not blank - it comes pre-populated with some information about Quarto and how to run code (if we don’t want to see this information, we could use the Create Empty Document button). These are often useful reminders when you are getting started, but once you are more familiar with Quarto you will delete these.</p>
+<p>Second, we can see this document is not blank - it comes pre-populated with some information about Quarto and how to run code (if we don’t want to see this information, we could use the “Create Empty Document” button). These are often useful reminders when you are getting started, but once you are more familiar with Quarto you will delete these.</p>
 <p>Third, this <em>already looks like a document</em> - that’s because we are currently in the “Visual” editor mode. We can click on the “Source” button to enter editor mode and see the markdown syntax.</p>
-<p><img src="figures/visualEditor.png" class="img-fluid" width="430" alt="Visual Editor mode is active"> <img src="figures/sourceEditor.png" class="img-fluid" width="467" alt="Source Editor mode is active"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/visualEditor.png" class="img-fluid figure-img" width="430"></p>
+<figcaption>Visual Editor mode is active</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/sourceEditor.png" class="img-fluid figure-img" width="467"></p>
+<figcaption>Source Editor mode is active</figcaption>
+</figure>
+</div>
 <p>You might also notice that within the YAML header there is a line selecting editor. While this says “visual” in both of the images above, we have manually over-ridden that with the inbuilt buttons in RStudio.</p>
-<section id="exercise-note-three-pieces-of-markdown-syntax-in-the-source-editor-and-how-this-translates-into-the-visual-editor." class="level4">
-<h4 class="anchored" data-anchor-id="exercise-note-three-pieces-of-markdown-syntax-in-the-source-editor-and-how-this-translates-into-the-visual-editor."><strong>Exercise:</strong> Note three pieces of markdown syntax in the Source editor and how this translates into the Visual editor.</h4>
+<section id="exercise-syntax-2-min" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-syntax-2-min"><strong>Exercise: Syntax</strong> (2 min)</h4>
+<p>Note three pieces of markdown syntax in the Source editor and how this translates into the Visual editor.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: three pieces of syntax in the source editor
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>## - sets the Header level. Two # is “level 2”, three # is “level 3” (a smaller header). Note how these appear as headings in the Outline panel in RStudio.</p></li>
+<li><p>** - when a word is surrounded by the double * it will become <strong>bold</strong>. Using a single * around a word will be interpreted as <em>italics</em>.</p></li>
+<li><p>&lt;&gt; - are used to create a link. A word can also be embedded as a hyperlink by surrounding it with square brackets followed by the link itself in round brackets i.e., [this is the link text](https://this-is-the-URL.com)<br>
+</p></li>
+</ol>
+<p>We will cover more syntax shortly. Almost anything you would like to do can be achieved and is covered on the <a href="https://quarto.org">Quarto website</a>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Three peices of syntax in the source editor
+Extra for experts
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li><p>“##” - sets the Header level. Two # is “level 2”, three # is “level 3” (a smaller header). Note how these appear as headings in the Outline panel in RStudio.</p></li>
-<li><p>“**” - when a word is surrounded by the double * it will become <strong>bold</strong>. Using a single * around a word will be interpreted as <em>italics</em>.</p></li>
-<li><p>“&lt;&gt;” - are used to create a link. A word can also be embedded as a hyperlink by surrounding it with square brackets followed by the link itself in round brackets.</p></li>
-</ol>
-<p>We will cover more syntax shortly. Almost anything you would like to do can be achieved and is covered on the <a href="https://quarto.org">Quarto website</a>.</p>
-<p>If ## designates a header, why isn’t <em>this</em> line coming up as a header? When you need to specify something like a # or an *, add \ (a backslash) first. This is known as ‘escaping’ and means that the next symbol will appear as-is in the document, rather than being translated as markdown.</p>
+<p>If ## designates a header, and this workshop itself is written in Quarto, then why isn’t the line above coming up as a header?</p>
+<p>Good catch! We have done something extra here called ‘escaping’. When you need to specify a character like a # or an * that is used for special syntax, you can add a \ (a backslash) first. This means that the next symbol will appear as-is in the document, rather than being translated as markdown.</p>
+</div>
+</div>
+</div>
+<p><br>
+</p>
 </div>
 </div>
 </div>
 </section>
-</section>
-<section id="rendering-a-document" class="level2">
-<h2 class="anchored" data-anchor-id="rendering-a-document">Rendering a document</h2>
-<p>The RStudio visual editor has a built in button for rendering a document, which will simultaneously open up a Preview. The Preview can either be viewed in a new window or in a panel in RStudio.</p>
 </section>
 <section id="visual-or-source-editor" class="level2">
 <h2 class="anchored" data-anchor-id="visual-or-source-editor">Visual or Source Editor</h2>
-<p>When I started writing this workshop I was almost exclusively using the Source Editor. During the process of writing this workshop I became more familiar with some of the features of Visual and started using that as a preference. You can use one or the other, and we will try and demonstrate some of each.</p>
-<p>The advantage to working in the Source Editor is that you are learning the markdown language. This is useful if you want to work on your documents while you are away from RStudio (for example, I often work in VisualStudioCode (VSCode), which doesn’t have the same visual editor).</p>
-<p>The advantage to working in the Visual Editor is speed and convenience - you can use basic buttons to add bold or italic text, embed links, insert tables <em>etc.,</em>.</p>
-<section id="exercise-visual-and-source-five-minutes" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-visual-and-source-five-minutes">Exercise: Visual and Source (five minutes)</h4>
+<p>You may chose to almost exclusively use the Source Editor, which has the advantage of helping you learn the markdown language. This is useful if you want to work on your documents while you are away from RStudio (for example, Visual Studio Code (VSCode) is a popular tool, which we are using to write this workshop, and it doesn’t have the same visual editor).</p>
+<p>You may prefer to use the Visual Editor, which has the advantage of speed and convenience - you can use basic buttons to add bold or italic text, embed links, insert tables <em>etc.,</em>.</p>
+<p>Today you can use one or the other, and we will try and demonstrate some of each.</p>
+<section id="exercise-visual-and-source-editors-5-min" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-visual-and-source-editors-5-min"><strong>Exercise: Visual and Source Editors</strong> (5 min)</h4>
 <p>To start: in the quarto document highlight everything outside of the yaml header (everything below the bottom three dashes) and delete it.</p>
 <p>Move to the Visual Editor, and use the toolbar buttons to:</p>
 <ul>
 <li><p>Insert a piece of <strong>Bold</strong> font.</p></li>
 <li><p>Insert a piece of <em>italic</em> font.</p></li>
 <li><p>Select and highlight a piece of text (using the &lt;/&gt; button).</p></li>
-<li><p>Add a heading above these bits of text you have just created (using the drop-down button called Normal).</p></li>
+<li><p>Add a heading above these bits of text you have just created (using the drop-down button called Normal to chose Header levels).</p></li>
 <li><p>Add a numeric list with three different items on it.</p></li>
-<li><p>Embed a link to yesterdays’ Github workshop: https://swcarpentry.github.io/git-novice/instructor/index.html (use the chain-link button).</p></li>
+<li><p>Embed a link to the GitHub repo for this workshop: <em>https://github.com/GenomicsAotearoa/reproducibility_with_git_and_quarto</em> (use the chain-link button).</p></li>
 <li><p>Finally, insert an example table with column headers and some example text.</p></li>
 </ul>
-<p>Once you have completed these tasks, switch back and forth between the Visual and Source Editor to see how these different effects are done with markdown.</p>
-<p>As you can see, the Visual editor makes it much easier to work in the Quarto markdown language.</p>
+<p>Once you have completed these tasks, <strong>switch back and forth</strong> between the <strong>Visual</strong> and <strong>Source</strong> Editor to see how these different effects are done with markdown.</p>
 </section>
 <section id="other-syntax-options-and-notes" class="level3">
 <h3 class="anchored" data-anchor-id="other-syntax-options-and-notes">Other syntax options and notes:</h3>
-<p>We can also use super<sup>script</sup> and sub<sub>script</sub>, by surrounding text with ^ or ~ respectively, and <del>strikeout</del> strikethrough text using double ~~ on either side of the word.</p>
+<p>We can also use super<sup>script</sup> and sub<sub>script</sub>, by surrounding text with ^ or ~ respectively, and <del>strikeout</del> text using double ~~ on either side of the word.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Markdown Syntax</th>
+<th>Visual Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>super^script^</td>
+<td>super<sup>script</sup></td>
+</tr>
+<tr class="even">
+<td>sub~script~</td>
+<td>sub<sub>script</sub></td>
+</tr>
+<tr class="odd">
+<td>~~strikeout~~</td>
+<td><del>strikeout</del></td>
+</tr>
+</tbody>
+</table>
 <p>Paragraphs (and items in lists) need to be separated by an <em>empty line</em>. If there is no empty line between paragraphs, they will be interpreted as having a space between them.</p>
-<p>If you are writing lists manually (<em>i.e.,</em> not using the Visual editor option) you can either add unnumbered lists with an *, or you can add numbered lists with any number followed by a fullstop at the start of the line. Note that any number works (try writing a bullet point list with 1. 2. 2. 4. 5. to start each line, remembering to separate lines with an empty line). Quarto will automatically sort the numbers, which means you can number lists and then easily add additional points anywhere along the list.</p>
+<p>If you are writing lists manually (<em>i.e.,</em> not using the Visual editor option) you can either add unnumbered lists with an asterisk <code style="color:green">*</code> or a hypen <code style="color:green">-</code> or you can add numbered lists with any number followed by a fullstop at the start of the line.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hints:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Note that any number works (try writing a bullet point list with <code style="color:green">1. 2. 2. 4. 5.</code> to start each line!). Quarto will automatically sort the numbers, which means you can number lists and then easily add additional points anywhere along the list.<br>
+</li>
+<li>Sometimes an ‘Enter’ or ‘Return’ to make a new line is not enough. You may also need to add two spaces at the end of the top line, if the subsequent line is appearing on the preceding.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="save-and-render-document" class="level3">
+<h3 class="anchored" data-anchor-id="save-and-render-document">Save and Render document</h3>
+<p>Save your Quarto file (<code style="color:black">CTRL</code> + <code style="color:black">S</code> or <code style="color:black">CMD</code> + <code style="color:black">S</code>), give it a name if you have not already (<em>e.g.,</em> <code style="color:blue">test-file.qmd</code>) and save it into the directory you made earlier (mine is called <code style="color:blue">my-test-repo</code>).</p>
+<p>Now back in RStudio, click teh ‘Render’ button, which will simultaneously open up a Preview. You can change the Preview settings by clicking the settings button next to the Render button. The Preview can either be viewed in a new window or in a panel in RStudio.</p>
+<p><img src="images-quarto/quarto-render-01.png" class="img-fluid" style="width:70.0%"></p>
+<p>Alternatively, you can <code>preview</code> and <code>render</code> a document on the command line (<em>e.g.,</em> in terminal in RStudio, type):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview test-file.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>As you make changes on your <code style="color:blue">.qmd</code> file, every time you save the document the Preview will update.</p>
+<p>Hit <code style="color:black">CTRL</code> + <code style="color:black">C</code> on terminal to exit preview mode.</p>
+<p><code>quarto preview</code> is great for live viewing, but we always need to generate our final output with <code>quarto render</code>. More on rendering later in this workshop!</p>
 </section>
 </section>
 <section id="yaml-headers" class="level2">
 <h2 class="anchored" data-anchor-id="yaml-headers">YAML headers</h2>
-<p>At the top of each .qmd document we create, we will need a YAML header. YAML (<strong>Y</strong>et <strong>A</strong>nother <strong>M</strong>arkup <strong>L</strong>anguage or <strong>Y</strong>AML <strong>A</strong>in’t <strong>M</strong>arkup <strong>L</strong>anguage) is placed at the very top of the document and is used to define the document metadata and output settings. For a single document, like we have here, we will provide all of our information in this YAML header. For a larger project like a book or webpage we will provide a separate document with global information and the individual page YAML headers will be minimal.</p>
+<p>At the top of each <code style="color:blue">.qmd</code> document we create, we will need a YAML header. YAML (<strong>Y</strong>et <strong>A</strong>nother <strong>M</strong>arkup <strong>L</strong>anguage or <strong>Y</strong>AML <strong>A</strong>in’t <strong>M</strong>arkup <strong>L</strong>anguage) is placed at the very top of the document and is used to define the document metadata and output settings.</p>
+<p><strong>For a single document</strong>, like we have here, we will provide all of our information in this YAML header.</p>
+<p><strong>For a larger project</strong>, like a book or webpage we will provide a separate document with global information and the individual page YAML headers will be minimal.</p>
+<blockquote class="blockquote">
 <p>One thing to note about YAML headers: they are <em>fussy</em>. Information within the YAML header must be stored between two lines each containing three dashes. When providing arguments you must provide both parts of the key-value pair, must use nesting where appropriate, and you must pay attention to indentation.</p>
+</blockquote>
 <section id="document-metadata" class="level3">
 <h3 class="anchored" data-anchor-id="document-metadata">Document metadata</h3>
 <p>Arguments are provided in key-value pairs with a specific format.</p>
 <section id="title" class="level4">
 <h4 class="anchored" data-anchor-id="title">Title</h4>
 <p><code>title: "A grand yet succint paper title"</code></p>
-<p>Note that technically you do not need to put the title itself in quotation marks, but you need them if you want to include things a colon (otherwise, the YAML header will attempt to interpret the colon).</p>
+<p>Note that technically you do not need to put the title itself in quotation marks, but you <strong>do</strong> need them if you want to include things <strong>like a colon</strong> (otherwise, the YAML header will attempt to interpret the colon).</p>
 </section>
 <section id="author" class="level4">
 <h4 class="anchored" data-anchor-id="author">Author</h4>
-<p><strong>Exercise: Adding one or more authors</strong></p>
 <p>To list an author on the document, we use the following key-value pair:</p>
-<p><code>author: T.McInnes</code></p>
+<p><code>author: Barbara McClintock</code></p>
 <p>Add your own name as the author of the document, render the document and confirm it has worked.</p>
-<p>Now add the initials of the people sitting next to you (or the intials of the Instructors, if online) as authors. <em>Note</em> - this might not work how you think it will. You may find the authors don’t appear how you expected, or the document may fail to render. This is a good demonstration of how YAML headers can be fussy.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -391,17 +502,17 @@ Adding multiple authors
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>There are two ways for this to work, and more ways for it to fail.</p>
 <p>One way to add authors is to include them on the same line, separated by commas:</p>
-<p><code>author: T.McInnes, McInnes.T</code></p>
+<p><code>author: Barbara McClintock, Marie Curie</code></p>
 <p>Note that in this case, while we can read them as separate authors, it would be more accurate to call this a single author with a long and confusing name.</p>
 <p>The correct way to include multiple authors is to list each author on a separate line under author, with each line starting with a dash:</p>
 <p><code>author:</code></p>
-<p><code>- T.McInnes</code></p>
-<p><code>- McInnes.T</code></p>
-<p>This is an example of nesting, where we are providing multiple input sources under a single key. If we break the format (<em>e.g.,</em> by having author: name on one line and -name on the next line) we will get an error message and the document will not render.</p>
+<p><code>- Barbara McClintock</code></p>
+<p><code>- Marie Curie</code></p>
+<p>This is an example of nesting, where we are providing multiple input sources under a single key. If we break the format (<em>e.g.,</em> by having author: name on one line and -name on the next line) we will get an error message and the document will not render. This is a good demonstration of how YAML headers can be fussy.</p>
 <p>You can also list multiple authors within [], with each author separated by commas.</p>
 </div>
 </div>
@@ -429,6 +540,7 @@ YYYY-MM-DDTHH:mm:ssZ</code></pre>
 <p>For this reason I strongly recommend using one of two options:</p>
 <p><code>date: today</code> The current local date.</p>
 <p><code>date: last-modified</code> The last date the input file was modified.</p>
+<p>Click save, and watch your Preview update.</p>
 </section>
 <section id="what-impact-does-this-have-on-reproducibility" class="level4">
 <h4 class="anchored" data-anchor-id="what-impact-does-this-have-on-reproducibility">What impact does this have on reproducibility?</h4>
@@ -475,6 +587,7 @@ YYYY-MM-DDTHH:mm:ssZ</code></pre>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

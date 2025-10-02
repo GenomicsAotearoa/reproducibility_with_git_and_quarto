@@ -101,6 +101,19 @@ button:hover, .nav-button:hover {
 }
 
 /* Callouts */
+
+/* callout font size */
+.callout-note,
+.callout-tip,
+.callout-warning,
+.callout-important,
+.callout-caution,
+.callout-question {
+  font-size: 1em; /* or your preferred size */
+  padding: 0em;      /* optional: adjust padding as needed */
+}
+
+
 /* Callouts: Lighter than Quarto default colors */
 .callout-note {
     background-color: #FFFFFF;   /* white background for notes */

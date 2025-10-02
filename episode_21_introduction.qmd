@@ -27,7 +27,7 @@ Quarto is a system for producing documents which contain all code, comments from
 
 ## What is Quarto?
 
-Quarto is a system that facilitates the easy creation of documents that wrap and store our code, the outputs, and notes. With a small bit of extra effort when writing our code, Quarto can generate pdfs, word docs, slideshow presentations, and websites. This website is built using Quarto. It is designed for scientific publishing, and works with multiple languages (R, Julia, Python) - the outcome from these code blocks can be easily embedded (*e.g.,* if code produces a figure, that figure will appear in the document). Quarto itself uses "markdown language", and will be familiar for anyone already using RMarkdown. Markdown is meant to be readable even before it's published, which means our day-to-day working documents are not a chore to work with.
+Quarto is a system that facilitates the easy creation of documents that wrap and store our code, the outputs, and notes. With a small bit of extra effort when writing our code, Quarto can generate pdfs, word docs, slideshow presentations, and websites. It is designed for scientific publishing, and works with multiple languages (R, Julia, Python) - the outcome from these code blocks can be easily embedded (*e.g.,* if code produces a figure, that figure will appear in the document). Quarto itself uses "markdown language", and will be familiar for anyone already using RMarkdown. Markdown is meant to be readable even before it's published, which means our day-to-day working documents are not a chore to work with.
 
 Simply, with Quarto, you will add small pieces of code to define headers, insert code blocks, embed links and figures. This code is then rendered into a document for distribution or storage. 
 
@@ -45,19 +45,19 @@ Lots! It's worth noting that we write our document using Quarto's markdown langu
 
 Quarto places a premium on **quality** - the online community of people using quarto are creating stylistic, clear, well-designed documents that emphasise the importance of science communication. 
 
-As an example [this book](https://r4ds.hadley.nz/) was created in Quarto, and by book I mean both the printed version and the website. 
+As an example, the [R For Data Science (2e) book](https://r4ds.hadley.nz/) was created in Quarto -- both the printed version and the website. 
 
 ### How does it work? 
 
 ![The Quarto render process](figures/quartoRender.png)
 
-This visual comes directly from a [Quarto workshop presented at posit::conf(2023)](https://posit-conf-2023.github.io/quarto-r/) by Andrew Bray, Amelia McNamara, Emil Hvitfeldt, and Mouna Belaid. I highly recommend this workshop, which covers a lot of background detail and specifics that we won't have time to go over. 
+This visual comes directly from a [Quarto workshop presented at posit::conf(2023)](https://posit-conf-2023.github.io/quarto-r/) by Andrew Bray, Amelia McNamara, Emil Hvitfeldt, and Mouna Belaid. We highly recommend this workshop, which covers a lot of background detail and specifics that we won't have time to go over. 
 
-In brief, we produce a .qmd file (a Quarto file), which will include some mix of text, code, and the markdown language required to format and control the file. The code can be R, Python, Julia, *etc.,*. The code is converted into output (*e.g.,* figures are generated, sums calculated), and this is then converted into one or more output documents. 
+In brief, we produce a `.qmd`{style="color:blue"} file (a Quarto file), which will include some mix of text, code, and the markdown language required to format and control the file. The code can be R, Python, Julia, *etc.,*. The code is converted into output (*e.g.,* figures are generated, sums calculated), and this is then converted into one or more output documents. 
 
 ### Isn't this just RMarkdown? 
 
-If you are familiar with RMarkdown this will all look and sound familiar, and these systems both aim to capture information and improve reproducibility. In fact, if you have RMarkdown documents you can rename them as .qmd files and they will render. 
+If you are familiar with RMarkdown this will all look and sound familiar, and these systems both aim to capture information and improve reproducibility. In fact, if you have RMarkdown documents you can rename them as `.qmd`{style="color:blue"} files and they will render. 
 
 However, note that RMarkdown is R-specific. Quarto is language agnostic and can be used by people who work in Python. 
 

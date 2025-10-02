@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./git_overview.html" rel="next">
+<link href="./test.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -115,6 +115,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">test styling</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -295,11 +301,22 @@ ul.task-list li input[type="checkbox"] {
 <p><strong><em>For Part Two - Quarto</em></strong></p>
 <p>This workshop <strong>does</strong> cover:</p>
 <ul>
-<li>lorem ipsum</li>
+<li>Basic Quarto document creation, syntax and formatting.</li>
+<li>Embedding an image, generating a table and coding in code blocks.<br>
+</li>
+<li>Basic themes, styles and project dir structure.<br>
+</li>
+<li>Publishing as a webpage using GitHub pages.</li>
 </ul>
 <p>This workshop <strong>does not</strong> cover:</p>
 <ul>
-<li>lorem ipsum</li>
+<li>Using callouts.<br>
+</li>
+<li>Using HTML or CSS syntax in Quarto documents/projects.<br>
+</li>
+<li>Extensive tool integration beyond RStudio (e.g., Jupyter, Visual Studio Code, Netlify, Shiny).<br>
+</li>
+<li>Behind the scenes of Quarto (e.g., knitr execution, pandoc markdown and conversion).</li>
 </ul>
 </section>
 </section>
@@ -323,7 +340,7 @@ Copyright information:
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>All Carpentries instructional material is made available under the Creative Commons Attribution license CC BY 4.0. The material in this workshop is not endorsed by the Carpentries and has been adapted by Genomics Aotearoa for our own teaching purposes.</p>
+<p>All Carpentries instructional material is made available under the Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/">Attribution license CC BY 4.0.</a> The material in this workshop is not endorsed by the Carpentries and has been adapted by Genomics Aotearoa for our own teaching purposes.</p>
 <p>The license information for The Carpentries lesson “Version Control with Git”, from which this workshop was adapted, can be <a href="https://github.com/swcarpentry/git-novice/blob/main/LICENSE.md">found here.</a></p>
 <p>In this workshop, the following episodes were adapted from The Carpentries lesson “Version Control with Git” in the manner stated below:</p>
 <p><strong>Re-used material</strong> (<em>i.e.,</em> almost word-for-word, including images, with minor wording or styling modifications):<br>
@@ -333,11 +350,12 @@ Copyright information:
 - <a href="./episode_05_Push-Github.html">Pushing local changes to GitHub episode</a></p>
 <p><strong>Minimally-adapted material</strong> (<em>i.e.,</em> inspired by stylistic choices and general workflow, but material is primarily developed by Genomics Aotearoa):<br>
 - <a href="./episode_06_Branches-Pull-Merge.html">Branches, pulling and merging episode</a>; continuing with The Carpentries recipe repo theme, but content is developed by Genomics Aotearoa.<br>
-- <a href="./episode_07_Collaborate-Organise.html">Collaborating and organising your workflow episode</a>; content is developed by Genomics Aotearoa.</p>
+- <a href="./episode_07_Collaborate-Organise.html">Collaborating and organising your workflow episode</a>; content is developed by Genomics Aotearoa.<br>
+- <a href="./git_overview.html">Part One - Git overview</a>; content is primarily developed by Genomics Aotearoa, set-up instructions for Git for Windows is copy-pasted from <a href="https://carpentries.github.io/workshop-template/install_instructions/#the-bash-shell">The Carpentries install instructions material.</a></p>
 </div>
 </div>
 </div>
-<p>The Quarto part of this workshop was written by <a href="https://github.com/tylermcinnes/reproducibility_block">Tyler McInnes</a> while he worked for Genomics Aotearoa as a <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/meetTheTeam.html#past-team-members">Bioinformatics Training Coordinator.</a></p>
+<p>The Quarto part of this workshop was written by <a href="https://github.com/tylermcinnes/reproducibility_block">Tyler McInnes</a> while he worked for Genomics Aotearoa as a <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/meetTheTeam.html#past-team-members">Bioinformatics Training Coordinator.</a> Some small modifications have been made from his version to generalise and re-style the material.</p>
 
 
 </section>
@@ -746,8 +764,8 @@ Copyright information:
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./git_overview.html" class="pagination-link" aria-label="Part One - Git">
-        <span class="nav-page-text">Part One - Git</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./test.html" class="pagination-link" aria-label="test styling">
+        <span class="nav-page-text">test styling</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

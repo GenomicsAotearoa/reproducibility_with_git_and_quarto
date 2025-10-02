@@ -44,6 +44,27 @@ stuff in caution
 :::
 
 
+::: {.callout-note appearance="minimal"}
+stuff in note appearance minimal
+:::
+
+::: {.callout-warning appearance="minimal"}
+stuff in warning appearance="minimal"
+:::
+
+::: {.callout-tip appearance="minimal"}
+stuff in tip appearance="minimal"
+:::
+
+::: {.callout-important appearance="minimal"}
+stuff in importnat appearance="minimal"
+:::
+
+::: {.callout-caution appearance="minimal"}
+stuff in caution appearance="minimal"
+:::
+
+
 
 # Header 1
 
