@@ -293,9 +293,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#output-format" id="toc-output-format" class="nav-link" data-scroll-target="#output-format">Output format</a>
   <ul class="collapse">
-  <li><a href="#exercise-exploring-revealjs" id="toc-exercise-exploring-revealjs" class="nav-link" data-scroll-target="#exercise-exploring-revealjs"><strong>Exercise:</strong> Exploring revealjs</a></li>
+  <li><a href="#exercise-exploring-revealjs-2-min" id="toc-exercise-exploring-revealjs-2-min" class="nav-link" data-scroll-target="#exercise-exploring-revealjs-2-min"><strong>Exercise:</strong> Exploring revealjs (2 min)</a></li>
   </ul></li>
-  <li><a href="#global-code-options" id="toc-global-code-options" class="nav-link" data-scroll-target="#global-code-options">Global code options</a></li>
   <li><a href="#useful-features" id="toc-useful-features" class="nav-link" data-scroll-target="#useful-features">Useful features</a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
@@ -317,24 +316,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Go to GitHub, under “Repositories”, click New, give your new repo a name and description.</p>
 <p>We won’t need this beyond today, so you can call it something like <code style="color:blue">my-test-repo</code> if you like. Make sure the “public” box is checked (this should occur by default).</p>
 <p>Click on the green “Code” button, and copy the url for the repo.</p>
-<p>From RStudio, go File &gt; New Project &gt; Version Control &gt; Git. Paste in the repo URL, provide a project directory name, and select the location for the project. Click “Create Project”.</p>
+<p>From RStudio, go <code style="color:black">File &gt; New Project &gt; Version Control &gt; Git</code>. Paste in the repo URL, provide a project directory name, and select the location for the project. Click <code style="color:black">Create Project</code></p>
 <p><img src="images-quarto/quarto-setup-01.png" class="img-fluid" style="width:80.0%"></p>
 </section>
 <section id="first-quarto-doc" class="level2">
 <h2 class="anchored" data-anchor-id="first-quarto-doc">First quarto doc</h2>
 <p>We can now create our first quarto (<code style="color:blue">.qmd</code>) file.</p>
-<p>Under File &gt; New File, click Quarto Document. Alternatively, use the button that looks like a blank page with a white “+” inside a green circle, and select Quarto Document. This will bring up a panel for creating a new quarto document:</p>
+<p>Under <code style="color:black">File &gt; New File</code>, click Quarto Document. Alternatively, use the button that looks like a blank page with a white “+” inside a green circle, and select Quarto Document. This will bring up a panel for creating a new quarto document:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/newQuartoDoc.png" class="img-fluid figure-img"></p>
 <figcaption>New Quarto doc panel</figcaption>
 </figure>
 </div>
-<p>On the left hand side we can see three options: Document, Presentation, and Interactive, and for each of these we can see there are different outputs. We can change these outputs later, but for now, select Document and HTML (this is the recommended format for working in). Give this document a title, something like “Basic About Page”. Before we create the document, we can see a couple of other options: <strong>Engine</strong> (leave this as Knitr), <strong>Editor</strong> (we will keep the visual editor box ticked), and then we can either click <strong>“Create”</strong> or <strong>“Create Empty Document”</strong>. For now, click on <strong>“Create”.</strong></p>
+<p>On the left hand side we can see three options: Document, Presentation, and Interactive, and for each of these we can see there are different outputs. We can change these outputs later, but for now, select Document and HTML (this is the recommended format for working in). Give this document a title, something like “Basic About Page”. Before we create the document, we can see a couple of other options: <strong>Engine</strong> (leave this as Knitr), <strong>Editor</strong> (we will keep the visual editor box ticked), and then we can either click <code style="color:black">Create</code> or <code style="color:black">Create Empty Document</code>. For now, click on <code style="color:black">Create</code></p>
 <p>This creates and opens a new document for us to write in. We can note three things:</p>
 <p>First, at the very top of our document is something called the YAML header. The YAML header is information about the document, and is always contained within two sets of three dashes. The YAML header sets things like the document title, subtitle, author, and the output file, as well as a lot of extra information. We will cover the YAML header in more detail shortly.</p>
-<p>Second, we can see this document is not blank - it comes pre-populated with some information about Quarto and how to run code (if we don’t want to see this information, we could use the “Create Empty Document” button). These are often useful reminders when you are getting started, but once you are more familiar with Quarto you will delete these.</p>
-<p>Third, this <em>already looks like a document</em> - that’s because we are currently in the “Visual” editor mode. We can click on the “Source” button to enter editor mode and see the markdown syntax.</p>
+<p>Second, we can see this document is not blank - it comes pre-populated with some information about Quarto and how to run code (if we don’t want to see this information, we could use the ‘Create Empty Document’ button). These are often useful reminders when you are getting started, but once you are more familiar with Quarto you will delete these.</p>
+<p>Third, this <em>already looks like a document</em> - that’s because we are currently in the ‘Visual’ editor mode. We can click on the ‘Source’ button to enter editor mode and see the markdown syntax.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/visualEditor.png" class="img-fluid figure-img" width="430"></p>
@@ -462,13 +461,16 @@ Hints:
 <section id="save-and-render-document" class="level3">
 <h3 class="anchored" data-anchor-id="save-and-render-document">Save and Render document</h3>
 <p>Save your Quarto file (<code style="color:black">CTRL</code> + <code style="color:black">S</code> or <code style="color:black">CMD</code> + <code style="color:black">S</code>), give it a name if you have not already (<em>e.g.,</em> <code style="color:blue">test-file.qmd</code>) and save it into the directory you made earlier (mine is called <code style="color:blue">my-test-repo</code>).</p>
-<p>Now back in RStudio, click teh ‘Render’ button, which will simultaneously open up a Preview. You can change the Preview settings by clicking the settings button next to the Render button. The Preview can either be viewed in a new window or in a panel in RStudio.</p>
+<p>Now back in RStudio, click the ‘Render’ button, which will simultaneously open up a Preview. You can change the Preview settings by clicking the settings button next to the Render button. The Preview can either be viewed in a new window or in a panel in RStudio.</p>
 <p><img src="images-quarto/quarto-render-01.png" class="img-fluid" style="width:70.0%"></p>
 <p>Alternatively, you can <code>preview</code> and <code>render</code> a document on the command line (<em>e.g.,</em> in terminal in RStudio, type):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview test-file.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This should also open a Preview window automatically in your browser.</p>
 <p>As you make changes on your <code style="color:blue">.qmd</code> file, every time you save the document the Preview will update.</p>
-<p>Hit <code style="color:black">CTRL</code> + <code style="color:black">C</code> on terminal to exit preview mode.</p>
-<p><code>quarto preview</code> is great for live viewing, but we always need to generate our final output with <code>quarto render</code>. More on rendering later in this workshop!</p>
+<p>Hit <code style="color:black">CTRL</code> + <code style="color:black">C</code> back in terminal to exit preview mode.</p>
+<blockquote class="blockquote">
+<p>Note: <code>quarto preview</code> is great for live viewing, but we always need to generate our final output with <code>quarto render</code>. More on rendering later in this workshop!</p>
+</blockquote>
 </section>
 </section>
 <section id="yaml-headers" class="level2">
@@ -485,13 +487,13 @@ Hints:
 <section id="title" class="level4">
 <h4 class="anchored" data-anchor-id="title">Title</h4>
 <p><code>title: "A grand yet succint paper title"</code></p>
-<p>Note that technically you do not need to put the title itself in quotation marks, but you <strong>do</strong> need them if you want to include things <strong>like a colon</strong> (otherwise, the YAML header will attempt to interpret the colon).</p>
+<p>Note that technically you do not need to put the title itself in quotation marks, but you <strong>do</strong> need them if you want to include things like a <strong>colon</strong> (otherwise, the YAML header will attempt to interpret the colon).</p>
 </section>
 <section id="author" class="level4">
 <h4 class="anchored" data-anchor-id="author">Author</h4>
 <p>To list an author on the document, we use the following key-value pair:</p>
 <p><code>author: Barbara McClintock</code></p>
-<p>Add your own name as the author of the document, render the document and confirm it has worked.</p>
+<p>Add your own name as the author of the document, render or preview the document and confirm it has worked.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -513,7 +515,8 @@ Adding multiple authors
 <p><code>- Barbara McClintock</code></p>
 <p><code>- Marie Curie</code></p>
 <p>This is an example of nesting, where we are providing multiple input sources under a single key. If we break the format (<em>e.g.,</em> by having author: name on one line and -name on the next line) we will get an error message and the document will not render. This is a good demonstration of how YAML headers can be fussy.</p>
-<p>You can also list multiple authors within [], with each author separated by commas.</p>
+<p>You can also list multiple authors within [], with each author separated by commas:</p>
+<p><code>author: [Barbara McClintock, Marie Curie]</code></p>
 </div>
 </div>
 </div>
@@ -553,19 +556,33 @@ YYYY-MM-DDTHH:mm:ssZ</code></pre>
 <p>When we want to output our document as a single format we use the basic key-value pair:</p>
 <p><code>format: html</code></p>
 <p>We can easily change the format after rendering to create a new document which duplicates the format <em>e.g.,</em> you could generate a slideshow and a static pdf/html as a backup (this is recommended if you might be presenting on a shared machine).</p>
-<section id="exercise-exploring-revealjs" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-exploring-revealjs"><strong>Exercise:</strong> Exploring revealjs</h4>
-<p>Add a new heading in the .qmd document (either set the line to Header 2 in Visual Editor or type two # symbols) and call it “Section 3”.</p>
-<p>Change the format of the output from html to “revealjs” and render.</p>
-<p>Explore the revealjs (slideshow) format.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+PDF format
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Quarto can also render your documents into PDF, but you will need to first install LaTeX, if you do not already have it.</p>
+<p>In r, you can install TinyTeX:</p>
+<p><code>install.packages("tinytex")</code><br>
+<code>tinytex::install_tinytex()</code></p>
+<p>Or you can install full distribution like TeX Live (Linux), MacTeX (Mac), MikTeX (Windows).</p>
+<p>Then you can set your YAML header to <code>format: pdf</code> and click render.</p>
+</div>
+</div>
+</div>
+<section id="exercise-exploring-revealjs-2-min" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-exploring-revealjs-2-min"><strong>Exercise:</strong> Exploring revealjs (2 min)</h4>
+<p>Add a new heading in the <code style="color:blue">.qmd</code> document (either set the line to Header 2 in Visual Editor or type two # symbols) and call it “Section 3”. Add in more sections if you like!</p>
+<p>Change the format of the output from <code>html</code> to <code>revealjs</code> and render.</p>
+<p>Explore the revealjs (slideshow) format! 🤠</p>
 </section>
-</section>
-<section id="global-code-options" class="level3">
-<h3 class="anchored" data-anchor-id="global-code-options">Global code options</h3>
-<p>Code options included in the YAML header are global - they will be applied to all code cells in this document. As we will cover below, individual code cells (chunks or blocks of code) can be controlled separately. Some useful global options we might want to set in the YAML header are:</p>
-<p><code>code-fold: true</code></p>
-<p><code>code-tools: true</code></p>
-<p>When code-fold is set to true, all code blocks will be automatically collapsed. This is useful when you want code to be available but would otherwise distract from the flow of the document <em>e.g.,</em> when teaching/training, presenting at lab meetings. Code-tools provides a simple button at the top of the html that can then be used to toggle all code to open/closed (an easy ‘reset’ of all code blocks).</p>
 </section>
 <section id="useful-features" class="level3">
 <h3 class="anchored" data-anchor-id="useful-features">Useful features</h3>
@@ -574,16 +591,23 @@ YYYY-MM-DDTHH:mm:ssZ</code></pre>
 <p><code>bibliography: references.bib</code> autogenerates a bibliography from a bib file.</p>
 <p><code>csl: nature.csl</code> sets the citation style.</p>
 <p><code>number-sections: true</code> adds auto-numbering for each section.</p>
+<p>… and many more!</p>
+<ul>
+<li>See <a href="https://quarto.org/docs/output-formats/html-basics.html">HTML Basics at quarto.org</a> for ways to format the HTML output in the YAML header.<br>
+</li>
+<li>See <a href="https://quarto.org/docs/output-formats/pdf-basics.html">PDF Basics at quarto.org</a> for ways to format the PDF output in the YAML header.</li>
+</ul>
 </section>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <p>What have we covered?</p>
 <ul>
-<li><p>Initiating a .qmd file.</p></li>
+<li><p>Initiating a <code style="color:blue">.qmd</code> file.</p></li>
 <li><p>The Visual and Source Editor windows.</p></li>
-<li><p>An introduction to the qmd syntax: italics, bold, hyperlinks, headings.</p></li>
-<li><p>The YAML header controls global options, such as author/date/document type metadata as well as a whole series of additional tools. If you are creating a single document (pdf, slideshow, standalone HTML) all of this information will be within the header at the top of the document. If you are creating a complex project (like the webpage you are reading now) most of that information will be stored in a separate document which we will cover later. As you will see below, you can over-ride the global options for certain blocks of code.</p></li>
+<li><p>An introduction to the qmd syntax: <em>italics</em>, <strong>bold</strong>, <u>hyperlinks</u>, # headings.</p></li>
+<li><p>The YAML header controls global options, such as author/date/document type metadata, as well as a whole series of additional formatting tools.</p></li>
+<li><p>Creating a single output document (pdf, slideshow, standalone HTML) from the YAML header.</p></li>
 </ul>
 
 

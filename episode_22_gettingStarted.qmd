@@ -15,7 +15,7 @@ We won't need this beyond today, so you can call it something like `my-test-repo
 
 Click on the green "Code" button, and copy the url for the repo. 
 
-From RStudio, go File > New Project > Version Control > Git. Paste in the repo URL, provide a project directory name, and select the location for the project. Click "Create Project". 
+From RStudio, go `File > New Project > Version Control > Git`{style="color:black"}. Paste in the repo URL, provide a project directory name, and select the location for the project. Click `Create Project`{style="color:black"} 
 
 ![](images-quarto/quarto-setup-01.png){width=80%}
 
@@ -23,19 +23,19 @@ From RStudio, go File > New Project > Version Control > Git. Paste in the repo U
 
 We can now create our first quarto (`.qmd`{style="color:blue"}) file. 
 
-Under File > New File, click Quarto Document. Alternatively, use the button that looks like a blank page with a white "+" inside a green circle, and select Quarto Document. This will bring up a panel for creating a new quarto document:
+Under `File > New File`{style="color:black"}, click Quarto Document. Alternatively, use the button that looks like a blank page with a white "+" inside a green circle, and select Quarto Document. This will bring up a panel for creating a new quarto document:
 
 ![New Quarto doc panel](figures/newQuartoDoc.png)
 
-On the left hand side we can see three options: Document, Presentation, and Interactive, and for each of these we can see there are different outputs. We can change these outputs later, but for now, select Document and HTML (this is the recommended format for working in). Give this document a title, something like "Basic About Page". Before we create the document, we can see a couple of other options: **Engine** (leave this as Knitr), **Editor** (we will keep the visual editor box ticked), and then we can either click **"Create"** or **"Create Empty Document"**. For now, click on **"Create".**
+On the left hand side we can see three options: Document, Presentation, and Interactive, and for each of these we can see there are different outputs. We can change these outputs later, but for now, select Document and HTML (this is the recommended format for working in). Give this document a title, something like "Basic About Page". Before we create the document, we can see a couple of other options: **Engine** (leave this as Knitr), **Editor** (we will keep the visual editor box ticked), and then we can either click `Create`{style="color:black"} or `Create Empty Document`{style="color:black"}. For now, click on `Create`{style="color:black"}
 
 This creates and opens a new document for us to write in. We can note three things:
 
 First, at the very top of our document is something called the YAML header. The YAML header is information about the document, and is always contained within two sets of three dashes. The YAML header sets things like the document title, subtitle, author, and the output file, as well as a lot of extra information. We will cover the YAML header in more detail shortly.
 
-Second, we can see this document is not blank - it comes pre-populated with some information about Quarto and how to run code (if we don't want to see this information, we could use the "Create Empty Document" button). These are often useful reminders when you are getting started, but once you are more familiar with Quarto you will delete these. 
+Second, we can see this document is not blank - it comes pre-populated with some information about Quarto and how to run code (if we don't want to see this information, we could use the 'Create Empty Document' button). These are often useful reminders when you are getting started, but once you are more familiar with Quarto you will delete these. 
 
-Third, this *already looks like a document* - that's because we are currently in the "Visual" editor mode. We can click on the "Source" button to enter editor mode and see the markdown syntax.
+Third, this *already looks like a document* - that's because we are currently in the 'Visual' editor mode. We can click on the 'Source' button to enter editor mode and see the markdown syntax.
 
 ![Visual Editor mode is active](figures/visualEditor.png){width=430}
 
@@ -131,7 +131,7 @@ If you are writing lists manually (*i.e.,* not using the Visual editor option) y
 
 Save your Quarto file (`CTRL`{style="color:black"} + `S`{style="color:black"} or `CMD`{style="color:black"} + `S`{style="color:black"}), give it a name if you have not already (*e.g.,* `test-file.qmd`{style="color:blue"}) and save it into the directory you made earlier (mine is called `my-test-repo`{style="color:blue"}).
 
-Now back in RStudio, click teh 'Render' button, which will simultaneously open up a Preview. You can change the Preview settings by clicking the settings button next to the Render button. The Preview can either be viewed in a new window or in a panel in RStudio. 
+Now back in RStudio, click the 'Render' button, which will simultaneously open up a Preview. You can change the Preview settings by clicking the settings button next to the Render button. The Preview can either be viewed in a new window or in a panel in RStudio. 
 
 ![](images-quarto/quarto-render-01.png){width=70%}
 
@@ -140,11 +140,14 @@ Alternatively, you can `preview` and `render` a document on the command line (*e
 ```bash
 quarto preview test-file.qmd
 ```
+
+This should also open a Preview window automatically in your browser.
+
 As you make changes on your `.qmd`{style="color:blue"} file, every time you save the document the Preview will update. 
 
-Hit `CTRL`{style="color:black"} + `C`{style="color:black"} on terminal to exit preview mode.
+Hit `CTRL`{style="color:black"} + `C`{style="color:black"} back in terminal to exit preview mode.
 
-`quarto preview` is great for live viewing, but we always need to generate our final output with `quarto render`. More on rendering later in this workshop!
+> Note: `quarto preview` is great for live viewing, but we always need to generate our final output with `quarto render`. More on rendering later in this workshop!
 
 
 
@@ -166,7 +169,7 @@ Arguments are provided in key-value pairs with a specific format.
 
 `title: "A grand yet succint paper title"`
 
-Note that technically you do not need to put the title itself in quotation marks, but you **do** need them if you want to include things **like a colon** (otherwise, the YAML header will attempt to interpret the colon). 
+Note that technically you do not need to put the title itself in quotation marks, but you **do** need them if you want to include things like a **colon** (otherwise, the YAML header will attempt to interpret the colon). 
 
 #### Author
 
@@ -175,7 +178,7 @@ To list an author on the document, we use the following key-value pair:
 
 `author: Barbara McClintock`
 
-Add your own name as the author of the document, render the document and confirm it has worked.
+Add your own name as the author of the document, render or preview the document and confirm it has worked.
 
 ::: {.callout-tip collapse="true"}
 ## Adding multiple authors
@@ -198,7 +201,9 @@ The correct way to include multiple authors is to list each author on a separate
 
 This is an example of nesting, where we are providing multiple input sources under a single key. If we break the format (*e.g.,* by having author: name on one line and -name on the next line) we will get an error message and the document will not render. This is a good demonstration of how YAML headers can be fussy.
 
-You can also list multiple authors within \[\], with each author separated by commas. 
+You can also list multiple authors within \[\], with each author separated by commas:
+
+`author: [Barbara McClintock, Marie Curie]` 
 
 
 :::
@@ -255,26 +260,32 @@ When we want to output our document as a single format we use the basic key-valu
 
 `format: html`
 
-We can easily change the format after rendering to create a new document which duplicates the format *e.g.,* you could generate a slideshow and a static pdf/html as a backup (this is recommended if you might be presenting on a shared machine). 
+We can easily change the format after rendering to create a new document which duplicates the format *e.g.,* you could generate a slideshow and a static pdf/html as a backup (this is recommended if you might be presenting on a shared machine).
 
-#### **Exercise:** Exploring revealjs
+::: {.callout-note collapse="true"}
+# PDF format
 
-Add a new heading in the .qmd document (either set the line to Header 2 in Visual Editor or type two \# symbols) and call it "Section 3".
+Quarto can also render your documents into PDF, but you will need to first install LaTeX, if you do not already have it.
 
-Change the format of the output from html to "revealjs" and render. 
+In r, you can install TinyTeX:
 
-Explore the revealjs (slideshow) format. 
+`install.packages("tinytex")`  
+`tinytex::install_tinytex()`
 
+Or you can install full distribution like TeX Live (Linux), MacTeX (Mac), MikTeX (Windows).
 
-### Global code options
+Then you can set your YAML header to `format: pdf` and click render.
 
-Code options included in the YAML header are global - they will be applied to all code cells in this document. As we will cover below, individual code cells (chunks or blocks of code) can be controlled separately. Some useful global options we might want to set in the YAML header are:
+:::
 
-`code-fold: true`
+#### **Exercise:** Exploring revealjs (2 min)
 
-`code-tools: true`
+Add a new heading in the `.qmd`{style="color:blue"} document (either set the line to Header 2 in Visual Editor or type two \# symbols) and call it "Section 3". Add in more sections if you like!
 
-When code-fold is set to true, all code blocks will be automatically collapsed. This is useful when you want code to be available but would otherwise distract from the flow of the document *e.g.,* when teaching/training, presenting at lab meetings. Code-tools provides a simple button at the top of the html that can then be used to toggle all code to open/closed (an easy 'reset' of all code blocks). 
+Change the format of the output from `html` to `revealjs` and render. 
+
+Explore the revealjs (slideshow) format! 🤠  
+
 
 ### Useful features
 
@@ -288,16 +299,23 @@ There are other useful features we can control through the YAML header. Some exa
 
 `number-sections: true` adds auto-numbering for each section. 
 
+... and many more! 
+
+* See [HTML Basics at quarto.org](https://quarto.org/docs/output-formats/html-basics.html) for ways to format the HTML output in the YAML header.  
+* See [PDF Basics at quarto.org](https://quarto.org/docs/output-formats/pdf-basics.html) for ways to format the PDF output in the YAML header.    
+
 
 
 ## Summary
 
 What have we covered?
 
-- Initiating a .qmd file.
+- Initiating a `.qmd`{style="color:blue"} file.
 
 - The Visual and Source Editor windows. 
 
-- An introduction to the qmd syntax: italics, bold, hyperlinks, headings.
+- An introduction to the qmd syntax: *italics*, **bold**, <u>hyperlinks</u>, # headings.
 
-- The YAML header controls global options, such as author/date/document type metadata as well as a whole series of additional tools. If you are creating a single document (pdf, slideshow, standalone HTML) all of this information will be within the header at the top of the document. If you are creating a complex project (like the webpage you are reading now) most of that information will be stored in a separate document which we will cover later. As you will see below, you can over-ride the global options for certain blocks of code.
+- The YAML header controls global options, such as author/date/document type metadata, as well as a whole series of additional formatting tools. 
+
+- Creating a single output document (pdf, slideshow, standalone HTML) from the YAML header. 

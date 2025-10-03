@@ -7,65 +7,72 @@ toc: true
 
 The aims of this section are to:
 
-- Learn the fundamentals of code cells in Quarto documents.
+- Learn the fundamentals of code cells in Quarto documents.  
+- Become familiar with `inline coding.`   
+- Generate an `html`{style="color:blue"} document with well-documented code and embedded output.  
+- Reinforce and expand the syntax skills from the previous episode and learn to apply good commenting/documentation habits when working in Quarto.  
 
-- Become familiar with inline coding. 
-
-- Generate an html document with well-documented code and embedded output.
-
-- Reinforce and expand the syntax skills from the previous episode.
-
-### Learning Objectives 
-
-By the end of this section you should be able to:
-
-- Write and execute code chunks.  
-- Use inline code to create dynamic content.  
-- Create an HTML report from your .qmd file. 
-- Apply good commenting/documentation habits when working in Quarto.  
 
 
 ## Code cells
 
-Code cells are the 'working unit' of code within Quarto. Each code cell will be evaluated and output will be embedded into the document immediately below the code cell. For this reason, it is worth thinking about the size and organisation of the code cell. A reasonable code cell might include loading all the libraries you will use in the analysis, or the generation of a single figure. 
+Code cells are the "working unit" of code within Quarto. Each code cell will be evaluated and output will be embedded into the document immediately below the code cell. For this reason, it is worth thinking about the size and organisation of the code cell. A reasonable code cell might include loading all the libraries you will use in the analysis, or the generation of a single figure. 
 
 When we want to embed code we do so with the use of the \` ("backtick"). Three backticks, followed by a curly bracket, and a symbol for the language our code will be in, signifies the start of a code block. We end the code block with three backticks. When we are within a code cell we can run any line of code, just the same as we would with a basic R markdown or R script document. Code cells are automatically executed as part of the rendering process. 
 
 ![R Code cell](figures/codeChunk.png)
 
-*Note:* In RMarkdown we call these 'code chunks' and in Quarto they are referred to as code cells. 
+> Note: In RMarkdown we call these "code chunks" and in Quarto they are referred to as "code cells". 
 
 We can also insert a code cell using an in-built button in RStudio (the "+" and letter "C" in a green box):
 
 ![Insert New Code cell button](figures/newCodeChunkButton.png){width=400}
 
-There are also keyboard shortcuts: shift+command+I for mac, or windows+alt+I for a Windows machine. 
+There are also keyboard shortcuts: `shift`{style="color:black"} + `command`{style="color:black"} + `I`{style="color:black"} for mac, or `windows`{style="color:black"} + `alt`{style="color:black"} + `I`{style="color:black"} for a Windows machine. 
 
-### Exercise
+#### Exercise: Insert a code cell (5 min)
 
 ```{r}
+#| message: false
 #| echo: false
 library(palmerpenguins)
 ```
 
-Create a new quarto document (File > New File > Quarto Document) and give it the title "Code in Quarto". 
+Create a new quarto document `(File > New File > Quarto Document)`{style="color:black"}, give it the title "Code in Quarto" and select `Create Empty Document`{style="color:black"}
 
-Highlight and delete everything below the YAML header, then insert a new R code chunk (*e.g.,* with the chunk option in Visual editor, the keyboard shortcut, or by manually adding backticks and curly braces in the Source editor).
+Insert a new R code cell. You do this by either:  
 
-Within the code chunk add the two lines: 
+* Using the new code cell button in Visual editor (click the “+” and letter “C” in a green box)  
+* Manually adding backticks and curly braces in the Source editor  
+* Using keyboard shortcuts  
+
+In 'Source', it would now look like this:  
+
+![](images-quarto/quarto-codecell-01.png)
 
 
-`library(palmerpenguins)`
+Within the code chunk add these two lines: 
 
-`head(penguins)`
+```{r}
+#| message: false
+#| output: false
+library(palmerpenguins) 
+head(penguins) 
+```
 
-*Note* the palmerpenguins R package has a built-in object called penguins, which is what we are viewing with the head function.
+Also add in comments (this is good reproducibility practise!), for example:  
+```{r}
+# this function loads the library
+# this shows first 6 lines of the penguin dataframe
+```
 
-Within the code chunk use the \# symbol to add comments that explain what each line of code is doing.
+> Note: the palmerpenguins R package has a built-in object called penguins, which is what we are viewing with the head function.
 
 Render the document. You may be prompted to save the file first. 
 
-**Because code cells are executed during rendering they need to work.** For example, if you do not have the palmerpenguins package installed, this cell cannot successfully execute and the render process will fail. Using the \# symbol within a code cell will cause that line of text to be 'commented out' (*i.e.,* it will be interpreted as plain text, rather than code). 
+**Because code cells are executed during rendering, they need to work!** 
+
+For example, if you do not have the palmerpenguins package installed, this cell cannot successfully execute and the render process will fail. Using the `#`{style="color:green"} symbol within a code cell will cause that line of text to be 'commented out' (*i.e.,* it will be interpreted as plain text, rather than code). 
 
 In the output document you should see both the code *and* the output of that code - in this case, the first six rows of the penguin object:
 
@@ -77,40 +84,55 @@ head(penguins)
 
 ## Code cell options
 
-Within each code cell we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code cell with \#\| (called the hash pipe). 
+Within each code cell we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code cell with `#|`{style="color:green"} (called the hash pipe). 
+
+
+### Global code options
+
+Code options included in the YAML header are global - they will be applied to all code cells in this document. As we will cover below, individual code cells (chunks or blocks of code) can be controlled separately. 
+
+Some useful global options we might want to set in the YAML header are:
+
+`code-fold: true`
+
+`code-tools: true`
+
+When `code-fold` is set to `true`, all code blocks will be automatically collapsed. This is useful when you want code to be available but would otherwise distract from the flow of the document *e.g.,* when teaching/training, presenting at lab meetings. `code-tools` provides a simple button at the top of the html that can then be used to toggle all code to open/closed (an easy 'reset' of all code blocks). 
 
 #### Echo and Eval
 
-Here we will use the **echo: false** command to hide the R code itself from the final doc, while the output is still displayed:
+Here we will use the `#| echo: false` command to hide the R code itself from the final doc, while the output is still displayed.
+
+The code cell looks like this:
+
+![](images-quarto/quarto-codecell-02.png)
+
+But rendered document shows only the executed code embedded into the document, like this:
+
 ```{r}
 #| echo: false
 
 tail(penguins)
 ```
 
-Note that hash pipe arguments are *not* displayed - this makes code cleaner in the document, but it does make it difficult to demonstrate or teach. The drop-down note below has a figure to demonstrate the hash pipe. 
+Note that hash pipe arguments are *not* displayed!
 
-::: {.callout-note collapse="true"}
-# What is happening above?
+Alternatively, we can display the code but not the output with `#| eval: false` 
 
-In the qmd file used to build the website you are looking at right now, the code above reads:
+When eval is set to false we see the code used but the code is not evaluated and no output is embedded into the final document. This is useful for when you want to demonstrate code but not run something that could take a long time or you do not want to over-write the original file. 
 
-![The hash pipe](figures/hashpipe.png)
+The code cell looks like this:
 
+![](images-quarto/quarto-codecell-03.png)
 
-echo: false means the code itself (`tail(penguins)`) will not be displayed, but the code is still executed and the output embedded into the document.
-:::
-
-Alternatively, we can display the code but not the output with **\#\| eval: false**. When eval is set to false we see the code used but the code is not evaluated and no output is embedded into the final document. This is useful for when you want to demonstrate code but not run something that could take a long time or you do not want to over-write the original file. 
+And the rendered document looks like this:
 
 ```{r}
-#| eval: false
-
 #| eval: false
 tail(penguins)
 ```
 
-**Note** although the the hashpipe and key-value statement is not normally visible, I've made it visible here by including the line twice in the .qmd document.
+Now see for yourself! Try using `#| eval: false` and `#| echo: false` and render the document.
 
 
 #### Cross-referencing

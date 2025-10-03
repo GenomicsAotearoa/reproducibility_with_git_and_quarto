@@ -269,19 +269,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#aims" id="toc-aims" class="nav-link active" data-scroll-target="#aims">Aims</a>
-  <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  </ul></li>
+  <li><a href="#aims" id="toc-aims" class="nav-link active" data-scroll-target="#aims">Aims</a></li>
   <li><a href="#code-cells" id="toc-code-cells" class="nav-link" data-scroll-target="#code-cells">Code cells</a>
   <ul>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
+  <li><a href="#exercise-insert-a-code-cell-5-min" id="toc-exercise-insert-a-code-cell-5-min" class="nav-link" data-scroll-target="#exercise-insert-a-code-cell-5-min">Exercise: Insert a code cell (5 min)</a></li>
   </ul></li>
   <li><a href="#code-cell-options" id="toc-code-cell-options" class="nav-link" data-scroll-target="#code-cell-options">Code cell options</a>
   <ul>
+  <li><a href="#global-code-options" id="toc-global-code-options" class="nav-link" data-scroll-target="#global-code-options">Global code options</a>
+  <ul class="collapse">
   <li><a href="#echo-and-eval" id="toc-echo-and-eval" class="nav-link" data-scroll-target="#echo-and-eval">Echo and Eval</a></li>
   <li><a href="#cross-referencing" id="toc-cross-referencing" class="nav-link" data-scroll-target="#cross-referencing">Cross-referencing</a></li>
   <li><a href="#warnings" id="toc-warnings" class="nav-link" data-scroll-target="#warnings">Warnings</a></li>
+  </ul></li>
   <li><a href="#set-figure-dimensions" id="toc-set-figure-dimensions" class="nav-link" data-scroll-target="#set-figure-dimensions">Set figure dimensions</a></li>
   </ul></li>
   <li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code">Inline code</a>
@@ -322,27 +322,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="aims">Aims</h2>
 <p>The aims of this section are to:</p>
 <ul>
-<li><p>Learn the fundamentals of code cells in Quarto documents.</p></li>
-<li><p>Become familiar with inline coding.</p></li>
-<li><p>Generate an html document with well-documented code and embedded output.</p></li>
-<li><p>Reinforce and expand the syntax skills from the previous episode.</p></li>
-</ul>
-<section id="learning-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
-<p>By the end of this section you should be able to:</p>
-<ul>
-<li>Write and execute code chunks.<br>
+<li>Learn the fundamentals of code cells in Quarto documents.<br>
 </li>
-<li>Use inline code to create dynamic content.<br>
+<li>Become familiar with <code>inline coding.</code><br>
 </li>
-<li>Create an HTML report from your .qmd file.</li>
-<li>Apply good commenting/documentation habits when working in Quarto.</li>
+<li>Generate an <code style="color:blue">html</code> document with well-documented code and embedded output.<br>
+</li>
+<li>Reinforce and expand the syntax skills from the previous episode and learn to apply good commenting/documentation habits when working in Quarto.</li>
 </ul>
-</section>
 </section>
 <section id="code-cells" class="level2">
 <h2 class="anchored" data-anchor-id="code-cells">Code cells</h2>
-<p>Code cells are the ‘working unit’ of code within Quarto. Each code cell will be evaluated and output will be embedded into the document immediately below the code cell. For this reason, it is worth thinking about the size and organisation of the code cell. A reasonable code cell might include loading all the libraries you will use in the analysis, or the generation of a single figure.</p>
+<p>Code cells are the “working unit” of code within Quarto. Each code cell will be evaluated and output will be embedded into the document immediately below the code cell. For this reason, it is worth thinking about the size and organisation of the code cell. A reasonable code cell might include loading all the libraries you will use in the analysis, or the generation of a single figure.</p>
 <p>When we want to embed code we do so with the use of the ` (“backtick”). Three backticks, followed by a curly bracket, and a symbol for the language our code will be in, signifies the start of a code block. We end the code block with three backticks. When we are within a code cell we can run any line of code, just the same as we would with a basic R markdown or R script document. Code cells are automatically executed as part of the rendering process.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -350,7 +341,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption>R Code cell</figcaption>
 </figure>
 </div>
-<p><em>Note:</em> In RMarkdown we call these ‘code chunks’ and in Quarto they are referred to as code cells.</p>
+<blockquote class="blockquote">
+<p>Note: In RMarkdown we call these “code chunks” and in Quarto they are referred to as “code cells”.</p>
+</blockquote>
 <p>We can also insert a code cell using an in-built button in RStudio (the “+” and letter “C” in a green box):</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -358,29 +351,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption>Insert New Code cell button</figcaption>
 </figure>
 </div>
-<p>There are also keyboard shortcuts: shift+command+I for mac, or windows+alt+I for a Windows machine.</p>
-<section id="exercise" class="level3">
-<h3 class="anchored" data-anchor-id="exercise">Exercise</h3>
+<p>There are also keyboard shortcuts: <code style="color:black">shift</code> + <code style="color:black">command</code> + <code style="color:black">I</code> for mac, or <code style="color:black">windows</code> + <code style="color:black">alt</code> + <code style="color:black">I</code> for a Windows machine.</p>
+<section id="exercise-insert-a-code-cell-5-min" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-insert-a-code-cell-5-min">Exercise: Insert a code cell (5 min)</h4>
+<p>Create a new quarto document <code style="color:black">(File &gt; New File &gt; Quarto Document)</code>, give it the title “Code in Quarto” and select <code style="color:black">Create Empty Document</code></p>
+<p>Insert a new R code cell. You do this by either:</p>
+<ul>
+<li>Using the new code cell button in Visual editor (click the “+” and letter “C” in a green box)<br>
+</li>
+<li>Manually adding backticks and curly braces in the Source editor<br>
+</li>
+<li>Using keyboard shortcuts</li>
+</ul>
+<p>In ‘Source’, it would now look like this:</p>
+<p><img src="images-quarto/quarto-codecell-01.png" class="img-fluid"></p>
+<p>Within the code chunk add these two lines:</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'palmerpenguins'</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:datasets':
-
-    penguins, penguins_raw</code></pre>
+<p>Also add in comments (this is good reproducibility practise!), for example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this function loads the library</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this shows first 6 lines of the penguin dataframe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p>Create a new quarto document (File &gt; New File &gt; Quarto Document) and give it the title “Code in Quarto”.</p>
-<p>Highlight and delete everything below the YAML header, then insert a new R code chunk (<em>e.g.,</em> with the chunk option in Visual editor, the keyboard shortcut, or by manually adding backticks and curly braces in the Source editor).</p>
-<p>Within the code chunk add the two lines:</p>
-<p><code>library(palmerpenguins)</code></p>
-<p><code>head(penguins)</code></p>
-<p><em>Note</em> the palmerpenguins R package has a built-in object called penguins, which is what we are viewing with the head function.</p>
-<p>Within the code chunk use the # symbol to add comments that explain what each line of code is doing.</p>
+<blockquote class="blockquote">
+<p>Note: the palmerpenguins R package has a built-in object called penguins, which is what we are viewing with the head function.</p>
+</blockquote>
 <p>Render the document. You may be prompted to save the file first.</p>
-<p><strong>Because code cells are executed during rendering they need to work.</strong> For example, if you do not have the palmerpenguins package installed, this cell cannot successfully execute and the render process will fail. Using the # symbol within a code cell will cause that line of text to be ‘commented out’ (<em>i.e.,</em> it will be interpreted as plain text, rather than code).</p>
+<p><strong>Because code cells are executed during rendering, they need to work!</strong></p>
+<p>For example, if you do not have the palmerpenguins package installed, this cell cannot successfully execute and the render process will fail. Using the <code style="color:green">#</code> symbol within a code cell will cause that line of text to be ‘commented out’ (<em>i.e.,</em> it will be interpreted as plain text, rather than code).</p>
 <p>In the output document you should see both the code <em>and</em> the output of that code - in this case, the first six rows of the penguin object:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
@@ -403,10 +403,20 @@ Attaching package: 'palmerpenguins'</code></pre>
 </section>
 <section id="code-cell-options" class="level2">
 <h2 class="anchored" data-anchor-id="code-cell-options">Code cell options</h2>
-<p>Within each code cell we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code cell with #| (called the hash pipe).</p>
+<p>Within each code cell we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code cell with <code style="color:green">#|</code> (called the hash pipe).</p>
+<section id="global-code-options" class="level3">
+<h3 class="anchored" data-anchor-id="global-code-options">Global code options</h3>
+<p>Code options included in the YAML header are global - they will be applied to all code cells in this document. As we will cover below, individual code cells (chunks or blocks of code) can be controlled separately.</p>
+<p>Some useful global options we might want to set in the YAML header are:</p>
+<p><code>code-fold: true</code></p>
+<p><code>code-tools: true</code></p>
+<p>When <code>code-fold</code> is set to <code>true</code>, all code blocks will be automatically collapsed. This is useful when you want code to be available but would otherwise distract from the flow of the document <em>e.g.,</em> when teaching/training, presenting at lab meetings. <code>code-tools</code> provides a simple button at the top of the html that can then be used to toggle all code to open/closed (an easy ‘reset’ of all code blocks).</p>
 <section id="echo-and-eval" class="level4">
 <h4 class="anchored" data-anchor-id="echo-and-eval">Echo and Eval</h4>
-<p>Here we will use the <strong>echo: false</strong> command to hide the R code itself from the final doc, while the output is still displayed:</p>
+<p>Here we will use the <code>#| echo: false</code> command to hide the R code itself from the final doc, while the output is still displayed.</p>
+<p>The code cell looks like this:</p>
+<p><img src="images-quarto/quarto-codecell-02.png" class="img-fluid"></p>
+<p>But rendered document shows only the executed code embedded into the document, like this:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
@@ -421,36 +431,16 @@ Attaching package: 'palmerpenguins'</code></pre>
 # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 </div>
-<p>Note that hash pipe arguments are <em>not</em> displayed - this makes code cleaner in the document, but it does make it difficult to demonstrate or teach. The drop-down note below has a figure to demonstrate the hash pipe.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-What is happening above?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>In the qmd file used to build the website you are looking at right now, the code above reads:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/hashpipe.png" class="img-fluid figure-img"></p>
-<figcaption>The hash pipe</figcaption>
-</figure>
-</div>
-<p>echo: false means the code itself (<code>tail(penguins)</code>) will not be displayed, but the code is still executed and the output embedded into the document.</p>
-</div>
-</div>
-</div>
-<p>Alternatively, we can display the code but not the output with <strong>#| eval: false</strong>. When eval is set to false we see the code used but the code is not evaluated and no output is embedded into the final document. This is useful for when you want to demonstrate code but not run something that could take a long time or you do not want to over-write the original file.</p>
+<p>Note that hash pipe arguments are <em>not</em> displayed!</p>
+<p>Alternatively, we can display the code but not the output with <code>#| eval: false</code></p>
+<p>When eval is set to false we see the code used but the code is not evaluated and no output is embedded into the final document. This is useful for when you want to demonstrate code but not run something that could take a long time or you do not want to over-write the original file.</p>
+<p>The code cell looks like this:</p>
+<p><img src="images-quarto/quarto-codecell-03.png" class="img-fluid"></p>
+<p>And the rendered document looks like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Note</strong> although the the hashpipe and key-value statement is not normally visible, I’ve made it visible here by including the line twice in the .qmd document.</p>
+<p>Now see for yourself! Try using <code>#| eval: false</code> and <code>#| echo: false</code> and render the document.</p>
 </section>
 <section id="cross-referencing" class="level4">
 <h4 class="anchored" data-anchor-id="cross-referencing">Cross-referencing</h4>
@@ -485,7 +475,7 @@ Figure&nbsp;1
 </div>
 <p>See <a href="#fig-penguinBills" class="quarto-xref">Figure&nbsp;1</a> for a positive correlation between bill depth and bill length.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -494,7 +484,7 @@ What is happening above?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In the qmd file used to build the website you are looking at right now, the code block above contains two #| lines:</p>
 <p>#| label: fig-penguinBills</p>
@@ -525,23 +515,23 @@ Table&nbsp;1: Penguin Mean Body Weights
 </figcaption>
 <div aria-describedby="tbl-penguin-mass-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="imxnckgxja" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#imxnckgxja table {
+<div id="ersozpjion" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ersozpjion table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#imxnckgxja thead, #imxnckgxja tbody, #imxnckgxja tfoot, #imxnckgxja tr, #imxnckgxja td, #imxnckgxja th {
+#ersozpjion thead, #ersozpjion tbody, #ersozpjion tfoot, #ersozpjion tr, #ersozpjion td, #ersozpjion th {
   border-style: none;
 }
 
-#imxnckgxja p {
+#ersozpjion p {
   margin: 0;
   padding: 0;
 }
 
-#imxnckgxja .gt_table {
+#ersozpjion .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -567,12 +557,12 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-left-color: #D3D3D3;
 }
 
-#imxnckgxja .gt_caption {
+#ersozpjion .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#imxnckgxja .gt_title {
+#ersozpjion .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -584,7 +574,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-width: 0;
 }
 
-#imxnckgxja .gt_subtitle {
+#ersozpjion .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -596,7 +586,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-top-width: 0;
 }
 
-#imxnckgxja .gt_heading {
+#ersozpjion .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -608,13 +598,13 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#imxnckgxja .gt_bottom_border {
+#ersozpjion .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#imxnckgxja .gt_col_headings {
+#ersozpjion .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -629,7 +619,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#imxnckgxja .gt_col_heading {
+#ersozpjion .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -649,7 +639,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#imxnckgxja .gt_column_spanner_outer {
+#ersozpjion .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -661,15 +651,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 4px;
 }
 
-#imxnckgxja .gt_column_spanner_outer:first-child {
+#ersozpjion .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#imxnckgxja .gt_column_spanner_outer:last-child {
+#ersozpjion .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#imxnckgxja .gt_column_spanner {
+#ersozpjion .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -681,11 +671,11 @@ Table&nbsp;1: Penguin Mean Body Weights
   width: 100%;
 }
 
-#imxnckgxja .gt_spanner_row {
+#ersozpjion .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#imxnckgxja .gt_group_heading {
+#ersozpjion .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -711,7 +701,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   text-align: left;
 }
 
-#imxnckgxja .gt_empty_group_heading {
+#ersozpjion .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -726,15 +716,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   vertical-align: middle;
 }
 
-#imxnckgxja .gt_from_md > :first-child {
+#ersozpjion .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#imxnckgxja .gt_from_md > :last-child {
+#ersozpjion .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#imxnckgxja .gt_row {
+#ersozpjion .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -753,7 +743,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#imxnckgxja .gt_stub {
+#ersozpjion .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -766,7 +756,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#imxnckgxja .gt_stub_row_group {
+#ersozpjion .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -780,15 +770,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   vertical-align: top;
 }
 
-#imxnckgxja .gt_row_group_first td {
+#ersozpjion .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#imxnckgxja .gt_row_group_first th {
+#ersozpjion .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#imxnckgxja .gt_summary_row {
+#ersozpjion .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -798,16 +788,16 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#imxnckgxja .gt_first_summary_row {
+#ersozpjion .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#imxnckgxja .gt_first_summary_row.thick {
+#ersozpjion .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#imxnckgxja .gt_last_summary_row {
+#ersozpjion .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -817,7 +807,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#imxnckgxja .gt_grand_summary_row {
+#ersozpjion .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -827,7 +817,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#imxnckgxja .gt_first_grand_summary_row {
+#ersozpjion .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -837,7 +827,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-top-color: #D3D3D3;
 }
 
-#imxnckgxja .gt_last_grand_summary_row_top {
+#ersozpjion .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -847,11 +837,11 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#imxnckgxja .gt_striped {
+#ersozpjion .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#imxnckgxja .gt_table_body {
+#ersozpjion .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -860,7 +850,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#imxnckgxja .gt_footnotes {
+#ersozpjion .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -874,7 +864,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#imxnckgxja .gt_footnote {
+#ersozpjion .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -883,7 +873,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#imxnckgxja .gt_sourcenotes {
+#ersozpjion .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -897,7 +887,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#imxnckgxja .gt_sourcenote {
+#ersozpjion .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -905,72 +895,72 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#imxnckgxja .gt_left {
+#ersozpjion .gt_left {
   text-align: left;
 }
 
-#imxnckgxja .gt_center {
+#ersozpjion .gt_center {
   text-align: center;
 }
 
-#imxnckgxja .gt_right {
+#ersozpjion .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#imxnckgxja .gt_font_normal {
+#ersozpjion .gt_font_normal {
   font-weight: normal;
 }
 
-#imxnckgxja .gt_font_bold {
+#ersozpjion .gt_font_bold {
   font-weight: bold;
 }
 
-#imxnckgxja .gt_font_italic {
+#ersozpjion .gt_font_italic {
   font-style: italic;
 }
 
-#imxnckgxja .gt_super {
+#ersozpjion .gt_super {
   font-size: 65%;
 }
 
-#imxnckgxja .gt_footnote_marks {
+#ersozpjion .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#imxnckgxja .gt_asterisk {
+#ersozpjion .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#imxnckgxja .gt_indent_1 {
+#ersozpjion .gt_indent_1 {
   text-indent: 5px;
 }
 
-#imxnckgxja .gt_indent_2 {
+#ersozpjion .gt_indent_2 {
   text-indent: 10px;
 }
 
-#imxnckgxja .gt_indent_3 {
+#ersozpjion .gt_indent_3 {
   text-indent: 15px;
 }
 
-#imxnckgxja .gt_indent_4 {
+#ersozpjion .gt_indent_4 {
   text-indent: 20px;
 }
 
-#imxnckgxja .gt_indent_5 {
+#ersozpjion .gt_indent_5 {
   text-indent: 25px;
 }
 
-#imxnckgxja .katex-display {
+#ersozpjion .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#imxnckgxja div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ersozpjion div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1011,7 +1001,7 @@ Table&nbsp;1: Penguin Mean Body Weights
 <p><strong>warning: false</strong> will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. I recommend printing the warning once and noting that it will be suppressed in all future cases.</p>
 <p><strong>Exercise:</strong> Add warning: false to the ggplot code cell above, and re-render the document to confirm warnings have disappeared.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1020,7 +1010,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-penguinBillsNoWarning</span></span>
@@ -1049,6 +1039,7 @@ Figure&nbsp;2
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="set-figure-dimensions" class="level3">
 <h3 class="anchored" data-anchor-id="set-figure-dimensions">Set figure dimensions</h3>
