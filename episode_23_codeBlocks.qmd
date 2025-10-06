@@ -7,68 +7,72 @@ toc: true
 
 The aims of this section are to:
 
-- Learn the fundamentals of code cells in Quarto documents.
+- Learn the fundamentals of code cells in Quarto documents.  
+- Become familiar with `inline coding.`   
+- Generate an `html`{style="color:blue"} document with well-documented code and embedded output.  
+- Reinforce and expand the syntax skills from the previous episode and learn to apply good commenting/documentation habits when working in Quarto.  
 
-- Become familiar with inline coding. 
-
-- Generate an html document with well-documented code and embedded output.
-
-- Reinforce and expand the syntax skills from the previous episode.
-
-### Learning Objectives:
-
-By the end of this section you should be able to:
-
-- Write and execute code chunks.
-
-- Use inline code to create dynamic content.
-
-- Create an HTML report from your .qmd file.
-
-- Apply good commenting/documentation habits when working in Quarto.
 
 
 ## Code cells
 
-Code cells are the 'working unit' of code within Quarto. Each code cell will be evaluated and output will be embedded into the document immediately below the code cell. For this reason, it is worth thinking about the size and organisation of the code cell. A reasonable code cell might include loading all the libraries you will use in the analysis, or the generation of a single figure. 
+Code cells are the "working unit" of code within Quarto. Each code cell will be evaluated and output will be embedded into the document immediately below the code cell. For this reason, it is worth thinking about the size and organisation of the code cell. A reasonable code cell might include loading all the libraries you will use in the analysis, or the generation of a single figure. 
 
 When we want to embed code we do so with the use of the \` ("backtick"). Three backticks, followed by a curly bracket, and a symbol for the language our code will be in, signifies the start of a code block. We end the code block with three backticks. When we are within a code cell we can run any line of code, just the same as we would with a basic R markdown or R script document. Code cells are automatically executed as part of the rendering process. 
 
 ![R Code cell](figures/codeChunk.png)
 
-*Note:* In RMarkdown we call these 'code chunks' and in Quarto they are referred to as code cells. 
+> Note: In RMarkdown we call these "code chunks" and in Quarto they are referred to as "code cells". 
 
 We can also insert a code cell using an in-built button in RStudio (the "+" and letter "C" in a green box):
 
 ![Insert New Code cell button](figures/newCodeChunkButton.png){width=400}
 
-There are also keyboard shortcuts: shift+command+I for mac, or windows+alt+I for a Windows machine. 
+There are also keyboard shortcuts: `shift`{style="color:black"} + `command`{style="color:black"} + `I`{style="color:black"} for mac, or `windows`{style="color:black"} + `alt`{style="color:black"} + `I`{style="color:black"} for a Windows machine. 
 
-### Exercise
+#### Exercise: Insert a code cell (5 min)
 
 ```{r}
+#| message: false
 #| echo: false
 library(palmerpenguins)
 ```
 
-Create a new quarto document (File > New File > Quarto Document) and give it the title "Code in Quarto". 
+Create a new quarto document `(File > New File > Quarto Document)`{style="color:black"}, give it the title "Code in Quarto" and select `Create Empty Document`{style="color:black"}
 
-Highlight and delete everything below the YAML header, then insert a new R code chunk (*e.g.,* with the chunk option in Visual editor, the keyboard shortcut, or by manually adding backticks and curly braces in the Source editor).
+Insert a new R code cell. You do this by either:  
 
-Within the code chunk add the two lines: 
+* Using the new code cell button in Visual editor (click the “+” and letter “C” in a green box)  
+* Manually adding backticks and curly braces in the Source editor  
+* Using keyboard shortcuts  
+
+In 'Source', it would now look like this:  
+
+![](images-quarto/quarto-codecell-01.png)
 
 
-`library(palmerpenguins)`
+Within the code chunk add these two lines: 
 
-`head(penguins)`
+```{r}
+#| message: false
+#| output: false
+library(palmerpenguins) 
+head(penguins) 
+```
 
-*Note* the palmerpenguins R package has a built-in object called penguins, which is what we are viewing with the head function.
+Also add in comments (this is good reproducibility practise!), for example:  
+```{r}
+# this function loads the library
+# this shows first 6 lines of the penguin dataframe
+```
 
-Within the code chunk use the \# symbol to add comments that explain what each line of code is doing.
+> Note: the palmerpenguins R package has a built-in object called penguins, which is what we are viewing with the head function.
 
 Render the document. You may be prompted to save the file first. 
 
-**Because code cells are executed during rendering they need to work.** For example, if you do not have the palmerpenguins package installed, this cell cannot successfully execute and the render process will fail. Using the \# symbol within a code cell will cause that line of text to be 'commented out' (*i.e.,* it will be interpreted as plain text, rather than code). 
+**Because code cells are executed during rendering, they need to work!** 
+
+For example, if you do not have the palmerpenguins package installed, this cell cannot successfully execute and the render process will fail. Using the `#`{style="color:green"} symbol within a code cell will cause that line of text to be 'commented out' (*i.e.,* it will be interpreted as plain text, rather than code). 
 
 In the output document you should see both the code *and* the output of that code - in this case, the first six rows of the penguin object:
 
@@ -80,47 +84,70 @@ head(penguins)
 
 ## Code cell options
 
-Within each code cell we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code cell with \#\| (called the hash pipe). 
+Within each code cell we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code cell with `#|`{style="color:green"} (called the hash pipe). 
+
+
+### Global code options
+
+Code options included in the YAML header are global - they will be applied to all code cells in this document. As we will cover below, individual code cells (chunks or blocks of code) can be controlled separately. 
+
+Some useful global options we might want to set in the YAML header are:
+
+`code-fold: true`
+
+`code-tools: true`
+
+When `code-fold` is set to `true`, all code blocks will be automatically collapsed. This is useful when you want code to be available but would otherwise distract from the flow of the document *e.g.,* when teaching/training, presenting at lab meetings. `code-tools` provides a simple button at the top of the html that can then be used to toggle all code to open/closed (an easy 'reset' of all code blocks). 
 
 #### Echo and Eval
 
-Here we will use the **echo: false** command to hide the R code itself from the final doc, while the output is still displayed:
+Here we will use the `#| echo: false` command to hide the R code itself from the final doc, while the output is still displayed.
+
+The code cell looks like this:
+
+![](images-quarto/quarto-codecell-02.png)
+
+But rendered document shows only the executed code embedded into the document, like this:
+
 ```{r}
 #| echo: false
 
 tail(penguins)
 ```
 
-Note that hash pipe arguments are *not* displayed - this makes code cleaner in the document, but it does make it difficult to demonstrate or teach. The drop-down note below has a figure to demonstrate the hash pipe. 
+Note that hash pipe arguments are *not* displayed!
 
-::: {.callout-note collapse="true"}
-# What is happening above?
+Alternatively, we can display the code but not the output with `#| eval: false` 
 
-In the qmd file used to build the website you are looking at right now, the code above reads:
+When eval is set to false we see the code used but the code is not evaluated and no output is embedded into the final document. This is useful for when you want to demonstrate code but not run something that could take a long time or you do not want to over-write the original file. 
 
-![The hash pipe](figures/hashpipe.png)
+The code cell looks like this:
 
+![](images-quarto/quarto-codecell-03.png)
 
-echo: false means the code itself (`tail(penguins)`) will not be displayed, but the code is still executed and the output embedded into the document.
-:::
-
-Alternatively, we can display the code but not the output with **\#\| eval: false**. When eval is set to false we see the code used but the code is not evaluated and no output is embedded into the final document. This is useful for when you want to demonstrate code but not run something that could take a long time or you do not want to over-write the original file. 
+And the rendered document looks like this:
 
 ```{r}
-#| eval: false
-
 #| eval: false
 tail(penguins)
 ```
 
-**Note** although the the hashpipe and key-value statement is not normally visible, I've made it visible here by including the line twice in the .qmd document.
+Now see for yourself! Try using `#| eval: false` and `#| echo: false` and render the document.
 
 
-#### Cross-referencing
+#### Cross-referencing: figures and tables
 
-Quarto allows easy cross-referencing. This can be done in two ways: 
+Quarto allows easy cross-referencing to figures and tables. 
 
-We can attach a label to a code block with **\#\| label:**, followed by a given label. We can then use **\@label** to cross-reference. For example: 
+We can attach a label to a code block with `#| label:`, followed by a given label. We can then use `@label` to cross-reference.
+
+
+##### Figures example:
+
+Open a code block.
+
+Directly under the header line of your code block, add the text `#| label: fig-penguinBills`. Then, add some `ggplot` code to make a figure. We'll do a simple `geom_point()` plot here using the palmerpenguins dataset as an example. Then, underneath your code block, write some text cross-referencing the figure label. See our exmaples below:
+
 
 ```{r}
 #| label: fig-penguinBills
@@ -136,30 +163,56 @@ ggplot(data = penguins,
          geom_point()
 ```
 
-See @fig-penguinBills for a positive correlation between bill depth and bill length. 
+See @fig-penguinBills for a positive correlation between bill depth and bill length.
+
+
 
 ::: {.callout-note collapse="true"}
-# What is happening above?
+# What is happening above (behind the scenes)?
 
-In the qmd file used to build the website you are looking at right now, the code block above contains two \#\| lines:
+In the qmd file used to build the website you are looking at right now, the code block above contains two `#|`{style="color:green"} lines:
 
-\#\| label: fig-penguinBills
+`#| label: fig-penguinBills`
 
+The first label line directly under the start of the code block (indicated by ` ```{r}` ) tells the code block to cross-reference this figure using the label "fig-penguinBills".
 
+Then, the line `#| label: fig-penguinBills` is repeated, so that you can see it in the code block above. As it is separated from the start of the code block by a line, it gets read by r as a commented out line, the same as any line starting with a `#`{style="color:green"}. 
 
 Below the code block the text reads:
 
-"See \@fig-penguinBills for a positive correlation between bill depth and bill length."
+See \@fig-penguinBills for a positive correlation between bill depth and bill length.
+
+Here, the `@fig-penguinBills`{style="color:green"} automatically gets converted to the text "Figure 1", with a clickable link.
+
+**Confused?** Here are pictures of the full code and output:
+
+<u>Code behind the scenes:</u>
+
+![](images-quarto/quarto-codeBTS-01.png)  
+
+
+<u>Output:</u>
+
+![](images-quarto/quarto-codeBTS-02.png)
+
+
+
+
 
 :::
 
-For cross referencing tables it is very similar to figures, but instead we use the `tbl` prefix
+
+
+##### Tables example:
+
+
+For cross referencing tables it is very similar to figures, but instead we use the `tbl` prefix, and we can also add a Table caption using `#| tbl-cap:` For example:
 
 ```{r}
-#| message: false # hide the messages from loading dplyr
 #| label: 'tbl-penguin-mass-summary'
 #| tbl-cap: 'Penguin Mean Body Weights'
 
+#| label: 'tbl-penguin-mass-summary'
 #| tbl-cap: 'Penguin Mean Body Weights'
 
 library(dplyr)
@@ -177,16 +230,28 @@ penguins |>
   
 ```
 
-And cross referencing is done in a similar matter by using the label, e.g. using `\@tbl-penguin-mass-summary` gives us the reference @tbl-penguin-mass-summary.
+And cross referencing is done in a similar matter by using the label, e.g. using `@tbl-penguin-mass-summary`{style="color:green"} gives us the cross-reference @tbl-penguin-mass-summary, which is automatically converted to the words "Table 1" with the hyperlink. 
 
-#### Warnings
+Now you try it out!
 
-**warning: false** will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. I recommend printing the warning once and noting that it will be suppressed in all future cases. 
+> Want more? For more ways to cross-reference, [see the Quarto docs here.](https://quarto.org/docs/authoring/cross-references.html)
 
-**Exercise:** Add warning: false to the ggplot code cell above, and re-render the document to confirm warnings have disappeared.
+
+#### Warnings and messages
+
+We can suppress warning and other messages from code outputs by adding:
+
+`#| warning: false` will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. We recommend printing the warning once and noting that it will be suppressed in all future cases. 
+
+`#| message: false` will suppress all messages, for example attached packages and masked package messages.
+
+#####  Exercise: remove messages and warnings (2 min)
+In the above examples for tables and figures we saw both warning and messages. Try adding either `#| warning: false` or `#| message:false` to the ggplot code cells above, and re-render the document to confirm warnings/messages have disappeared.
 
 ::: {.callout-note collapse="true"}
 # Solution
+
+**Figure without warning:**
 
 ```{r}
 #| label: fig-penguinBillsNoWarning
@@ -194,6 +259,7 @@ And cross referencing is done in a similar matter by using the label, e.g. using
 
 #| label: fig-penguinBillsNoWarning
 #| warning: false
+
 library(ggplot2)
 ggplot(data = penguins,
        mapping = aes(x = bill_depth_mm,
@@ -204,11 +270,37 @@ ggplot(data = penguins,
 ```
 
 Note that we cannot use the same label twice within a document, so we need to use a new label (penguinBillsNoWarning) or the render will fail. 
+
+
+**Table without message:**
+
+```{r}
+#| message: false 
+#| label: 'tbl-penguin-mass-summary-NoMessage'
+
+#| message: false # hide the messages from loading dplyr
+#| label: 'tbl-penguin-mass-summary-NoMessage'
+
+library(dplyr)
+library(gt)
+
+penguins |> 
+  group_by(island) |>
+  summarise(mean_body_mass_g = mean(body_mass_g, na.rm = TRUE)) |>
+  gt() |>
+  fmt_number(mean_body_mass_g) |>
+  cols_label(island ="Island", 
+              mean_body_mass_g = "Mean Body Mass (g)") |>
+  cols_align(columns = island, align = "left")
+  
+  
+```
+
 :::
 
 ### Set figure dimensions
 
-**fig-width: x** and **fig-length: y** can be used to manually set the dimension of embedded figures. 
+`#| fig-width: x` and `#| fig-length: y` can be used to manually set the dimension of embedded figures, in inches. 
 
 ## Inline code
 
@@ -231,11 +323,15 @@ To streamline the above with inline code we need to do three things:
 
 This is demonstrated below, using quotation marks in place of backticks so that it is human readable:
 
-The mean bill length of penguins in the dataset is "r round(mean(na.omit(penguins$bill_length_mm)),2)"mm. 
+```bash
+The mean bill length of penguins in the dataset is "r round(mean(na.omit(penguins$bill_length_mm)),2)"mm.
+```
 
 **The same line of code above but with backticks in place of quotation marks is rendered as:**
 
+```bash
 The mean bill length of penguins in the dataset is `r round(mean(na.omit(penguins$bill_length_mm)),2)`mm.
+```
 
 ### Why use inline code? 
 
@@ -270,7 +366,7 @@ In this section we have:
 
 2. What symbols do we add to set the code cell options? 
 
-3. If a code cell has echo: false and eval: true, what will happen when the document is rendered?
+3. If a code cell has `echo: false` and `eval: true`, what will happen when the document is rendered?
 
 4. List one other code cell option we have used today.
 

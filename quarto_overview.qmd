@@ -3,7 +3,7 @@ title: Quarto Overview
 toc: true
 ---
 
-What is Quarto? 
+## What is Quarto? 
 
 What is the purpose of Quarto (and it's equivalent systems)?
 
@@ -11,26 +11,20 @@ What is the purpose of Quarto (and it's equivalent systems)?
 
 Basic syntax (generate a pdf) 
 
-- A basic CV or "About me" document:
-
-- Formatting: headings, lists, bold and italics
-
-- Embed an image, generate a table, headings, italics and bold face
+- A basic CV or "About me" document  
+- Formatting: headings, lists, bold and italics  
+- Embed an image, generate a table, headings, italics and bold face  
 
 
 Upgrading to a website
 
-- Minimal changes required due to Quarto's cross-output capabilities
-
-- A website could: be an about page (your elevator pitch - an ideal pinned repo), a lab on-boarding page, or a walkthrough of a method with output ("showcasing your story").
+- Minimal changes required due to Quarto's cross-output capabilities  
+- A website could: be an about page (your elevator pitch - an ideal pinned repo), a lab on-boarding page, or a walkthrough of a method with output ("showcasing your story").  
 
 Preview and Render, git and Publishing
 
 - Practice practice practice! Theme, styles.
-
 - Publishing with github pages.
-
-
 
 
 

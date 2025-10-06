@@ -1,10 +1,97 @@
 ---
-title: ""
+title: "Reproducibility with Git and Quarto"
 format: html
 ---
 
-# *Reproducibility with Git and Quarto ...*
 
-The git part of this workshop is under construction, please [see this link here](https://swcarpentry.github.io/git-novice/) for instructions on how to use git / github by the Carpentries.
+![](theme-images/github_quarto.png){width="70%" .center}
 
-The Quarto part of this workshop is complete, please feel free to peruse :)
+### What is this workshop about?
+
+Good research goes beyond running analyses, it’s about making your work reproducible, transparent, and accessible to your supervisor, colleagues, and the wider scientific community.
+
+This two-day workshop will show you not only how to make your research more reproducible, but also how to more easily collaborate on projects with other researchers and how to generate polished reports to share with others. 
+
+With Git and GitHub, you’ll learn how to manage and host your own code, and how to download, adapt, and build on code that others share - whether that’s custom scripts, small programs, or entire projects. 
+
+Using Quarto, you’ll then learn how to turn your analysis into clear, self-contained documents, create polished HTML outputs with embedded results, and publish your work online as a website.
+
+#### How are Git/GitHub and quarto linked?
+
+One of the great things you can do with both of these tools together is create material in quarto documents, that can then be displayed as a webpage using GitHub. In fact, this workshop itself is written in quarto and displayed online using GitHub pages! Check out the [github repo here.](https://github.com/GenomicsAotearoa/reproducibility_with_git_and_quarto)
+
+#### What this workshop does and does not cover:
+
+***For Part One - Git***   
+
+This workshop **does** cover:
+
+* Setting up git, creating a new repository and connecting your local repo to the GitHub Server.
+* Tracking, adding and committing files.  
+* Basic pushing, pulling and merging new branches. 
+* Collaboration and workflow tools (issues, projects).
+
+This workshop **does not** cover:  
+
+* Forking, merge conflicts and different kinds of merges.  
+* Extended file recovery, log details and commit history.    
+* Using `git rebase` and `git ignore`.  
+* How to connect Git/GitHub and RStudio (see [The Carpentries lesson here](https://swcarpentry.github.io/git-novice/14-supplemental-rstudio.html) or the Chapter from Happy Git with R on [connecting these tools here.](https://happygitwithr.com/connect-intro)) 
+* Further GitHub tools such as Releases, Actions, Pages   
+
+
+***For Part Two - Quarto***   
+
+This workshop **does** cover:   
+
+*  Basic Quarto document creation, syntax and formatting. 
+*  Embedding an image, generating a table and coding in code blocks.    
+*  Basic themes, styles and project dir structure.   
+*  Publishing as a webpage using GitHub pages.  
+
+This workshop **does not** cover: 
+
+* Using callouts.    
+* Using HTML or CSS syntax in Quarto documents/projects.   
+* Extensive tool integration beyond RStudio (e.g., Jupyter, Visual Studio Code, Netlify, Shiny).  
+* Behind the scenes of Quarto (e.g., knitr execution, pandoc markdown and conversion).  
+
+
+
+### Setup
+
+For this workshop you will need to have a number of different software installed on your local computer, as well as an account made with GitHub. 
+
+See [Part One - Git: Setup on local machine](git_overview.qmd#setup-on-local-machine) for setup instructions. Quarto is a part of RStudio, therefore you will not need to setup anything extra for Part Two - Quarto. 
+  
+
+
+### Attribution
+
+
+The Git part of this workshop was adapted from and heavily inspired by content from The Carpentries lesson on [Version Control with Git.](https://swcarpentry.github.io/git-novice/) 
+
+::: {.callout-note collapse="true" appearance="simple"}
+## Copyright information:
+All Carpentries instructional material is made available under the Creative Commons [Attribution license CC BY 4.0.](https://creativecommons.org/licenses/by/4.0/)
+The material in this workshop is not endorsed by the Carpentries and has been adapted by Genomics Aotearoa for our own teaching purposes.  
+
+The license information for The Carpentries lesson "Version Control with Git", from which this workshop was adapted, can be [found here.](https://github.com/swcarpentry/git-novice/blob/main/LICENSE.md)
+
+In this workshop, the following episodes were adapted from The Carpentries lesson "Version Control with Git" in the manner stated below:
+
+**Re-used material** (*i.e.,* almost word-for-word, including images, with minor wording or styling modifications):  
+- [Automated Version Control episode](episode_01_AutomatedVersionControl.qmd)  
+- [Creating a repository episode](episode_03_CreatingARepository.qmd)  
+- [Tracking, adding and committing changes episode](episode_04_Track-Add-Commit-Changes.qmd)  
+- [Pushing local changes to GitHub episode](episode_05_Push-Github.qmd)  
+
+
+**Minimally-adapted material** (*i.e.,* inspired by stylistic choices and general workflow, but material is primarily developed by Genomics Aotearoa):  
+- [Branches, pulling and merging episode](episode_06_Branches-Pull-Merge.qmd); continuing with The Carpentries recipe repo theme, but content is developed by Genomics Aotearoa.  
+- [Collaborating and organising your workflow episode](episode_07_Collaborate-Organise.qmd); content is developed by Genomics Aotearoa.  
+- [Part One - Git overview](git_overview.qmd); content is primarily developed by Genomics Aotearoa, set-up instructions for Git for Windows is copy-pasted from [The Carpentries install instructions material.](https://carpentries.github.io/workshop-template/install_instructions/#the-bash-shell)
+:::
+
+The Quarto part of this workshop was written by [Tyler McInnes](https://github.com/tylermcinnes/reproducibility_block) while he worked for Genomics Aotearoa as a [Bioinformatics Training Coordinator.](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/meetTheTeam.html#past-team-members) Some small modifications have been made from his version to generalise and re-style the material.
+

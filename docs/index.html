@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./figures/socialImage.png" rel="icon" type="image/png">
+<link href="./git_overview.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e12d7696102c29682f72ea5f3865928a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-709f788519238433456b39eacb8aeed0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,6 +71,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Reproducibility with Git and Quarto">
+<meta property="og:description" content="">
+<meta property="og:image" content="theme-images/github_quarto.png">
+<meta property="og:site_name" content="Reproducibility with Git and Quarto">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -82,9 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Reproducibility with Git and Quarto
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -100,9 +102,6 @@ ul.task-list li input[type="checkbox"] {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Reproducibility with Git and Quarto</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/GenomicsAotearoa/reproducibility_with_git_and_quarto" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -112,15 +111,74 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./quarto_overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Part Two - Quarto</span></a>
+            <a href="./git_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Part One - Git</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_01_AutomatedVersionControl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automated version control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_02_SettingUpGit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting up Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_03_CreatingARepository.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Create a repository</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_04_Track-Add-Commit-Changes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tracking, adding and committing changes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_05_Push-Github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pushing local changes to GitHub</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_06_Branches-Pull-Merge.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Branches, pulling and merging</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./episode_07_Collaborate-Organise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Collaborating and organising your workflow</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./quarto_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Part Two - Quarto</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./episode_21_introduction.html" class="sidebar-item-text sidebar-link">
@@ -164,17 +222,134 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-this-workshop-about" id="toc-what-is-this-workshop-about" class="nav-link active" data-scroll-target="#what-is-this-workshop-about">What is this workshop about?</a>
+  <ul>
+  <li><a href="#how-are-gitgithub-and-quarto-linked" id="toc-how-are-gitgithub-and-quarto-linked" class="nav-link" data-scroll-target="#how-are-gitgithub-and-quarto-linked">How are Git/GitHub and quarto linked?</a></li>
+  <li><a href="#what-this-workshop-does-and-does-not-cover" id="toc-what-this-workshop-does-and-does-not-cover" class="nav-link" data-scroll-target="#what-this-workshop-does-and-does-not-cover">What this workshop does and does not cover:</a></li>
+  </ul></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#attribution" id="toc-attribution" class="nav-link" data-scroll-target="#attribution">Attribution</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Reproducibility with Git and Quarto</h1>
+</div>
 
 
 
+<div class="quarto-title-meta column-body">
 
-<section id="reproducibility-with-git-and-quarto" class="level1">
-<h1><em>Reproducibility with Git and Quarto …</em></h1>
-<p>The git part of this workshop is under construction, please <a href="https://swcarpentry.github.io/git-novice/">see this link here</a> for instructions on how to use git / github by the Carpentries.</p>
-<p>The Quarto part of this workshop is complete, please feel free to peruse :)</p>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><img src="theme-images/github_quarto.png" class="center img-fluid" style="width:70.0%"></p>
+<section id="what-is-this-workshop-about" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-this-workshop-about">What is this workshop about?</h3>
+<p>Good research goes beyond running analyses, it’s about making your work reproducible, transparent, and accessible to your supervisor, colleagues, and the wider scientific community.</p>
+<p>This two-day workshop will show you not only how to make your research more reproducible, but also how to more easily collaborate on projects with other researchers and how to generate polished reports to share with others.</p>
+<p>With Git and GitHub, you’ll learn how to manage and host your own code, and how to download, adapt, and build on code that others share - whether that’s custom scripts, small programs, or entire projects.</p>
+<p>Using Quarto, you’ll then learn how to turn your analysis into clear, self-contained documents, create polished HTML outputs with embedded results, and publish your work online as a website.</p>
+<section id="how-are-gitgithub-and-quarto-linked" class="level4">
+<h4 class="anchored" data-anchor-id="how-are-gitgithub-and-quarto-linked">How are Git/GitHub and quarto linked?</h4>
+<p>One of the great things you can do with both of these tools together is create material in quarto documents, that can then be displayed as a webpage using GitHub. In fact, this workshop itself is written in quarto and displayed online using GitHub pages! Check out the <a href="https://github.com/GenomicsAotearoa/reproducibility_with_git_and_quarto">github repo here.</a></p>
+</section>
+<section id="what-this-workshop-does-and-does-not-cover" class="level4">
+<h4 class="anchored" data-anchor-id="what-this-workshop-does-and-does-not-cover">What this workshop does and does not cover:</h4>
+<p><strong><em>For Part One - Git</em></strong></p>
+<p>This workshop <strong>does</strong> cover:</p>
+<ul>
+<li>Setting up git, creating a new repository and connecting your local repo to the GitHub Server.</li>
+<li>Tracking, adding and committing files.<br>
+</li>
+<li>Basic pushing, pulling and merging new branches.</li>
+<li>Collaboration and workflow tools (issues, projects).</li>
+</ul>
+<p>This workshop <strong>does not</strong> cover:</p>
+<ul>
+<li>Forking, merge conflicts and different kinds of merges.<br>
+</li>
+<li>Extended file recovery, log details and commit history.<br>
+</li>
+<li>Using <code>git rebase</code> and <code>git ignore</code>.<br>
+</li>
+<li>How to connect Git/GitHub and RStudio (see <a href="https://swcarpentry.github.io/git-novice/14-supplemental-rstudio.html">The Carpentries lesson here</a> or the Chapter from Happy Git with R on <a href="https://happygitwithr.com/connect-intro">connecting these tools here.</a>)</li>
+<li>Further GitHub tools such as Releases, Actions, Pages</li>
+</ul>
+<p><strong><em>For Part Two - Quarto</em></strong></p>
+<p>This workshop <strong>does</strong> cover:</p>
+<ul>
+<li>Basic Quarto document creation, syntax and formatting.</li>
+<li>Embedding an image, generating a table and coding in code blocks.<br>
+</li>
+<li>Basic themes, styles and project dir structure.<br>
+</li>
+<li>Publishing as a webpage using GitHub pages.</li>
+</ul>
+<p>This workshop <strong>does not</strong> cover:</p>
+<ul>
+<li>Using callouts.<br>
+</li>
+<li>Using HTML or CSS syntax in Quarto documents/projects.<br>
+</li>
+<li>Extensive tool integration beyond RStudio (e.g., Jupyter, Visual Studio Code, Netlify, Shiny).<br>
+</li>
+<li>Behind the scenes of Quarto (e.g., knitr execution, pandoc markdown and conversion).</li>
+</ul>
+</section>
+</section>
+<section id="setup" class="level3">
+<h3 class="anchored" data-anchor-id="setup">Setup</h3>
+<p>For this workshop you will need to have a number of different software installed on your local computer, as well as an account made with GitHub.</p>
+<p>See <a href="./git_overview.html#setup-on-local-machine">Part One - Git: Setup on local machine</a> for setup instructions. Quarto is a part of RStudio, therefore you will not need to setup anything extra for Part Two - Quarto.</p>
+</section>
+<section id="attribution" class="level3">
+<h3 class="anchored" data-anchor-id="attribution">Attribution</h3>
+<p>The Git part of this workshop was adapted from and heavily inspired by content from The Carpentries lesson on <a href="https://swcarpentry.github.io/git-novice/">Version Control with Git.</a></p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Copyright information:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>All Carpentries instructional material is made available under the Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/">Attribution license CC BY 4.0.</a> The material in this workshop is not endorsed by the Carpentries and has been adapted by Genomics Aotearoa for our own teaching purposes.</p>
+<p>The license information for The Carpentries lesson “Version Control with Git”, from which this workshop was adapted, can be <a href="https://github.com/swcarpentry/git-novice/blob/main/LICENSE.md">found here.</a></p>
+<p>In this workshop, the following episodes were adapted from The Carpentries lesson “Version Control with Git” in the manner stated below:</p>
+<p><strong>Re-used material</strong> (<em>i.e.,</em> almost word-for-word, including images, with minor wording or styling modifications):<br>
+- <a href="./episode_01_AutomatedVersionControl.html">Automated Version Control episode</a><br>
+- <a href="./episode_03_CreatingARepository.html">Creating a repository episode</a><br>
+- <a href="./episode_04_Track-Add-Commit-Changes.html">Tracking, adding and committing changes episode</a><br>
+- <a href="./episode_05_Push-Github.html">Pushing local changes to GitHub episode</a></p>
+<p><strong>Minimally-adapted material</strong> (<em>i.e.,</em> inspired by stylistic choices and general workflow, but material is primarily developed by Genomics Aotearoa):<br>
+- <a href="./episode_06_Branches-Pull-Merge.html">Branches, pulling and merging episode</a>; continuing with The Carpentries recipe repo theme, but content is developed by Genomics Aotearoa.<br>
+- <a href="./episode_07_Collaborate-Organise.html">Collaborating and organising your workflow episode</a>; content is developed by Genomics Aotearoa.<br>
+- <a href="./git_overview.html">Part One - Git overview</a>; content is primarily developed by Genomics Aotearoa, set-up instructions for Git for Windows is copy-pasted from <a href="https://carpentries.github.io/workshop-template/install_instructions/#the-bash-shell">The Carpentries install instructions material.</a></p>
+</div>
+</div>
+</div>
+<p>The Quarto part of this workshop was written by <a href="https://github.com/tylermcinnes/reproducibility_block">Tyler McInnes</a> while he worked for Genomics Aotearoa as a <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/meetTheTeam.html#past-team-members">Bioinformatics Training Coordinator.</a> Some small modifications have been made from his version to generalise and re-style the material.</p>
 
 
 </section>
@@ -579,6 +754,15 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./git_overview.html" class="pagination-link" aria-label="Part One - Git">
+        <span class="nav-page-text">Part One - Git</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

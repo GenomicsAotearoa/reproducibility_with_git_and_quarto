@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 605.29 325.5">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #70bf41;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke-width: 2px;
+      }
+
+      .cls-5 {
+        font-size: 13.5px;
+      }
+
+      .cls-5, .cls-6 {
+        font-family: Helvetica, Helvetica;
+      }
+
+      .cls-5, .cls-6, .cls-7, .cls-8 {
+        isolation: isolate;
+      }
+
+      .cls-6, .cls-7 {
+        font-size: 12px;
+      }
+
+      .cls-3, .cls-9 {
+        stroke: #000;
+      }
+
+      .cls-7, .cls-8 {
+        font-family: ArialMT, Arial;
+      }
+
+      .cls-10 {
+        fill: #dcdee0;
+      }
+
+      .cls-9, .cls-11, .cls-12, .cls-13, .cls-14 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-9, .cls-13 {
+        fill: #fff;
+      }
+
+      .cls-11 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-11, .cls-12, .cls-13 {
+        stroke: #231f20;
+      }
+
+      .cls-12 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-14 {
+        fill: #b5b5b5;
+        stroke: #fff;
+      }
+
+      .cls-4 {
+        stroke: #85888d;
+      }
+
+      .cls-15 {
+        fill: #45beee;
+      }
+
+      .cls-8 {
+        font-size: 18px;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="301.14" y1="374.79" x2="301.14" y2="319.54" gradientTransform="translate(-4.14 487.28) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset=".1" stop-color="#c4c4c4"/>
+      <stop offset=".53" stop-color="#686868"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="534.82" y1="441.12" x2="534.82" y2="385.86" gradientTransform="translate(-4.14 487.28) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset=".1" stop-color="#c4c4c4"/>
+      <stop offset=".53" stop-color="#686868"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+  </defs>
+  <g id="g3573">
+    <g id="g3564">
+      <g id="g3494">
+        <rect id="rect3498" class="cls-1" x="190.5" y="297.5" width="70" height="28"/>
+      </g>
+    </g>
+    <g id="g3504">
+      <g id="Layer_6" data-name="Layer 6">
+        <rect id="rect5" class="cls-9" x=".5" y=".5" width="603.78" height="244"/>
+      </g>
+      <g id="g8">
+        <path id="path10" class="cls-14" d="M591.5,51.5c0-8.28-6.72-15-15-15H191.5c-8.28,0-15,6.72-15,15v167c0,8.28,6.72,15,15,15h385c8.28,0,15-6.72,15-15V51.5Z"/>
+        <rect id="rect12" class="cls-1" x="190.5" y="47.5" width="70" height="28"/>
+        <text id="text14" class="cls-8" transform="translate(190.5 59.92)"><tspan x="0" y="0">.git</tspan></text>
+      </g>
+      <rect id="rect16" class="cls-1" x="9.5" y="7.5" width="195.59" height="24.45"/>
+      <text id="text18" class="cls-5" transform="translate(9.5 17.21)"><tspan x="0" y="0">~/alflin/recipes</tspan></text>
+      <g id="Layer_3" data-name="Layer 3">
+        <g id="g37">
+          <path id="path46" class="cls-12" d="M246.95,166.71c0-9.26,22.4-16.78,50.05-16.78s50.04,7.51,50.04,16.78v1.03-38.86.39c0-9.27-22.4-16.78-50.04-16.78s-50.05,7.51-50.05,16.78v-.39,38.86-1.03h0Z"/>
+          <g id="g48">
+            <path id="path50" class="cls-13" d="M347.05,128.87v35.74c0,1,.36,3.12.36,3.12,0,9.27-22.76,16.78-50.4,16.78s-50.4-7.51-50.4-16.78c0,0,.35-1.92.35-3.13v-35.73c0,9.27,22.4,16.79,50.05,16.79s50.04-7.51,50.04-16.79h0Z"/>
+          </g>
+        </g>
+        <g id="g52">
+          <polygon id="polygon54" class="cls-9" points="322.04 137.96 335.22 123.46 275.91 123.46 262.73 137.96 322.04 137.96"/>
+          <line id="line56" class="cls-2" x1="275.91" y1="129.39" x2="324.67" y2="129.39"/>
+        </g>
+      </g>
+      <g id="Layer_4" data-name="Layer 4">
+        <path id="path66" class="cls-11" d="M480.63,100.38c0-9.27,22.41-16.78,50.05-16.78s50.05,7.51,50.05,16.78v1.03-38.86.39c0-9.27-22.41-16.78-50.05-16.78s-50.05,7.51-50.05,16.78v-.39,38.86-1.03Z"/>
+        <g id="g68">
+          <path id="path70" class="cls-13" d="M580.52,139.78v35.74c0,1,.35,3.12.35,3.12,0,9.27-22.76,16.78-50.4,16.78s-50.4-7.51-50.4-16.78c0,0,.35-1.92.35-3.13v-35.73c0,9.27,22.41,16.78,50.05,16.78,27.64,0,50.04-7.51,50.04-16.78h0Z"/>
+        </g>
+        <g id="g72">
+          <path id="path74" class="cls-13" d="M580.52,101.1v35.74c0,1,.35,3.12.35,3.12,0,9.27-22.76,16.78-50.4,16.78s-50.4-7.51-50.4-16.78c0,0,.35-1.92.35-3.13v-35.73c0,9.27,22.41,16.78,50.05,16.78s50.04-7.51,50.04-16.78Z"/>
+        </g>
+        <g id="g76">
+          <path id="path78" class="cls-13" d="M580.52,62.13v35.74c0,1,.35,3.12.35,3.12,0,9.27-22.76,16.78-50.4,16.78s-50.4-7.51-50.4-16.78c0,0,.35-1.92.35-3.13v-35.73c0,9.27,22.41,16.78,50.05,16.78,27.64,0,50.04-7.51,50.04-16.78Z"/>
+        </g>
+        <g id="g80">
+          <polygon id="polygon82" class="cls-9" points="553.54 69.38 566.72 54.88 507.41 54.88 494.23 69.38 553.54 69.38"/>
+          <line id="line84" class="cls-2" x1="507.41" y1="60.81" x2="556.16" y2="60.81"/>
+        </g>
+      </g>
+      <g id="Layer_1" data-name="Layer 1">
+        <g id="g87">
+          <rect id="rect89" class="cls-10" x="17.5" y="73.5" width="100" height="128"/>
+          <rect id="rect91" class="cls-4" x="17.5" y="73.5" width="100" height="128"/>
+          <line id="line93" class="cls-3" x1="30.5" y1="93.5" x2="104.5" y2="93.5"/>
+          <line id="line95" class="cls-3" x1="30.5" y1="99.5" x2="104.5" y2="99.5"/>
+          <line id="line97" class="cls-3" x1="30.5" y1="105.5" x2="104.5" y2="105.5"/>
+          <line id="line99" class="cls-2" x1="30.5" y1="117.5" x2="104.5" y2="117.5"/>
+        </g>
+      </g>
+      <g id="Layer_2" data-name="Layer 2">
+        <g id="g102">
+          <rect id="rect104" class="cls-15" x="144.37" y="125.27" width="45.96" height="30.6"/>
+          <polygon id="polygon106" class="cls-15" points="227.52 139.66 186.97 110.07 186.97 170.2 227.52 139.66"/>
+        </g>
+        <rect id="rect108" class="cls-1" x="157.5" y="134.57" width="52.74" height="14"/>
+        <text id="text110" class="cls-7" transform="translate(157.5 142.85)"><tspan x="0" y="0">git add</tspan></text>
+        <g id="g112">
+          <rect id="rect114" class="cls-15" x="374.75" y="125.27" width="45.96" height="30.6"/>
+          <polygon id="polygon116" class="cls-15" points="457.9 139.66 417.35 110.07 417.35 170.2 457.9 139.66"/>
+        </g>
+        <rect id="rect118" class="cls-1" x="370.48" y="134.57" width="85.54" height="14"/>
+        <text id="text120" class="cls-7" transform="translate(380.26 142.85)"><tspan x="0" y="0">git commit</tspan></text>
+        <rect id="rect122" class="cls-1" x="222.5" y="194.5" width="147" height="17"/>
+        <text id="text124" class="cls-6" transform="translate(262.98 203.13)"><tspan x="0" y="0">staging area</tspan></text>
+        <rect id="rect126" class="cls-1" x="458.29" y="207.5" width="147" height="17"/>
+        <text id="text128" class="cls-6" transform="translate(505.44 216.13)"><tspan x="0" y="0">repository</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,126 @@
+---
+title: "test styling"
+format: html
+---
+
+::: {.callout-note}
+stuff in note
+:::
+
+::: {.callout-warning}
+stuff in warning
+:::
+
+::: {.callout-tip}
+stuff in tip
+:::
+
+::: {.callout-important}
+stuff in importnat
+:::
+
+::: {.callout-caution}
+stuff in caution
+:::
+
+::: {.callout-note collapse="true"}
+stuff in note
+:::
+
+::: {.callout-warning collapse="true"}
+stuff in warning
+:::
+
+::: {.callout-tip collapse="true"}
+stuff in tip
+:::
+
+::: {.callout-important collapse="true"}
+stuff in importnat
+:::
+
+::: {.callout-caution collapse="true"}
+stuff in caution
+:::
+
+
+::: {.callout-note appearance="minimal"}
+stuff in note appearance minimal
+:::
+
+::: {.callout-warning appearance="minimal"}
+stuff in warning appearance="minimal"
+:::
+
+::: {.callout-tip appearance="minimal"}
+stuff in tip appearance="minimal"
+:::
+
+::: {.callout-important appearance="minimal"}
+stuff in importnat appearance="minimal"
+:::
+
+::: {.callout-caution appearance="minimal"}
+stuff in caution appearance="minimal"
+:::
+
+
+
+# Header 1
+
+text
+
+## Header 2
+
+text
+
+### Header 3
+
+text
+
+#### Header 4
+
+text
+
+##### Header 5
+
+text
+
+
+# code blocks
+
+```bash
+bash code block
+```
+
+```{r}
+# r code block
+getwd()
+```
+
+
+# stuff to add
+
+
+deleting/adding untracked files
+
+merge and pull
+and branches
+
+
+making changes on github - need to pull back down readme gitignore and licence.
+
+using git restore to recover old versions of files. 
+
+adding extra stuff on logs etc
+
+can link to carpentries - must link to carpenrtries
+
+
+### extended functionality 
+supplementary - linking in github and visual studio code
+
+https://swcarpentry.github.io/git-novice/instructor/14-supplemental-rstudio.html
+
+https://github.com/GenomicsAotearoa/ga-workshop-tutorial/tree/main/0.GettingStarted
+

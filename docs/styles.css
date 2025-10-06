@@ -1,149 +1,240 @@
+/* Import Roboto and mukta font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;700&display=swap');
+
+
+/* Apply font globally */
+body, h1, h2, h3, h4, h5, h6, p, a, button, table, blockquote {
+    font-family: 'Mukta', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+/* global font bigger */
+html, body {
+  font-size: 20px;   /* default is ~16px, so this is slightly bigger */
+}
+
+
+
 /* General page styling */
 body {
-    background-color: #f7f9fc;  /* Very light blue background for a soft feel */
-    color: #4a4a4a;  /* Dark gray text color for good readability */
-    font-family: Arial, sans-serif;  /* Font family for a clean, modern look */
+    background-color: #F5F3FA;  /* Light lavender background */
+    color: #3B3A3D;  /* Dark gray text for readability */
     line-height: 1.6;
     margin: 0;
     padding: 0;
-  }
-  
-  /* Section styling for visual separation */
-  section {
-    border: 1px solid #e0e0e0;  /* Light gray border for separation */
-    background-color: #ffffff;  /* White background for sections */
+}
+
+/* image align */
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+/* Section styling */
+section {
+    border: 1px solid #D0C8E0;  /* Soft purple-gray border */
+    background-color: #FFFFFF;   /* White section background */
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);  /* Subtle shadow for depth */
-  }
-  
-  /* Heading styles with background highlight */
-  h1, h2, h3 {
-    color: #3b5998;  /* Soft blue for headings */
-    padding: 5px;
-    background-color: #eaf1fb;  /* Very light blue background for heading highlights */
-    border-radius: 5px;
-  }
-  
-  /* Link styles */
-  a {
-    color: #3b5998;  /* Muted yellow color for links */
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #6B5B95;  /* Deep purple */
+    border-bottom: 2px solid #A084CA;  /* subtle underline instead of box */
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 0em;
+    margin-bottom: 1em;
+    background: none;
+    border-radius: 0;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.7em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.2em; }
+h5 { font-size: 1em; }
+h6 { font-size: 0.9em; }
+
+h4, h5, h6 {
+    color: #6B5B95;  /* Deep purple */
+    border-bottom: 0px;  /* no underline */
+    padding-bottom: 5px;
+    padding-top: 0px;
+    margin-top: 0em;
+    margin-bottom: 1em;
+    background: none;
+    border-radius: 0;
+}
+
+/* Links */
+a {
+    color: #6B5B95;
     text-decoration: none;
-  }
-  
-  a:hover {
-    color: #3b5998;  /* Darker blue on hover for a subtle effect */
+}
+a:hover {
+    color: #8C52FF;
     text-decoration: underline;
-  }
-  
-  /* Button styles with gradient and shadow */
-  button {
-    background: linear-gradient(to bottom, #f4d03f, #e2be33);  /* Gradient yellow for buttons */
-    color: #3b5998;  /* Soft blue text for contrast */
+}
+
+/* Buttons */
+button, .nav-button {
+    background-color: #8C52FF;
+    color: #FFFFFF;
     border: none;
+    border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Shadow for depth */
     transition: background 0.3s, transform 0.2s;
-  }
-  
-  button:hover {
-    background: linear-gradient(to bottom, #f5e26f, #d1a920);  /* Lighter yellow on hover */
-    transform: translateY(-2px);  /* Slight lift effect on hover */
-  }
-  
-  /* Callout block styles */
-  .callout-note {
-    background-color: #eaf1fb;  /* Very light blue for callout background */
-    border-left: 5px solid #3b5998;  /* Soft blue border to highlight the callout */
-    padding: 15px;
-    margin: 20px 0;
-  }
-  
-  /* Footer styling */
-  footer {
-    background-color: #3b5998;  /* Soft blue footer background */
-    color: #ffffff;  /* White text color */
-    padding: 10px;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  /* Table styles with improved visual interest */
-  table {
+}
+button:hover, .nav-button:hover {
+    background-color: #A084CA;
+    transform: translateY(-2px);
+}
+
+/* Callouts */
+
+/* callout font size */
+.callout-note,
+.callout-tip,
+.callout-warning,
+.callout-important,
+.callout-caution,
+.callout-question {
+  font-size: 1em; /* or your preferred size */
+  padding: 0em;      /* optional: adjust padding as needed */
+}
+
+
+/* Callouts: Lighter than Quarto default colors */
+.callout-note {
+    background-color: #FFFFFF;   /* white background for notes */
+    border-left: 4px solid #2C7BE5;  /* Quarto note: blue */
+}
+
+.callout-tip {
+    background-color: #F3FCF3;   /* lighter green */
+    border-left: 4px solid #4CAF50;
+}
+
+.callout-warning {
+    background-color: #FFF9F0;   /* lighter orange */
+    border-left: 4px solid #FFA500;
+}
+
+.callout-important {
+    background-color: #FFF7F7;   /* lighter red */
+    border-left: 4px solid #FF4C4C;
+}
+
+.callout-caution {
+    background-color: #FFF9F0;   /* lighter orange */
+    border-left: 4px solid #FFA500;
+}
+
+/* Tables inside callouts: always white */
+.callout-note table,
+.callout-tip table,
+.callout-warning table,
+.callout-important table,
+.callout-caution table,
+.callout-note table th,
+.callout-tip table th,
+.callout-warning table th,
+.callout-important table th,
+.callout-caution table th,
+.callout-note table td,
+.callout-tip table td,
+.callout-warning table td,
+.callout-important table td,
+.callout-caution table td,
+.callout-note table tr,
+.callout-tip table tr,
+.callout-warning table tr,
+.callout-important table tr,
+.callout-caution table tr,
+.callout-note table tr:nth-child(even),
+.callout-tip table tr:nth-child(even),
+.callout-warning table tr:nth-child(even),
+.callout-important table tr:nth-child(even),
+.callout-caution table tr:nth-child(even),
+.callout-note table tr:nth-child(odd),
+.callout-tip table tr:nth-child(odd),
+.callout-warning table tr:nth-child(odd),
+.callout-important table tr:nth-child(odd),
+.callout-caution table tr:nth-child(odd) {
+    background-color: #FFFFFF !important;
+}
+
+
+/* Tables */
+table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);  /* Subtle shadow for the table */
-  }
-  
-  table th, table td {
-    border: 1px solid #3b5998;  /* Soft blue borders */
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+}
+table th, table td {
+    border: 1px solid #D0C8E0;
     padding: 10px;
     text-align: left;
-  }
-  
-  table th {
-    background-color: #f4d03f;  /* Muted yellow header background */
-    color: #3b5998;  /* Soft blue text */
-  }
-  
-  table tr:nth-child(even) {
-    background-color: #f7f9fc;  /* Light blue for alternating rows */
-  }
-  
-  /* Blockquote styles with subtle enhancement */
-  blockquote {
-    border-left: 5px solid #3b5998;  /* Soft blue border to emphasize blockquote */
-    background: #eaf1fb;  /* Light blue background */
+}
+table th {
+    background-color: #EDE7F6;
+    color: #6B5B95;
+}
+table tr:nth-child(even) {
+    background-color: #F5F3FA;
+}
+table tr:hover {
+    background-color: #EDE7F6;
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 4px solid #6B5B95;
+    background: #F5F3FA;
     padding: 15px;
     margin: 20px 0;
-    color: #4a4a4a;
+    color: #3B3A3D;
     font-style: italic;
-  }
-  
-  /* Content box styling */
-  .content-box {
-    background-color: #ffffff;  /* White background for contrast */
-    border: 1px solid #e0e0e0;  /* Light gray border */
+}
+
+/* Content boxes */
+.content-box {
+    background-color: #FFFFFF;
+    border: 1px solid #D0C8E0;
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
-  }
-  
-  /* Navigation button styling */
-.navigation-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-  }
-  
-  .navigation-buttons a {
-    text-decoration: none;
-  }
-  
-  .nav-button {
-    background: linear-gradient(to bottom, #f4d03f, #e2be33);  /* Gradient yellow for buttons */
-    color: #3b5998;  /* Soft blue text for contrast */
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Shadow for depth */
-    transition: background 0.3s, transform 0.2s;
-  }
-  
-  .nav-button:hover {
-    background: linear-gradient(to bottom, #f5e26f, #d1a920);  /* Lighter yellow on hover */
-    transform: translateY(-2px);  /* Slight lift effect on hover */
-  }
-  
-  .prev-button {
-    margin-right: auto;  /* Aligns the Previous button to the left */
-  }
-  
-  .next-button {
-    margin-left: auto;  /* Aligns the Next button to the right */
-  }
+}
+
+
+
+/* Navigation container */
+.page-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #D0C8E0; /* matches content-box border */
+}
+
+
+.code-block-title, .quarto-code-title {
+  display: block;
+  color: #6B5B95;
+  background: #F5F3FA;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px 6px 0 0;
+  font-size: 1em;
+}

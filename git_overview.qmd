@@ -1,0 +1,114 @@
+---
+title: "Git Overview"
+toc: true
+---
+
+# What is Git/Github and why do I want to use it? 
+
+**Git** is a version control system. It lets you track changes to your code and documents over time, so you can:
+
+- **Organise your work:** keep your research projects, analysis scripts, and data files tidy and structured.
+- **Track changes:** see what was added, removed, or modified, and go back to previous versions if something breaks.
+- **Collaborate safely:** multiple people can work on the same project without overwriting each other’s work.
+
+**GitHub** is a cloud-based platform that works with Git. It lets you:   
+
+- **Share your projects** with others, or download packages and code that other researchers have shared.  
+- **Collaborate** on code and projects with colleagues or contributors around the world.  
+- **Create webpages and reports** using tools like **Quarto** (we’ll cover this in part two of the workshop).  
+- **Host and publish your work online**, making it easier to share and document your research reproducibly.  
+
+In short: Git keeps your work organised and versioned on your local computer, and GitHub lets you back it up, share it, and collaborate with others online.
+
+::: {.callout-tip appearance="simple"}
+# Some cool examples of how people use git/github:
+- The [Kākāpō genome project](https://github.com/GenomicsAotearoa/Kakapo), with all the scripts and workflows needed for the genome assembly.  
+- The website for the [Genomics Aotearoa Bioinformatics Training Programme](https://github.com/GenomicsAotearoa/BioinformaticsTrainingProgramme) is hosted on github, written in Quarto and displayed using [github pages.](https://docs.github.com/en/pages)  
+- A curated list of [awesome ggplot2 packages](https://github.com/erikgahner/awesome-ggplot2)  
+:::
+
+### Setup on local machine  
+  
+We will run everything locally in RStudio. If you are confident using the command line, you could also use any command line shell you like instead (*e.g.,* Terminal (macOS), Warp, GitBash for Windows, Visual Studio Code). Please have the following installed **before the workshop**.  
+
+If you already have these tools installed, make sure they are **up to date**.
+
+
+#### 1. Install the latest version of R
+
+
+- **Mac:** [Download `.pkg` installer here](https://cran.r-project.org/bin/macosx/)  
+- **Windows:** [Download `.exe` installer here](https://cran.r-project.org/bin/windows/base/)  
+- **Linux:** [Instructions here](https://cran.r-project.org/bin/linux/)  
+
+> **Note:** Do **not** use `.tar.gz` source files unless you want to compile R from source.
+
+#### 2. Install the latest version of RStudio
+
+- [Download RStudio Desktop](https://posit.co/download/rstudio-desktop/)  
+
+
+#### 3. Install Git
+
+Git is a separate program from R/RStudio.  
+
+- **Mac:** Check if Git is already installed. Open terminal and run:  
+```bash
+git --version
+```
+> **Note:** If it is not already installed, [follow instructions here for macOS](https://git-scm.com/downloads/mac)  
+
+- **Windows:** Follow the "Installing Git for Windows" instructions [here on the software carpentry page](https://carpentries.github.io/workshop-template/install_instructions/#the-bash-shell) (Instructions may be hiding under "The Bash Shell" section, tab for "Git for Windows".)
+
+::: {.callout-note collapse="true"}
+## If you can't find it, the instructions are copy-pasted here:
+Installing Git for Windows  
+If you are unable to use WSL 2, please use the following instructions to install Git for Windows (“Git Bash”).
+
+1. Download the [Git for Windows installer.](https://gitforwindows.org/)
+2. Run the installer and follow the steps below:
+    1. Click on "Next" four times (two times if you've previously installed Git). You don't need to change anything in the Information, location, components, and start menu screens.
+    2. **From the dropdown menu, "Choosing the default editor used by Git", select "Use the Nano editor by default" (NOTE: you will need to scroll up to find it) and click on "Next".**
+    3. On the page that says "Adjusting the name of the initial branch in new repositories", ensure that "Let Git decide" is selected. This will ensure the highest level of compatibility for our lessons.
+    4. Ensure that "Git from the command line and also from 3rd-party software" is selected and click on "Next". (If you don't do this Git Bash will not work properly, requiring you to remove the Git Bash installation, re-run the installer and to select the "Git from the command line and also from 3rd-party software" option.)
+    5. Select "Use bundled OpenSSH".
+    6. Ensure that "Use the native Windows Secure Channel Library" is selected and click on "Next".
+    7. Ensure that "Checkout Windows-style, commit Unix-style line endings" is selected and click on "Next".
+    8. **Ensure that "Use Windows' default console window" is selected and click on "Next".**
+    9. Ensure that "Default (fast-forward or merge) is selected and click "Next"
+    10. Ensure that "Git Credential Manager" is selected and click on "Next".
+    11. Ensure that "Enable file system caching" is selected and click on "Next".
+    12. Click on "Install".
+    13. Click on "Finish" or "Next".
+3. If your "HOME" environment variable is not set (or you don't know what this is):
+    1. Open command prompt (Open Start Menu then type `cmd` and press Enter)
+    2. Type the following line into the command prompt window exactly as shown:
+    `setx HOME "%USERPROFILE%"`
+    3. Press Enter, you should see SUCCESS: Specified value was saved.
+    4. Quit command prompt by typing `exit` then pressing Enter
+
+This will provide you with both Git and Bash in the Git Bash program.
+
+:::
+
+> **Note:** If you have previously completed the carpentries lesson on [Introduction to Shell](https://swcarpentry.github.io/shell-novice/01-intro.html) on your windows computer, you would have already downloaded Git. 
+
+
+#### 4. Make a Github account
+
+1. Go to [https://github.com](https://github.com) and follow the “Sign up” link at the top-right of the window.
+2. Follow the instructions to create an account.
+3. Verify your email address with GitHub.
+4. Configure multifactor authentication ([see Github page on 2FA](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication))  
+5. **Optional:** Add a profile picture and modify other preferences, such as linking ORCID, in your github account.
+
+
+::: {.callout-caution appearance="minimal"}
+## Caution - chose your email address and username wisely!  
+
+- Use an email address for Github that you expect to have access to in the future. Your institutional address may not be the best choice.  
+- Your username will become the name all of your collaborators and the github public see, so chose something wise (*e.g.,* your fullname, or a shortened version of it).  
+
+You will need to remember both of these for when we [configure git](episode_02_SettingUpGit.qmd) during the workshop.
+:::  
+
