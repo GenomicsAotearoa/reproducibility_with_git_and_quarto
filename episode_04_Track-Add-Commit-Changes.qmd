@@ -205,11 +205,11 @@ It's time to commit the modified version. Except remember, we need to `git add` 
 
 ```bash
 git add guacamole.qmd
-git commit -m "Add ingredients for basic guacamole"
+git commit -m "Add instructions for basic guacamole"
 ```
 
 ```
-[main 8a8041c] Add ingredients for basic guacamole
+[main 8a8041c] Add instructions for basic guacamole
  1 file changed, 4 insertions(+)
  ```
 

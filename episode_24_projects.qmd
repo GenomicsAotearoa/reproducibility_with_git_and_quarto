@@ -5,7 +5,7 @@ toc: true
 
 #### **Challenge**
 
-First, a challenge: What's special about this page title? Specifically, what do I need to do when creating this .qmd file to make sure this renders? 
+First, a challenge: What's special about this page title? Specifically, what do I need to do when creating this `.qmd`{style="color:blue"} file to make sure this renders? 
 
 ::: {.callout-tip collapse="true"}
 ## Solution
@@ -15,13 +15,10 @@ This page title contains a colon. Since colons are used to separate the key-valu
 
 ## Aims
 
-Recognise sensible directory structure and appreciate how consistent structure aids reproducibility and collaboration.
-
-Understand what a Quarto project is and when to use one.
-
-Create and configure a basic Quarto project with _quarto.yml.
-
-Learn how _quarto.yml controls project-wide behavior (rendering, format, options).
+* Recognise sensible directory structure and appreciate how consistent structure aids reproducibility and collaboration.    
+* Understand what a Quarto project is and when to use one.  
+* Create and configure a basic Quarto project with `_quarto.yml`{style="color:blue"}.  
+* Learn how `_quarto.yml`{style="color:blue"} controls project-wide behavior (rendering, format, options).  
 
 
 ## Project Directory Structure
@@ -42,13 +39,13 @@ Some key practices to keep in mind include:
 
 1. Separate directories for Raw and Processed Data. 
 
-    - Raw and Processed Data will probably be included in your .gitignore file so that it is not uploaded to github. 
+    - Raw and Processed Data will probably be included in your `.gitignore`{style="color:blue"} file so that it is not uploaded to github. 
 
 2. Scripts directories could be split by work stage (*e.g.,* preprocessing/analysis/visualisation) or by type (*e.g.,* R/Bash).
 
 3. Output directories should contain subdirectories for each type of output (figures/tables).
 
-4. Configuration files (_quarto.yml, styles.css, README) should sit in the main project directory.
+4. Configuration files (`_quarto.yml`{style="color:blue"}, `styles.css`{style="color:blue"}, `README`{style="color:blue"}) should sit in the main project directory.
 
 5. Global naming convention across projects.
 
@@ -86,7 +83,7 @@ my-genomics-project/
 
 └── docs/                    # Optional: exported PDFs or other formats
 
-#### Group discussion exercise
+#### Group discussion exercise (5 min)
 
 Have you ever inherited a project that did (or did not) adhere to the above principles? How did this impact you? 
 
@@ -103,9 +100,9 @@ We should also think about projects in terms of directory structure. We want to 
 
 ### Quarto Projects and _quarto.yml
 
-Specifically, a project is a directory that contains a high level file that provides information and structure to the other files: the _quarto.yml file. The _quarto.yml file is required to link individual pages together and provides options for navigation menus. Once a _quarto.yml file is in place in a directory, rendering any .qmd file in the directory will render all files in that directory - but only those that are linked through the _quarto.yml file will appear in the document. 
+Specifically, a project is a directory that contains a high level file that provides information and structure to the other files: the `_quarto.yml`{style="color:blue"} file. The `_quarto.yml`{style="color:blue"} file is required to link individual pages together and provides options for navigation menus. Once a `_quarto.yml`{style="color:blue"} file is in place in a directory, rendering any `.qmd`{style="color:blue"} file in the directory will render all files in that directory - but only those that are linked through the `_quarto.yml`{style="color:blue"} file will appear in the document. 
 
-If you have been following along you should have two .qmd files (Getting Started and Code Blocks). We will now build a new _quarto.yml file and use it to link the two existing pages into a single site. We will break this simple _quarto.yml into three sections: project information, website information, and format information.
+If you have been following along you should have two `.qmd`{style="color:blue"} files (something like "getting-started.qmd" and "code-in-quarto.qmd' - depends what you named them!). We will now build a new `_quarto.yml`{style="color:blue"} file and use it to link the two existing pages into a single site. We will break this simple `_quarto.yml`{style="color:blue"} into three sections: project information, website information, and format information.
 
 ::: {.callout-tip collapse="true"}
 ## What if we **don't** want to render a doc in the directory?
@@ -126,21 +123,43 @@ This file is essentially a YAML header for the whole project. Options here will 
 
 3. Third we can control the look of the website with format options. We specify that we are working with an html-type output and can choose from a set of pre-built themes to customise the look of the document. We can also specify a css file, where we provide a styles.css file that further customises our website (*e.g.,* brand colours, hyperlink visuals). We will look at creating a styles.css file later. 
 
-Remember, the _quarto.yml file is essentially a YAML header for the whole document and is very fussy about indentation, spacing (between key-value pairs), and all format arguments. 
-
-Render this document from one of the existing .qmd files. You cannot render from the _quarto.yml file itself. 
-
-::: {.callout-tip collapse="true"}
-## An example _quarto.yml file
+An example `_quarto.yml`{style="color:blue"}  file looks like:
 
 ![_quarto.yml](figures/quartoYML.png)
-:::
 
-We will look at the _quarto.yml options in more detail in the next section.
+Remember, the _quarto.yml file is essentially a YAML header for the whole document and is very fussy about indentation, spacing (between key-value pairs), and all format arguments.
 
-#### **Exercise:** _quarto.yml themes and options
 
-Change the theme in the _quarto.yml file to one of the 25 pre-built options (listed below). Render the document and view the outcome. 
+#### **Exercise:** Create your own _quarto.yml, add themes and options (8 min)
+
+1. Create a text document in RStudio
+2. Copy-paste the following text (change file names to your file names!):
+
+```bash
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "My Quarto Site"
+  navbar:
+    left:
+      - text: "Getting started"
+        href: getting-started.qmd
+      - text: "Code blocks"
+        href: code-in-quarto.qmd
+
+format:
+  html:
+    theme: default
+```
+> Note: the formatting will go weird if you copy-paste into a new R script. Make sure it is a new text file!
+
+3. Save this file as `_quarto.yml`{style="color:blue"}
+4. Click render from one of the existing .qmd files. You cannot render from the _quarto.yml file itself! Alternatively, type `quarto preview` in the terminal.
+5. Explore your new webpage! 🥳
+
+6. Now, you can change the theme in the `_quarto.yml`{style="color:blue"} file from default to one of the 25 pre-built options (listed below). Render the document and view the outcome ✨
 
 ::: {.callout-tip collapse="true"}
 ## **Pre-constructed themes**
@@ -174,12 +193,10 @@ Change the theme in the _quarto.yml file to one of the 25 pre-built options (lis
 
 :::
 
-Immediately under the navbar line, add a new line (indented from navbar) and add "pinned: true". What effect does this have? 
+7. Options: Immediately under the navbar line, add a new line (indented from navbar) and add `pinned: true`. What effect does this have? 
 
 ## Summary
 
-Sensible directory structures enhance reproducibility and make collaboration easier. 
-
-Quarto projects are a directory containing multiple .qmd files linked by a _quarto.yml document. 
-
-Basic _quarto.yml files control the structure of the output website/book, and can control all visual elements. 
+* Sensible directory structures enhance reproducibility and make collaboration easier.   
+* Quarto projects are a directory containing multiple `.qmd`{style="color:blue"} files linked by a `_quarto.yml`{style="color:blue"} document.  
+* Basic `_quarto.yml`{style="color:blue"} files control the structure of the output website/book, and can control all visual elements. 

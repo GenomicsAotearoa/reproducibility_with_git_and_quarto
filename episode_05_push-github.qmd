@@ -77,17 +77,22 @@ We will run the list command to check what key pairs already exist on your compu
 ls -al ~/.ssh
 ```
 
-Your output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using. It may look like this:
+Your output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using.  
+
+If you **have not** set up SSH before on your computer, you will get an output something like this:
 
 ```
 ls: cannot access '/c/Users/username/.ssh': No such file or directory
 ```
 
-If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either `id_ed25519`{style="color:blue"}/`id_ed25519.pub`{style="color:blue"} or `id_rsa`{style="color:blue"}/`id_rsa.pub`{style="color:blue"} depending on how the key pairs were set up. 
+If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either `id_ed25519`{style="color:blue"}/`id_ed25519.pub`{style="color:blue"} or `id_rsa`{style="color:blue"}/`id_rsa.pub`{style="color:blue"} depending on how the key pairs were set up.  
+
+If you **have** set up SSH before on your computer, you will get an output something like this:
 
 ```
-drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ./
-drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ../
+drwxr-xr-x  1 Username   197121   0 Jul 16 14:48 ./
+drwxr-xr-x  1 Username   197121   0 Jul 16 14:48 ../
+-rw-------@ 1 Username  staff   467 Sep 25 16:10 config
 ```
 
 ### 3.1 Create an SSH key pair

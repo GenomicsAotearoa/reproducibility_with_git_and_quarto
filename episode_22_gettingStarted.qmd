@@ -129,7 +129,7 @@ If you are writing lists manually (*i.e.,* not using the Visual editor option) y
  
 ### Save and Render document
 
-Save your Quarto file (`CTRL`{style="color:black"} + `S`{style="color:black"} or `CMD`{style="color:black"} + `S`{style="color:black"}), give it a name if you have not already (*e.g.,* `test-file.qmd`{style="color:blue"}) and save it into the directory you made earlier (mine is called `my-test-repo`{style="color:blue"}).
+Save your Quarto file (`CTRL`{style="color:black"} + `S`{style="color:black"} or `CMD`{style="color:black"} + `S`{style="color:black"}), give it a name if you have not already (*e.g.,* `getting-started.qmd`{style="color:blue"}) and save it into the directory you made earlier (mine is called `my-test-repo`{style="color:blue"}).
 
 Now back in RStudio, click the 'Render' button, which will simultaneously open up a Preview. You can change the Preview settings by clicking the settings button next to the Render button. The Preview can either be viewed in a new window or in a panel in RStudio. 
 
@@ -138,7 +138,7 @@ Now back in RStudio, click the 'Render' button, which will simultaneously open u
 Alternatively, you can `preview` and `render` a document on the command line (*e.g.,* in terminal in RStudio, type):
 
 ```bash
-quarto preview test-file.qmd
+quarto preview getting-started.qmd
 ```
 
 This should also open a Preview window automatically in your browser.

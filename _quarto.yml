@@ -12,8 +12,6 @@ website:
     contents:
       - text: "Home"
         href: index.qmd
-      - test: "test style"
-        href: test.qmd
       - section: "Part One - Git"
         href: git_overview.qmd
         contents:

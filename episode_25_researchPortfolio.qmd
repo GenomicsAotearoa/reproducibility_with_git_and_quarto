@@ -3,25 +3,16 @@ title: Building our own research porfolio
 toc: true
 ---
 
-In this section we will all build and publish our own website with the aim of giving you:
 
-1. Hands-on experience with writing the Quarto documents required for a website.
-
-2. A website that highlights your capabilities as a researcher and bioinformatician. 
-
-
-#### Aims
+## Aims
 
 - Learn how to publish a website.
-
 - Gain experience with Quarto, explore options around format, theme, styles.css, *etc.,* to create a polished website.
-
 - Pin a repo to showcase your capabilities.
-
 - Gain confidence in working publicly. 
 
 
-\* As an alternative to creating a research portfolio website, you may instead choose to focus on creating a website that documents one of your particular projects, or some other form of website. While we recommend the concept of a pinned github repo to highlight your abilities as a researcher and bioinformatician, how you do this is up to you. 
+As an alternative to creating a research portfolio website, you may instead choose to focus on creating a website that documents one of your particular projects, or some other form of website. While we recommend the concept of a pinned github repo to highlight your abilities as a researcher and bioinformatician, how you do this is up to you. 
 
 
 ## Why a portfolio website? 
@@ -30,34 +21,61 @@ If you want to progress in bioinformatics, you should assume that people (future
 
 Aside from github repos it can be useful to create websites as a way to market either yourself and your work, or the work of your lab group. Quarto can make this easy. [Jadey Ryan](https://jadeyryan.com/) has a great website that really showcases what a Quarto website can look like.
 
-To get a better understanding of why I am recommending this and what we are trying to do, I recommend this talk from posit::conf(2024) titled "[Github - How to tell your professional story](https://www.youtube.com/watch?v=R-bPjavai5A&list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn&index=20)". In this talk, Dr. Abigail Haddad outlines how Github can be used to demonstrate not just the raw coding skills you use frequently, but also the auxilliary skills that define how you work - your problem solving skills, your practices, and how you communicate. 
+To get a better understanding of why I am recommending this and what we are trying to do, we recommend this talk from posit::conf(2024) titled "[Github - How to tell your professional story](https://www.youtube.com/watch?v=R-bPjavai5A&list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn&index=20)". In this talk, Dr. Abigail Haddad outlines how Github can be used to demonstrate not just the raw coding skills you use frequently, but also the auxilliary skills that define how you work - your problem solving skills, your practices, and how you communicate. 
 
 We are going to take some of the advice from that talk, which says that all of your github should be used to *actively* demonstrate your skills and tell your story, and we are going to compress it down to a single github repo which will convey (or at least introduce) your story. We will Pin this repo so that it's the first thing people see when they visit your github page, and publish it as a working website so that you also have a link you can drop into LinkedIn or Bluesky posts, incorporate into your email signatures, whenever you feel it's appropriate to do some self-marketing. 
 
 
-## Initial setup (5-10 minutes)
+## Initial setup 
 
 Using skills from yesterday and today's workshops:
 
-- Initiate a new, public github repo with a name like Work Portfolio or equivalent. 
+- Initiate a new, public github repo with a name like "Work Portfolio" or equivalent. 
 
 - In RStudio, start a New Project and use the Version Control option to link it to the new repo. 
 
 - Create three .qmd files. For each file, set the YAML header to include an appropriate title and add at least one header and a piece of sample text to each document: 
 
-    - index.qmd. Index.qmd will work as the landing page for the site, and could include something like the short blurb found at the top of a CV.
+    - `index.qmd`{style="color:blue"}. Index.qmd will work as the landing page for the site, and could include something like the short blurb found at the top of a CV.
     
-    - portfolio.qmd. Portfolio will contain hyperlinks to your work - either to other github repos, publications, google scholar account, LinkedIn account *etc.,* (it will be the definitive, exhaustive set of your work).
+    - `portfolio.qmd`{style="color:blue"}. Portfolio will contain hyperlinks to your work - either to other github repos, publications, google scholar account, LinkedIn account *etc.,* (it will be the definitive, exhaustive set of your work).
     
-    - research_focus.qmd. Research_focus.qmd will include a written statement about your focus as a researcher.
+    - `research_focus.qmd`{style="color:blue"}. Research_focus.qmd will include a written statement about your focus as a researcher.
 
-\* **Note** these initial files are templates only, and will be populated later. 
+    - Create a `_quarto.yml`{style="color:blue"} file using the template from the previous section. Under contents, include index.qmd first, then portfolio.qmd and research_focus.qmd.
 
-- Create a _quarto.yml file using the template from the previous section. Under contents, include index.qmd first, then portfolio.qmd and research_focus.qmd.
+**Note:** these initial files are templates only, and will be populated later. 
+
+::: {.callout-note collapse="true" appearance="minimal"}
+# Make the _quarto.yml file for me please:
+
+```bash
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "My work portfolio"
+  navbar:
+    left:
+      - text: "My name"
+        href: index.qmd
+      - text: "My portfolio"
+        href: portfolio.qmd
+      - text: "My research focus"
+        href: research_focus.qmd
+
+format:
+  html:
+    theme: minty
+```
+
+:::
+
 
 ## Refining the site
 
-Here we will look at a number of options through the _quarto.yml file to improve the look of the website. 
+Here we will look at a number of options through the `_quarto.yml`{style="color:blue"} file to improve the look of the website. 
 
 ### Improved navigation and layout
 
@@ -65,11 +83,40 @@ Here we will look at a number of options through the _quarto.yml file to improve
 
 In the last section we added a navbar along the top of the page for website navigation. An alternative to this is sidebar navigation:
 
-- In the _quarto.yml document, replace 'navbar:' with 'sidebar:'. 
+- In the `_quarto.yml`{style="color:blue"} document, replace `navbar:` with `sidebar:` 
 
-- Add a new line below sidebar, indent and add style: "docked". 
+- Add a new line below `sidebar`, indent and add `style: "docked"`. 
 
-- Add a new line and (same indentation level as style, because it is an argument under sidebar) add contents:, then add individual .qmd documents with text and href as before. 
+- Add a new line and (same indentation level as `style:`, because it is an argument under `sidebar`), remove the `left:`, and add `contents:`. This is then followed individual `.qmd`{style="color:blue"} documents with `text` and `href` as before. 
+
+::: {.callout-warning collapse="true"}
+# Help! What should my _quarto.yml look like now?
+
+Your `_quarto.yml`{style="color:blue"} should now look like this:
+
+```bash
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "My work portfolio"
+  sidebar:
+    style: "docked"
+    contents:
+      - text: "My name"
+        href: index.qmd
+      - text: "My portfolio"
+        href: portfolio.qmd
+      - text: "My research focus"
+        href: research_focus.qmd
+
+format:
+  html:
+    theme: minty
+```
+
+:::
 
 #### Sections
 
@@ -89,81 +136,293 @@ Sections are very useful for *e.g.,* a website that focuses on discrete aspects 
 
 #### Site icons
 
-We can add a range of icons to our navigation menu and provide links for these icons. This provides an easy and clear way for site visitors to view your other, more commonly used accounts. Commonly used icons include github/linkedIn/bluesky, with [thousands of icons](https://icons.getbootstrap.com/) available for use. Add the code below to a new line in the website section of the _quarto.yml file. Note that navbar should be at the same indentation level as sidebar. You can swap the href link (which is currently to the generic github site) to your own github. 
+We can add a range of icons to our navigation menu and provide links for these icons. This provides an easy and clear way for site visitors to view your other, more commonly used accounts. Commonly used icons include github/linkedIn/bluesky, with [thousands of icons](https://icons.getbootstrap.com/) available for use. 
 
+Add the code below to a new line in the `website` section of the `_quarto.yml`{style="color:blue"}  file. Note that `navbar` should be at the same indentation level as `sidebar`. You can swap the href link (which is currently to the generic github site) to your own github. 
+
+```bash
   navbar:
-
     right:
-
       - icon: github
-
         href: https://github.com/
-
         aria-label: GitHub
+```
 
 #### Footer
 
 Add a footer with: 
 
+```bash
   page-footer:
-
     center:
-
       - text: "Built with love and Quarto"
-
       - href: https://quarto.org
-
+```
 
 #### Themes light and dark
 
 In addition to selecting a single theme as we have done in the previous section of this workshop, we can enable both a light and dark mode using themes. The easiest way to do this is to choose the simple themes "flatly" and "darkly", but you can select any themes you prefer. 
 
-To do this, under theme, add two new lines with the key-value pairs "light: flatly" and "dark: darkly". After rendering we can now switch between light and dark modes. 
+To do this, under `theme:`, add two new lines with the key-value pairs `light: flatly` and `dark: darkly`. After rendering we can now switch between light and dark modes. 
+
+```bash
+theme:
+  light: flatly
+  dark: darkly
+```
 
 ### styles.css
 
-In addition to the pre-built format that themes can provide we can also customise our sites with a styles.css file. The .css file is a "Cascading Style Sheets" document, which can be used to override all of the Quarto defaults for HTML documents. The .css file is used to manipulate fonts, choose colours, layout, background for code cells, side and navbar aesthetics, table text alignment - *almost every visual aspect* can be changed with a styles.css file. 
+In addition to the pre-built format that themes can provide we can also customise our sites with a `styles.css`{style="color:blue"} file. This a "Cascading Style Sheets" document, which can be used to override all of the Quarto defaults for HTML documents. The .css file is used to manipulate fonts, choose colours, layout, background for code cells, side and navbar aesthetics, table text alignment - *almost every visual aspect* can be changed with a styles.css file. 
 
-The styles.css file is written in css - it is not Quarto specific, and requires reasonably detailed knowledge. I recommend using templates sourced online or chatGPT equivalents for building a styles.css template which you can then work from. Using chatGPT I selected colours (blue and gold for Otago), specified that I wanted those to be gentle (not harsh, lower contrast) and asked for a clean, clear look. I took the template and added it a new document call styles.css.
+The `styles.css`{style="color:blue"}  file is written in css - it is not Quarto specific, and requires reasonably detailed knowledge. We recommend using templates sourced online or chatGPT equivalents for building a `styles.css`{style="color:blue"} template which you can then work from. 
 
-Styles.css is stored in the top level of the directory. In the _quarto.yml document under format, I added a new line at the same indentation level as theme and added "css: styles.css". 
+Styles.css is stored in the top level of the directory. In the `_quarto.yml`{style="color:blue"} document under `format`, we can add a new line at the same indentation level as theme and added `css: styles.css` 
+
+```bash
+format:
+  html:
+    css: styles.css
+```
+
+::: {.callout-note collapse="true"}
+# Example styles.css
+Here we created one using ChatGPT, by asking it to create a styles.css file using the specified colour palette (these colours come from a [Kākāpō palette by Geoffrey Thomson](https://g-thomson.github.io/Manu/)). Copy-paste this text into a text file and save it as `styles.css`{style="color:blue"}:
+
+```bash
+/* ===========================
+   Custom Portfolio Styles
+   =========================== */
+
+/* ----- Colour Palette ----- */
+:root {
+  --olive: #7D9D33;      /* Primary green accent */
+  --sage: #CED38C;       /* Light green background */
+  --gold: #DCC949;       /* Secondary accent */
+  --taupe: #BCA888;      /* Soft contrast */
+  --terracotta: #CD8862; /* Warm highlight */
+  --brown: #775B24;      /* Dark brown text / navbar */
+}
+
+/* ----- Base ----- */
+body {
+  background-color: var(--sage);
+  color: var(--brown);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* ----- Headings ----- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--brown);
+  font-weight: 600;
+  margin-top: 1.2em;
+}
+
+/* ----- Links ----- */
+a {
+  color: var(--olive);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--terracotta);
+  text-decoration: underline;
+}
+
+/* ----- Sidebar ----- */
+.sidebar {
+  background-color: var(--sage);
+  color: var(--brown);
+  border-right: 2px solid var(--taupe);
+  padding-top: 1em;
+}
+
+.sidebar a {
+  display: block;
+  color: var(--brown);
+  padding: 0.5em 1em;
+  font-weight: 500;
+}
+
+.sidebar a:hover {
+  background-color: var(--gold);
+  color: var(--brown);
+  text-decoration: none;
+}
+
+.sidebar a.active {
+  border-left: 4px solid var(--terracotta);
+  background-color: rgba(205, 136, 98, 0.15);
+}
+
+/* ----- Navbar ----- */
+.navbar {
+  background-color: var(--brown);
+  color: var(--gold);
+  padding: 0.6em 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid var(--terracotta);
+}
+
+.navbar a {
+  color: var(--gold);
+  margin-left: 1em;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: var(--sage);
+}
+
+/* ----- Footer ----- */
+.page-footer, .footer {
+  background-color: var(--brown);
+  color: var(--gold);
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
+  border-top: 4px solid var(--terracotta);
+}
+
+.page-footer a, .footer a {
+  color: var(--terracotta);
+  text-decoration: none;
+}
+
+.page-footer a:hover, .footer a:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+/* ----- Buttons ----- */
+button, .btn, input[type="submit"] {
+  background-color: var(--terracotta);
+  color: var(--sage);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover, .btn:hover, input[type="submit"]:hover {
+  background-color: var(--brown);
+  color: var(--gold);
+}
+
+/* ----- Content Boxes ----- */
+.content-box {
+  background-color: var(--taupe);
+  border: 1px solid var(--brown);
+  padding: 1em;
+  border-radius: 8px;
+  margin: 1em 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ----- Blockquotes ----- */
+blockquote {
+  border-left: 4px solid var(--terracotta);
+  background: var(--gold);
+  color: var(--brown);
+  padding: 1em;
+  margin: 1.5em 0;
+  font-style: italic;
+  border-radius: 4px;
+}
+
+/* ----- Tables ----- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: var(--sage);
+}
+
+th {
+  background-color: var(--brown);
+  color: var(--gold);
+  padding: 0.6em;
+}
+
+td {
+  border: 1px solid var(--taupe);
+  padding: 0.5em;
+  color: var(--brown);
+}
+
+/* ----- Code Blocks ----- */
+pre, code {
+  background-color: var(--taupe);
+  color: var(--brown);
+  font-family: "Courier New", monospace;
+  border-radius: 4px;
+  padding: 0.3em 0.5em;
+}
+```
+
+:::
 
 
-## Pinning a repo and publishing the site using github
 
-On the github website you can pin up to six repos as visible on your main landing page, with the remaining repos being visible under the repos tab. Once your research portfolio website is underway I recommend pinning it, alongside your most completed and well-documented repos, so that they will be the first thing visitors will see. 
+## Publishing the site using GitHub Pages
 
-To publish a website - that is, to take it from the local-only html file to a hosted site that is accessible via url - [there are a number of options](https://quarto.org/docs/publishing/). Today we will focus on publishing through github pages. Within github pages there are three options for publishing (render to docs and publish, using the quarto publish command, or using a Github Action). We will use the simplest option, render to docs and then instruct github to publish from the docs directory. 
+To publish a website - that is, to take it from the local-only html file to a hosted site that is accessible via url - [there are a number of options](https://quarto.org/docs/publishing/). Today we will focus on publishing through GitHub Pages. Within GitHub Pages there are three options for publishing (render to docs and publish, using the quarto publish command, or using a Github Action). We will use the simplest option, render to docs and then instruct GitHub to publish from the docs directory. 
 
-### Setting up
 
-In the _quarto.yml file, make sure that we have "output-dir: docs" under project. Quarto render will then output all files to the docs directory. 
+### 1. Setting up
 
-We need to add a specific file that tells github pages *not* to do additional processing of our site (github has built in methods for publishing, which we do not want to use here). Under the Terminal tab in RStudio, run "touch .nojekyll". Just like how the underscore at the start of a _quarto.yml file means the file is not rendered, starting with a "." means that the file is not rendered and is instead treated as a high-level argument. 
+1. In the `_quarto.yml`{style="color:blue"} file, make sure that we have `output-dir: docs` under `project`. Quarto render will then output all files to the docs directory. 
 
-### Render, add, commit, push
+2. We need to add a specific file that tells GitHub pages *not* to do additional processing of our site (github has built in methods for publishing, which we do not want to use here). Under the Terminal tab in RStudio, run: 
+
+```bash
+touch .nojekyll
+```
+
+The file is not rendered - starting with a `.`{style="color:green"} means that the file is not rendered and is instead treated as a high-level argument. 
+
+### 2. Render, add, commit, push
 
 While still in the Terminal window of RStudio, run:
 
-`quarto render`
+```bash
+quarto render
+```
 
-`git add docs`
+```bash
+git add docs
+```
 
-`git commit -m "publish to docs/" `
+```bash
+git commit -m "publish to docs/"
+```
 
-`git push`
+```bash
+git push
+```
 
 Our new rendered docs should now be stored safely in our repo. 
 
-### Deploy from main/docs
+### 3. Deploy from main/docs
 
-Navigate to the github repo for the page you wish to deploy. Under Settings > Pages, use the dropdown menus under the Branch header to select "Main" branch, and then switch the directory from "root" to "docs". When ready, click "Save". 
+Navigate to the GitHub repo for the page you wish to deploy. Under `Settings`{style="color:black"}  > `Pages`{style="color:black"}, use the dropdown menus under the **Branch** header to select `main`{style="color:black"} branch, and then switch the directory from `/(root)`{style="color:black"}  to `/docs`{style="color:black"}. When ready, click `Save`{style="color:black"}. 
 
 The page should refresh with a new note saying "Your Github pages site is currently being built...". 
 
 ![Deploying the github page](figures/deployPage.png)
 
-Refresh the page to see the url for the new site and a button to Visit the site. Copy this url, return to the main page for the repo, and use the buttons on the github site to edit the About and/or Readme. Alternatively, back in RStudio open the README.md file and add the url there. 
+Refresh the page to see the url for the new site and a button to Visit the site. Copy this url, return to the main page for the repo, and use the buttons on the github site to edit the About and/or Readme. Alternatively, back in RStudio open the README.md file and add the url there. Explore and share your now live portfolio webpage! 
+
+### 4. Pin your repo
+
+On the GitHub website you can pin up to six repos as visible on your main landing page, with the remaining repos being visible under the repos tab. Once your research portfolio website is underway we recommend pinning it, alongside your most completed and well-documented repos, so that they will be the first thing visitors will see. 
 
 
 ## Summary

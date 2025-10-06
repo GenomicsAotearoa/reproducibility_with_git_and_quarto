@@ -153,12 +153,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Home</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">test styling</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./git_overview.html" class="sidebar-item-text sidebar-link">
@@ -279,8 +273,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#global-code-options" id="toc-global-code-options" class="nav-link" data-scroll-target="#global-code-options">Global code options</a>
   <ul class="collapse">
   <li><a href="#echo-and-eval" id="toc-echo-and-eval" class="nav-link" data-scroll-target="#echo-and-eval">Echo and Eval</a></li>
-  <li><a href="#cross-referencing" id="toc-cross-referencing" class="nav-link" data-scroll-target="#cross-referencing">Cross-referencing</a></li>
-  <li><a href="#warnings" id="toc-warnings" class="nav-link" data-scroll-target="#warnings">Warnings</a></li>
+  <li><a href="#cross-referencing-figures-and-tables" id="toc-cross-referencing-figures-and-tables" class="nav-link" data-scroll-target="#cross-referencing-figures-and-tables">Cross-referencing: figures and tables</a></li>
+  <li><a href="#warnings-and-messages" id="toc-warnings-and-messages" class="nav-link" data-scroll-target="#warnings-and-messages">Warnings and messages</a></li>
   </ul></li>
   <li><a href="#set-figure-dimensions" id="toc-set-figure-dimensions" class="nav-link" data-scroll-target="#set-figure-dimensions">Set figure dimensions</a></li>
   </ul></li>
@@ -442,10 +436,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Now see for yourself! Try using <code>#| eval: false</code> and <code>#| echo: false</code> and render the document.</p>
 </section>
-<section id="cross-referencing" class="level4">
-<h4 class="anchored" data-anchor-id="cross-referencing">Cross-referencing</h4>
-<p>Quarto allows easy cross-referencing. This can be done in two ways:</p>
-<p>We can attach a label to a code block with <strong>#| label:</strong>, followed by a given label. We can then use <strong>@label</strong> to cross-reference. For example:</p>
+<section id="cross-referencing-figures-and-tables" class="level4">
+<h4 class="anchored" data-anchor-id="cross-referencing-figures-and-tables">Cross-referencing: figures and tables</h4>
+<p>Quarto allows easy cross-referencing to figures and tables.</p>
+<p>We can attach a label to a code block with <code>#| label:</code>, followed by a given label. We can then use <code>@label</code> to cross-reference.</p>
+<section id="figures-example" class="level5">
+<h5 class="anchored" data-anchor-id="figures-example">Figures example:</h5>
+<p>Open a code block.</p>
+<p>Directly under the header line of your code block, add the text <code>#| label: fig-penguinBills</code>. Then, add some <code>ggplot</code> code to make a figure. We’ll do a simple <code>geom_point()</code> plot here using the palmerpenguins dataset as an example. Then, underneath your code block, write some text cross-referencing the figure label. See our exmaples below:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-penguinBills</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -480,34 +478,60 @@ Figure&nbsp;1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-What is happening above?
+What is happening above (behind the scenes)?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>In the qmd file used to build the website you are looking at right now, the code block above contains two #| lines:</p>
-<p>#| label: fig-penguinBills</p>
+<p>In the qmd file used to build the website you are looking at right now, the code block above contains two <code style="color:green">#|</code> lines:</p>
+<p><code>#| label: fig-penguinBills</code></p>
+<p>The first label line directly under the start of the code block (indicated by <code>```{r}</code> ) tells the code block to cross-reference this figure using the label “fig-penguinBills”.</p>
+<p>Then, the line <code>#| label: fig-penguinBills</code> is repeated, so that you can see it in the code block above. As it is separated from the start of the code block by a line, it gets read by r as a commented out line, the same as any line starting with a <code style="color:green">#</code>.</p>
 <p>Below the code block the text reads:</p>
-<p>“See @fig-penguinBills for a positive correlation between bill depth and bill length.”</p>
+<p>See @fig-penguinBills for a positive correlation between bill depth and bill length.</p>
+<p>Here, the <code style="color:green">@fig-penguinBills</code> automatically gets converted to the text “Figure 1”, with a clickable link.</p>
+<p><strong>Confused?</strong> Here are pictures of the full code and output:</p>
+<p><u>Code behind the scenes:</u></p>
+<p><img src="images-quarto/quarto-codeBTS-01.png" class="img-fluid"></p>
+<p><u>Output:</u></p>
+<p><img src="images-quarto/quarto-codeBTS-02.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
-<p>For cross referencing tables it is very similar to figures, but instead we use the <code>tbl</code> prefix</p>
+</section>
+<section id="tables-example" class="level5">
+<h5 class="anchored" data-anchor-id="tables-example">Tables example:</h5>
+<p>For cross referencing tables it is very similar to figures, but instead we use the <code>tbl</code> prefix, and we can also add a Table caption using <code>#| tbl-cap:</code> For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: 'Penguin Mean Body Weights'</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island) <span class="sc">|&gt;</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_body_mass_g =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(mean_body_mass_g) <span class="sc">|&gt;</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">island =</span><span class="st">"Island"</span>, </span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">mean_body_mass_g =</span> <span class="st">"Mean Body Mass (g)"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">columns =</span> island, <span class="at">align =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: 'tbl-penguin-mass-summary'</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: 'Penguin Mean Body Weights'</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island) <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_body_mass_g =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(mean_body_mass_g) <span class="sc">|&gt;</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">island =</span><span class="st">"Island"</span>, </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">mean_body_mass_g =</span> <span class="st">"Mean Body Mass (g)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">columns =</span> island, <span class="at">align =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-penguin-mass-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-penguin-mass-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -515,23 +539,23 @@ Table&nbsp;1: Penguin Mean Body Weights
 </figcaption>
 <div aria-describedby="tbl-penguin-mass-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ersozpjion" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ersozpjion table {
+<div id="avetfpqlsg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#avetfpqlsg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ersozpjion thead, #ersozpjion tbody, #ersozpjion tfoot, #ersozpjion tr, #ersozpjion td, #ersozpjion th {
+#avetfpqlsg thead, #avetfpqlsg tbody, #avetfpqlsg tfoot, #avetfpqlsg tr, #avetfpqlsg td, #avetfpqlsg th {
   border-style: none;
 }
 
-#ersozpjion p {
+#avetfpqlsg p {
   margin: 0;
   padding: 0;
 }
 
-#ersozpjion .gt_table {
+#avetfpqlsg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -557,12 +581,12 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-left-color: #D3D3D3;
 }
 
-#ersozpjion .gt_caption {
+#avetfpqlsg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ersozpjion .gt_title {
+#avetfpqlsg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -574,7 +598,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-width: 0;
 }
 
-#ersozpjion .gt_subtitle {
+#avetfpqlsg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -586,7 +610,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-top-width: 0;
 }
 
-#ersozpjion .gt_heading {
+#avetfpqlsg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -598,13 +622,13 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#ersozpjion .gt_bottom_border {
+#avetfpqlsg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ersozpjion .gt_col_headings {
+#avetfpqlsg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -619,7 +643,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#ersozpjion .gt_col_heading {
+#avetfpqlsg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -639,7 +663,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#ersozpjion .gt_column_spanner_outer {
+#avetfpqlsg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -651,15 +675,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 4px;
 }
 
-#ersozpjion .gt_column_spanner_outer:first-child {
+#avetfpqlsg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ersozpjion .gt_column_spanner_outer:last-child {
+#avetfpqlsg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ersozpjion .gt_column_spanner {
+#avetfpqlsg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -671,11 +695,11 @@ Table&nbsp;1: Penguin Mean Body Weights
   width: 100%;
 }
 
-#ersozpjion .gt_spanner_row {
+#avetfpqlsg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ersozpjion .gt_group_heading {
+#avetfpqlsg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -701,7 +725,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   text-align: left;
 }
 
-#ersozpjion .gt_empty_group_heading {
+#avetfpqlsg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -716,15 +740,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   vertical-align: middle;
 }
 
-#ersozpjion .gt_from_md > :first-child {
+#avetfpqlsg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ersozpjion .gt_from_md > :last-child {
+#avetfpqlsg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ersozpjion .gt_row {
+#avetfpqlsg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -743,7 +767,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#ersozpjion .gt_stub {
+#avetfpqlsg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -756,7 +780,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#ersozpjion .gt_stub_row_group {
+#avetfpqlsg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -770,15 +794,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   vertical-align: top;
 }
 
-#ersozpjion .gt_row_group_first td {
+#avetfpqlsg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ersozpjion .gt_row_group_first th {
+#avetfpqlsg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ersozpjion .gt_summary_row {
+#avetfpqlsg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -788,16 +812,16 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#ersozpjion .gt_first_summary_row {
+#avetfpqlsg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ersozpjion .gt_first_summary_row.thick {
+#avetfpqlsg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ersozpjion .gt_last_summary_row {
+#avetfpqlsg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -807,7 +831,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#ersozpjion .gt_grand_summary_row {
+#avetfpqlsg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -817,7 +841,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#ersozpjion .gt_first_grand_summary_row {
+#avetfpqlsg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -827,7 +851,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-top-color: #D3D3D3;
 }
 
-#ersozpjion .gt_last_grand_summary_row_top {
+#avetfpqlsg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -837,11 +861,11 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#ersozpjion .gt_striped {
+#avetfpqlsg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ersozpjion .gt_table_body {
+#avetfpqlsg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -850,7 +874,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#ersozpjion .gt_footnotes {
+#avetfpqlsg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -864,7 +888,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#ersozpjion .gt_footnote {
+#avetfpqlsg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -873,7 +897,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#ersozpjion .gt_sourcenotes {
+#avetfpqlsg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -887,7 +911,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#ersozpjion .gt_sourcenote {
+#avetfpqlsg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -895,72 +919,72 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#ersozpjion .gt_left {
+#avetfpqlsg .gt_left {
   text-align: left;
 }
 
-#ersozpjion .gt_center {
+#avetfpqlsg .gt_center {
   text-align: center;
 }
 
-#ersozpjion .gt_right {
+#avetfpqlsg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ersozpjion .gt_font_normal {
+#avetfpqlsg .gt_font_normal {
   font-weight: normal;
 }
 
-#ersozpjion .gt_font_bold {
+#avetfpqlsg .gt_font_bold {
   font-weight: bold;
 }
 
-#ersozpjion .gt_font_italic {
+#avetfpqlsg .gt_font_italic {
   font-style: italic;
 }
 
-#ersozpjion .gt_super {
+#avetfpqlsg .gt_super {
   font-size: 65%;
 }
 
-#ersozpjion .gt_footnote_marks {
+#avetfpqlsg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ersozpjion .gt_asterisk {
+#avetfpqlsg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ersozpjion .gt_indent_1 {
+#avetfpqlsg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ersozpjion .gt_indent_2 {
+#avetfpqlsg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ersozpjion .gt_indent_3 {
+#avetfpqlsg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ersozpjion .gt_indent_4 {
+#avetfpqlsg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ersozpjion .gt_indent_5 {
+#avetfpqlsg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ersozpjion .katex-display {
+#avetfpqlsg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ersozpjion div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#avetfpqlsg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -994,12 +1018,21 @@ Table&nbsp;1: Penguin Mean Body Weights
 </figure>
 </div>
 </div>
-<p>And cross referencing is done in a similar matter by using the label, e.g.&nbsp;using <code>\@tbl-penguin-mass-summary</code> gives us the reference <a href="#tbl-penguin-mass-summary" class="quarto-xref">Table&nbsp;1</a>.</p>
+<p>And cross referencing is done in a similar matter by using the label, e.g.&nbsp;using <code style="color:green">@tbl-penguin-mass-summary</code> gives us the cross-reference <a href="#tbl-penguin-mass-summary" class="quarto-xref">Table&nbsp;1</a>, which is automatically converted to the words “Table 1” with the hyperlink.</p>
+<p>Now you try it out!</p>
+<blockquote class="blockquote">
+<p>Want more? For more ways to cross-reference, <a href="https://quarto.org/docs/authoring/cross-references.html">see the Quarto docs here.</a></p>
+</blockquote>
 </section>
-<section id="warnings" class="level4">
-<h4 class="anchored" data-anchor-id="warnings">Warnings</h4>
-<p><strong>warning: false</strong> will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. I recommend printing the warning once and noting that it will be suppressed in all future cases.</p>
-<p><strong>Exercise:</strong> Add warning: false to the ggplot code cell above, and re-render the document to confirm warnings have disappeared.</p>
+</section>
+<section id="warnings-and-messages" class="level4">
+<h4 class="anchored" data-anchor-id="warnings-and-messages">Warnings and messages</h4>
+<p>We can suppress warning and other messages from code outputs by adding:</p>
+<p><code>#| warning: false</code> will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. We recommend printing the warning once and noting that it will be suppressed in all future cases.</p>
+<p><code>#| message: false</code> will suppress all messages, for example attached packages and masked package messages.</p>
+<section id="exercise-remove-messages-and-warnings-2-min" class="level5">
+<h5 class="anchored" data-anchor-id="exercise-remove-messages-and-warnings-2-min">Exercise: remove messages and warnings (2 min)</h5>
+<p>In the above examples for tables and figures we saw both warning and messages. Try adding either <code>#| warning: false</code> or <code>#| message:false</code> to the ggplot code cells above, and re-render the document to confirm warnings/messages have disappeared.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1012,16 +1045,18 @@ Solution
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p><strong>Figure without warning:</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-penguinBillsNoWarning</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_depth_mm,</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_length_mm,</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">colour =</span> species,</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-penguinBillsNoWarning</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_depth_mm,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_length_mm,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">colour =</span> species,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-penguinBillsNoWarning" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1036,14 +1071,517 @@ Figure&nbsp;2
 </div>
 </div>
 <p>Note that we cannot use the same label twice within a document, so we need to use a new label (penguinBillsNoWarning) or the render will fail.</p>
+<p><strong>Table without message:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false # hide the messages from loading dplyr</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: 'tbl-penguin-mass-summary-NoMessage'</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island) <span class="sc">|&gt;</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_body_mass_g =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(mean_body_mass_g) <span class="sc">|&gt;</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">island =</span><span class="st">"Island"</span>, </span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">mean_body_mass_g =</span> <span class="st">"Mean Body Mass (g)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">columns =</span> island, <span class="at">align =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-penguin-mass-summary-NoMessage" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-penguin-mass-summary-NoMessage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2
+</figcaption>
+<div aria-describedby="tbl-penguin-mass-summary-NoMessage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="vrqugjuhhs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vrqugjuhhs table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#vrqugjuhhs thead, #vrqugjuhhs tbody, #vrqugjuhhs tfoot, #vrqugjuhhs tr, #vrqugjuhhs td, #vrqugjuhhs th {
+  border-style: none;
+}
+
+#vrqugjuhhs p {
+  margin: 0;
+  padding: 0;
+}
+
+#vrqugjuhhs .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#vrqugjuhhs .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#vrqugjuhhs .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vrqugjuhhs .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vrqugjuhhs .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vrqugjuhhs .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vrqugjuhhs .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vrqugjuhhs .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#vrqugjuhhs .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#vrqugjuhhs .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#vrqugjuhhs .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#vrqugjuhhs .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#vrqugjuhhs .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#vrqugjuhhs .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#vrqugjuhhs .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vrqugjuhhs .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#vrqugjuhhs .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#vrqugjuhhs .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#vrqugjuhhs .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vrqugjuhhs .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#vrqugjuhhs .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#vrqugjuhhs .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#vrqugjuhhs .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vrqugjuhhs .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#vrqugjuhhs .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#vrqugjuhhs .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vrqugjuhhs .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vrqugjuhhs .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#vrqugjuhhs .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vrqugjuhhs .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#vrqugjuhhs .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vrqugjuhhs .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vrqugjuhhs .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vrqugjuhhs .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vrqugjuhhs .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vrqugjuhhs .gt_left {
+  text-align: left;
+}
+
+#vrqugjuhhs .gt_center {
+  text-align: center;
+}
+
+#vrqugjuhhs .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#vrqugjuhhs .gt_font_normal {
+  font-weight: normal;
+}
+
+#vrqugjuhhs .gt_font_bold {
+  font-weight: bold;
+}
+
+#vrqugjuhhs .gt_font_italic {
+  font-style: italic;
+}
+
+#vrqugjuhhs .gt_super {
+  font-size: 65%;
+}
+
+#vrqugjuhhs .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#vrqugjuhhs .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#vrqugjuhhs .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#vrqugjuhhs .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#vrqugjuhhs .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#vrqugjuhhs .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#vrqugjuhhs .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#vrqugjuhhs .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#vrqugjuhhs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="island" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Island</th>
+<th id="mean_body_mass_g" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Mean Body Mass (g)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="island">Biscoe</td>
+<td class="gt_row gt_right" headers="mean_body_mass_g">4,716.02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="island">Dream</td>
+<td class="gt_row gt_right" headers="mean_body_mass_g">3,712.90</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="island">Torgersen</td>
+<td class="gt_row gt_right" headers="mean_body_mass_g">3,706.37</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 <section id="set-figure-dimensions" class="level3">
 <h3 class="anchored" data-anchor-id="set-figure-dimensions">Set figure dimensions</h3>
-<p><strong>fig-width: x</strong> and <strong>fig-length: y</strong> can be used to manually set the dimension of embedded figures.</p>
+<p><code>#| fig-width: x</code> and <code>#| fig-length: y</code> can be used to manually set the dimension of embedded figures, in inches.</p>
 </section>
 </section>
 <section id="inline-code" class="level2">
@@ -1051,11 +1589,11 @@ Figure&nbsp;2
 <p>Inline code refers to code that is used within the document but is not stored separately in a code cell. The purpose of inline code is to embed the output directly into the document text.</p>
 <p>For example, if we wanted to describe the mean bill length for the Adelie species of penguins in the penguins object, we could manually calculate the value and then add a written statement:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(<span class="fu">na.omit</span>(penguins<span class="sc">$</span>bill_length_mm)),<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(<span class="fu">na.omit</span>(penguins<span class="sc">$</span>bill_length_mm)),<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 43.92</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The mean bill length of penguins in the dataset is 43.92mm.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The mean bill length of penguins in the dataset is 43.92mm.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To streamline the above with inline code we need to do three things:</p>
 <ol type="1">
@@ -1064,9 +1602,9 @@ Figure&nbsp;2
 <li><p>Include the code to be evaluated.</p></li>
 </ol>
 <p>This is demonstrated below, using quotation marks in place of backticks so that it is human readable:</p>
-<p>The mean bill length of penguins in the dataset is “r round(mean(na.omit(penguins$bill_length_mm)),2)”mm.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> mean bill length of penguins in the dataset is <span class="st">"r round(mean(na.omit(penguins</span><span class="va">$bill_length_mm</span><span class="st">)),2)"</span>mm.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>The same line of code above but with backticks in place of quotation marks is rendered as:</strong></p>
-<p>The mean bill length of penguins in the dataset is 43.92mm.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> mean bill length of penguins in the dataset is 43.92mm.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="why-use-inline-code" class="level3">
 <h3 class="anchored" data-anchor-id="why-use-inline-code">Why use inline code?</h3>
 <p>The key reason for using inline code is reproducibility. If you need to re-run your analysis, or update an input file, your statements will automatically be updated to reflect the new data. This has the additional benefit of reducing human error: avoids copy-paste errors (or copy and writing errors) between the calculated values and the value stated in text and ensures that all instances of this value are identical (<em>e.g.,</em> if this value is referred to repeatedly).</p>
@@ -1096,7 +1634,7 @@ Figure&nbsp;2
 <ol type="1">
 <li><p>What are the three methods for inserting a new code cell?</p></li>
 <li><p>What symbols do we add to set the code cell options?</p></li>
-<li><p>If a code cell has echo: false and eval: true, what will happen when the document is rendered?</p></li>
+<li><p>If a code cell has <code>echo: false</code> and <code>eval: true</code>, what will happen when the document is rendered?</p></li>
 <li><p>List one other code cell option we have used today.</p></li>
 <li><p>Give two reasons you might use to convince a co-worker to use inline code.</p></li>
 </ol>

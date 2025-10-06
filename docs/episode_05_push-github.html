@@ -153,12 +153,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Home</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">test styling</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./git_overview.html" class="sidebar-item-text sidebar-link">
@@ -329,11 +323,14 @@ origin  git@github.com:githubusername/recipes.git (push)</code></pre>
 <p>The first thing we are going to do is check if this has already been done on the computer you’re on. Because generally speaking, this setup only needs to happen once and then you can forget about it.</p>
 <p>We will run the list command to check what key pairs already exist on your computer.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-al</span> ~/.ssh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Your output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using. It may look like this:</p>
+<p>Your output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using.</p>
+<p>If you <strong>have not</strong> set up SSH before on your computer, you will get an output something like this:</p>
 <pre><code>ls: cannot access '/c/Users/username/.ssh': No such file or directory</code></pre>
 <p>If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either <code style="color:blue">id_ed25519</code>/<code style="color:blue">id_ed25519.pub</code> or <code style="color:blue">id_rsa</code>/<code style="color:blue">id_rsa.pub</code> depending on how the key pairs were set up.</p>
-<pre><code>drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ./
-drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ../</code></pre>
+<p>If you <strong>have</strong> set up SSH before on your computer, you will get an output something like this:</p>
+<pre><code>drwxr-xr-x  1 Username   197121   0 Jul 16 14:48 ./
+drwxr-xr-x  1 Username   197121   0 Jul 16 14:48 ../
+-rw-------@ 1 Username  staff   467 Sep 25 16:10 config</code></pre>
 <section id="create-an-ssh-key-pair" class="level3">
 <h3 class="anchored" data-anchor-id="create-an-ssh-key-pair">3.1 Create an SSH key pair</h3>
 <p>To create an SSH key pair, use this command, where the <code>-t</code> option specifies which type of algorithm to use and <code>-C</code> attaches a comment to the key (here, use your email):</p>

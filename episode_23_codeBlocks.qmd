@@ -135,11 +135,19 @@ tail(penguins)
 Now see for yourself! Try using `#| eval: false` and `#| echo: false` and render the document.
 
 
-#### Cross-referencing
+#### Cross-referencing: figures and tables
 
-Quarto allows easy cross-referencing. This can be done in two ways: 
+Quarto allows easy cross-referencing to figures and tables. 
 
-We can attach a label to a code block with **\#\| label:**, followed by a given label. We can then use **\@label** to cross-reference. For example: 
+We can attach a label to a code block with `#| label:`, followed by a given label. We can then use `@label` to cross-reference.
+
+
+##### Figures example:
+
+Open a code block.
+
+Directly under the header line of your code block, add the text `#| label: fig-penguinBills`. Then, add some `ggplot` code to make a figure. We'll do a simple `geom_point()` plot here using the palmerpenguins dataset as an example. Then, underneath your code block, write some text cross-referencing the figure label. See our exmaples below:
+
 
 ```{r}
 #| label: fig-penguinBills
@@ -155,30 +163,56 @@ ggplot(data = penguins,
          geom_point()
 ```
 
-See @fig-penguinBills for a positive correlation between bill depth and bill length. 
+See @fig-penguinBills for a positive correlation between bill depth and bill length.
+
+
 
 ::: {.callout-note collapse="true"}
-# What is happening above?
+# What is happening above (behind the scenes)?
 
-In the qmd file used to build the website you are looking at right now, the code block above contains two \#\| lines:
+In the qmd file used to build the website you are looking at right now, the code block above contains two `#|`{style="color:green"} lines:
 
-\#\| label: fig-penguinBills
+`#| label: fig-penguinBills`
 
+The first label line directly under the start of the code block (indicated by ` ```{r}` ) tells the code block to cross-reference this figure using the label "fig-penguinBills".
 
+Then, the line `#| label: fig-penguinBills` is repeated, so that you can see it in the code block above. As it is separated from the start of the code block by a line, it gets read by r as a commented out line, the same as any line starting with a `#`{style="color:green"}. 
 
 Below the code block the text reads:
 
-"See \@fig-penguinBills for a positive correlation between bill depth and bill length."
+See \@fig-penguinBills for a positive correlation between bill depth and bill length.
+
+Here, the `@fig-penguinBills`{style="color:green"} automatically gets converted to the text "Figure 1", with a clickable link.
+
+**Confused?** Here are pictures of the full code and output:
+
+<u>Code behind the scenes:</u>
+
+![](images-quarto/quarto-codeBTS-01.png)  
+
+
+<u>Output:</u>
+
+![](images-quarto/quarto-codeBTS-02.png)
+
+
+
+
 
 :::
 
-For cross referencing tables it is very similar to figures, but instead we use the `tbl` prefix
+
+
+##### Tables example:
+
+
+For cross referencing tables it is very similar to figures, but instead we use the `tbl` prefix, and we can also add a Table caption using `#| tbl-cap:` For example:
 
 ```{r}
-#| message: false # hide the messages from loading dplyr
 #| label: 'tbl-penguin-mass-summary'
 #| tbl-cap: 'Penguin Mean Body Weights'
 
+#| label: 'tbl-penguin-mass-summary'
 #| tbl-cap: 'Penguin Mean Body Weights'
 
 library(dplyr)
@@ -196,16 +230,28 @@ penguins |>
   
 ```
 
-And cross referencing is done in a similar matter by using the label, e.g. using `\@tbl-penguin-mass-summary` gives us the reference @tbl-penguin-mass-summary.
+And cross referencing is done in a similar matter by using the label, e.g. using `@tbl-penguin-mass-summary`{style="color:green"} gives us the cross-reference @tbl-penguin-mass-summary, which is automatically converted to the words "Table 1" with the hyperlink. 
 
-#### Warnings
+Now you try it out!
 
-**warning: false** will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. I recommend printing the warning once and noting that it will be suppressed in all future cases. 
+> Want more? For more ways to cross-reference, [see the Quarto docs here.](https://quarto.org/docs/authoring/cross-references.html)
 
-**Exercise:** Add warning: false to the ggplot code cell above, and re-render the document to confirm warnings have disappeared.
+
+#### Warnings and messages
+
+We can suppress warning and other messages from code outputs by adding:
+
+`#| warning: false` will suppress warnings from code output. This can be very useful when you have a warning that is showing up repeatedly. We recommend printing the warning once and noting that it will be suppressed in all future cases. 
+
+`#| message: false` will suppress all messages, for example attached packages and masked package messages.
+
+#####  Exercise: remove messages and warnings (2 min)
+In the above examples for tables and figures we saw both warning and messages. Try adding either `#| warning: false` or `#| message:false` to the ggplot code cells above, and re-render the document to confirm warnings/messages have disappeared.
 
 ::: {.callout-note collapse="true"}
 # Solution
+
+**Figure without warning:**
 
 ```{r}
 #| label: fig-penguinBillsNoWarning
@@ -213,6 +259,7 @@ And cross referencing is done in a similar matter by using the label, e.g. using
 
 #| label: fig-penguinBillsNoWarning
 #| warning: false
+
 library(ggplot2)
 ggplot(data = penguins,
        mapping = aes(x = bill_depth_mm,
@@ -223,11 +270,37 @@ ggplot(data = penguins,
 ```
 
 Note that we cannot use the same label twice within a document, so we need to use a new label (penguinBillsNoWarning) or the render will fail. 
+
+
+**Table without message:**
+
+```{r}
+#| message: false 
+#| label: 'tbl-penguin-mass-summary-NoMessage'
+
+#| message: false # hide the messages from loading dplyr
+#| label: 'tbl-penguin-mass-summary-NoMessage'
+
+library(dplyr)
+library(gt)
+
+penguins |> 
+  group_by(island) |>
+  summarise(mean_body_mass_g = mean(body_mass_g, na.rm = TRUE)) |>
+  gt() |>
+  fmt_number(mean_body_mass_g) |>
+  cols_label(island ="Island", 
+              mean_body_mass_g = "Mean Body Mass (g)") |>
+  cols_align(columns = island, align = "left")
+  
+  
+```
+
 :::
 
 ### Set figure dimensions
 
-**fig-width: x** and **fig-length: y** can be used to manually set the dimension of embedded figures. 
+`#| fig-width: x` and `#| fig-length: y` can be used to manually set the dimension of embedded figures, in inches. 
 
 ## Inline code
 
@@ -250,11 +323,15 @@ To streamline the above with inline code we need to do three things:
 
 This is demonstrated below, using quotation marks in place of backticks so that it is human readable:
 
-The mean bill length of penguins in the dataset is "r round(mean(na.omit(penguins$bill_length_mm)),2)"mm. 
+```bash
+The mean bill length of penguins in the dataset is "r round(mean(na.omit(penguins$bill_length_mm)),2)"mm.
+```
 
 **The same line of code above but with backticks in place of quotation marks is rendered as:**
 
+```bash
 The mean bill length of penguins in the dataset is `r round(mean(na.omit(penguins$bill_length_mm)),2)`mm.
+```
 
 ### Why use inline code? 
 
@@ -289,7 +366,7 @@ In this section we have:
 
 2. What symbols do we add to set the code cell options? 
 
-3. If a code cell has echo: false and eval: true, what will happen when the document is rendered?
+3. If a code cell has `echo: false` and `eval: true`, what will happen when the document is rendered?
 
 4. List one other code cell option we have used today.
 
