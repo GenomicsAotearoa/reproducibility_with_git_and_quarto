@@ -99,7 +99,7 @@ As we have been working on one branch, main, you should see this output:
 * main
 ```
 
-Now we can make a new branch and switch to it. You can name it anything you like, but its best to pick something that describes what you are doing with that branch. You may even want to name it after the 'Issue' you are addressing -- more on 'Issues' in the [next episode!](episode_07_Collaborating.qmd#issues)
+Now we can make a new branch and switch to it. You can name it anything you like, but its best to pick something that describes what you are doing with that branch. You may even want to name it after the 'Issue' you are addressing -- more on 'Issues' in the [next episode!](episode_07_Collaborate-Organise.qmd#issues)
 
 
 ```bash
