@@ -1,5 +1,5 @@
 ---
-title: Building our own research porfolio
+title: Building our own research portfolio
 toc: true
 ---
 
@@ -42,9 +42,7 @@ Using skills from yesterday and today's workshops:
     
     - `research_focus.qmd`{style="color:blue"}. Research_focus.qmd will include a written statement about your focus as a researcher.
 
-    - Create a `_quarto.yml`{style="color:blue"} file using the template from the previous section. Under contents, include index.qmd first, then portfolio.qmd and research_focus.qmd.
-
-**Note:** these initial files are templates only, and will be populated later. 
+    - Create a `_quarto.yml`{style="color:blue"} file using the template from the previous section. Include `index.qmd`{style="color:blue"} first, then `research_focus.qmd`{style="color:blue"} and then `portfolio.qmd`{style="color:blue"}.  
 
 ::: {.callout-note collapse="true" appearance="minimal"}
 # Make the _quarto.yml file for me please:
@@ -60,10 +58,10 @@ website:
     left:
       - text: "My name"
         href: index.qmd
-      - text: "My portfolio"
-        href: portfolio.qmd
       - text: "My research focus"
         href: research_focus.qmd
+      - text: "My portfolio"
+        href: portfolio.qmd
 
 format:
   html:
@@ -72,6 +70,153 @@ format:
 
 :::
 
+**Note:** these initial files are templates only, and will be populated later. 
+
+Save all four files and click "Render" in RStudio. Alternatively, in terminal type `quarto render` then `quarto preview`. You will now have created a rudimentary structure for your work portfolio website.
+
+
+
+
+::: {.callout-tip collapse="true" appearance="simple"}
+# What should my website look like? Show me an example
+
+We encourage you after the workshop to spend some time developing your research portfolio website, populated with your own real information.
+
+Here as an example, we have created a website as if written by the scientist [Dr Barbara McClintock.](https://chloevdb.github.io/work-portfolio-barbara-mcclintock/)
+
+You can use this text to populate your own if you'd like to use an example for now:
+
+
+
+::: {.callout-note collapse="true" appearance="minimal"}
+# _quarto.yml
+
+```bash
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Barbara McClintock"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Research Focus"
+        href: research_focus.qmd
+      - text: "Portfolio"
+        href: portfolio.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+```
+
+:::
+
+::: {.callout-note collapse="true" appearance="minimal"}
+# index.qmd
+
+```bash
+---
+title: "Barbara McClintock"
+format: html
+---
+
+
+# Welcome to My Research Portfolio
+
+![Barbara McClintock (1902-1992), Department of Genetics, Carnegie Institution at Cold Spring Harbor, New York, shown in her laboratory. [Photo: From the  Smithsonian Institution Archives, Accession 90-105, Science Service Records, Image No. SIA2008-5609](http://siarchives.si.edu/collections/siris_arc_306310)](images/barbaramcclintock.jpg){width=80%}
+
+
+
+Hello, I’m **Barbara McClintock**, an American cytogeneticist fascinated by the dynamic nature of the genome.  
+My work with **maize chromosomes** led to the discovery of genetic recombination, chromosome breakage, and eventually, **transposable elements** — genes that can move within the genome.
+
+I completed my PhD in Botany at **Cornell University** in 1927, and spent much of my career exploring how chromosomes behave and control genetic expression in maize.  
+In 1983, I was awarded the **Nobel Prize in Physiology or Medicine** for the discovery of genetic transposition.
+
+This site serves as a portfolio of my research, publications, and ongoing scientific interests.
+
+---
+
+> “If you know you are on the right track, if you have this inner knowledge, then nobody can turn you off.”
+```
+
+:::
+
+> *Hint: The image in index.qmd will not display unless you download it from the given link and put it in a dir called images. The site will render regardless.*
+
+::: {.callout-note collapse="true" appearance="minimal"}
+# research_focus.qmd
+
+```bash
+---
+title: "Research Focus"
+format: html
+---
+
+
+My lifelong scientific interest lies in understanding how **chromosomes behave and change** — and how such behavior influences genetic expression and heredity.
+
+## Cytogenetics of Maize
+Working with *Zea mays*, I developed techniques to visualize chromosomes under the microscope.  
+These methods enabled me to:  
+- Demonstrate **crossing-over** during meiosis.  
+- Identify the roles of **telomeres** and **centromeres** in maintaining chromosome stability.  
+- Track structural rearrangements in chromosomes across generations.
+
+## Discovery of Transposable Elements
+In the 1940s and 1950s, I discovered **“jumping genes”**, or **transposons** — mobile genetic elements that can change their position within the genome.  
+This finding revealed that the genome is **not static**, but instead **dynamic and responsive** to its environment.
+
+## Later Research and Broader Impact
+My later work extended into the **cytogenetics and ethnobotany of South American maize races**, integrating field studies with laboratory cytology.  
+These findings helped connect genetic variability with the evolutionary adaptation of maize to local environments.
+
+---
+
+> “A feeling for the organism” — understanding life by working with it patiently, respectfully, and without preconception — remains the heart of my approach to science.
+```
+
+:::
+
+::: {.callout-note collapse="true" appearance="minimal"}
+# portfolio.qmd
+
+```bash
+---
+title: "Research Portfolio"
+format: html
+---
+
+
+Below is a curated selection of my key scientific works and contributions to genetics.
+
+## 📚 Selected Publications
+- McClintock, B. (1939). *The Behavior in Successive Nuclear Divisions of a Chromosome Broken at Meiosis*. *PNAS*, **25** (8) 405-416. [doi.org/10.1073/pnas.25.8.40](https://doi.org/10.1073/pnas.25.8.40).  
+- McClintock, B. (1941). *The Stability of Broken Ends of Chromosomes in Zea Mays*. *Genetics*, **26** (2) 234-282. [doi.org/10.1093/genetics/26.2.234](https://doi.org/10.1093/genetics/26.2.234).  
+- McClintock, B. (1950). *The origin and behavior of mutable loci in maize*. *PNAS*, **36** (6) 344-355. [doi.org/10.1073/pnas.36.6.344](https://doi.org/10.1073/pnas.36.6.344).  
+
+
+## 🏆 Nobel Lecture
+- Nobel Lecture (1983): [The Significance of Responses of the Genome to Challenge](https://www.nobelprize.org/prizes/medicine/1983/mcclintock/lecture/)
+
+## 🔬 Data and Resources
+- [Cold Spring Harbor Laboratory — Barbara McClintock Collection](https://www.cshl.edu/personal-collections/barbara-mcclintock/)  
+
+## 🗞️ Media
+- [Nobel Prize Stories: Women who changed science](https://www.nobelprize.org/stories/women-who-changed-science/barbara-mcclintock/)
+
+## 🌐 Professional Links 
+- [National Academy of Sciences Biography](https://www.nasonline.org/directory-entry/barbara-mcclintock-x3z8mp/)
+- [GitHub](https://github.com/chloevdb/work-portfolio-barbara-mcclintock)
+```
+
+:::
+
+:::
 
 ## Refining the site
 
