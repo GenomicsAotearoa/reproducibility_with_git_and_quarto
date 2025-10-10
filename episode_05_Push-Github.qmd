@@ -3,8 +3,15 @@ title: ""
 format: html
 ---
 
-
 # Pushing local changes to GitHub
+
+::: {.callout-note appearance="simple"}
+# Key points
+- Connect local repositories to GitHub using `git remote add origin`
+- Set up SSH key pairs once per computer
+- Use `git push origin main` to upload changes from your local repository to GitHub 
+:::
+
 
 Now that we have added and committed our changes, we need to push the changes from our local computer, on to the Github server.
 
@@ -112,11 +119,14 @@ Enter file in which to save the key (/Users/username/.ssh/id_ed25519):
 
 We want to use the default file, so just press Enter.
 
+It will now ask you for a passphrase. For now, you may find it easier to not set one (just press Enter). 
+
 ```
 Enter passphrase (empty for no passphrase): 
 ```
 
-Be sure to use something memorable or write down your passphrase somewhere, as there is no “reset my password” option. Note that, when typing a passphrase on a terminal, there won’t be any visual feedback of your typing. This is normal: your passphrase will be recorded even if you see nothing changing on your screen.
+
+If you do chose to set one, be sure to use something memorable or write down your passphrase somewhere, as there is no “reset my password” option. Note that, when typing a passphrase on a terminal, there won’t be any visual feedback of your typing. This is normal: your passphrase will be recorded even if you see nothing changing on your screen.
 
 
 ::: {.callout-note collapse="true" appearance="simple"}
@@ -130,11 +140,56 @@ Some examples are:
 **sl33pfreeHardidea**  
 :::
 
+::: {.callout-warning appearance="simple" collapse="true"}
+# Want to set or remove the passphrase, or avoid typing it?
+
+**Set or remove the passphrase:**
+
+```bash
+ssh-keygen -p -f ~/.ssh/id_ed25519
+```
+
+It will ask:
+
+- Enter old passphrase: (type your current one, or press enter if you did not set one): press Enter  
+- Enter new passphrase (empty for no passphrase, or chose one here): press Enter  
+- Enter same passphrase again: press Enter  
+
+This rewrites the key with or without a passphrase. Caution! There is no 'passphrase reset' if you forgot your passphrase. Rewriting only works if you know what your passphrase is. 
+
+**Avoid typing it**   
+On macOS, you can set up an SSH agent and store the passphrase in the macOS keychain, so you don't have to type it every time you push and pull.
+
+1. Start the agent
+
+```bash
+eval "$(ssh-agent -s)"
+```
+
+2. Add your key and store the passphrase in the macOS Keychain:
+
+```bash
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+```
+*(replace id_ed25519 with your key filename if different)*
+
+3. Tell SSH to always use the Keychain. Add this to `~/.ssh/config` (create the file if it doesn’t exist):
+
+```
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+```
+
+
+:::
+
 
 ```
 Enter same passphrase again:
 ```
-After entering the same passphrase a second time, we receive the confirmation:
+After entering the same passphrase a second time (or press Enter again for no passphrase), we receive the confirmation:
 
 ```
 Your identification has been saved in /Users/username/.ssh/id_ed25519
@@ -238,54 +293,8 @@ Now that authentication is setup, we can return to the remote. This command will
 git push origin main
 ```
 
-Since we set up a passphrase, it will prompt us for it every time we push or pull. This is more secure, but can be a nuisance.
+> If you set up a passphrase, it will prompt you for it every time you push or pull. This is more secure, but can be a nuisance.
 
-::: {.callout-warning appearance="simple" collapse="true"}
-# Want to remove the passphrase or avoid typing it?
-
-
-**Remove the passphrase entirely:**
-
-```bash
-ssh-keygen -p -f ~/.ssh/id_ed25519
-```
-
-It will ask:
-
-- Enter old passphrase: (type your current one)  
-- Enter new passphrase (empty for no passphrase): just press Enter  
-- Enter same passphrase again: press Enter  
-
-This rewrites the key without a passphrase.
-
-**Avoid typing it**   
-On macOS, you can set up an SSH agent and store the passphrase in the macOS keychain, so you don't have to type it every time you push and pull.
-
-1. Start the agent
-
-```bash
-eval "$(ssh-agent -s)"
-```
-
-2. Add your key and store the passphrase in the macOS Keychain:
-
-```bash
-ssh-add --apple-use-keychain ~/.ssh/id_ed25519
-```
-*(replace id_ed25519 with your key filename if different)*
-
-3. Tell SSH to always use the Keychain. Add this to `~/.ssh/config` (create the file if it doesn’t exist):
-
-```
-Host github.com
-  AddKeysToAgent yes
-  UseKeychain yes
-  IdentityFile ~/.ssh/id_ed25519
-```
-
-
-
-:::
 
 After pushing, we should see something like this:
 
