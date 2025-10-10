@@ -285,6 +285,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="pushing-local-changes-to-github" class="level1">
 <h1>Pushing local changes to GitHub</h1>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key points
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Connect local repositories to GitHub using <code>git remote add origin</code></li>
+<li>Set up SSH key pairs once per computer</li>
+<li>Use <code>git push origin main</code> to upload changes from your local repository to GitHub</li>
+</ul>
+</div>
+</div>
 <p>Now that we have added and committed our changes, we need to push the changes from our local computer, on to the Github server.</p>
 <p>First, we need to set up the <strong>remote repository on Github</strong> which is linked to our <strong>local repository.</strong></p>
 <section id="create-a-remote-repository" class="level2">
@@ -339,10 +356,11 @@ drwxr-xr-x  1 Username   197121   0 Jul 16 14:48 ../
 <pre><code>Generating public/private ed25519 key pair.
 Enter file in which to save the key (/Users/username/.ssh/id_ed25519):</code></pre>
 <p>We want to use the default file, so just press Enter.</p>
+<p>It will now ask you for a passphrase. For now, you may find it easier to not set one (just press Enter).</p>
 <pre><code>Enter passphrase (empty for no passphrase): </code></pre>
-<p>Be sure to use something memorable or write down your passphrase somewhere, as there is no “reset my password” option. Note that, when typing a passphrase on a terminal, there won’t be any visual feedback of your typing. This is normal: your passphrase will be recorded even if you see nothing changing on your screen.</p>
+<p>If you do chose to set one, be sure to use something memorable or write down your passphrase somewhere, as there is no “reset my password” option. Note that, when typing a passphrase on a terminal, there won’t be any visual feedback of your typing. This is normal: your passphrase will be recorded even if you see nothing changing on your screen.</p>
 <div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -351,7 +369,7 @@ What is a passphrase?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A passphrase is a phrase of four or more random unrelated words, generally a length of at least 15 characters. You can also include upper/lowercase and numbers/symbols to make it more secure.</p>
 <p>Some examples are:</p>
@@ -361,8 +379,52 @@ What is a passphrase?
 </div>
 </div>
 </div>
+<div class="callout callout-style-simple callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Want to set or remove the passphrase, or avoid typing it?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Set or remove the passphrase:</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-p</span> <span class="at">-f</span> ~/.ssh/id_ed25519</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It will ask:</p>
+<ul>
+<li>Enter old passphrase: (type your current one, or press enter if you did not set one): press Enter<br>
+</li>
+<li>Enter new passphrase (empty for no passphrase, or chose one here): press Enter<br>
+</li>
+<li>Enter same passphrase again: press Enter</li>
+</ul>
+<p>This rewrites the key with or without a passphrase. Caution! There is no ‘passphrase reset’ if you forgot your passphrase. Rewriting only works if you know what your passphrase is.</p>
+<p><strong>Avoid typing it</strong><br>
+On macOS, you can set up an SSH agent and store the passphrase in the macOS keychain, so you don’t have to type it every time you push and pull.</p>
+<ol type="1">
+<li>Start the agent</li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="st">"</span><span class="va">$(</span><span class="fu">ssh-agent</span> <span class="at">-s</span><span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Add your key and store the passphrase in the macOS Keychain:</li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-add</span> <span class="at">--apple-use-keychain</span> ~/.ssh/id_ed25519</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><em>(replace id_ed25519 with your key filename if different)</em></p>
+<ol start="3" type="1">
+<li>Tell SSH to always use the Keychain. Add this to <code>~/.ssh/config</code> (create the file if it doesn’t exist):</li>
+</ol>
+<pre><code>Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519</code></pre>
+</div>
+</div>
+</div>
 <pre><code>Enter same passphrase again:</code></pre>
-<p>After entering the same passphrase a second time, we receive the confirmation:</p>
+<p>After entering the same passphrase a second time (or press Enter again for no passphrase), we receive the confirmation:</p>
 <pre><code>Your identification has been saved in /Users/username/.ssh/id_ed25519
 Your public key has been saved in /Users/username/.ssh/id_ed25519.pub
 The key fingerprint is:
@@ -381,7 +443,7 @@ The key's randomart image is:
 +----[SHA256]-----+</code></pre>
 <p>The “identification” is actually the private key. You should never share it. The public key is appropriately named. The “key fingerprint” is a shorter version of a public key.</p>
 <p>Now that we have generated the SSH keys, we will find the SSH files when we check.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-al</span> ~/.ssh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-al</span> ~/.ssh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>drwxr-xr-x 1 username   197121   0 Jul 16 14:48 ./
 drwxr-xr-x 1 username   197121   0 Jul 16 14:48 ../
 -rw-r--r-- 1 username   197121 419 Jul 16 14:48 id_ed25519
@@ -390,16 +452,16 @@ drwxr-xr-x 1 username   197121   0 Jul 16 14:48 ../
 <section id="copy-the-public-key-to-github" class="level3">
 <h3 class="anchored" data-anchor-id="copy-the-public-key-to-github">3.2 Copy the public key to GitHub</h3>
 <p>First, we need to copy the public key. Be sure to include the .pub at the end, otherwise you’re looking at the private key.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> ~/.ssh/id_ed25519.pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> ~/.ssh/id_ed25519.pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu. Click “Settings”, then on the settings page, click “SSH and GPG keys”, on the left side “Access” menu. Click the “New SSH key” button on the right side.</p>
 <p><img src="images_git/github-newSSH_01.png" class="img-fluid"></p>
 <p>Now, you can add the title (Use a title such as “My macbook pro laptop” so you can remember where the original key pair files are located), paste your SSH key into the field, and click the “Add SSH key” to complete the setup.</p>
 <p><img src="images_git/github-newSSH_02.png" class="img-fluid"></p>
 <p>Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>Hi username! You've successfully authenticated, but GitHub does not provide shell access.</code></pre>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -408,7 +470,7 @@ See a “The authenticity of host…can’t be established” message?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If you see a message like this:</p>
 <pre><code>The authenticity of host 'github.com (4.237.22.38)' can't be established.
@@ -434,52 +496,10 @@ Enter passphrase for key '/Users/username/.ssh/id_ed25519': </code></pre>
 <section id="push-local-changes-to-a-remote" class="level2">
 <h2 class="anchored" data-anchor-id="push-local-changes-to-a-remote">4. Push local changes to a remote</h2>
 <p>Now that authentication is setup, we can return to the remote. This command will push the changes from our <strong>local repository</strong> to the <strong>repository on GitHub:</strong></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Since we set up a passphrase, it will prompt us for it every time we push or pull. This is more secure, but can be a nuisance.</p>
-<div class="callout callout-style-simple callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Want to remove the passphrase or avoid typing it?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Remove the passphrase entirely:</strong></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-p</span> <span class="at">-f</span> ~/.ssh/id_ed25519</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>It will ask:</p>
-<ul>
-<li>Enter old passphrase: (type your current one)<br>
-</li>
-<li>Enter new passphrase (empty for no passphrase): just press Enter<br>
-</li>
-<li>Enter same passphrase again: press Enter</li>
-</ul>
-<p>This rewrites the key without a passphrase.</p>
-<p><strong>Avoid typing it</strong><br>
-On macOS, you can set up an SSH agent and store the passphrase in the macOS keychain, so you don’t have to type it every time you push and pull.</p>
-<ol type="1">
-<li>Start the agent</li>
-</ol>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="st">"</span><span class="va">$(</span><span class="fu">ssh-agent</span> <span class="at">-s</span><span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Add your key and store the passphrase in the macOS Keychain:</li>
-</ol>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-add</span> <span class="at">--apple-use-keychain</span> ~/.ssh/id_ed25519</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><em>(replace id_ed25519 with your key filename if different)</em></p>
-<ol start="3" type="1">
-<li>Tell SSH to always use the Keychain. Add this to <code>~/.ssh/config</code> (create the file if it doesn’t exist):</li>
-</ol>
-<pre><code>Host github.com
-  AddKeysToAgent yes
-  UseKeychain yes
-  IdentityFile ~/.ssh/id_ed25519</code></pre>
-</div>
-</div>
-</div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>If you set up a passphrase, it will prompt you for it every time you push or pull. This is more secure, but can be a nuisance.</p>
+</blockquote>
 <p>After pushing, we should see something like this:</p>
 <pre><code>Enumerating objects: 16, done.
 Counting objects: 100% (16/16), done.

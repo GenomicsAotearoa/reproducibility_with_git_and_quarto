@@ -28,10 +28,10 @@ Preview and Render, git and Publishing
 
 
 
-## Practically, what will we do today? 
+## Setup on local machine
 
-Everyone will generate a pdf and a published website. 
+Quarto comes as a part of RStudio, so if you already have [RStudio](git_overview.qmd#setup-on-local-machine) installed **you don't need to do anything extra for this part of the workshop.** 
 
-We will demonstrate how to incorporate code and text notes into a document.
+However, there are lots of ways you can use and integrate Quarto into your preferred tool:  
 
-
+* See ["Get Started" in Quarto docs](https://quarto.org/docs/get-started/) to install the Quarto command line interface and links to download other compatible tools. 
