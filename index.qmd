@@ -95,3 +95,17 @@ In this workshop, the following episodes were adapted from The Carpentries lesso
 
 The Quarto part of this workshop was written by [Tyler McInnes](https://github.com/tylermcinnes/reproducibility_block) while he worked for Genomics Aotearoa as a [Bioinformatics Training Coordinator.](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/meetTheTeam.html#past-team-members) Some small modifications have been made from his version to generalise and re-style the material.
 
+
+
+
+::: {style="background: #FFFFFF; text-align:center; padding: 1.5rem; border-radius: 8px; max-width: 800px; margin: 0 auto;"}
+
+
+### {style="background: #D0C8E0; text-align:center;"}
+
+
+[![](theme-images/GA-Logo-Bioinformatics-Training-black.png){width=80%}](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/)
+
+Made with ❤️ and [Quarto](https://genomicsaotearoa.github.io/reproducibility_with_git_and_quarto/quarto_overview.html)
+
+:::
