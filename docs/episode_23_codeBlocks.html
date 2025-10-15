@@ -363,10 +363,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>In ‘Source’, it would now look like this:</p>
 <p><img src="images-quarto/quarto-codecell-01.png" class="img-fluid"></p>
-<p>Within the code chunk add these two lines:</p>
+<p>Within the code chunk add these lines:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins) </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("palmerpenguins") </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins) </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Also add in comments (this is good reproducibility practise!), for example:</p>
 <div class="cell">
@@ -447,17 +448,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="figures-example" class="level5">
 <h5 class="anchored" data-anchor-id="figures-example">Figures example:</h5>
 <p>Open a code block.</p>
-<p>Directly under the header line of your code block, add the text <code>#| label: fig-penguinBills</code>. Then, add some <code>ggplot</code> code to make a figure. We’ll do a simple <code>geom_point()</code> plot here using the palmerpenguins dataset as an example. Then, underneath your code block, write some text cross-referencing the figure label. See our exmaples below:</p>
+<p>Directly under the header line of your code block, add the text <code>#| label: fig-penguinBills</code>. Then, add some <code>ggplot</code> code to make a figure. We’ll do a simple <code>geom_point()</code> plot here using the palmerpenguins dataset as an example. Then, underneath your code block, write some text cross-referencing the figure label. See our examples below:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-penguinBills</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_depth_mm,</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_length_mm,</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">colour =</span> species,</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyverse")</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_depth_mm,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_length_mm,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">colour =</span> species,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).</code></pre>
@@ -543,23 +545,23 @@ Table&nbsp;1: Penguin Mean Body Weights
 </figcaption>
 <div aria-describedby="tbl-penguin-mass-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="dzsapjzuhb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dzsapjzuhb table {
+<div id="bfwkuxoeel" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bfwkuxoeel table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dzsapjzuhb thead, #dzsapjzuhb tbody, #dzsapjzuhb tfoot, #dzsapjzuhb tr, #dzsapjzuhb td, #dzsapjzuhb th {
+#bfwkuxoeel thead, #bfwkuxoeel tbody, #bfwkuxoeel tfoot, #bfwkuxoeel tr, #bfwkuxoeel td, #bfwkuxoeel th {
   border-style: none;
 }
 
-#dzsapjzuhb p {
+#bfwkuxoeel p {
   margin: 0;
   padding: 0;
 }
 
-#dzsapjzuhb .gt_table {
+#bfwkuxoeel .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -585,12 +587,12 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-left-color: #D3D3D3;
 }
 
-#dzsapjzuhb .gt_caption {
+#bfwkuxoeel .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dzsapjzuhb .gt_title {
+#bfwkuxoeel .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -602,7 +604,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-width: 0;
 }
 
-#dzsapjzuhb .gt_subtitle {
+#bfwkuxoeel .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -614,7 +616,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-top-width: 0;
 }
 
-#dzsapjzuhb .gt_heading {
+#bfwkuxoeel .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -626,13 +628,13 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#dzsapjzuhb .gt_bottom_border {
+#bfwkuxoeel .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dzsapjzuhb .gt_col_headings {
+#bfwkuxoeel .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -647,7 +649,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#dzsapjzuhb .gt_col_heading {
+#bfwkuxoeel .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -667,7 +669,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#dzsapjzuhb .gt_column_spanner_outer {
+#bfwkuxoeel .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -679,15 +681,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 4px;
 }
 
-#dzsapjzuhb .gt_column_spanner_outer:first-child {
+#bfwkuxoeel .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dzsapjzuhb .gt_column_spanner_outer:last-child {
+#bfwkuxoeel .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dzsapjzuhb .gt_column_spanner {
+#bfwkuxoeel .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -699,11 +701,11 @@ Table&nbsp;1: Penguin Mean Body Weights
   width: 100%;
 }
 
-#dzsapjzuhb .gt_spanner_row {
+#bfwkuxoeel .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dzsapjzuhb .gt_group_heading {
+#bfwkuxoeel .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -729,7 +731,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   text-align: left;
 }
 
-#dzsapjzuhb .gt_empty_group_heading {
+#bfwkuxoeel .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -744,15 +746,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   vertical-align: middle;
 }
 
-#dzsapjzuhb .gt_from_md > :first-child {
+#bfwkuxoeel .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dzsapjzuhb .gt_from_md > :last-child {
+#bfwkuxoeel .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dzsapjzuhb .gt_row {
+#bfwkuxoeel .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -771,7 +773,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#dzsapjzuhb .gt_stub {
+#bfwkuxoeel .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -784,7 +786,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#dzsapjzuhb .gt_stub_row_group {
+#bfwkuxoeel .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -798,15 +800,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   vertical-align: top;
 }
 
-#dzsapjzuhb .gt_row_group_first td {
+#bfwkuxoeel .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dzsapjzuhb .gt_row_group_first th {
+#bfwkuxoeel .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dzsapjzuhb .gt_summary_row {
+#bfwkuxoeel .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -816,16 +818,16 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#dzsapjzuhb .gt_first_summary_row {
+#bfwkuxoeel .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dzsapjzuhb .gt_first_summary_row.thick {
+#bfwkuxoeel .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dzsapjzuhb .gt_last_summary_row {
+#bfwkuxoeel .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -835,7 +837,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#dzsapjzuhb .gt_grand_summary_row {
+#bfwkuxoeel .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -845,7 +847,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#dzsapjzuhb .gt_first_grand_summary_row {
+#bfwkuxoeel .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -855,7 +857,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-top-color: #D3D3D3;
 }
 
-#dzsapjzuhb .gt_last_grand_summary_row_top {
+#bfwkuxoeel .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -865,11 +867,11 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#dzsapjzuhb .gt_striped {
+#bfwkuxoeel .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dzsapjzuhb .gt_table_body {
+#bfwkuxoeel .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -878,7 +880,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#dzsapjzuhb .gt_footnotes {
+#bfwkuxoeel .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -892,7 +894,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#dzsapjzuhb .gt_footnote {
+#bfwkuxoeel .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -901,7 +903,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#dzsapjzuhb .gt_sourcenotes {
+#bfwkuxoeel .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -915,7 +917,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#dzsapjzuhb .gt_sourcenote {
+#bfwkuxoeel .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -923,72 +925,72 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#dzsapjzuhb .gt_left {
+#bfwkuxoeel .gt_left {
   text-align: left;
 }
 
-#dzsapjzuhb .gt_center {
+#bfwkuxoeel .gt_center {
   text-align: center;
 }
 
-#dzsapjzuhb .gt_right {
+#bfwkuxoeel .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dzsapjzuhb .gt_font_normal {
+#bfwkuxoeel .gt_font_normal {
   font-weight: normal;
 }
 
-#dzsapjzuhb .gt_font_bold {
+#bfwkuxoeel .gt_font_bold {
   font-weight: bold;
 }
 
-#dzsapjzuhb .gt_font_italic {
+#bfwkuxoeel .gt_font_italic {
   font-style: italic;
 }
 
-#dzsapjzuhb .gt_super {
+#bfwkuxoeel .gt_super {
   font-size: 65%;
 }
 
-#dzsapjzuhb .gt_footnote_marks {
+#bfwkuxoeel .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dzsapjzuhb .gt_asterisk {
+#bfwkuxoeel .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dzsapjzuhb .gt_indent_1 {
+#bfwkuxoeel .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dzsapjzuhb .gt_indent_2 {
+#bfwkuxoeel .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dzsapjzuhb .gt_indent_3 {
+#bfwkuxoeel .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dzsapjzuhb .gt_indent_4 {
+#bfwkuxoeel .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dzsapjzuhb .gt_indent_5 {
+#bfwkuxoeel .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dzsapjzuhb .katex-display {
+#bfwkuxoeel .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dzsapjzuhb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#bfwkuxoeel div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1098,23 +1100,23 @@ Table&nbsp;2
 </figcaption>
 <div aria-describedby="tbl-penguin-mass-summary-NoMessage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tghysdnrhc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tghysdnrhc table {
+<div id="foygddribx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#foygddribx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tghysdnrhc thead, #tghysdnrhc tbody, #tghysdnrhc tfoot, #tghysdnrhc tr, #tghysdnrhc td, #tghysdnrhc th {
+#foygddribx thead, #foygddribx tbody, #foygddribx tfoot, #foygddribx tr, #foygddribx td, #foygddribx th {
   border-style: none;
 }
 
-#tghysdnrhc p {
+#foygddribx p {
   margin: 0;
   padding: 0;
 }
 
-#tghysdnrhc .gt_table {
+#foygddribx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1140,12 +1142,12 @@ Table&nbsp;2
   border-left-color: #D3D3D3;
 }
 
-#tghysdnrhc .gt_caption {
+#foygddribx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tghysdnrhc .gt_title {
+#foygddribx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1157,7 +1159,7 @@ Table&nbsp;2
   border-bottom-width: 0;
 }
 
-#tghysdnrhc .gt_subtitle {
+#foygddribx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1169,7 +1171,7 @@ Table&nbsp;2
   border-top-width: 0;
 }
 
-#tghysdnrhc .gt_heading {
+#foygddribx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1181,13 +1183,13 @@ Table&nbsp;2
   border-right-color: #D3D3D3;
 }
 
-#tghysdnrhc .gt_bottom_border {
+#foygddribx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tghysdnrhc .gt_col_headings {
+#foygddribx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1202,7 +1204,7 @@ Table&nbsp;2
   border-right-color: #D3D3D3;
 }
 
-#tghysdnrhc .gt_col_heading {
+#foygddribx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1222,7 +1224,7 @@ Table&nbsp;2
   overflow-x: hidden;
 }
 
-#tghysdnrhc .gt_column_spanner_outer {
+#foygddribx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1234,15 +1236,15 @@ Table&nbsp;2
   padding-right: 4px;
 }
 
-#tghysdnrhc .gt_column_spanner_outer:first-child {
+#foygddribx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tghysdnrhc .gt_column_spanner_outer:last-child {
+#foygddribx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tghysdnrhc .gt_column_spanner {
+#foygddribx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1254,11 +1256,11 @@ Table&nbsp;2
   width: 100%;
 }
 
-#tghysdnrhc .gt_spanner_row {
+#foygddribx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tghysdnrhc .gt_group_heading {
+#foygddribx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1284,7 +1286,7 @@ Table&nbsp;2
   text-align: left;
 }
 
-#tghysdnrhc .gt_empty_group_heading {
+#foygddribx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1299,15 +1301,15 @@ Table&nbsp;2
   vertical-align: middle;
 }
 
-#tghysdnrhc .gt_from_md > :first-child {
+#foygddribx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tghysdnrhc .gt_from_md > :last-child {
+#foygddribx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tghysdnrhc .gt_row {
+#foygddribx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1326,7 +1328,7 @@ Table&nbsp;2
   overflow-x: hidden;
 }
 
-#tghysdnrhc .gt_stub {
+#foygddribx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1339,7 +1341,7 @@ Table&nbsp;2
   padding-right: 5px;
 }
 
-#tghysdnrhc .gt_stub_row_group {
+#foygddribx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1353,15 +1355,15 @@ Table&nbsp;2
   vertical-align: top;
 }
 
-#tghysdnrhc .gt_row_group_first td {
+#foygddribx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tghysdnrhc .gt_row_group_first th {
+#foygddribx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tghysdnrhc .gt_summary_row {
+#foygddribx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1371,16 +1373,16 @@ Table&nbsp;2
   padding-right: 5px;
 }
 
-#tghysdnrhc .gt_first_summary_row {
+#foygddribx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tghysdnrhc .gt_first_summary_row.thick {
+#foygddribx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tghysdnrhc .gt_last_summary_row {
+#foygddribx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1390,7 +1392,7 @@ Table&nbsp;2
   border-bottom-color: #D3D3D3;
 }
 
-#tghysdnrhc .gt_grand_summary_row {
+#foygddribx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1400,7 +1402,7 @@ Table&nbsp;2
   padding-right: 5px;
 }
 
-#tghysdnrhc .gt_first_grand_summary_row {
+#foygddribx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1410,7 +1412,7 @@ Table&nbsp;2
   border-top-color: #D3D3D3;
 }
 
-#tghysdnrhc .gt_last_grand_summary_row_top {
+#foygddribx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1420,11 +1422,11 @@ Table&nbsp;2
   border-bottom-color: #D3D3D3;
 }
 
-#tghysdnrhc .gt_striped {
+#foygddribx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tghysdnrhc .gt_table_body {
+#foygddribx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1433,7 +1435,7 @@ Table&nbsp;2
   border-bottom-color: #D3D3D3;
 }
 
-#tghysdnrhc .gt_footnotes {
+#foygddribx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1447,7 +1449,7 @@ Table&nbsp;2
   border-right-color: #D3D3D3;
 }
 
-#tghysdnrhc .gt_footnote {
+#foygddribx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1456,7 +1458,7 @@ Table&nbsp;2
   padding-right: 5px;
 }
 
-#tghysdnrhc .gt_sourcenotes {
+#foygddribx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1470,7 +1472,7 @@ Table&nbsp;2
   border-right-color: #D3D3D3;
 }
 
-#tghysdnrhc .gt_sourcenote {
+#foygddribx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1478,72 +1480,72 @@ Table&nbsp;2
   padding-right: 5px;
 }
 
-#tghysdnrhc .gt_left {
+#foygddribx .gt_left {
   text-align: left;
 }
 
-#tghysdnrhc .gt_center {
+#foygddribx .gt_center {
   text-align: center;
 }
 
-#tghysdnrhc .gt_right {
+#foygddribx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tghysdnrhc .gt_font_normal {
+#foygddribx .gt_font_normal {
   font-weight: normal;
 }
 
-#tghysdnrhc .gt_font_bold {
+#foygddribx .gt_font_bold {
   font-weight: bold;
 }
 
-#tghysdnrhc .gt_font_italic {
+#foygddribx .gt_font_italic {
   font-style: italic;
 }
 
-#tghysdnrhc .gt_super {
+#foygddribx .gt_super {
   font-size: 65%;
 }
 
-#tghysdnrhc .gt_footnote_marks {
+#foygddribx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tghysdnrhc .gt_asterisk {
+#foygddribx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tghysdnrhc .gt_indent_1 {
+#foygddribx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tghysdnrhc .gt_indent_2 {
+#foygddribx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tghysdnrhc .gt_indent_3 {
+#foygddribx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tghysdnrhc .gt_indent_4 {
+#foygddribx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tghysdnrhc .gt_indent_5 {
+#foygddribx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tghysdnrhc .katex-display {
+#foygddribx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tghysdnrhc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#foygddribx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>

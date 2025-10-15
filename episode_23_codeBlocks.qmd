@@ -51,11 +51,13 @@ In 'Source', it would now look like this:
 ![](images-quarto/quarto-codecell-01.png)
 
 
-Within the code chunk add these two lines: 
+Within the code chunk add these lines: 
 
 ```{r}
 #| message: false
 #| output: false
+
+# install.packages("palmerpenguins") 
 library(palmerpenguins) 
 head(penguins) 
 ```
@@ -146,7 +148,7 @@ We can attach a label to a code block with `#| label:`, followed by a given labe
 
 Open a code block.
 
-Directly under the header line of your code block, add the text `#| label: fig-penguinBills`. Then, add some `ggplot` code to make a figure. We'll do a simple `geom_point()` plot here using the palmerpenguins dataset as an example. Then, underneath your code block, write some text cross-referencing the figure label. See our exmaples below:
+Directly under the header line of your code block, add the text `#| label: fig-penguinBills`. Then, add some `ggplot` code to make a figure. We'll do a simple `geom_point()` plot here using the palmerpenguins dataset as an example. Then, underneath your code block, write some text cross-referencing the figure label. See our examples below:
 
 
 ```{r}
@@ -154,6 +156,7 @@ Directly under the header line of your code block, add the text `#| label: fig-p
 
 #| label: fig-penguinBills
 
+# install.packages("tidyverse")
 library(ggplot2)
 ggplot(data = penguins,
        mapping = aes(x = bill_depth_mm,
