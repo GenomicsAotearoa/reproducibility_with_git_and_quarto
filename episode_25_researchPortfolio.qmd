@@ -32,7 +32,7 @@ Using skills from yesterday and today's workshops:
 
 - Initiate a new, public github repo with a name like "Work Portfolio" or equivalent. 
 
-- In RStudio, start a New Project and use the Version Control option to link it to the new repo. 
+- In RStudio, start a New Project, and use the Version Control option to link it to the new repo, and select where you want the directory to be (e.g., select 'Desktop', and your new directory will appear on your desktop) 
 
 - Create three .qmd files. For each file, set the YAML header to include an appropriate title and add at least one header and a piece of sample text to each document: 
 
@@ -72,7 +72,7 @@ format:
 
 **Note:** these initial files are templates only, and will be populated later. 
 
-Save all four files and click "Render" in RStudio. Alternatively, in terminal type `quarto render` then `quarto preview`. You will now have created a rudimentary structure for your work portfolio website.
+Save all four files and click "Render" in RStudio. You will now have created a rudimentary structure for your work portfolio website.
 
 
 
@@ -330,7 +330,7 @@ format:
     css: styles.css
 ```
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" appearance="minimal"}
 # Example styles.css
 Here we created one using ChatGPT, by asking it to create a styles.css file using the specified colour palette (these colours come from a [Kākāpō palette by Geoffrey Thomson](https://g-thomson.github.io/Manu/)). Copy-paste this text into a text file and save it as `styles.css`{style="color:blue"}:
 
@@ -535,15 +535,15 @@ The file is not rendered - starting with a `.`{style="color:green"} means that t
 
 ### 2. Render, add, commit, push
 
-While still in the Terminal window of RStudio, run:
+First, save all your open `.qmd`{style="color:blue"} files.  Then, click the 'Render' button on **every single `.qmd`{style="color:blue"} file.** This will create a `html`{style="color:blue"} file in `docs/`{style="color:blue"} for each qmd file. 
+
+While still in RStudio terminal, run:
 
 ```bash
-quarto render
+git add . 
 ```
+(The `.`{style="color:green"} renders everything, alternatively type: `git add docs`)
 
-```bash
-git add docs
-```
 
 ```bash
 git commit -m "publish to docs/"
@@ -553,7 +553,29 @@ git commit -m "publish to docs/"
 git push
 ```
 
-Our new rendered docs should now be stored safely in our repo. 
+(If you get an error message here, you might need to type `git push origin main`)
+
+Our new rendered docs should now be stored safely in our repo on the GitHub server. 
+
+::: {.callout-tip collapse="true"}
+# Is there a faster way to render all my files?
+
+Yes there is!
+
+There are two ways you could do this:
+
+**1. Save all files, close RStudio, re-open RStudio.**  
+  a) You will now see a tab appear that says 'Build'.  
+  b) Click the button that says 'Render Website' and all your qmd files in the directory will be rendered. The qmd don't need to be open in RStudio. 
+
+![](images-quarto/quarto-render-02.png)
+
+**2. Render from the command line**  
+  a) Make sure you have [Quarto CLI tools installed first](https://quarto.org/docs/get-started/). Type `quarto --version` to check.  
+  b) Type `quarto render` in terminal. All qmd files will render. You can confirm this by checking that recent html files have appeared in docs, and by running `quarto preview` in terminal to confirm your website looks how you expect it to. 
+
+:::
+
 
 ### 3. Deploy from main/docs
 

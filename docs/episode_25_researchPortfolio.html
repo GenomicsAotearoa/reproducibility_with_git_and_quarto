@@ -340,7 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Using skills from yesterday and today’s workshops:</p>
 <ul>
 <li><p>Initiate a new, public github repo with a name like “Work Portfolio” or equivalent.</p></li>
-<li><p>In RStudio, start a New Project and use the Version Control option to link it to the new repo.</p></li>
+<li><p>In RStudio, start a New Project, and use the Version Control option to link it to the new repo, and select where you want the directory to be (e.g., select ‘Desktop’, and your new directory will appear on your desktop)</p></li>
 <li><p>Create three .qmd files. For each file, set the YAML header to include an appropriate title and add at least one header and a piece of sample text to each document:</p>
 <ul>
 <li><p><code style="color:blue">index.qmd</code>. Index.qmd will work as the landing page for the site, and could include something like the short blurb found at the top of a CV.</p></li>
@@ -383,7 +383,7 @@ Make the _quarto.yml file for me please:
 </div>
 </div>
 <p><strong>Note:</strong> these initial files are templates only, and will be populated later.</p>
-<p>Save all four files and click “Render” in RStudio. Alternatively, in terminal type <code>quarto render</code> then <code>quarto preview</code>. You will now have created a rudimentary structure for your work portfolio website.</p>
+<p>Save all four files and click “Render” in RStudio. You will now have created a rudimentary structure for your work portfolio website.</p>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -673,10 +673,10 @@ Example sidebar and section .yml
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">format:</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">html:</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">css:</span> styles.css</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Example styles.css
@@ -880,12 +880,38 @@ Example styles.css
 </section>
 <section id="render-add-commit-push" class="level3">
 <h3 class="anchored" data-anchor-id="render-add-commit-push">2. Render, add, commit, push</h3>
-<p>While still in the Terminal window of RStudio, run:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add docs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"publish to docs/"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Our new rendered docs should now be stored safely in our repo.</p>
+<p>First, save all your open <code style="color:blue">.qmd</code> files. Then, click the ‘Render’ button on <strong>every single <code style="color:blue">.qmd</code> file.</strong> This will create a <code style="color:blue">html</code> file in <code style="color:blue">docs/</code> for each qmd file.</p>
+<p>While still in RStudio terminal, run:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add . </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>(The <code style="color:green">.</code> renders everything, alternatively type: <code>git add docs</code>)</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"publish to docs/"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>(If you get an error message here, you might need to type <code>git push origin main</code>)</p>
+<p>Our new rendered docs should now be stored safely in our repo on the GitHub server.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Is there a faster way to render all my files?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Yes there is!</p>
+<p>There are two ways you could do this:</p>
+<p><strong>1. Save all files, close RStudio, re-open RStudio.</strong><br>
+a) You will now see a tab appear that says ‘Build’.<br>
+b) Click the button that says ‘Render Website’ and all your qmd files in the directory will be rendered. The qmd don’t need to be open in RStudio.</p>
+<p><img src="images-quarto/quarto-render-02.png" class="img-fluid"></p>
+<p><strong>2. Render from the command line</strong><br>
+a) Make sure you have <a href="https://quarto.org/docs/get-started/">Quarto CLI tools installed first</a>. Type <code>quarto --version</code> to check.<br>
+b) Type <code>quarto render</code> in terminal. All qmd files will render. You can confirm this by checking that recent html files have appeared in docs, and by running <code>quarto preview</code> in terminal to confirm your website looks how you expect it to.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="deploy-from-maindocs" class="level3">
 <h3 class="anchored" data-anchor-id="deploy-from-maindocs">3. Deploy from main/docs</h3>

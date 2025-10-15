@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Projects: books and websites – Reproducibility with Git and Quarto</title>
+<title>quarto-inputd460303cb3402bce – Reproducibility with Git and Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -286,29 +286,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#aims-1" id="toc-aims-1" class="nav-link" data-scroll-target="#aims-1">Aims</a></li>
+  <li><a href="#why-a-portfolio-website" id="toc-why-a-portfolio-website" class="nav-link" data-scroll-target="#why-a-portfolio-website">Why a portfolio website?</a></li>
+  <li><a href="#initial-setup" id="toc-initial-setup" class="nav-link" data-scroll-target="#initial-setup">Initial setup</a></li>
+  <li><a href="#refining-the-site" id="toc-refining-the-site" class="nav-link" data-scroll-target="#refining-the-site">Refining the site</a>
+  <ul>
+  <li><a href="#improved-navigation-and-layout" id="toc-improved-navigation-and-layout" class="nav-link" data-scroll-target="#improved-navigation-and-layout">Improved navigation and layout</a>
+  <ul class="collapse">
+  <li><a href="#sidebar-navigation" id="toc-sidebar-navigation" class="nav-link" data-scroll-target="#sidebar-navigation">Sidebar navigation</a></li>
+  <li><a href="#sections" id="toc-sections" class="nav-link" data-scroll-target="#sections">Sections</a></li>
+  </ul></li>
+  <li><a href="#adding-personal-details-github-icons-footer-light-and-dark" id="toc-adding-personal-details-github-icons-footer-light-and-dark" class="nav-link" data-scroll-target="#adding-personal-details-github-icons-footer-light-and-dark">Adding personal details: github icons, footer, light and dark</a>
+  <ul class="collapse">
+  <li><a href="#site-icons" id="toc-site-icons" class="nav-link" data-scroll-target="#site-icons">Site icons</a></li>
+  <li><a href="#footer" id="toc-footer" class="nav-link" data-scroll-target="#footer">Footer</a></li>
+  <li><a href="#themes-light-and-dark" id="toc-themes-light-and-dark" class="nav-link" data-scroll-target="#themes-light-and-dark">Themes light and dark</a></li>
+  </ul></li>
+  <li><a href="#styles.css" id="toc-styles.css" class="nav-link" data-scroll-target="#styles.css">styles.css</a></li>
+  </ul></li>
+  <li><a href="#publishing-the-site-using-github-pages" id="toc-publishing-the-site-using-github-pages" class="nav-link" data-scroll-target="#publishing-the-site-using-github-pages">Publishing the site using GitHub Pages</a>
+  <ul>
+  <li><a href="#setting-up" id="toc-setting-up" class="nav-link" data-scroll-target="#setting-up">1. Setting up</a></li>
+  <li><a href="#render-add-commit-push" id="toc-render-add-commit-push" class="nav-link" data-scroll-target="#render-add-commit-push">2. Render, add, commit, push</a></li>
+  <li><a href="#deploy-from-maindocs" id="toc-deploy-from-maindocs" class="nav-link" data-scroll-target="#deploy-from-maindocs">3. Deploy from main/docs</a></li>
+  <li><a href="#pin-your-repo" id="toc-pin-your-repo" class="nav-link" data-scroll-target="#pin-your-repo">4. Pin your repo</a></li>
+  </ul></li>
+  <li><a href="#summary-1" id="toc-summary-1" class="nav-link" data-scroll-target="#summary-1">Summary</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a>
+  <ul>
+  <li><a href="#set-up-new-public-repo-and-open-an-r-project" id="toc-set-up-new-public-repo-and-open-an-r-project" class="nav-link" data-scroll-target="#set-up-new-public-repo-and-open-an-r-project">Set up new public repo and open an R project</a></li>
+  <li><a href="#first-quarto-doc" id="toc-first-quarto-doc" class="nav-link" data-scroll-target="#first-quarto-doc">First quarto doc</a>
+  <ul class="collapse">
+  <li><a href="#exercise-syntax-2-min" id="toc-exercise-syntax-2-min" class="nav-link" data-scroll-target="#exercise-syntax-2-min"><strong>Exercise: Syntax</strong> (2 min)</a></li>
+  </ul></li>
+  <li><a href="#visual-or-source-editor" id="toc-visual-or-source-editor" class="nav-link" data-scroll-target="#visual-or-source-editor">Visual or Source Editor</a>
+  <ul class="collapse">
+  <li><a href="#exercise-visual-and-source-editors-5-min" id="toc-exercise-visual-and-source-editors-5-min" class="nav-link" data-scroll-target="#exercise-visual-and-source-editors-5-min"><strong>Exercise: Visual and Source Editors</strong> (5 min)</a></li>
+  <li><a href="#other-syntax-options-and-notes" id="toc-other-syntax-options-and-notes" class="nav-link" data-scroll-target="#other-syntax-options-and-notes">Other syntax options and notes:</a></li>
+  <li><a href="#save-and-render-document" id="toc-save-and-render-document" class="nav-link" data-scroll-target="#save-and-render-document">Save and Render document</a></li>
+  </ul></li>
+  <li><a href="#yaml-headers" id="toc-yaml-headers" class="nav-link" data-scroll-target="#yaml-headers">YAML headers</a>
+  <ul class="collapse">
+  <li><a href="#document-metadata" id="toc-document-metadata" class="nav-link" data-scroll-target="#document-metadata">Document metadata</a>
+  <ul class="collapse">
+  <li><a href="#title" id="toc-title" class="nav-link" data-scroll-target="#title">Title</a></li>
+  <li><a href="#author" id="toc-author" class="nav-link" data-scroll-target="#author">Author</a></li>
+  <li><a href="#date" id="toc-date" class="nav-link" data-scroll-target="#date">Date</a></li>
+  <li><a href="#what-impact-does-this-have-on-reproducibility" id="toc-what-impact-does-this-have-on-reproducibility" class="nav-link" data-scroll-target="#what-impact-does-this-have-on-reproducibility">What impact does this have on reproducibility?</a></li>
+  </ul></li>
+  <li><a href="#output-format" id="toc-output-format" class="nav-link" data-scroll-target="#output-format">Output format</a>
+  <ul class="collapse">
+  <li><a href="#exercise-exploring-revealjs-2-min" id="toc-exercise-exploring-revealjs-2-min" class="nav-link" data-scroll-target="#exercise-exploring-revealjs-2-min"><strong>Exercise:</strong> Exploring revealjs (2 min)</a></li>
+  </ul></li>
+  <li><a href="#useful-features" id="toc-useful-features" class="nav-link" data-scroll-target="#useful-features">Useful features</a></li>
+  </ul></li>
+  <li><a href="#summary-2" id="toc-summary-2" class="nav-link" data-scroll-target="#summary-2">Summary</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_overview.html">Part Two - Quarto</a></li><li class="breadcrumb-item"><a href="./episode_24_projects.html">Projects: books and websites</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Projects: books and websites</h1>
-</div>
+<main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_overview.html">Part Two - Quarto</a></li><li class="breadcrumb-item"><a href="./episode_24_projects.html">Projects: books and websites</a></li></ol></nav></header>
 
 
-
-<div class="quarto-title-meta column-body">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
 
 
 <section id="challenge" class="level4">
@@ -462,7 +502,7 @@ What if we <strong>don’t</strong> want to render a doc in the directory?
 </blockquote>
 <ol start="3" type="1">
 <li><p>Save this file as <code style="color:blue">_quarto.yml</code></p></li>
-<li><p>Click render from one of the existing .qmd files. You cannot render from the _quarto.yml file itself! Alternatively, type <code>quarto preview</code> in the terminal.</p></li>
+<li><p>Click render from one of the existing <code style="color:blue">.qmd</code> files. You cannot render from the <code style="color:blue">_quarto.yml</code> file itself!</p></li>
 <li><p>Explore your new webpage! 🥳</p></li>
 <li><p>Now, you can change the theme in the <code style="color:blue">_quarto.yml</code> file from default to one of the 25 pre-built options (listed below). Render the document and view the outcome ✨</p></li>
 </ol>
@@ -524,6 +564,944 @@ zephyr</code></pre>
 </ul>
 
 
+</section>
+<section id="aims-1" class="level2">
+<h2 class="anchored" data-anchor-id="aims-1">Aims</h2>
+<ul>
+<li>Learn how to publish a website.</li>
+<li>Gain experience with Quarto, explore options around format, theme, styles.css, <em>etc.,</em> to create a polished website.</li>
+<li>Pin a repo to showcase your capabilities.</li>
+<li>Gain confidence in working publicly.</li>
+</ul>
+<p>As an alternative to creating a research portfolio website, you may instead choose to focus on creating a website that documents one of your particular projects, or some other form of website. While we recommend the concept of a pinned github repo to highlight your abilities as a researcher and bioinformatician, how you do this is up to you.</p>
+</section>
+<section id="why-a-portfolio-website" class="level2">
+<h2 class="anchored" data-anchor-id="why-a-portfolio-website">Why a portfolio website?</h2>
+<p>If you want to progress in bioinformatics, you should assume that people (future employers) will look at your github. Having a set of tidy repos that document your workflow is the minimum you should aim for. In addition to these tidy repos, we can build a single repo that directs and guides viewers through our github and highlights our key skills.</p>
+<p>Aside from github repos it can be useful to create websites as a way to market either yourself and your work, or the work of your lab group. Quarto can make this easy. <a href="https://jadeyryan.com/">Jadey Ryan</a> has a great website that really showcases what a Quarto website can look like.</p>
+<p>To get a better understanding of why I am recommending this and what we are trying to do, we recommend this talk from posit::conf(2024) titled “<a href="https://www.youtube.com/watch?v=R-bPjavai5A&amp;list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn&amp;index=20">Github - How to tell your professional story</a>”. In this talk, Dr.&nbsp;Abigail Haddad outlines how Github can be used to demonstrate not just the raw coding skills you use frequently, but also the auxilliary skills that define how you work - your problem solving skills, your practices, and how you communicate.</p>
+<p>We are going to take some of the advice from that talk, which says that all of your github should be used to <em>actively</em> demonstrate your skills and tell your story, and we are going to compress it down to a single github repo which will convey (or at least introduce) your story. We will Pin this repo so that it’s the first thing people see when they visit your github page, and publish it as a working website so that you also have a link you can drop into LinkedIn or Bluesky posts, incorporate into your email signatures, whenever you feel it’s appropriate to do some self-marketing.</p>
+</section>
+<section id="initial-setup" class="level2">
+<h2 class="anchored" data-anchor-id="initial-setup">Initial setup</h2>
+<p>Using skills from yesterday and today’s workshops:</p>
+<ul>
+<li><p>Initiate a new, public github repo with a name like “Work Portfolio” or equivalent.</p></li>
+<li><p>In RStudio, start a New Project, and use the Version Control option to link it to the new repo, and select where you want the directory to be (e.g., select ‘Desktop’, and your new directory will appear on your desktop)</p></li>
+<li><p>Create three .qmd files. For each file, set the YAML header to include an appropriate title and add at least one header and a piece of sample text to each document:</p>
+<ul>
+<li><p><code style="color:blue">index.qmd</code>. Index.qmd will work as the landing page for the site, and could include something like the short blurb found at the top of a CV.</p></li>
+<li><p><code style="color:blue">portfolio.qmd</code>. Portfolio will contain hyperlinks to your work - either to other github repos, publications, google scholar account, LinkedIn account <em>etc.,</em> (it will be the definitive, exhaustive set of your work).</p></li>
+<li><p><code style="color:blue">research_focus.qmd</code>. Research_focus.qmd will include a written statement about your focus as a researcher.</p></li>
+<li><p>Create a <code style="color:blue">_quarto.yml</code> file using the template from the previous section. Include <code style="color:blue">index.qmd</code> first, then <code style="color:blue">research_focus.qmd</code> and then <code style="color:blue">portfolio.qmd</code>.</p></li>
+</ul></li>
+</ul>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Make the _quarto.yml file for me please:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">type:</span> website</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">output-dir:</span> docs</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">website:</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">title:</span> <span class="st">"My work portfolio"</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">navbar:</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">left:</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> text: <span class="st">"My name"</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="ex">href:</span> index.qmd</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> text: <span class="st">"My research focus"</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="ex">href:</span> research_focus.qmd</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> text: <span class="st">"My portfolio"</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        <span class="ex">href:</span> portfolio.qmd</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="ex">format:</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="ex">html:</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">theme:</span> minty</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Note:</strong> these initial files are templates only, and will be populated later.</p>
+<p>Save all four files and click “Render” in RStudio. You will now have created a rudimentary structure for your work portfolio website.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What should my website look like? Show me an example
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We encourage you after the workshop to spend some time developing your research portfolio website, populated with your own real information.</p>
+<p>Here as an example, we have created a website as if written by the scientist <a href="https://chloevdb.github.io/work-portfolio-barbara-mcclintock/">Dr Barbara McClintock.</a></p>
+<p>You can use this text to populate your own if you’d like to use an example for now:</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+_quarto.yml
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">type:</span> website</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">output-dir:</span> docs</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">website:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">title:</span> <span class="st">"Barbara McClintock"</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">navbar:</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">left:</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> text: <span class="st">"Home"</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="ex">href:</span> index.qmd</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> text: <span class="st">"Research Focus"</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="ex">href:</span> research_focus.qmd</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> text: <span class="st">"Portfolio"</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        <span class="ex">href:</span> portfolio.qmd</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="ex">format:</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="ex">html:</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">theme:</span> cosmo</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">toc:</span> true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+index.qmd
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">---</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">title:</span> <span class="st">"Barbara McClintock"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">format:</span> html</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">---</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Welcome to My Research Portfolio</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="ex">![Barbara</span> McClintock <span class="er">(</span><span class="ex">1902-1992</span><span class="kw">)</span><span class="ex">,</span> Department of Genetics, Carnegie Institution at Cold Spring Harbor, New York, shown in her laboratory. [Photo: From the  Smithsonian Institution Archives, Accession 90-105, Science Service Records, Image No. SIA2008-5609]<span class="er">(</span><span class="ex">http://siarchives.si.edu/collections/siris_arc_306310</span><span class="kw">)</span><span class="ex">]</span><span class="er">(</span><span class="ex">images/barbaramcclintock.jpg</span><span class="kw">)</span><span class="ex">{width=80%}</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello,</span> I’m <span class="pp">**</span>Barbara McClintock<span class="pp">**</span>, an American cytogeneticist fascinated by the dynamic nature of the genome.  </span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="ex">My</span> work with <span class="pp">**</span>maize chromosomes<span class="pp">**</span> led to the discovery of genetic recombination, chromosome breakage, and eventually, <span class="pp">**</span>transposable elements<span class="pp">**</span> — genes that can move within the genome.</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="ex">I</span> completed my PhD in Botany at <span class="pp">**</span>Cornell University<span class="pp">**</span> in 1927, and spent much of my career exploring how chromosomes behave and control genetic expression in maize.  </span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="ex">In</span> 1983, I was awarded the <span class="pp">**</span>Nobel Prize in Physiology or Medicine<span class="pp">**</span> for the discovery of genetic transposition.</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> site serves as a portfolio of my research, publications, and ongoing scientific interests.</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="ex">---</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> “If <span class="ex">you</span> know you are on the right track, if you have this inner knowledge, then nobody can turn you off.”</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><em>Hint: The image in index.qmd will not display unless you download it from the given link and put it in a dir called images. The site will render regardless.</em></p>
+</blockquote>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+research_focus.qmd
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">title:</span> <span class="st">"Research Focus"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">format:</span> html</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">---</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="ex">My</span> lifelong scientific interest lies in understanding how <span class="pp">**</span>chromosomes behave and change<span class="pp">**</span> — and how such behavior influences genetic expression and heredity.</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">## Cytogenetics of Maize</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="ex">Working</span> with <span class="pp">*</span>Zea mays<span class="pp">*</span>, I developed techniques to visualize chromosomes under the microscope.  </span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="ex">These</span> methods enabled me to:  </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> Demonstrate <span class="pp">**</span>crossing-over<span class="pp">**</span> during meiosis.  </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> Identify the roles of <span class="pp">**</span>telomeres<span class="pp">**</span> and <span class="pp">**</span>centromeres<span class="pp">**</span> in maintaining chromosome stability.  </span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> Track structural rearrangements in chromosomes across generations.</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">## Discovery of Transposable Elements</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="ex">In</span> the 1940s and 1950s, I discovered <span class="pp">**</span>“jumping genes”<span class="pp">**</span>, or <span class="pp">**</span>transposons<span class="pp">**</span> — mobile genetic elements that can change their position within the genome.  </span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> finding revealed that the genome is <span class="pp">**</span>not static<span class="pp">**</span>, but instead <span class="pp">**</span>dynamic and responsive<span class="pp">**</span> to its environment.</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co">## Later Research and Broader Impact</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="ex">My</span> later work extended into the <span class="pp">**</span>cytogenetics and ethnobotany of South American maize races<span class="pp">**</span>, integrating field studies with laboratory cytology.  </span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="ex">These</span> findings helped connect genetic variability with the evolutionary adaptation of maize to local environments.</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="ex">---</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> “A <span class="ex">feeling</span> for the organism” — understanding life by working with it patiently, respectfully, and without preconception — remains the heart of my approach to science.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+portfolio.qmd
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">---</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">title:</span> <span class="st">"Research Portfolio"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">format:</span> html</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">---</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Below</span> is a curated selection of my key scientific works and contributions to genetics.</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">## 📚 Selected Publications</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> McClintock, B. <span class="er">(</span><span class="ex">1939</span><span class="kw">)</span><span class="bu">.</span> <span class="pp">*</span>The Behavior in Successive Nuclear Divisions of a Chromosome Broken at Meiosis<span class="pp">*</span>. <span class="pp">*</span>PNAS<span class="pp">*</span>, <span class="pp">**</span>25<span class="pp">**</span> <span class="er">(</span><span class="ex">8</span><span class="kw">)</span> <span class="ex">405-416.</span> <span class="pp">[</span><span class="ss">doi.org/10.1073/pnas.25.8.40</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://doi.org/10.1073/pnas.25.8.40</span><span class="kw">)</span><span class="bu">.</span>  </span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> McClintock, B. <span class="er">(</span><span class="ex">1941</span><span class="kw">)</span><span class="bu">.</span> <span class="pp">*</span>The Stability of Broken Ends of Chromosomes in Zea Mays<span class="pp">*</span>. <span class="pp">*</span>Genetics<span class="pp">*</span>, <span class="pp">**</span>26<span class="pp">**</span> <span class="er">(</span><span class="ex">2</span><span class="kw">)</span> <span class="ex">234-282.</span> <span class="pp">[</span><span class="ss">doi.org/10.1093/genetics/26.2.234</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://doi.org/10.1093/genetics/26.2.234</span><span class="kw">)</span><span class="bu">.</span>  </span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> McClintock, B. <span class="er">(</span><span class="ex">1950</span><span class="kw">)</span><span class="bu">.</span> <span class="pp">*</span>The origin and behavior of mutable loci in maize<span class="pp">*</span>. <span class="pp">*</span>PNAS<span class="pp">*</span>, <span class="pp">**</span>36<span class="pp">**</span> <span class="er">(</span><span class="ex">6</span><span class="kw">)</span> <span class="ex">344-355.</span> <span class="pp">[</span><span class="ss">doi.org/10.1073/pnas.36.6.344</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://doi.org/10.1073/pnas.36.6.344</span><span class="kw">)</span><span class="bu">.</span>  </span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co">## 🏆 Nobel Lecture</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> Nobel Lecture <span class="er">(</span><span class="ex">1983</span><span class="kw">)</span><span class="bu">:</span> [The Significance of Responses of the Genome to Challenge]<span class="er">(</span><span class="ex">https://www.nobelprize.org/prizes/medicine/1983/mcclintock/lecture/</span><span class="kw">)</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co">## 🔬 Data and Resources</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> [Cold Spring Harbor Laboratory — Barbara McClintock Collection]<span class="er">(</span><span class="ex">https://www.cshl.edu/personal-collections/barbara-mcclintock/</span><span class="kw">)</span>  </span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="co">## 🗞️ Media</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> [Nobel Prize Stories: Women who changed science]<span class="er">(</span><span class="ex">https://www.nobelprize.org/stories/women-who-changed-science/barbara-mcclintock/</span><span class="kw">)</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co">## 🌐 Professional Links </span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> [National Academy of Sciences Biography]<span class="er">(</span><span class="ex">https://www.nasonline.org/directory-entry/barbara-mcclintock-x3z8mp/</span><span class="kw">)</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> <span class="pp">[</span><span class="ss">GitHub</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://github.com/chloevdb/work-portfolio-barbara-mcclintock</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="refining-the-site" class="level2">
+<h2 class="anchored" data-anchor-id="refining-the-site">Refining the site</h2>
+<p>Here we will look at a number of options through the <code style="color:blue">_quarto.yml</code> file to improve the look of the website.</p>
+<section id="improved-navigation-and-layout" class="level3">
+<h3 class="anchored" data-anchor-id="improved-navigation-and-layout">Improved navigation and layout</h3>
+<section id="sidebar-navigation" class="level4">
+<h4 class="anchored" data-anchor-id="sidebar-navigation">Sidebar navigation</h4>
+<p>In the last section we added a navbar along the top of the page for website navigation. An alternative to this is sidebar navigation:</p>
+<ul>
+<li><p>In the <code style="color:blue">_quarto.yml</code> document, replace <code>navbar:</code> with <code>sidebar:</code></p></li>
+<li><p>Add a new line below <code>sidebar</code>, indent and add <code>style: "docked"</code>.</p></li>
+<li><p>Add a new line and (same indentation level as <code>style:</code>, because it is an argument under <code>sidebar</code>), remove the <code>left:</code>, and add <code>contents:</code>. This is then followed individual <code style="color:blue">.qmd</code> documents with <code>text</code> and <code>href</code> as before.</p></li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Help! What should my _quarto.yml look like now?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Your <code style="color:blue">_quarto.yml</code> should now look like this:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">type:</span> website</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">output-dir:</span> docs</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="ex">website:</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">title:</span> <span class="st">"My work portfolio"</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">sidebar:</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">style:</span> <span class="st">"docked"</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">contents:</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> text: <span class="st">"My name"</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>        <span class="ex">href:</span> index.qmd</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> text: <span class="st">"My portfolio"</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>        <span class="ex">href:</span> portfolio.qmd</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> text: <span class="st">"My research focus"</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>        <span class="ex">href:</span> research_focus.qmd</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="ex">format:</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="ex">html:</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">theme:</span> minty</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sections" class="level4">
+<h4 class="anchored" data-anchor-id="sections">Sections</h4>
+<p>We can group pages under a header in sidebar navigation. Clicking on the header will open a drop-down menu. Each section can be given it’s own name, and can have any number of individual pages nested below it through the “contents:” key.</p>
+<p>Sections are very useful for <em>e.g.,</em> a website that focuses on discrete aspects (two day protocols, wetlab and drylab sections <em>etc.,</em>)</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example sidebar and section .yml
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/sidebar_and_sections.png" class="img-fluid figure-img"></p>
+<figcaption>Sidebar and sections example</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="adding-personal-details-github-icons-footer-light-and-dark" class="level3">
+<h3 class="anchored" data-anchor-id="adding-personal-details-github-icons-footer-light-and-dark">Adding personal details: github icons, footer, light and dark</h3>
+<section id="site-icons" class="level4">
+<h4 class="anchored" data-anchor-id="site-icons">Site icons</h4>
+<p>We can add a range of icons to our navigation menu and provide links for these icons. This provides an easy and clear way for site visitors to view your other, more commonly used accounts. Commonly used icons include github/linkedIn/bluesky, with <a href="https://icons.getbootstrap.com/">thousands of icons</a> available for use.</p>
+<p>Add the code below to a new line in the <code>website</code> section of the <code style="color:blue">_quarto.yml</code> file. Note that <code>navbar</code> should be at the same indentation level as <code>sidebar</code>. You can swap the href link (which is currently to the generic github site) to your own github.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">navbar:</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">right:</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> icon: github</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="ex">href:</span> https://github.com/</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="ex">aria-label:</span> GitHub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="footer" class="level4">
+<h4 class="anchored" data-anchor-id="footer">Footer</h4>
+<p>Add a footer with:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">page-footer:</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">center:</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> text: <span class="st">"Built with love and Quarto"</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> href: https://quarto.org</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="themes-light-and-dark" class="level4">
+<h4 class="anchored" data-anchor-id="themes-light-and-dark">Themes light and dark</h4>
+<p>In addition to selecting a single theme as we have done in the previous section of this workshop, we can enable both a light and dark mode using themes. The easiest way to do this is to choose the simple themes “flatly” and “darkly”, but you can select any themes you prefer.</p>
+<p>To do this, under <code>theme:</code>, add two new lines with the key-value pairs <code>light: flatly</code> and <code>dark: darkly</code>. After rendering we can now switch between light and dark modes.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">theme:</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">light:</span> flatly</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">dark:</span> darkly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="styles.css" class="level3">
+<h3 class="anchored" data-anchor-id="styles.css">styles.css</h3>
+<p>In addition to the pre-built format that themes can provide we can also customise our sites with a <code style="color:blue">styles.css</code> file. This a “Cascading Style Sheets” document, which can be used to override all of the Quarto defaults for HTML documents. The .css file is used to manipulate fonts, choose colours, layout, background for code cells, side and navbar aesthetics, table text alignment - <em>almost every visual aspect</em> can be changed with a styles.css file.</p>
+<p>The <code style="color:blue">styles.css</code> file is written in css - it is not Quarto specific, and requires reasonably detailed knowledge. We recommend using templates sourced online or chatGPT equivalents for building a <code style="color:blue">styles.css</code> template which you can then work from.</p>
+<p>Styles.css is stored in the top level of the directory. In the <code style="color:blue">_quarto.yml</code> document under <code>format</code>, we can add a new line at the same indentation level as theme and added <code>css: styles.css</code></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">format:</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">html:</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">css:</span> styles.css</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example styles.css
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Here we created one using ChatGPT, by asking it to create a styles.css file using the specified colour palette (these colours come from a <a href="https://g-thomson.github.io/Manu/">Kākāpō palette by Geoffrey Thomson</a>). Copy-paste this text into a text file and save it as <code style="color:blue">styles.css</code>:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/*</span> ===========================</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>   <span class="ex">Custom</span> Portfolio Styles</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>   <span class="ex">===========================</span> <span class="pp">*</span>/</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="ex">/*</span> <span class="at">-----</span> Colour Palette <span class="at">-----</span> <span class="pp">*</span>/</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="ex">:root</span> {</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">--olive:</span> <span class="co">#7D9D33;      /* Primary green accent */</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="ex">--sage:</span> <span class="co">#CED38C;       /* Light green background */</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="ex">--gold:</span> <span class="co">#DCC949;       /* Secondary accent */</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="ex">--taupe:</span> <span class="co">#BCA888;      /* Soft contrast */</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="ex">--terracotta:</span> <span class="co">#CD8862; /* Warm highlight */</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="ex">--brown:</span> <span class="co">#775B24;      /* Dark brown text / navbar */</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="ex">/*</span> <span class="at">-----</span> Base <span class="at">-----</span> <span class="pp">*</span>/</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="ex">body</span> {</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="ex">background-color:</span> var<span class="er">(</span><span class="ex">--sage</span><span class="kw">);</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--brown</span><span class="kw">);</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  <span class="ex">font-family:</span> <span class="st">"Helvetica Neue"</span>, Arial, sans-serif<span class="kw">;</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  <span class="ex">line-height:</span> 1.6<span class="kw">;</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  <span class="ex">margin:</span> 0<span class="kw">;</span></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>  <span class="ex">padding:</span> 0<span class="kw">;</span></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="ex">/*</span> <span class="at">-----</span> Headings <span class="at">-----</span> <span class="pp">*</span>/</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a><span class="ex">h1,</span> h2, h3, h4, h5, h6 {</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--brown</span><span class="kw">);</span></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>  <span class="ex">font-weight:</span> 600<span class="kw">;</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>  <span class="ex">margin-top:</span> 1.2em<span class="kw">;</span></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a><span class="ex">/*</span> <span class="at">-----</span> Links <span class="at">-----</span> <span class="pp">*</span>/</span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a><span class="ex">a</span> {</span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--olive</span><span class="kw">);</span></span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>  <span class="ex">text-decoration:</span> none<span class="kw">;</span></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>  <span class="ex">transition:</span> color 0.2s ease-in-out<span class="kw">;</span></span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a><span class="ex">a:hover</span> {</span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--terracotta</span><span class="kw">);</span></span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>  <span class="ex">text-decoration:</span> underline<span class="kw">;</span></span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a><span class="ex">/*</span> <span class="at">-----</span> Sidebar <span class="at">-----</span> <span class="pp">*</span>/</span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a><span class="ex">.sidebar</span> {</span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>  <span class="ex">background-color:</span> var<span class="er">(</span><span class="ex">--sage</span><span class="kw">);</span></span>
+<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--brown</span><span class="kw">);</span></span>
+<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a>  <span class="ex">border-right:</span> 2px solid var<span class="er">(</span><span class="ex">--taupe</span><span class="kw">);</span></span>
+<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a>  <span class="ex">padding-top:</span> 1em<span class="kw">;</span></span>
+<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a><span class="ex">.sidebar</span> a {</span>
+<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a>  <span class="ex">display:</span> block<span class="kw">;</span></span>
+<span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--brown</span><span class="kw">);</span></span>
+<span id="cb16-55"><a href="#cb16-55" aria-hidden="true" tabindex="-1"></a>  <span class="ex">padding:</span> 0.5em 1em<span class="kw">;</span></span>
+<span id="cb16-56"><a href="#cb16-56" aria-hidden="true" tabindex="-1"></a>  <span class="ex">font-weight:</span> 500<span class="kw">;</span></span>
+<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-58"><a href="#cb16-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-59"><a href="#cb16-59" aria-hidden="true" tabindex="-1"></a><span class="ex">.sidebar</span> a:hover {</span>
+<span id="cb16-60"><a href="#cb16-60" aria-hidden="true" tabindex="-1"></a>  <span class="ex">background-color:</span> var<span class="er">(</span><span class="ex">--gold</span><span class="kw">);</span></span>
+<span id="cb16-61"><a href="#cb16-61" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--brown</span><span class="kw">);</span></span>
+<span id="cb16-62"><a href="#cb16-62" aria-hidden="true" tabindex="-1"></a>  <span class="ex">text-decoration:</span> none<span class="kw">;</span></span>
+<span id="cb16-63"><a href="#cb16-63" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-64"><a href="#cb16-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-65"><a href="#cb16-65" aria-hidden="true" tabindex="-1"></a><span class="ex">.sidebar</span> a.active {</span>
+<span id="cb16-66"><a href="#cb16-66" aria-hidden="true" tabindex="-1"></a>  <span class="ex">border-left:</span> 4px solid var<span class="er">(</span><span class="ex">--terracotta</span><span class="kw">);</span></span>
+<span id="cb16-67"><a href="#cb16-67" aria-hidden="true" tabindex="-1"></a>  <span class="ex">background-color:</span> rgba<span class="er">(</span><span class="ex">205,</span> 136, 98, 0.15<span class="kw">);</span></span>
+<span id="cb16-68"><a href="#cb16-68" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-69"><a href="#cb16-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-70"><a href="#cb16-70" aria-hidden="true" tabindex="-1"></a><span class="ex">/*</span> <span class="at">-----</span> Navbar <span class="at">-----</span> <span class="pp">*</span>/</span>
+<span id="cb16-71"><a href="#cb16-71" aria-hidden="true" tabindex="-1"></a><span class="ex">.navbar</span> {</span>
+<span id="cb16-72"><a href="#cb16-72" aria-hidden="true" tabindex="-1"></a>  <span class="ex">background-color:</span> var<span class="er">(</span><span class="ex">--brown</span><span class="kw">);</span></span>
+<span id="cb16-73"><a href="#cb16-73" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--gold</span><span class="kw">);</span></span>
+<span id="cb16-74"><a href="#cb16-74" aria-hidden="true" tabindex="-1"></a>  <span class="ex">padding:</span> 0.6em 1em<span class="kw">;</span></span>
+<span id="cb16-75"><a href="#cb16-75" aria-hidden="true" tabindex="-1"></a>  <span class="ex">display:</span> flex<span class="kw">;</span></span>
+<span id="cb16-76"><a href="#cb16-76" aria-hidden="true" tabindex="-1"></a>  <span class="ex">justify-content:</span> space-between<span class="kw">;</span></span>
+<span id="cb16-77"><a href="#cb16-77" aria-hidden="true" tabindex="-1"></a>  <span class="ex">align-items:</span> center<span class="kw">;</span></span>
+<span id="cb16-78"><a href="#cb16-78" aria-hidden="true" tabindex="-1"></a>  <span class="ex">border-bottom:</span> 4px solid var<span class="er">(</span><span class="ex">--terracotta</span><span class="kw">);</span></span>
+<span id="cb16-79"><a href="#cb16-79" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-80"><a href="#cb16-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-81"><a href="#cb16-81" aria-hidden="true" tabindex="-1"></a><span class="ex">.navbar</span> a {</span>
+<span id="cb16-82"><a href="#cb16-82" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--gold</span><span class="kw">);</span></span>
+<span id="cb16-83"><a href="#cb16-83" aria-hidden="true" tabindex="-1"></a>  <span class="ex">margin-left:</span> 1em<span class="kw">;</span></span>
+<span id="cb16-84"><a href="#cb16-84" aria-hidden="true" tabindex="-1"></a>  <span class="ex">font-weight:</span> 500<span class="kw">;</span></span>
+<span id="cb16-85"><a href="#cb16-85" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-86"><a href="#cb16-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-87"><a href="#cb16-87" aria-hidden="true" tabindex="-1"></a><span class="ex">.navbar</span> a:hover {</span>
+<span id="cb16-88"><a href="#cb16-88" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--sage</span><span class="kw">);</span></span>
+<span id="cb16-89"><a href="#cb16-89" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-90"><a href="#cb16-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-91"><a href="#cb16-91" aria-hidden="true" tabindex="-1"></a><span class="ex">/*</span> <span class="at">-----</span> Footer <span class="at">-----</span> <span class="pp">*</span>/</span>
+<span id="cb16-92"><a href="#cb16-92" aria-hidden="true" tabindex="-1"></a><span class="ex">.page-footer,</span> .footer {</span>
+<span id="cb16-93"><a href="#cb16-93" aria-hidden="true" tabindex="-1"></a>  <span class="ex">background-color:</span> var<span class="er">(</span><span class="ex">--brown</span><span class="kw">);</span></span>
+<span id="cb16-94"><a href="#cb16-94" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--gold</span><span class="kw">);</span></span>
+<span id="cb16-95"><a href="#cb16-95" aria-hidden="true" tabindex="-1"></a>  <span class="ex">text-align:</span> center<span class="kw">;</span></span>
+<span id="cb16-96"><a href="#cb16-96" aria-hidden="true" tabindex="-1"></a>  <span class="ex">padding:</span> 1em<span class="kw">;</span></span>
+<span id="cb16-97"><a href="#cb16-97" aria-hidden="true" tabindex="-1"></a>  <span class="ex">font-size:</span> 0.9em<span class="kw">;</span></span>
+<span id="cb16-98"><a href="#cb16-98" aria-hidden="true" tabindex="-1"></a>  <span class="ex">border-top:</span> 4px solid var<span class="er">(</span><span class="ex">--terracotta</span><span class="kw">);</span></span>
+<span id="cb16-99"><a href="#cb16-99" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-100"><a href="#cb16-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-101"><a href="#cb16-101" aria-hidden="true" tabindex="-1"></a><span class="ex">.page-footer</span> a, .footer a {</span>
+<span id="cb16-102"><a href="#cb16-102" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--terracotta</span><span class="kw">);</span></span>
+<span id="cb16-103"><a href="#cb16-103" aria-hidden="true" tabindex="-1"></a>  <span class="ex">text-decoration:</span> none<span class="kw">;</span></span>
+<span id="cb16-104"><a href="#cb16-104" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-105"><a href="#cb16-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-106"><a href="#cb16-106" aria-hidden="true" tabindex="-1"></a><span class="ex">.page-footer</span> a:hover, .footer a:hover {</span>
+<span id="cb16-107"><a href="#cb16-107" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--gold</span><span class="kw">);</span></span>
+<span id="cb16-108"><a href="#cb16-108" aria-hidden="true" tabindex="-1"></a>  <span class="ex">text-decoration:</span> underline<span class="kw">;</span></span>
+<span id="cb16-109"><a href="#cb16-109" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-110"><a href="#cb16-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-111"><a href="#cb16-111" aria-hidden="true" tabindex="-1"></a><span class="ex">/*</span> <span class="at">-----</span> Buttons <span class="at">-----</span> <span class="pp">*</span>/</span>
+<span id="cb16-112"><a href="#cb16-112" aria-hidden="true" tabindex="-1"></a><span class="ex">button,</span> .btn, input<span class="pp">[</span><span class="ss">type=</span><span class="st">"submit"</span><span class="pp">]</span> {</span>
+<span id="cb16-113"><a href="#cb16-113" aria-hidden="true" tabindex="-1"></a>  <span class="ex">background-color:</span> var<span class="er">(</span><span class="ex">--terracotta</span><span class="kw">);</span></span>
+<span id="cb16-114"><a href="#cb16-114" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--sage</span><span class="kw">);</span></span>
+<span id="cb16-115"><a href="#cb16-115" aria-hidden="true" tabindex="-1"></a>  <span class="ex">border:</span> none<span class="kw">;</span></span>
+<span id="cb16-116"><a href="#cb16-116" aria-hidden="true" tabindex="-1"></a>  <span class="ex">padding:</span> 0.5em 1em<span class="kw">;</span></span>
+<span id="cb16-117"><a href="#cb16-117" aria-hidden="true" tabindex="-1"></a>  <span class="ex">border-radius:</span> 6px<span class="kw">;</span></span>
+<span id="cb16-118"><a href="#cb16-118" aria-hidden="true" tabindex="-1"></a>  <span class="ex">cursor:</span> pointer<span class="kw">;</span></span>
+<span id="cb16-119"><a href="#cb16-119" aria-hidden="true" tabindex="-1"></a>  <span class="ex">font-weight:</span> 600<span class="kw">;</span></span>
+<span id="cb16-120"><a href="#cb16-120" aria-hidden="true" tabindex="-1"></a>  <span class="ex">transition:</span> background-color 0.2s ease-in-out<span class="kw">;</span></span>
+<span id="cb16-121"><a href="#cb16-121" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-122"><a href="#cb16-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-123"><a href="#cb16-123" aria-hidden="true" tabindex="-1"></a><span class="ex">button:hover,</span> .btn:hover, input<span class="pp">[</span><span class="ss">type=</span><span class="st">"submit"</span><span class="pp">]</span>:hover {</span>
+<span id="cb16-124"><a href="#cb16-124" aria-hidden="true" tabindex="-1"></a>  <span class="ex">background-color:</span> var<span class="er">(</span><span class="ex">--brown</span><span class="kw">);</span></span>
+<span id="cb16-125"><a href="#cb16-125" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--gold</span><span class="kw">);</span></span>
+<span id="cb16-126"><a href="#cb16-126" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-127"><a href="#cb16-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-128"><a href="#cb16-128" aria-hidden="true" tabindex="-1"></a><span class="ex">/*</span> <span class="at">-----</span> Content Boxes <span class="at">-----</span> <span class="pp">*</span>/</span>
+<span id="cb16-129"><a href="#cb16-129" aria-hidden="true" tabindex="-1"></a><span class="ex">.content-box</span> {</span>
+<span id="cb16-130"><a href="#cb16-130" aria-hidden="true" tabindex="-1"></a>  <span class="ex">background-color:</span> var<span class="er">(</span><span class="ex">--taupe</span><span class="kw">);</span></span>
+<span id="cb16-131"><a href="#cb16-131" aria-hidden="true" tabindex="-1"></a>  <span class="ex">border:</span> 1px solid var<span class="er">(</span><span class="ex">--brown</span><span class="kw">);</span></span>
+<span id="cb16-132"><a href="#cb16-132" aria-hidden="true" tabindex="-1"></a>  <span class="ex">padding:</span> 1em<span class="kw">;</span></span>
+<span id="cb16-133"><a href="#cb16-133" aria-hidden="true" tabindex="-1"></a>  <span class="ex">border-radius:</span> 8px<span class="kw">;</span></span>
+<span id="cb16-134"><a href="#cb16-134" aria-hidden="true" tabindex="-1"></a>  <span class="ex">margin:</span> 1em 0<span class="kw">;</span></span>
+<span id="cb16-135"><a href="#cb16-135" aria-hidden="true" tabindex="-1"></a>  <span class="ex">box-shadow:</span> 0 2px 6px rgba<span class="er">(</span><span class="ex">0,0,0,0.1</span><span class="kw">);</span></span>
+<span id="cb16-136"><a href="#cb16-136" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-137"><a href="#cb16-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-138"><a href="#cb16-138" aria-hidden="true" tabindex="-1"></a><span class="ex">/*</span> <span class="at">-----</span> Blockquotes <span class="at">-----</span> <span class="pp">*</span>/</span>
+<span id="cb16-139"><a href="#cb16-139" aria-hidden="true" tabindex="-1"></a><span class="ex">blockquote</span> {</span>
+<span id="cb16-140"><a href="#cb16-140" aria-hidden="true" tabindex="-1"></a>  <span class="ex">border-left:</span> 4px solid var<span class="er">(</span><span class="ex">--terracotta</span><span class="kw">);</span></span>
+<span id="cb16-141"><a href="#cb16-141" aria-hidden="true" tabindex="-1"></a>  <span class="ex">background:</span> var<span class="er">(</span><span class="ex">--gold</span><span class="kw">);</span></span>
+<span id="cb16-142"><a href="#cb16-142" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--brown</span><span class="kw">);</span></span>
+<span id="cb16-143"><a href="#cb16-143" aria-hidden="true" tabindex="-1"></a>  <span class="ex">padding:</span> 1em<span class="kw">;</span></span>
+<span id="cb16-144"><a href="#cb16-144" aria-hidden="true" tabindex="-1"></a>  <span class="ex">margin:</span> 1.5em 0<span class="kw">;</span></span>
+<span id="cb16-145"><a href="#cb16-145" aria-hidden="true" tabindex="-1"></a>  <span class="ex">font-style:</span> italic<span class="kw">;</span></span>
+<span id="cb16-146"><a href="#cb16-146" aria-hidden="true" tabindex="-1"></a>  <span class="ex">border-radius:</span> 4px<span class="kw">;</span></span>
+<span id="cb16-147"><a href="#cb16-147" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-148"><a href="#cb16-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-149"><a href="#cb16-149" aria-hidden="true" tabindex="-1"></a><span class="ex">/*</span> <span class="at">-----</span> Tables <span class="at">-----</span> <span class="pp">*</span>/</span>
+<span id="cb16-150"><a href="#cb16-150" aria-hidden="true" tabindex="-1"></a><span class="ex">table</span> {</span>
+<span id="cb16-151"><a href="#cb16-151" aria-hidden="true" tabindex="-1"></a>  <span class="ex">border-collapse:</span> collapse<span class="kw">;</span></span>
+<span id="cb16-152"><a href="#cb16-152" aria-hidden="true" tabindex="-1"></a>  <span class="ex">width:</span> 100%<span class="kw">;</span></span>
+<span id="cb16-153"><a href="#cb16-153" aria-hidden="true" tabindex="-1"></a>  <span class="ex">background-color:</span> var<span class="er">(</span><span class="ex">--sage</span><span class="kw">);</span></span>
+<span id="cb16-154"><a href="#cb16-154" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-155"><a href="#cb16-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-156"><a href="#cb16-156" aria-hidden="true" tabindex="-1"></a><span class="ex">th</span> {</span>
+<span id="cb16-157"><a href="#cb16-157" aria-hidden="true" tabindex="-1"></a>  <span class="ex">background-color:</span> var<span class="er">(</span><span class="ex">--brown</span><span class="kw">);</span></span>
+<span id="cb16-158"><a href="#cb16-158" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--gold</span><span class="kw">);</span></span>
+<span id="cb16-159"><a href="#cb16-159" aria-hidden="true" tabindex="-1"></a>  <span class="ex">padding:</span> 0.6em<span class="kw">;</span></span>
+<span id="cb16-160"><a href="#cb16-160" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-161"><a href="#cb16-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-162"><a href="#cb16-162" aria-hidden="true" tabindex="-1"></a><span class="ex">td</span> {</span>
+<span id="cb16-163"><a href="#cb16-163" aria-hidden="true" tabindex="-1"></a>  <span class="ex">border:</span> 1px solid var<span class="er">(</span><span class="ex">--taupe</span><span class="kw">);</span></span>
+<span id="cb16-164"><a href="#cb16-164" aria-hidden="true" tabindex="-1"></a>  <span class="ex">padding:</span> 0.5em<span class="kw">;</span></span>
+<span id="cb16-165"><a href="#cb16-165" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--brown</span><span class="kw">);</span></span>
+<span id="cb16-166"><a href="#cb16-166" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb16-167"><a href="#cb16-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-168"><a href="#cb16-168" aria-hidden="true" tabindex="-1"></a><span class="ex">/*</span> <span class="at">-----</span> Code Blocks <span class="at">-----</span> <span class="pp">*</span>/</span>
+<span id="cb16-169"><a href="#cb16-169" aria-hidden="true" tabindex="-1"></a><span class="ex">pre,</span> code {</span>
+<span id="cb16-170"><a href="#cb16-170" aria-hidden="true" tabindex="-1"></a>  <span class="ex">background-color:</span> var<span class="er">(</span><span class="ex">--taupe</span><span class="kw">);</span></span>
+<span id="cb16-171"><a href="#cb16-171" aria-hidden="true" tabindex="-1"></a>  <span class="ex">color:</span> var<span class="er">(</span><span class="ex">--brown</span><span class="kw">);</span></span>
+<span id="cb16-172"><a href="#cb16-172" aria-hidden="true" tabindex="-1"></a>  <span class="ex">font-family:</span> <span class="st">"Courier New"</span>, monospace<span class="kw">;</span></span>
+<span id="cb16-173"><a href="#cb16-173" aria-hidden="true" tabindex="-1"></a>  <span class="ex">border-radius:</span> 4px<span class="kw">;</span></span>
+<span id="cb16-174"><a href="#cb16-174" aria-hidden="true" tabindex="-1"></a>  <span class="ex">padding:</span> 0.3em 0.5em<span class="kw">;</span></span>
+<span id="cb16-175"><a href="#cb16-175" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="publishing-the-site-using-github-pages" class="level2">
+<h2 class="anchored" data-anchor-id="publishing-the-site-using-github-pages">Publishing the site using GitHub Pages</h2>
+<p>To publish a website - that is, to take it from the local-only html file to a hosted site that is accessible via url - <a href="https://quarto.org/docs/publishing/">there are a number of options</a>. Today we will focus on publishing through GitHub Pages. Within GitHub Pages there are three options for publishing (render to docs and publish, using the quarto publish command, or using a Github Action). We will use the simplest option, render to docs and then instruct GitHub to publish from the docs directory.</p>
+<section id="setting-up" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up">1. Setting up</h3>
+<ol type="1">
+<li><p>In the <code style="color:blue">_quarto.yml</code> file, make sure that we have <code>output-dir: docs</code> under <code>project</code>. Quarto render will then output all files to the docs directory.</p></li>
+<li><p>We need to add a specific file that tells GitHub pages <em>not</em> to do additional processing of our site (github has built in methods for publishing, which we do not want to use here). Under the Terminal tab in RStudio, run:</p></li>
+</ol>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> .nojekyll</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The file is not rendered - starting with a <code style="color:green">.</code> means that the file is not rendered and is instead treated as a high-level argument.</p>
+</section>
+<section id="render-add-commit-push" class="level3">
+<h3 class="anchored" data-anchor-id="render-add-commit-push">2. Render, add, commit, push</h3>
+<p>First, save all your open <code style="color:blue">.qmd</code> files. Then, click the ‘Render’ button on <strong>every single <code style="color:blue">.qmd</code> file.</strong> This will create a <code style="color:blue">html</code> file in <code style="color:blue">docs/</code> for each qmd file.</p>
+<p>While still in RStudio terminal, run:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add . </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>(The <code style="color:green">.</code> renders everything, alternatively type: <code>git add docs</code>)</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"publish to docs/"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>(If you get an error message here, you might need to type <code>git push origin main</code>)</p>
+<p>Our new rendered docs should now be stored safely in our repo on the GitHub server.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Is there a faster way to render all my files?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Yes there is!</p>
+<p>There are two ways you could do this:</p>
+<p><strong>1. Save all files, close RStudio, re-open RStudio.</strong><br>
+a) You will now see a tab appear that says ‘Build’.<br>
+b) Click the button that says ‘Render Website’ and all your qmd files in the directory will be rendered. The qmd don’t need to be open in RStudio.</p>
+<p><img src="images-quarto/quarto-render-02.png" class="img-fluid"></p>
+<p><strong>2. Render from the command line</strong><br>
+a) Make sure you have <a href="https://quarto.org/docs/get-started/">Quarto CLI tools installed first</a>. Type <code>quarto --version</code> to check.<br>
+b) Type <code>quarto render</code> in terminal. All qmd files will render. You can confirm this by checking that recent html files have appeared in docs, and by running <code>quarto preview</code> in terminal to confirm your website looks how you expect it to.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="deploy-from-maindocs" class="level3">
+<h3 class="anchored" data-anchor-id="deploy-from-maindocs">3. Deploy from main/docs</h3>
+<p>Navigate to the GitHub repo for the page you wish to deploy. Under <code style="color:black">Settings</code> &gt; <code style="color:black">Pages</code>, use the dropdown menus under the <strong>Branch</strong> header to select <code style="color:black">main</code> branch, and then switch the directory from <code style="color:black">/(root)</code> to <code style="color:black">/docs</code>. When ready, click <code style="color:black">Save</code>.</p>
+<p>The page should refresh with a new note saying “Your Github pages site is currently being built…”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/deployPage.png" class="img-fluid figure-img"></p>
+<figcaption>Deploying the github page</figcaption>
+</figure>
+</div>
+<p>Refresh the page to see the url for the new site and a button to Visit the site. Copy this url, return to the main page for the repo, and use the buttons on the github site to edit the About and/or Readme. Alternatively, back in RStudio open the README.md file and add the url there. Explore and share your now live portfolio webpage!</p>
+</section>
+<section id="pin-your-repo" class="level3">
+<h3 class="anchored" data-anchor-id="pin-your-repo">4. Pin your repo</h3>
+<p>On the GitHub website you can pin up to six repos as visible on your main landing page, with the remaining repos being visible under the repos tab. Once your research portfolio website is underway we recommend pinning it, alongside your most completed and well-documented repos, so that they will be the first thing visitors will see.</p>
+</section>
+</section>
+<section id="summary-1" class="level2">
+<h2 class="anchored" data-anchor-id="summary-1">Summary</h2>
+<p>You can reasonably expect people to look at your github repos. Creating a repo to guide viewers through your portfolio of research is a a good way to influence what people will see.</p>
+<p>With quarto we have a great level of control over the documents we create with arguments in the _quarto.yml file, through the use of themes, and a dedicated styles.css file.</p>
+<p>There are multiple ways to freely publish your documents as websites. Github pages works well with quarto docs and the method shown here is simple and easy to follow.</p>
+</section>
+<section id="getting-started" class="level1">
+<h1>Getting Started</h1>
+<p>In this workshop we will need to work publicly (which is <em>scary</em>). We will create a public GitHub repo to work from, and in the first stages of this workshop we will generate a local file (for ease, we will create a basic <code style="color:blue">.html</code> file, but the concepts will be the same as for creating a word doc or pdf). We will then update this file to become a webpage which to function as an ‘about me’ page or to showcase your work. We recommend pinning this repo (which we will demonstrate) so that when someone visits your GitHub, they can view useful information about you.</p>
+<section id="set-up-new-public-repo-and-open-an-r-project" class="level2">
+<h2 class="anchored" data-anchor-id="set-up-new-public-repo-and-open-an-r-project">Set up new public repo and open an R project</h2>
+<p>Go to GitHub, under “Repositories”, click New, give your new repo a name and description.</p>
+<p>We won’t need this beyond today, so you can call it something like <code style="color:blue">my-test-repo</code> if you like. Make sure the “public” box is checked (this should occur by default).</p>
+<p>Click on the green “Code” button, and copy the url for the repo.</p>
+<p>From RStudio, go <code style="color:black">File &gt; New Project &gt; Version Control &gt; Git</code>. Paste in the repo URL, provide a project directory name, and select the location for the project. Click <code style="color:black">Create Project</code></p>
+<p><img src="images-quarto/quarto-setup-01.png" class="img-fluid" style="width:80.0%"></p>
+</section>
+<section id="first-quarto-doc" class="level2">
+<h2 class="anchored" data-anchor-id="first-quarto-doc">First quarto doc</h2>
+<p>We can now create our first quarto (<code style="color:blue">.qmd</code>) file.</p>
+<p>Under <code style="color:black">File &gt; New File</code>, click Quarto Document. Alternatively, use the button that looks like a blank page with a white “+” inside a green circle, and select Quarto Document. This will bring up a panel for creating a new quarto document:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/newQuartoDoc.png" class="img-fluid figure-img"></p>
+<figcaption>New Quarto doc panel</figcaption>
+</figure>
+</div>
+<p>On the left hand side we can see three options: Document, Presentation, and Interactive, and for each of these we can see there are different outputs. We can change these outputs later, but for now, select Document and HTML (this is the recommended format for working in). Give this document a title, something like “Basic About Page”. Before we create the document, we can see a couple of other options: <strong>Engine</strong> (leave this as Knitr), <strong>Editor</strong> (we will keep the visual editor box ticked), and then we can either click <code style="color:black">Create</code> or <code style="color:black">Create Empty Document</code>. For now, click on <code style="color:black">Create</code></p>
+<p>This creates and opens a new document for us to write in. We can note three things:</p>
+<p>First, at the very top of our document is something called the YAML header. The YAML header is information about the document, and is always contained within two sets of three dashes. The YAML header sets things like the document title, subtitle, author, and the output file, as well as a lot of extra information. We will cover the YAML header in more detail shortly.</p>
+<p>Second, we can see this document is not blank - it comes pre-populated with some information about Quarto and how to run code (if we don’t want to see this information, we could use the ‘Create Empty Document’ button). These are often useful reminders when you are getting started, but once you are more familiar with Quarto you will delete these.</p>
+<p>Third, this <em>already looks like a document</em> - that’s because we are currently in the ‘Visual’ editor mode. We can click on the ‘Source’ button to enter editor mode and see the markdown syntax.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/visualEditor.png" class="img-fluid figure-img" width="430"></p>
+<figcaption>Visual Editor mode is active</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/sourceEditor.png" class="img-fluid figure-img" width="467"></p>
+<figcaption>Source Editor mode is active</figcaption>
+</figure>
+</div>
+<p>You might also notice that within the YAML header there is a line selecting editor. While this says “visual” in both of the images above, we have manually over-ridden that with the inbuilt buttons in RStudio.</p>
+<section id="exercise-syntax-2-min" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-syntax-2-min"><strong>Exercise: Syntax</strong> (2 min)</h4>
+<p>Note three pieces of markdown syntax in the Source editor and how this translates into the Visual editor.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: three pieces of syntax in the source editor
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>## - sets the Header level. Two # is “level 2”, three # is “level 3” (a smaller header). Note how these appear as headings in the Outline panel in RStudio.</p></li>
+<li><p>** - when a word is surrounded by the double * it will become <strong>bold</strong>. Using a single * around a word will be interpreted as <em>italics</em>.</p></li>
+<li><p>&lt;&gt; - are used to create a link. A word can also be embedded as a hyperlink by surrounding it with square brackets followed by the link itself in round brackets i.e., [this is the link text](https://this-is-the-URL.com)<br>
+</p></li>
+</ol>
+<p>We will cover more syntax shortly. Almost anything you would like to do can be achieved and is covered on the <a href="https://quarto.org">Quarto website</a>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Extra for experts
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If ## designates a header, and this workshop itself is written in Quarto, then why isn’t the line above coming up as a header?</p>
+<p>Good catch! We have done something extra here called ‘escaping’. When you need to specify a character like a # or an * that is used for special syntax, you can add a \ (a backslash) first. This means that the next symbol will appear as-is in the document, rather than being translated as markdown.</p>
+</div>
+</div>
+</div>
+<p><br>
+</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="visual-or-source-editor" class="level2">
+<h2 class="anchored" data-anchor-id="visual-or-source-editor">Visual or Source Editor</h2>
+<p>You may chose to almost exclusively use the Source Editor, which has the advantage of helping you learn the markdown language. This is useful if you want to work on your documents while you are away from RStudio (for example, Visual Studio Code (VSCode) is a popular tool, which we are using to write this workshop, and it doesn’t have the same visual editor).</p>
+<p>You may prefer to use the Visual Editor, which has the advantage of speed and convenience - you can use basic buttons to add bold or italic text, embed links, insert tables <em>etc.,</em>.</p>
+<p>Today you can use one or the other, and we will try and demonstrate some of each.</p>
+<section id="exercise-visual-and-source-editors-5-min" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-visual-and-source-editors-5-min"><strong>Exercise: Visual and Source Editors</strong> (5 min)</h4>
+<p>To start: in the quarto document highlight everything outside of the yaml header (everything below the bottom three dashes) and delete it.</p>
+<p>Move to the Visual Editor, and use the toolbar buttons to:</p>
+<ul>
+<li><p>Insert a piece of <strong>Bold</strong> font.</p></li>
+<li><p>Insert a piece of <em>italic</em> font.</p></li>
+<li><p>Select and highlight a piece of text (using the &lt;/&gt; button).</p></li>
+<li><p>Add a heading above these bits of text you have just created (using the drop-down button called Normal to chose Header levels).</p></li>
+<li><p>Add a numeric list with three different items on it.</p></li>
+<li><p>Embed a link to the GitHub repo for this workshop: <em>https://github.com/GenomicsAotearoa/reproducibility_with_git_and_quarto</em> (use the chain-link button).</p></li>
+<li><p>Finally, insert an example table with column headers and some example text.</p></li>
+</ul>
+<p>Once you have completed these tasks, <strong>switch back and forth</strong> between the <strong>Visual</strong> and <strong>Source</strong> Editor to see how these different effects are done with markdown.</p>
+</section>
+<section id="other-syntax-options-and-notes" class="level3">
+<h3 class="anchored" data-anchor-id="other-syntax-options-and-notes">Other syntax options and notes:</h3>
+<p>We can also use super<sup>script</sup> and sub<sub>script</sub>, by surrounding text with ^ or ~ respectively, and <del>strikeout</del> text using double ~~ on either side of the word.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Markdown Syntax</th>
+<th>Visual Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>super^script^</td>
+<td>super<sup>script</sup></td>
+</tr>
+<tr class="even">
+<td>sub~script~</td>
+<td>sub<sub>script</sub></td>
+</tr>
+<tr class="odd">
+<td>~~strikeout~~</td>
+<td><del>strikeout</del></td>
+</tr>
+</tbody>
+</table>
+<p>Paragraphs (and items in lists) need to be separated by an <em>empty line</em>. If there is no empty line between paragraphs, they will be interpreted as having a space between them.</p>
+<p>If you are writing lists manually (<em>i.e.,</em> not using the Visual editor option) you can either add unnumbered lists with an asterisk <code style="color:green">*</code> or a hypen <code style="color:green">-</code> or you can add numbered lists with any number followed by a fullstop at the start of the line.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hints:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Note that any number works (try writing a bullet point list with <code style="color:green">1. 2. 2. 4. 5.</code> to start each line!). Quarto will automatically sort the numbers, which means you can number lists and then easily add additional points anywhere along the list.<br>
+</li>
+<li>Sometimes an ‘Enter’ or ‘Return’ to make a new line is not enough. You may also need to add two spaces at the end of the top line, if the subsequent line is appearing on the preceding.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="save-and-render-document" class="level3">
+<h3 class="anchored" data-anchor-id="save-and-render-document">Save and Render document</h3>
+<p>Save your Quarto file (<code style="color:black">CTRL</code> + <code style="color:black">S</code> or <code style="color:black">CMD</code> + <code style="color:black">S</code>), give it a name if you have not already (<em>e.g.,</em> <code style="color:blue">getting-started.qmd</code>) and save it into the directory you made earlier (mine is called <code style="color:blue">my-test-repo</code>).</p>
+<p>Now back in RStudio, click the ‘Render’ button, which will simultaneously open up a Preview. You can change the Preview settings by clicking the settings button next to the Render button. The Preview can either be viewed in a new window or in a panel in RStudio.</p>
+<p><img src="images-quarto/quarto-render-01.png" class="img-fluid" style="width:70.0%"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Want to render and preview using a command line interface?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Alternatively, you can <code>preview</code> and <code>render</code> a document on the command line (<em>e.g.,</em> in terminal in RStudio)</p>
+<p>You may first need to download the Quarto CLI. Try type first in terminal:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you get a version number, you’re good to go. If you get a “commnand not found” output, <a href="https://quarto.org/docs/get-started/">install the Quarto CLI from here.</a> It should automatically add quarto to your PATH.</p>
+<p>type:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview getting-started.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This should also open a Preview window automatically in your browser.</p>
+<p>As you make changes on your <code style="color:blue">.qmd</code> file, every time you save the document the Preview will update.</p>
+<p>Hit <kbd>CTRL</kbd> + <kbd>C</kbd> back in terminal to exit preview mode.</p>
+<p><strong>Note:</strong> <code>quarto preview</code> is great for live viewing, but we always need to generate our final output with <code>quarto render</code>. More on rendering later in this workshop!</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="yaml-headers" class="level2">
+<h2 class="anchored" data-anchor-id="yaml-headers">YAML headers</h2>
+<p>At the top of each <code style="color:blue">.qmd</code> document we create, we will need a YAML header. YAML (<strong>Y</strong>et <strong>A</strong>nother <strong>M</strong>arkup <strong>L</strong>anguage or <strong>Y</strong>AML <strong>A</strong>in’t <strong>M</strong>arkup <strong>L</strong>anguage) is placed at the very top of the document and is used to define the document metadata and output settings.</p>
+<p><strong>For a single document</strong>, like we have here, we will provide all of our information in this YAML header.</p>
+<p><strong>For a larger project</strong>, like a book or webpage we will provide a separate document with global information and the individual page YAML headers will be minimal.</p>
+<blockquote class="blockquote">
+<p>One thing to note about YAML headers: they are <em>fussy</em>. Information within the YAML header must be stored between two lines each containing three dashes. When providing arguments you must provide both parts of the key-value pair, must use nesting where appropriate, and you must pay attention to indentation.</p>
+</blockquote>
+<section id="document-metadata" class="level3">
+<h3 class="anchored" data-anchor-id="document-metadata">Document metadata</h3>
+<p>Arguments are provided in key-value pairs with a specific format.</p>
+<section id="title" class="level4">
+<h4 class="anchored" data-anchor-id="title">Title</h4>
+<p><code>title: "A grand yet succint paper title"</code></p>
+<p>Note that technically you do not need to put the title itself in quotation marks, but you <strong>do</strong> need them if you want to include things like a <strong>colon</strong> (otherwise, the YAML header will attempt to interpret the colon).</p>
+</section>
+<section id="author" class="level4">
+<h4 class="anchored" data-anchor-id="author">Author</h4>
+<p>To list an author on the document, we use the following key-value pair:</p>
+<p><code>author: Barbara McClintock</code></p>
+<p>Add your own name as the author of the document, render or preview the document and confirm it has worked.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Adding multiple authors
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>There are two ways for this to work, and more ways for it to fail.</p>
+<p>One way to add authors is to include them on the same line, separated by commas:</p>
+<p><code>author: Barbara McClintock, Marie Curie</code></p>
+<p>Note that in this case, while we can read them as separate authors, it would be more accurate to call this a single author with a long and confusing name.</p>
+<p>The correct way to include multiple authors is to list each author on a separate line under author, with each line starting with a dash:</p>
+<p><code>author:</code></p>
+<p><code>- Barbara McClintock</code></p>
+<p><code>- Marie Curie</code></p>
+<p>This is an example of nesting, where we are providing multiple input sources under a single key. If we break the format (<em>e.g.,</em> by having author: name on one line and -name on the next line) we will get an error message and the document will not render. This is a good demonstration of how YAML headers can be fussy.</p>
+<p>You can also list multiple authors within [], with each author separated by commas:</p>
+<p><code>author: [Barbara McClintock, Marie Curie]</code></p>
+</div>
+</div>
+</div>
+</section>
+<section id="date" class="level4">
+<h4 class="anchored" data-anchor-id="date">Date</h4>
+<p>The basic format for date is:</p>
+<p><code>date: 29-05-25</code></p>
+<p>There are a lot of different formats we can use for date formats:</p>
+<pre><code>MM/dd/yyyy
+MM-dd-yyyy
+MM/dd/yy
+MM-dd-yy
+yyyy-MM-dd
+dd MM yyyy
+MM dd, yyyy
+YYYY-MM-DDTHH:mm:ssZ</code></pre>
+<p>These options have a <em>hierarchy</em>. That means that Quarto will attempt to interpret the date in the order of formats above. In practice, this means that</p>
+<p><code>date: 05/06/2025</code></p>
+<p>Will be interpreted as May 6th, 2025.</p>
+<p>For the date:</p>
+<p><code>date: 13/07/2025</code></p>
+<p>Quarto will first attempt to read it as month/date/year, but since that doesn’t work it will be intepreted as “The 7th day, 13 months from the start of 2025” - January 7th, 2026.</p>
+<p>For this reason I strongly recommend using one of two options:</p>
+<p><code>date: today</code> The current local date.</p>
+<p><code>date: last-modified</code> The last date the input file was modified.</p>
+<p>Click save, and watch your Preview update.</p>
+</section>
+<section id="what-impact-does-this-have-on-reproducibility" class="level4">
+<h4 class="anchored" data-anchor-id="what-impact-does-this-have-on-reproducibility">What impact does this have on reproducibility?</h4>
+<p>It’s important to include this information in even our most basic documents. Clear authoring is required for fair attribution and for directing readers in terms of who to contact.</p>
+<p>Using a last-modified date format helps the reader to understand the timeline of the file, such as what public data or software versions were available at the time of last render.</p>
+</section>
+</section>
+<section id="output-format" class="level3">
+<h3 class="anchored" data-anchor-id="output-format">Output format</h3>
+<p>When we want to output our document as a single format we use the basic key-value pair:</p>
+<p><code>format: html</code></p>
+<p>We can easily change the format after rendering to create a new document which duplicates the format <em>e.g.,</em> you could generate a slideshow and a static pdf/html as a backup (this is recommended if you might be presenting on a shared machine).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+PDF format
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Quarto can also render your documents into PDF, but you will need to first install LaTeX, if you do not already have it.</p>
+<p>In r, you can install TinyTeX:</p>
+<p><code>install.packages("tinytex")</code><br>
+<code>tinytex::install_tinytex()</code></p>
+<p>Or you can install full distribution like TeX Live (Linux), MacTeX (Mac), MikTeX (Windows).</p>
+<p>Then you can set your YAML header to <code>format: pdf</code> and click render.</p>
+</div>
+</div>
+</div>
+<section id="exercise-exploring-revealjs-2-min" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-exploring-revealjs-2-min"><strong>Exercise:</strong> Exploring revealjs (2 min)</h4>
+<p>Add a new heading in the <code style="color:blue">.qmd</code> document (either set the line to Header 2 in Visual Editor or type two # symbols) and call it “Section 3”. Add in more sections if you like!</p>
+<p>Change the format of the output from <code>html</code> to <code>revealjs</code> and render.</p>
+<p>Explore the revealjs (slideshow) format! 🤠</p>
+</section>
+</section>
+<section id="useful-features" class="level3">
+<h3 class="anchored" data-anchor-id="useful-features">Useful features</h3>
+<p>There are other useful features we can control through the YAML header. Some examples:</p>
+<p><code>toc: true</code> will autogenerate a table of contents (for multi-page websites or documents).</p>
+<p><code>bibliography: references.bib</code> autogenerates a bibliography from a bib file.</p>
+<p><code>csl: nature.csl</code> sets the citation style.</p>
+<p><code>number-sections: true</code> adds auto-numbering for each section.</p>
+<p>… and many more!</p>
+<ul>
+<li>See <a href="https://quarto.org/docs/output-formats/html-basics.html">HTML Basics at quarto.org</a> for ways to format the HTML output in the YAML header.<br>
+</li>
+<li>See <a href="https://quarto.org/docs/output-formats/pdf-basics.html">PDF Basics at quarto.org</a> for ways to format the PDF output in the YAML header.</li>
+</ul>
+</section>
+</section>
+<section id="summary-2" class="level2">
+<h2 class="anchored" data-anchor-id="summary-2">Summary</h2>
+<p>What have we covered?</p>
+<ul>
+<li><p>Initiating a <code style="color:blue">.qmd</code> file.</p></li>
+<li><p>The Visual and Source Editor windows.</p></li>
+<li><p>An introduction to the qmd syntax: <em>italics</em>, <strong>bold</strong>, <u>hyperlinks</u>, # headings.</p></li>
+<li><p>The YAML header controls global options, such as author/date/document type metadata, as well as a whole series of additional formatting tools.</p></li>
+<li><p>Creating a single output document (pdf, slideshow, standalone HTML) from the YAML header.</p></li>
+</ul>
+</section>
 </section>
 
 </main> <!-- /main -->

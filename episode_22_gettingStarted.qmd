@@ -135,7 +135,20 @@ Now back in RStudio, click the 'Render' button, which will simultaneously open u
 
 ![](images-quarto/quarto-render-01.png){width=70%}
 
-Alternatively, you can `preview` and `render` a document on the command line (*e.g.,* in terminal in RStudio, type):
+::: {.callout-tip collapse="true"}
+# Want to render and preview using a command line interface?
+
+Alternatively, you can `preview` and `render` a document on the command line (*e.g.,* in terminal in RStudio)
+
+You may first need to download the Quarto CLI. Try type first in terminal:
+
+```bash
+quarto --version
+```
+If you get a version number, you're good to go.
+If you get a "commnand not found" output, [install the Quarto CLI from here.](https://quarto.org/docs/get-started/) It should automatically add quarto to your PATH. 
+
+type:
 
 ```bash
 quarto preview getting-started.qmd
@@ -145,9 +158,12 @@ This should also open a Preview window automatically in your browser.
 
 As you make changes on your `.qmd`{style="color:blue"} file, every time you save the document the Preview will update. 
 
-Hit `CTRL`{style="color:black"} + `C`{style="color:black"} back in terminal to exit preview mode.
+Hit <KBD>CTRL</KBD>  + <KBD>C</KBD> back in terminal to exit preview mode.
 
-> Note: `quarto preview` is great for live viewing, but we always need to generate our final output with `quarto render`. More on rendering later in this workshop!
+**Note:** `quarto preview` is great for live viewing, but we always need to generate our final output with `quarto render`. More on rendering later in this workshop!
+
+:::
+
 
 
 
@@ -180,7 +196,7 @@ To list an author on the document, we use the following key-value pair:
 
 Add your own name as the author of the document, render or preview the document and confirm it has worked.
 
-::: {.callout-tip collapse="true"}
+::: {.callout-note collapse="true"}
 ## Adding multiple authors
 
 There are two ways for this to work, and more ways for it to fail. 

@@ -461,14 +461,31 @@ Hints:
 <p>Save your Quarto file (<code style="color:black">CTRL</code> + <code style="color:black">S</code> or <code style="color:black">CMD</code> + <code style="color:black">S</code>), give it a name if you have not already (<em>e.g.,</em> <code style="color:blue">getting-started.qmd</code>) and save it into the directory you made earlier (mine is called <code style="color:blue">my-test-repo</code>).</p>
 <p>Now back in RStudio, click the ‘Render’ button, which will simultaneously open up a Preview. You can change the Preview settings by clicking the settings button next to the Render button. The Preview can either be viewed in a new window or in a panel in RStudio.</p>
 <p><img src="images-quarto/quarto-render-01.png" class="img-fluid" style="width:70.0%"></p>
-<p>Alternatively, you can <code>preview</code> and <code>render</code> a document on the command line (<em>e.g.,</em> in terminal in RStudio, type):</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview getting-started.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Want to render and preview using a command line interface?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Alternatively, you can <code>preview</code> and <code>render</code> a document on the command line (<em>e.g.,</em> in terminal in RStudio)</p>
+<p>You may first need to download the Quarto CLI. Try type first in terminal:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you get a version number, you’re good to go. If you get a “commnand not found” output, <a href="https://quarto.org/docs/get-started/">install the Quarto CLI from here.</a> It should automatically add quarto to your PATH.</p>
+<p>type:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview getting-started.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This should also open a Preview window automatically in your browser.</p>
 <p>As you make changes on your <code style="color:blue">.qmd</code> file, every time you save the document the Preview will update.</p>
-<p>Hit <code style="color:black">CTRL</code> + <code style="color:black">C</code> back in terminal to exit preview mode.</p>
-<blockquote class="blockquote">
-<p>Note: <code>quarto preview</code> is great for live viewing, but we always need to generate our final output with <code>quarto render</code>. More on rendering later in this workshop!</p>
-</blockquote>
+<p>Hit <kbd>CTRL</kbd> + <kbd>C</kbd> back in terminal to exit preview mode.</p>
+<p><strong>Note:</strong> <code>quarto preview</code> is great for live viewing, but we always need to generate our final output with <code>quarto render</code>. More on rendering later in this workshop!</p>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="yaml-headers" class="level2">
@@ -492,8 +509,8 @@ Hints:
 <p>To list an author on the document, we use the following key-value pair:</p>
 <p><code>author: Barbara McClintock</code></p>
 <p>Add your own name as the author of the document, render or preview the document and confirm it has worked.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -502,7 +519,7 @@ Adding multiple authors
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>There are two ways for this to work, and more ways for it to fail.</p>
 <p>One way to add authors is to include them on the same line, separated by commas:</p>
@@ -555,7 +572,7 @@ YYYY-MM-DDTHH:mm:ssZ</code></pre>
 <p><code>format: html</code></p>
 <p>We can easily change the format after rendering to create a new document which duplicates the format <em>e.g.,</em> you could generate a slideshow and a static pdf/html as a backup (this is recommended if you might be presenting on a shared machine).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -564,7 +581,7 @@ PDF format
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Quarto can also render your documents into PDF, but you will need to first install LaTeX, if you do not already have it.</p>
 <p>In r, you can install TinyTeX:</p>

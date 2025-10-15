@@ -156,7 +156,7 @@ format:
 > Note: the formatting will go weird if you copy-paste into a new R script. Make sure it is a new text file!
 
 3. Save this file as `_quarto.yml`{style="color:blue"}
-4. Click render from one of the existing .qmd files. You cannot render from the _quarto.yml file itself! Alternatively, type `quarto preview` in the terminal.
+4. Click render from one of the existing `.qmd`{style="color:blue"} files. You cannot render from the `_quarto.yml`{style="color:blue"} file itself!
 5. Explore your new webpage! 🥳
 
 6. Now, you can change the theme in the `_quarto.yml`{style="color:blue"} file from default to one of the 25 pre-built options (listed below). Render the document and view the outcome ✨
