@@ -367,10 +367,10 @@ Some cool examples of how people use git/github:
 <h4 class="anchored" data-anchor-id="install-git">3. Install Git</h4>
 <p>Git is a separate program from R/RStudio.</p>
 <ul>
-<li><strong>Mac:</strong> Check if Git is already installed. Open terminal and run:<br>
-</li>
+<li><strong>Mac:</strong> Check if Git is already installed. Open Terminal and run:</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you get a version number as an output, you are good to go.</p>
 <blockquote class="blockquote">
 <p><strong>Note:</strong> If it is not already installed, <a href="https://git-scm.com/downloads/mac">follow instructions here for macOS</a></p>
 </blockquote>
@@ -422,8 +422,27 @@ If you are unable to use WSL 2, please use the following instructions to install
 </div>
 </div>
 <blockquote class="blockquote">
-<p><strong>Note:</strong> If you have previously completed the carpentries lesson on <a href="https://swcarpentry.github.io/shell-novice/01-intro.html">Introduction to Shell</a> on your windows computer, you would have already downloaded Git.</p>
+<p><strong>Note:</strong> If you have previously completed the carpentries lesson on <a href="https://swcarpentry.github.io/shell-novice/01-intro.html">Introduction to Shell</a> on your windows computer, you would have already downloaded Git. Proceed to next step.</p>
 </blockquote>
+<p>Once you have installed Git for Windows, open RStudio, go to the Terminal tab in the bottom right panel (next to Console) and type:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you get a version number as an output, you are good to go.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Access denied message?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If you get an access denied error message, you will need to tell RStudio to use Git Bash for Terminal. Go to <code style="color:black">Tools</code> -&gt; <code style="color:black">Global Options</code> -&gt; <code style="color:black">Terminal</code> and under Shell choose New terminals open with: Git Bash. Click Apply and OK. You may then need to close and re-open the Terminal tab (next to Console) to refresh it.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="make-a-github-account" class="level4">
 <h4 class="anchored" data-anchor-id="make-a-github-account">4. Make a Github account</h4>

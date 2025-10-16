@@ -52,10 +52,14 @@ If you already have these tools installed, make sure they are **up to date**.
 
 Git is a separate program from R/RStudio.  
 
-- **Mac:** Check if Git is already installed. Open terminal and run:  
+- **Mac:** Check if Git is already installed. Open Terminal and run:  
+
 ```bash
 git --version
 ```
+
+If you get a version number as an output, you are good to go.
+
 > **Note:** If it is not already installed, [follow instructions here for macOS](https://git-scm.com/downloads/mac)  
 
 - **Windows:** Follow the "Installing Git for Windows" instructions [here on the software carpentry page](https://carpentries.github.io/workshop-template/install_instructions/#the-bash-shell) (Instructions may be hiding under "The Bash Shell" section, tab for "Git for Windows".)
@@ -91,7 +95,21 @@ This will provide you with both Git and Bash in the Git Bash program.
 
 :::
 
-> **Note:** If you have previously completed the carpentries lesson on [Introduction to Shell](https://swcarpentry.github.io/shell-novice/01-intro.html) on your windows computer, you would have already downloaded Git. 
+> **Note:** If you have previously completed the carpentries lesson on [Introduction to Shell](https://swcarpentry.github.io/shell-novice/01-intro.html) on your windows computer, you would have already downloaded Git. Proceed to next step.
+
+Once you have installed Git for Windows, open RStudio, go to the Terminal tab in the bottom right panel (next to Console) and type:
+
+```bash
+git --version
+```
+
+If you get a version number as an output, you are good to go.
+
+::: {.callout-important collapse="true"}
+# Access denied message?
+If you get an access denied error message, you will need to tell RStudio to use Git Bash for Terminal. Go to `Tools`{style="color:black"}
+-> `Global Options`{style="color:black"} -> `Terminal`{style="color:black"} and under Shell choose New terminals open with: Git Bash. Click Apply and OK. You may then need to close and re-open the Terminal tab (next to Console) to refresh it. 
+:::
 
 
 #### 4. Make a Github account
