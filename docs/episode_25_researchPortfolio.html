@@ -883,7 +883,7 @@ Example styles.css
 <p>First, save all your open <code style="color:blue">.qmd</code> files. Then, click the ‘Render’ button on <strong>every single <code style="color:blue">.qmd</code> file.</strong> This will create a <code style="color:blue">html</code> file in <code style="color:blue">docs/</code> for each qmd file.</p>
 <p>While still in RStudio terminal, run:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add . </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>(The <code style="color:green">.</code> renders everything, alternatively type: <code>git add docs</code>)</p>
+<p>(The <code style="color:green">.</code> adds everything, alternatively type: <code>git add docs</code>)</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"publish to docs/"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>(If you get an error message here, you might need to type <code>git push origin main</code>)</p>
@@ -904,7 +904,7 @@ Is there a faster way to render all my files?
 <p>There are two ways you could do this:</p>
 <p><strong>1. Save all files, close RStudio, re-open RStudio.</strong><br>
 a) You will now see a tab appear that says ‘Build’.<br>
-b) Click the button that says ‘Render Website’ and all your qmd files in the directory will be rendered. The qmd don’t need to be open in RStudio.</p>
+b) Click the button that says ‘Render Website’ and all your qmd files in the directory will be rendered. The qmd files don’t need to be open in RStudio. Note that this only works if you made an RStudio project first (we did this in <a href="#initial-setup">“Intial setup”</a>).</p>
 <p><img src="images-quarto/quarto-render-02.png" class="img-fluid"></p>
 <p><strong>2. Render from the command line</strong><br>
 a) Make sure you have <a href="https://quarto.org/docs/get-started/">Quarto CLI tools installed first</a>. Type <code>quarto --version</code> to check.<br>
@@ -923,7 +923,8 @@ b) Type <code>quarto render</code> in terminal. All qmd files will render. You c
 <figcaption>Deploying the github page</figcaption>
 </figure>
 </div>
-<p>Refresh the page to see the url for the new site and a button to Visit the site. Copy this url, return to the main page for the repo, and use the buttons on the github site to edit the About and/or Readme. Alternatively, back in RStudio open the README.md file and add the url there. Explore and share your now live portfolio webpage!</p>
+<p>Refresh the page to see the url for the new site and a button to Visit the site. Copy this url, return to the main page for the repo, and use the buttons on the github site to edit the About and/or Readme. Alternatively, back in RStudio open the README.md file and add the url there.</p>
+<p>Explore and share your now live portfolio webpage! 👏</p>
 </section>
 <section id="pin-your-repo" class="level3">
 <h3 class="anchored" data-anchor-id="pin-your-repo">4. Pin your repo</h3>

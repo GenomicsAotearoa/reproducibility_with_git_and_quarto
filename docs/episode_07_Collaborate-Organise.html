@@ -277,8 +277,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#final-thoughts" id="toc-final-thoughts" class="nav-link" data-scroll-target="#final-thoughts">Final thoughts</a>
   <ul class="collapse">
-  <li><a href="#best-practises" id="toc-best-practises" class="nav-link" data-scroll-target="#best-practises">Best practises</a></li>
-  <li><a href="#burn-it-all-down" id="toc-burn-it-all-down" class="nav-link" data-scroll-target="#burn-it-all-down">Burn it all down</a></li>
+  <li><a href="#best-practises" id="toc-best-practises" class="nav-link" data-scroll-target="#best-practises">Best practises 🌟</a></li>
+  <li><a href="#burn-it-all-down" id="toc-burn-it-all-down" class="nav-link" data-scroll-target="#burn-it-all-down">Burn it all down 🔥</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -381,14 +381,14 @@ Can I push changes I have made locally to this repo back to the GitHub server?
 <p>Now go back to your issue, paste the permalink in the description, and add whatever descriptive text you want and create the issue:</p>
 <p><img src="images_git/github-issue-04.png" class="img-fluid"></p>
 <p>Our <code style="color:blue">guacamole.qmd</code> file is not very big, so specifying the exact line is not really necessary, but if you have a file with hundreds of lines of code then being able to track and note exactly where typos are is really handy!</p>
-<p>Now, go back to your terminal, make the changes locally, add, commit and push the changes, then go back to your GitHub repo and explore what happens!</p>
+<p>Now, go back to your terminal and move back into your recipes dir:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Quick safety checks:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Before you go any further, are you on the right branch? To change existing branches:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now we are back on main. But wait, we merged a pull request earlier on GitHub, but these changes were made locally on a new branch before pushing to GitHub. Now that we are back on main, what does our <code style="color:blue">guacamole.qmd</code> file look like locally?</p>
+<p>Change your branch back to <code style="color:darkorange">main</code>. But wait, we merged a pull request earlier on GitHub, but these changes were made locally on <code style="color:darkorange">test-new-recipe</code> before pushing to GitHub. Now that we are back on main, what does our <code style="color:blue">guacamole.qmd</code> file look like locally?</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code># Guacamole recipe
 
@@ -405,7 +405,7 @@ Can I push changes I have made locally to this repo back to the GitHub server?
 3. Add salt and lemon juice to taste  
 4. Enjoy!</code></pre>
 <p>It’s our original recipe, without the added lime juice. We need the new one!</p>
-<p>We can use <code>git fetch</code> to fetch information about files from the server (<em>i.e.,</em> origin/main) and compare to our local files (<em>i.e.,</em> main) to see if we need to pull down new copies of the files:</p>
+<p>Safety checks: We can use <code>git fetch</code> to fetch information about files from the server (<em>i.e.,</em> origin/main) and compare to our local files (<em>i.e.,</em> main) to see if we need to pull down new copies of the files:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch origin</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff main origin/main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>diff --git a/guacamole.qmd b/guacamole.qmd
@@ -427,8 +427,8 @@ index 6249f4c..2dc69fb 100644
 -3. Add salt and lemon juice to taste  
 +3. Add salt,lemon and lime juice to taste  
  4. Enjoy!</code></pre>
-<p>The output shows there are lines that are different between our local <code style="color:blue">main</code> and our server <code style="color:blue">origin/main</code>.<br>
-<code>git fetch</code> does not touch your local files, so we now need to pull down the new file:</p>
+<p>The output shows there are lines that are different between our local <strong>main</strong> and our server <strong>origin/main</strong>.</p>
+<p><code>git fetch</code> does not touch your local files, so we now need to pull down the new file:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Double check your local files match the server:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch origin</span>
@@ -490,15 +490,20 @@ Wait, why is it #2 if this was my first issue?
 <section id="final-thoughts" class="level2">
 <h2 class="anchored" data-anchor-id="final-thoughts">Final thoughts</h2>
 <section id="best-practises" class="level3">
-<h3 class="anchored" data-anchor-id="best-practises">Best practises</h3>
-<p>To avoid conflicts (and headaches!) we can manage our workflow by always:<br>
-- Checking our file and branch status with <code>git status</code>, <code>git branch</code> and <code>git diff</code><br>
-- At the end of each day, remember to save your work by running <code>git add</code>, <code>git commit</code> and <code>git push</code>.<br>
-- At the start of each day, check if there have been any changes to the repo on the server, and <code>git pull</code> as necessary.<br>
-- Utilise branches and handy functionality such as ‘Issues’ and ‘Projects’ when collaborating with others – or even just for yourself!</p>
+<h3 class="anchored" data-anchor-id="best-practises">Best practises 🌟</h3>
+<p>To avoid conflicts (and headaches!) we can manage our workflow by always:</p>
+<ul>
+<li>Checking our file and branch status with <code>git status</code>, <code>git branch</code> and <code>git diff</code><br>
+</li>
+<li>At the end of each day, remember to save your work by running <code>git add</code>, <code>git commit</code> and <code>git push</code>.<br>
+</li>
+<li>At the start of each day, check if there have been any changes to the repo on the server, and <code>git pull</code> as necessary.<br>
+</li>
+<li>Utilise branches and handy functionality such as ‘Issues’ and ‘Projects’ when collaborating with others – or even just for yourself!</li>
+</ul>
 </section>
 <section id="burn-it-all-down" class="level3">
-<h3 class="anchored" data-anchor-id="burn-it-all-down">Burn it all down</h3>
+<h3 class="anchored" data-anchor-id="burn-it-all-down">Burn it all down 🔥</h3>
 <p>Sometimes our repos get too messy and complicated, and we just want to burn it all down.</p>
 <p>This website called <a href="https://happygitwithr.com">Happy git with R</a> by Jenny Bryan and Jim Hester is a fantastic guide on how to make Git/GitHub work with RStudio. If all else fails, they suggest in <a href="https://happygitwithr.com/burn">section 37</a> to simply “Burn it all down”. In short, make a copy of all the files you want to keep locally, delete your repo on GitHub and start anew.</p>
 <div class="quarto-figure quarto-figure-center">

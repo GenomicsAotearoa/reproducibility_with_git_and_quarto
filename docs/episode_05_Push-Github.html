@@ -325,7 +325,7 @@ Key points
 <p>Now we connect the two repositories. We do this by making the GitHub repository a remote for the local repository. The home page of the repository on GitHub includes the URL string we need to identify it.</p>
 <p>Click on the ‘SSH’ link to change the protocol from HTTPS to SSH and copy that URL from the browser.</p>
 <p><img src="images_git/github-connect-local-01.png" class="img-fluid"></p>
-<p>Go into the local <code>recipes</code> repository, and run this command:<br>
+<p>Go into the local <code style="color:blue">recipes</code> repository, and run this command:<br>
 (<em>Make sure to use the URL for your repository!</em>)</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin <span class="op">&lt;</span>git@github.com:username/recipes.git<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Hint: don’t type the &lt;&gt; around the URL.</p>
@@ -359,8 +359,8 @@ drwxr-xr-x  1 Username   197121   0 Jul 16 14:48 ../
 <p>If you are using a legacy system that doesn’t support the Ed25519 algorithm, use: <code>$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"</code></p>
 <pre><code>Generating public/private ed25519 key pair.
 Enter file in which to save the key (/Users/username/.ssh/id_ed25519):</code></pre>
-<p>We want to use the default file, so just press Enter.</p>
-<p>It will now ask you for a passphrase. For now, you may find it easier to not set one (just press Enter).</p>
+<p>We want to use the default file, so just press <kbd>Enter</kbd>.</p>
+<p>It will now ask you for a passphrase. For now, you may find it easier to not set one (just press <kbd>Enter</kbd>).</p>
 <pre><code>Enter passphrase (empty for no passphrase): </code></pre>
 <p>If you do chose to set one, be sure to use something memorable or write down your passphrase somewhere, as there is no “reset my password” option. Note that, when typing a passphrase on a terminal, there won’t be any visual feedback of your typing. This is normal: your passphrase will be recorded even if you see nothing changing on your screen.</p>
 <div class="callout callout-style-simple callout-note callout-titled">
@@ -428,7 +428,7 @@ On macOS, you can set up an SSH agent and store the passphrase in the macOS keyc
 </div>
 </div>
 <pre><code>Enter same passphrase again:</code></pre>
-<p>After entering the same passphrase a second time (or press Enter again for no passphrase), we receive the confirmation:</p>
+<p>After entering the same passphrase a second time (or press <kbd>Enter</kbd> again for no passphrase), we receive the confirmation:</p>
 <pre><code>Your identification has been saved in /Users/username/.ssh/id_ed25519
 Your public key has been saved in /Users/username/.ssh/id_ed25519.pub
 The key fingerprint is:
@@ -459,7 +459,7 @@ drwxr-xr-x 1 username   197121   0 Jul 16 14:48 ../
 <div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> ~/.ssh/id_ed25519.pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu. Click “Settings”, then on the settings page, click “SSH and GPG keys”, on the left side “Access” menu. Click the “New SSH key” button on the right side.</p>
 <p><img src="images_git/github-newSSH_01.png" class="img-fluid"></p>
-<p>Now, you can add the title (Use a title such as “My macbook pro laptop” so you can remember where the original key pair files are located), paste your SSH key into the field, and click the “Add SSH key” to complete the setup.</p>
+<p>Now, you can add the title (Use a title such as “My macbook pro laptop” so you can remember where the original key pair files are located), paste your public SSH key into the field, and click the “Add SSH key” to complete the setup.</p>
 <p><img src="images_git/github-newSSH_02.png" class="img-fluid"></p>
 <p>Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -481,11 +481,12 @@ See a “The authenticity of host…can’t be established” message?
 ED25519 key fingerprint is SHA256:SOME-KEY-ID
 This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])?</code></pre>
+<p>It is probably because you set a passphrase.</p>
 <p>Type <code>yes</code></p>
 <p>Then, you’ll see a message like this, and it will ask for your passphrase:</p>
 <pre><code>Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
 Enter passphrase for key '/Users/username/.ssh/id_ed25519': </code></pre>
-<p>Enter your passphrase, then you should get a success message:</p>
+<p>Enter your passphrase, then you should get a success message.</p>
 </div>
 </div>
 </div>
@@ -502,7 +503,7 @@ Enter passphrase for key '/Users/username/.ssh/id_ed25519': </code></pre>
 <p>Now that authentication is setup, we can return to the remote. This command will push the changes from our <strong>local repository</strong> to the <strong>repository on GitHub:</strong></p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
-<p>If you set up a passphrase, it will prompt you for it every time you push or pull. This is more secure, but can be a nuisance.</p>
+<p>If you set up a passphrase, it will prompt you for it every time you push or pull. This is more secure, but can be a nuisance. Scroll back up to section 3.1 for instructions to set, remove, or avoid typing passphrases.</p>
 </blockquote>
 <p>After pushing, we should see something like this:</p>
 <pre><code>Enumerating objects: 16, done.

@@ -83,7 +83,7 @@ Run `ls` to see the files in your directory and confirm we now have the README f
 
 ## Branches
 
-So far, we have been working on one branch, called main. We can add more branches to our tree, make any changes we wish safely without affecting the main branch and when we are ready we can 'Compare and pull' these changes into the main branch. Generally, we want to make brnaches to work on when we are doing bug fixes of our code or testing out major restructuring or styling and we don't want these to be pushed to the main branch just yet.
+So far, we have been working on one branch, called main. We can add more branches to our tree, make any changes we wish safely without affecting the main branch and when we are ready we can 'Compare and pull' these changes into the main branch. Generally, we want to make branches to work on when we are doing bug fixes of our code or testing out major restructuring or styling and we don't want these to be pushed to the main branch just yet.
 
 Let's practise making a new branch. 
 
@@ -203,7 +203,7 @@ We can now review this pull request in github. You'll see a button "Compare & pu
 ![](images_git/github-pullrequest-01.png)
 
 
-This is GitHub asking if we want to 'pull' our new branch into our main branch. Click the button. 
+This is GitHub asking if we want to 'pull' our new `test-new-recipe`{style="color:darkorange"} branch into our `main`{style="color:darkorange"} branch. Let's assume we are happy with our new recipe, and we want this to be on our main branch now. Click the "Compare & pull request" button. 
 
 
 ![](images_git/github-pullrequest-02.png)
@@ -214,11 +214,11 @@ The pull request is now made, but our new branch has not been merged into main y
 
 ![](images_git/github-pullrequest-03.png)
 
-Optionally add a comment, or otherwise click 'Merge pull request'  to merge your `test-new-recipe`{style="color:orange"} branch into `main`{style="color:orange"}. GitHub will give you a default commit message, which you can leave as is. Click 'Confirm merge'.
+Optionally add a comment, or otherwise click 'Merge pull request'  to merge your `test-new-recipe`{style="color:darkorange"} branch into `main`{style="color:darkorange"}. GitHub will give you a default commit message, which you can leave as is. Click 'Confirm merge'.
 
 ![](images_git/github-pullrequest-04.png)
 
-It's good practice to 'trim your tree' and remove branches that you no longer need. You can click through to branches and safely delete the `test-new-recipe`{style="color:orange"} branch. 
+It's good practice to 'trim your tree' and remove branches that you no longer need. You can click through to branches and safely delete the `test-new-recipe`{style="color:darkorange"} branch. 
 
 Have a look back at your main repo now. You'll see the commit message has updated to the most recent one you used when you committed the changes to `guacamole.qmd`{style="color:blue"} on the new branch.
 

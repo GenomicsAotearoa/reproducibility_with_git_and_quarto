@@ -39,6 +39,7 @@ This workshop **does not** cover:
 * How to connect Git/GitHub and RStudio (see [The Carpentries lesson here](https://swcarpentry.github.io/git-novice/14-supplemental-rstudio.html) or the Chapter from Happy Git with R on [connecting these tools here.](https://happygitwithr.com/connect-intro)) 
 * Further GitHub tools such as Releases, Actions, Pages   
 
+\
 
 ***For Part Two - Quarto***   
 

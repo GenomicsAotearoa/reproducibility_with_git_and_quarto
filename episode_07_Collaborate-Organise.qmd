@@ -121,7 +121,7 @@ Now go back to your issue, paste the permalink in the description, and add whate
 
 Our `guacamole.qmd`{style="color:blue"} file is not very big, so specifying the exact line is not really necessary, but if you have a file with hundreds of lines of code then being able to track and note exactly where typos are is really handy!
 
-Now, go back to your terminal, make the changes locally, add, commit and push the changes, then go back to your GitHub repo and explore what happens!
+Now, go back to your terminal and move back into your recipes dir:
 
 ```bash
 cd ~/Desktop/recipes
@@ -140,7 +140,7 @@ Before you go any further, are you on the right branch? To change existing branc
 git checkout <branch-name>
 ```
 
-Now we are back on main. But wait, we merged a pull request earlier on GitHub, but these changes were made locally on a new branch before pushing to GitHub. Now that we are back on main, what does our `guacamole.qmd`{style="color:blue"} file look like locally?
+Change your branch back to `main`{style="color:darkorange"}. But wait, we merged a pull request earlier on GitHub, but these changes were made locally on `test-new-recipe`{style="color:darkorange"} before pushing to GitHub. Now that we are back on main, what does our `guacamole.qmd`{style="color:blue"} file look like locally?
 
 ```bash
 cat guacamole.qmd
@@ -165,7 +165,7 @@ cat guacamole.qmd
 
 It's our original recipe, without the added lime juice. We need the new one! 
 
-We can use `git fetch` to fetch information about files from the server (*i.e.,* origin/main) and compare to our local files (*i.e.,* main) to see if we need to pull down new copies of the files:
+Safety checks: We can use `git fetch` to fetch information about files from the server (*i.e.,* origin/main) and compare to our local files (*i.e.,* main) to see if we need to pull down new copies of the files:
 
 ```bash
 git fetch origin
@@ -194,7 +194,8 @@ index 6249f4c..2dc69fb 100644
  4. Enjoy!
 ```
 
-The output shows there are lines that are different between our local `main`{style="color:blue"} and our server `origin/main`{style="color:blue"}.  
+The output shows there are lines that are different between our local **main** and our server **origin/main**.  
+
 `git fetch` does not touch your local files, so we now need to pull down the new file:
 
 ```bash
@@ -286,15 +287,16 @@ For further information on Organisations, see the [GitHub docs here.](https://do
 
 ## Final thoughts
 
-### Best practises 
+### Best practises 🌟
 
-To avoid conflicts (and headaches!) we can manage our workflow by always:  
+To avoid conflicts (and headaches!) we can manage our workflow by always: 
+
 - Checking our file and branch status with `git status`, `git branch` and `git diff`   
 - At the end of each day, remember to save your work by running `git add`, `git commit` and `git push`.  
 - At the start of each day, check if there have been any changes to the repo on the server, and `git pull` as necessary.  
 - Utilise branches and handy functionality such as 'Issues' and 'Projects' when collaborating with others -- or even just for yourself!  
 
-### Burn it all down
+### Burn it all down 🔥
 
 Sometimes our repos get too messy and complicated, and we just want to burn it all down. 
 

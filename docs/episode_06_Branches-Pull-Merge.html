@@ -365,7 +365,7 @@ Fast-forward
 </section>
 <section id="branches" class="level2">
 <h2 class="anchored" data-anchor-id="branches">Branches</h2>
-<p>So far, we have been working on one branch, called main. We can add more branches to our tree, make any changes we wish safely without affecting the main branch and when we are ready we can ‘Compare and pull’ these changes into the main branch. Generally, we want to make brnaches to work on when we are doing bug fixes of our code or testing out major restructuring or styling and we don’t want these to be pushed to the main branch just yet.</p>
+<p>So far, we have been working on one branch, called main. We can add more branches to our tree, make any changes we wish safely without affecting the main branch and when we are ready we can ‘Compare and pull’ these changes into the main branch. Generally, we want to make branches to work on when we are doing bug fixes of our code or testing out major restructuring or styling and we don’t want these to be pushed to the main branch just yet.</p>
 <p>Let’s practise making a new branch.</p>
 <p>Back in RStudio, type the following into terminal to see what branch you are currently on:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -444,14 +444,14 @@ To github.com:username/recipes.git
 <pre><code>remote: Create a pull request for 'test-new-recipe'</code></pre>
 <p>We can now review this pull request in github. You’ll see a button “Compare &amp; pull request”</p>
 <p><img src="images_git/github-pullrequest-01.png" class="img-fluid"></p>
-<p>This is GitHub asking if we want to ‘pull’ our new branch into our main branch. Click the button.</p>
+<p>This is GitHub asking if we want to ‘pull’ our new <code style="color:darkorange">test-new-recipe</code> branch into our <code style="color:darkorange">main</code> branch. Let’s assume we are happy with our new recipe, and we want this to be on our main branch now. Click the “Compare &amp; pull request” button.</p>
 <p><img src="images_git/github-pullrequest-02.png" class="img-fluid"></p>
 <p>You can now see what changes were made in the file, and are given the option to ‘Create pull request’. The title will default to the commit message you used and you can add further description if you like. Click ‘Create pull request’.</p>
 <p>The pull request is now made, but our new branch has not been merged into main yet, it is waiting for us to merge it. There are different kinds of merges, but today we will do the default merge.</p>
 <p><img src="images_git/github-pullrequest-03.png" class="img-fluid"></p>
-<p>Optionally add a comment, or otherwise click ‘Merge pull request’ to merge your <code style="color:orange">test-new-recipe</code> branch into <code style="color:orange">main</code>. GitHub will give you a default commit message, which you can leave as is. Click ‘Confirm merge’.</p>
+<p>Optionally add a comment, or otherwise click ‘Merge pull request’ to merge your <code style="color:darkorange">test-new-recipe</code> branch into <code style="color:darkorange">main</code>. GitHub will give you a default commit message, which you can leave as is. Click ‘Confirm merge’.</p>
 <p><img src="images_git/github-pullrequest-04.png" class="img-fluid"></p>
-<p>It’s good practice to ‘trim your tree’ and remove branches that you no longer need. You can click through to branches and safely delete the <code style="color:orange">test-new-recipe</code> branch.</p>
+<p>It’s good practice to ‘trim your tree’ and remove branches that you no longer need. You can click through to branches and safely delete the <code style="color:darkorange">test-new-recipe</code> branch.</p>
 <p>Have a look back at your main repo now. You’ll see the commit message has updated to the most recent one you used when you committed the changes to <code style="color:blue">guacamole.qmd</code> on the new branch.</p>
 <p><img src="images_git/github-pullrequest-05.png" class="img-fluid"></p>
 <p>By default, other people cannot make branches directly on your repository, unless you have added them as collaborators. You can assign roles to collaborators to control if they are able to push directly onto main, or if you want to personally approve all pull requests. Other people <strong>can</strong> however fork your public repository (making a copy on their own account) and submit a pull request back to your original repository, which you can then decide to merge or not. You can switch your repository to private in settings – note that you cannot turn private repositories into a website via GitHub pages.</p>

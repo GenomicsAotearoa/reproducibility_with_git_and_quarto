@@ -43,6 +43,8 @@ Put some text in your `guacamole.qmd`{style="color:blue"} file, for example:
 
 ```
 
+Save your file and exit nano. 
+
 Verify that the file was made, using `ls` and `cat` commands to explore the file. 
 
 If we check the status of our project again, Git tells us that it’s noticed the new file:
@@ -148,6 +150,7 @@ Add some text (here I have now added instructions):
 3. Add salt and lemon juice to taste  
 4. Enjoy!  
 ```
+Save your file and exit nano. 
 
 When we run `git status` now, it tells us that a file it already knows about has been modified:
 

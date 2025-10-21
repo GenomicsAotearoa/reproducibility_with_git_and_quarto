@@ -45,7 +45,7 @@ Click on the ‘SSH’ link to change the protocol from HTTPS to SSH and copy th
 
 ![](images_git/github-connect-local-01.png)
 
-Go into the local `recipes` repository, and run this command:  
+Go into the local `recipes`{style="color:blue"} repository, and run this command:  
 (*Make sure to use the URL for your repository!*)
 
 ```bash
@@ -117,9 +117,9 @@ Generating public/private ed25519 key pair.
 Enter file in which to save the key (/Users/username/.ssh/id_ed25519):
 ```
 
-We want to use the default file, so just press Enter.
+We want to use the default file, so just press <KBD>Enter</KBD>.
 
-It will now ask you for a passphrase. For now, you may find it easier to not set one (just press Enter). 
+It will now ask you for a passphrase. For now, you may find it easier to not set one (just press <KBD>Enter</KBD>). 
 
 ```
 Enter passphrase (empty for no passphrase): 
@@ -189,7 +189,7 @@ Host github.com
 ```
 Enter same passphrase again:
 ```
-After entering the same passphrase a second time (or press Enter again for no passphrase), we receive the confirmation:
+After entering the same passphrase a second time (or press <KBD>Enter</KBD> again for no passphrase), we receive the confirmation:
 
 ```
 Your identification has been saved in /Users/username/.ssh/id_ed25519
@@ -237,7 +237,7 @@ Now, going to GitHub.com, click on your profile icon in the top right corner to 
 
 ![](images_git/github-newSSH_01.png)
 
-Now, you can add the title (Use a title such as “My macbook pro laptop” so you can remember where the original key pair files are located), paste your SSH key into the field, and click the “Add SSH key” to complete the setup.
+Now, you can add the title (Use a title such as “My macbook pro laptop” so you can remember where the original key pair files are located), paste your public SSH key into the field, and click the “Add SSH key” to complete the setup.
 
 ![](images_git/github-newSSH_02.png)
 
@@ -262,6 +262,9 @@ ED25519 key fingerprint is SHA256:SOME-KEY-ID
 This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
+
+It is probably because you set a passphrase. 
+
 Type `yes`
 
 Then, you'll see a message like this, and it will ask for your passphrase:
@@ -271,7 +274,7 @@ Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
 Enter passphrase for key '/Users/username/.ssh/id_ed25519': 
 ```
 
-Enter your passphrase, then you should get a success message:
+Enter your passphrase, then you should get a success message.
 :::
 
 
@@ -293,7 +296,7 @@ Now that authentication is setup, we can return to the remote. This command will
 git push origin main
 ```
 
-> If you set up a passphrase, it will prompt you for it every time you push or pull. This is more secure, but can be a nuisance.
+> If you set up a passphrase, it will prompt you for it every time you push or pull. This is more secure, but can be a nuisance. Scroll back up to section 3.1 for instructions to set, remove, or avoid typing passphrases.
 
 
 After pushing, we should see something like this:
