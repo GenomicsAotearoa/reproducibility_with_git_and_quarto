@@ -7,8 +7,17 @@ toc: true
 
 In this workshop we will need to work publicly (which is *scary*). We will create a public GitHub repo to work from, and in the first stages of this workshop we will generate a local file (for ease, we will create a basic `.html`{style="color:blue"} file, but the concepts will be the same as for creating a word doc or pdf). We will then update this file to become a webpage which to function as an 'about me' page or to showcase your work. We recommend pinning this repo (which we will demonstrate) so that when someone visits your GitHub, they can view useful information about you. 
 
-## Set up new public repo and open an R project
+## Open an R project
 
+First, make a new directory on your Desktop and call it `Learning-quarto`{style="color:blue"}. 
+
+Go to RStudio and click on `File > New Project > Existing Directory`{style="color:black"}, then use browse to select your `Learning-quarto`{style="color:blue"} folder. Click `Create Project.`{style="color:black"} 
+
+![](images-quarto/quarto-setup-02.png){width=80%}
+
+
+::: {.callout-note appearance="simple" collapse="true"}
+# Optional alternative: Start a new GitHub repo 
 Go to GitHub, under "Repositories", click New, give your new repo a name and description. 
 
 We won't need this beyond today, so you can call it something like `my-test-repo`{style="color:blue"} if you like. Make sure the "public" box is checked (this should occur by default). 
@@ -18,6 +27,9 @@ Click on the green "Code" button, and copy the url for the repo.
 From RStudio, go `File > New Project > Version Control > Git`{style="color:black"}. Paste in the repo URL, provide a project directory name, and select the location for the project. Click `Create Project`{style="color:black"} 
 
 ![](images-quarto/quarto-setup-01.png){width=80%}
+
+:::
+
 
 ## First quarto doc
 
@@ -129,7 +141,7 @@ If you are writing lists manually (*i.e.,* not using the Visual editor option) y
  
 ### Save and Render document
 
-Save your Quarto file (`CTRL`{style="color:black"} + `S`{style="color:black"} or `CMD`{style="color:black"} + `S`{style="color:black"}), give it a name if you have not already (*e.g.,* `getting-started.qmd`{style="color:blue"}) and save it into the directory you made earlier (mine is called `my-test-repo`{style="color:blue"}).
+Save your Quarto file (`CTRL`{style="color:black"} + `S`{style="color:black"} or `CMD`{style="color:black"} + `S`{style="color:black"}), give it a name if you have not already (*e.g.,* `getting-started.qmd`{style="color:blue"}) and save it into the directory you made earlier (mine is called `Learning-quarto`{style="color:blue"}).
 
 Now back in RStudio, click the 'Render' button, which will simultaneously open up a Preview. You can change the Preview settings by clicking the settings button next to the Render button. The Preview can either be viewed in a new window or in a panel in RStudio. 
 
