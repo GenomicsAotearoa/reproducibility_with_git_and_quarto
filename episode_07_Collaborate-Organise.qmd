@@ -81,7 +81,7 @@ Long answer, yes you can with additional steps:
     4. Then, you can create a pull request and suggest changes to the original repo - the owner may or may not accept and merge your changes!
 :::  
 
-> Hint: If you don't want this on your computer anymore after this workshop type: `rm -r Kakapo`
+> Hint: If you don't want this on your computer anymore after this workshop type: `rm -rf Kakapo`
 
 
 ## Improving your workflow
