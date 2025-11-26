@@ -1,7 +1,15 @@
 # Reproducibility with Git and Quarto
 
 
-A two day workshop on reproducibility with Git and Quarto
+A two day workshop on reproducibility with Git and Quarto.
+
+Good research goes beyond running analyses, it’s about making your work reproducible, transparent, and accessible to your supervisor, colleagues, and the wider scientific community.
+
+This two-day workshop will show you not only how to make your research more reproducible, but also how to more easily collaborate on projects with other researchers and how to generate polished reports to share with others.
+
+With Git and GitHub, you’ll learn how to manage and host your own code, and how to download, adapt, and build on code that others share - whether that’s custom scripts, small programs, or entire projects.
+
+Using Quarto, you’ll then learn how to turn your analysis into clear, self-contained documents, create polished HTML outputs with embedded results, and publish your work online as a website.
 
 
 ## Workshop Timings
