@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="– Reproducibility with Git and Quarto">
 <meta property="og:description" content="">
-<meta property="og:image" content="images-quarto/quarto-setup-01.png">
+<meta property="og:image" content="images-quarto/quarto-setup-02.png">
 <meta property="og:site_name" content="Reproducibility with Git and Quarto">
 </head>
 
@@ -269,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a>
   <ul>
-  <li><a href="#set-up-new-public-repo-and-open-an-r-project" id="toc-set-up-new-public-repo-and-open-an-r-project" class="nav-link" data-scroll-target="#set-up-new-public-repo-and-open-an-r-project">Set up new public repo and open an R project</a></li>
+  <li><a href="#open-an-r-project" id="toc-open-an-r-project" class="nav-link" data-scroll-target="#open-an-r-project">Open an R project</a></li>
   <li><a href="#first-quarto-doc" id="toc-first-quarto-doc" class="nav-link" data-scroll-target="#first-quarto-doc">First quarto doc</a>
   <ul class="collapse">
   <li><a href="#exercise-syntax-2-min" id="toc-exercise-syntax-2-min" class="nav-link" data-scroll-target="#exercise-syntax-2-min"><strong>Exercise: Syntax</strong> (2 min)</a></li>
@@ -309,13 +309,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="getting-started" class="level1">
 <h1>Getting Started</h1>
 <p>In this workshop we will need to work publicly (which is <em>scary</em>). We will create a public GitHub repo to work from, and in the first stages of this workshop we will generate a local file (for ease, we will create a basic <code style="color:blue">.html</code> file, but the concepts will be the same as for creating a word doc or pdf). We will then update this file to become a webpage which to function as an ‘about me’ page or to showcase your work. We recommend pinning this repo (which we will demonstrate) so that when someone visits your GitHub, they can view useful information about you.</p>
-<section id="set-up-new-public-repo-and-open-an-r-project" class="level2">
-<h2 class="anchored" data-anchor-id="set-up-new-public-repo-and-open-an-r-project">Set up new public repo and open an R project</h2>
+<section id="open-an-r-project" class="level2">
+<h2 class="anchored" data-anchor-id="open-an-r-project">Open an R project</h2>
+<p>First, make a new directory on your Desktop and call it <code style="color:blue">Learning-quarto</code>.</p>
+<p>Go to RStudio and click on <code style="color:black">File &gt; New Project &gt; Existing Directory</code>, then use browse to select your <code style="color:blue">Learning-quarto</code> folder. Click <code style="color:black">Create Project.</code></p>
+<p><img src="images-quarto/quarto-setup-02.png" class="img-fluid" style="width:80.0%"></p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Optional alternative: Start a new GitHub repo
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Go to GitHub, under “Repositories”, click New, give your new repo a name and description.</p>
 <p>We won’t need this beyond today, so you can call it something like <code style="color:blue">my-test-repo</code> if you like. Make sure the “public” box is checked (this should occur by default).</p>
 <p>Click on the green “Code” button, and copy the url for the repo.</p>
 <p>From RStudio, go <code style="color:black">File &gt; New Project &gt; Version Control &gt; Git</code>. Paste in the repo URL, provide a project directory name, and select the location for the project. Click <code style="color:black">Create Project</code></p>
 <p><img src="images-quarto/quarto-setup-01.png" class="img-fluid" style="width:80.0%"></p>
+</div>
+</div>
+</div>
 </section>
 <section id="first-quarto-doc" class="level2">
 <h2 class="anchored" data-anchor-id="first-quarto-doc">First quarto doc</h2>
@@ -349,7 +367,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="exercise-syntax-2-min"><strong>Exercise: Syntax</strong> (2 min)</h4>
 <p>Note three pieces of markdown syntax in the Source editor and how this translates into the Visual editor.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -358,7 +376,7 @@ Solution: three pieces of syntax in the source editor
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>## - sets the Header level. Two # is “level 2”, three # is “level 3” (a smaller header). Note how these appear as headings in the Outline panel in RStudio.</p></li>
@@ -368,7 +386,7 @@ Solution: three pieces of syntax in the source editor
 </ol>
 <p>We will cover more syntax shortly. Almost anything you would like to do can be achieved and is covered on the <a href="https://quarto.org">Quarto website</a>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -377,7 +395,7 @@ Extra for experts
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If ## designates a header, and this workshop itself is written in Quarto, then why isn’t the line above coming up as a header?</p>
 <p>Good catch! We have done something extra here called ‘escaping’. When you need to specify a character like a # or an * that is used for special syntax, you can add a \ (a backslash) first. This means that the next symbol will appear as-is in the document, rather than being translated as markdown.</p>
@@ -458,11 +476,11 @@ Hints:
 </section>
 <section id="save-and-render-document" class="level3">
 <h3 class="anchored" data-anchor-id="save-and-render-document">Save and Render document</h3>
-<p>Save your Quarto file (<code style="color:black">CTRL</code> + <code style="color:black">S</code> or <code style="color:black">CMD</code> + <code style="color:black">S</code>), give it a name if you have not already (<em>e.g.,</em> <code style="color:blue">getting-started.qmd</code>) and save it into the directory you made earlier (mine is called <code style="color:blue">my-test-repo</code>).</p>
+<p>Save your Quarto file (<code style="color:black">CTRL</code> + <code style="color:black">S</code> or <code style="color:black">CMD</code> + <code style="color:black">S</code>), give it a name if you have not already (<em>e.g.,</em> <code style="color:blue">getting-started.qmd</code>) and save it into the directory you made earlier (mine is called <code style="color:blue">Learning-quarto</code>).</p>
 <p>Now back in RStudio, click the ‘Render’ button, which will simultaneously open up a Preview. You can change the Preview settings by clicking the settings button next to the Render button. The Preview can either be viewed in a new window or in a panel in RStudio.</p>
 <p><img src="images-quarto/quarto-render-01.png" class="img-fluid" style="width:70.0%"></p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -471,7 +489,7 @@ Want to render and preview using a command line interface?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Alternatively, you can <code>preview</code> and <code>render</code> a document on the command line (<em>e.g.,</em> in terminal in RStudio)</p>
 <p>You may first need to download the Quarto CLI. Try type first in terminal:</p>
@@ -510,7 +528,7 @@ Want to render and preview using a command line interface?
 <p><code>author: Barbara McClintock</code></p>
 <p>Add your own name as the author of the document, render or preview the document and confirm it has worked.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -519,7 +537,7 @@ Adding multiple authors
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>There are two ways for this to work, and more ways for it to fail.</p>
 <p>One way to add authors is to include them on the same line, separated by commas:</p>
@@ -572,7 +590,7 @@ YYYY-MM-DDTHH:mm:ssZ</code></pre>
 <p><code>format: html</code></p>
 <p>We can easily change the format after rendering to create a new document which duplicates the format <em>e.g.,</em> you could generate a slideshow and a static pdf/html as a backup (this is recommended if you might be presenting on a shared machine).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -581,7 +599,7 @@ PDF format
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Quarto can also render your documents into PDF, but you will need to first install LaTeX, if you do not already have it.</p>
 <p>In r, you can install TinyTeX:</p>
