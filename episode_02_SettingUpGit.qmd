@@ -27,8 +27,16 @@ git config --global user.email "your_email@example.com"
 
 Please use your own name and email address. This user name and email will be associated with your subsequent Git activity, which means that any changes pushed to GitHub after this lesson will include this information. **The email address used should be the same as the one used when setting up your GitHub account.** If you are concerned about privacy, please review [GitHub’s instructions for keeping your email address private.](https://help.github.com/articles/keeping-your-email-address-private/)
 
+Configure your favourite text editor, chosing one from the dropdown below.
+
+In this workshop we will use `nano`:
+
+```bash
+git config --global core.editor "nano -w"
+```
+
 ::: {.callout-tip collapse="true"}
-## Optional: configure your favourite text editor
+## Configure text editor options
 
 | Editor                              | Configuration command |
 |-------------------------------------|------------------------|
@@ -95,9 +103,28 @@ Source file changes are associated with a “branch.” In 2020, most Git code h
 :::
 
 
+We should also configure the way git recognises line endings. Different operating systems use different character(s) to represent the end of a line. (You may also hear these referred to as newlines or line breaks.) Because Git uses these characters to compare files, it may cause unexpected issues when editing a file on different machines. Though it is beyond the scope of this lesson, you can read more about this issue in the [Pro Git book.](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf)
+
+On macOS and Linux:
+
+```bash
+git config --global core.autocrlf input
+```
+
+On Windows:
+```bash
+git config --global core.autocrlf true
+```
+
 The commands we just ran above only need to be run once: the flag `--global` tells Git to use the settings for every project, in your user account, on this computer
 
 We can review these settings and change the configuration if needed.
+
+To view your configuration, type into the terminal:
+
+```bash
+git config --list --global
+```
 
 ::: {.callout-caution appearance="minimal" collapse="true"}
 ## Re-configuring
