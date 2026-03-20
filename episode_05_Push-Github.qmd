@@ -49,11 +49,10 @@ Go into the local `recipes`{style="color:blue"} repository, and run this command
 (*Make sure to use the URL for your repository!*)
 
 ```bash
-git remote add origin <git@github.com:username/recipes.git>
+git remote add origin git@github.com:username/recipes.git
 ```
-Hint: don't type the <> around the URL.
 
-We can check that the command has worked by running git remote -v:
+We can check that the command has worked by running:
 
 ```bash
 git remote -v
@@ -63,6 +62,7 @@ git remote -v
 origin  git@github.com:githubusername/recipes.git (fetch)
 origin  git@github.com:githubusername/recipes.git (push)
 ```
+
 
 ## 3. SSH setup and key pair (do this once per local machine)
 
@@ -142,6 +142,8 @@ Some examples are:
 
 ::: {.callout-warning appearance="simple" collapse="true"}
 # Want to set or remove the passphrase, or avoid typing it?
+
+The easiest way to set or remove the passphrase is to remake your keys.
 
 **Set or remove the passphrase:**
 
@@ -229,6 +231,10 @@ drwxr-xr-x 1 username   197121   0 Jul 16 14:48 ../
 
 First, we need to copy the public key. Be sure to include the .pub at the end, otherwise you’re looking at the private key.
 
+::: {.callout-important}
+# IMPORTANT! Only copy the PUBLIC key to GitHub. Never share your private key. 
+:::
+
 ```bash
 cat ~/.ssh/id_ed25519.pub
 ```
@@ -263,19 +269,25 @@ This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
 
-It is probably because you set a passphrase. 
+This is a standard first-connection prompt that happens for any new host.
 
 Type `yes`
 
-Then, you'll see a message like this, and it will ask for your passphrase:
+Then, you'll see a message like this.
 
 ```
 Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+```
+
+You may then also get asked for your passphrase:
+
+```
 Enter passphrase for key '/Users/username/.ssh/id_ed25519': 
 ```
 
 Enter your passphrase, then you should get a success message.
 :::
+
 
 
 
@@ -298,6 +310,33 @@ git push origin main
 
 > If you set up a passphrase, it will prompt you for it every time you push or pull. This is more secure, but can be a nuisance. Scroll back up to section 3.1 for instructions to set, remove, or avoid typing passphrases.
 
+::: {.callout-note collapse="true"}
+# ssh: connect to host github.com port 22: Connection timed out (or refused) error?
+
+This can happen for some users due to a network block from their institution or workplace. 
+
+You can try this fix.
+
+Edit/create a config file like so:
+
+```bash
+nano ~/.ssh/config
+```
+
+Then paste in the following:
+
+```bash
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+```
+
+This allows GitHub to let you use SSH over port 443 (the HTTPS port) to get around corporate firewalls.
+
+After saving and exiting nano, try git push again.
+
+:::
+
 
 After pushing, we should see something like this:
 
@@ -309,7 +348,7 @@ Compressing objects: 100% (11/11), done.
 Writing objects: 100% (16/16), 1.45 KiB | 372.00 KiB/s, done.
 Total 16 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), done.
-To https://github.com/username/recipes.git
+To github.com/:username/recipes.git
  * [new branch]      main -> main
 ```
 
