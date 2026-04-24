@@ -1,12 +1,13 @@
 ---
-title: "Reproducibility with Git and Quarto"
+title: ""
 format: html
 ---
 
+# Reproducibility with Git and Quarto
 
 ![](theme-images/github_quarto.png){width="70%" .center}
 
-### What is this workshop about?
+## What is this workshop about?
 
 Good research goes beyond running analyses, it’s about making your work reproducible, transparent, and accessible to your supervisor, colleagues, and the wider scientific community.
 
@@ -16,11 +17,11 @@ With Git and GitHub, you’ll learn how to manage and host your own code, and ho
 
 Using Quarto, you’ll then learn how to turn your analysis into clear, self-contained documents, create polished HTML outputs with embedded results, and publish your work online as a website.
 
-#### How are Git/GitHub and quarto linked?
+### How are Git/GitHub and quarto linked?
 
 One of the great things you can do with both of these tools together is create material in quarto documents, that can then be displayed as a webpage using GitHub. In fact, this workshop itself is written in quarto and displayed online using GitHub pages! Check out the [github repo here.](https://github.com/GenomicsAotearoa/reproducibility_with_git_and_quarto)
 
-#### What this workshop does and does not cover:
+### What this workshop does and does not cover:
 
 ***For Part One - Git***   
 
@@ -59,7 +60,7 @@ This workshop **does not** cover:
 
 
 
-### Setup
+## Setup
 
 For this workshop you will need to have a number of different software installed on your local computer, as well as an account made with GitHub. 
 
@@ -67,7 +68,7 @@ See [Part One - Git: Setup on local machine](git_overview.qmd#setup-on-local-mac
   
 
 
-### Attribution
+## Attribution
 
 
 The Git part of this workshop was adapted from and heavily inspired by content from The Carpentries lesson on [Version Control with Git.](https://swcarpentry.github.io/git-novice/) 
@@ -94,7 +95,7 @@ In this workshop, the following episodes were adapted from The Carpentries lesso
 - [Part One - Git overview](git_overview.qmd); content is primarily developed by Genomics Aotearoa, set-up instructions for Git for Windows is copy-pasted from [The Carpentries install instructions material.](https://carpentries.github.io/workshop-template/install_instructions/#the-bash-shell)
 :::
 
-The Quarto part of this workshop was written by [Tyler McInnes](https://github.com/tylermcinnes/reproducibility_block) while he worked for Genomics Aotearoa as a [Bioinformatics Training Coordinator.](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/meetTheTeam.html#past-team-members) Some small modifications have been made from his version to generalise and re-style the material.
+The Quarto part of this workshop was written by [Tyler McInnes](https://github.com/tylermcinnes/reproducibility_block) while he worked for Genomics Aotearoa as a [Bioinformatics Training Coordinator.](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/meetTheTeam.html#past-team-members) Some modifications have been made from his version to generalise, re-style and re-work the material.
 
 
 
@@ -102,11 +103,11 @@ The Quarto part of this workshop was written by [Tyler McInnes](https://github.c
 ::: {style="background: #FFFFFF; text-align:center; padding: 1.5rem; border-radius: 8px; max-width: 800px; margin: 0 auto;"}
 
 
-### {style="background: #D0C8E0; text-align:center;"}
+## {style="background: #D0C8E0; text-align:center;"}
 
 
 [![](theme-images/GA-Logo-Bioinformatics-Training-black.png){width=80%}](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/)
 
-Made with ❤️ and [Quarto](https://genomicsaotearoa.github.io/reproducibility_with_git_and_quarto/quarto_overview.html)
+Made with [❤️](https://docs.carpentries.org/policies/coc/) and [Quarto](https://genomicsaotearoa.github.io/reproducibility_with_git_and_quarto/quarto_overview.html)
 
 :::
