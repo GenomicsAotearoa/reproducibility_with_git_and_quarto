@@ -86,6 +86,58 @@ Long answer, yes you can with additional steps:
 
 ## Improving your workflow
 
+### Safety checks
+
+We can use `git fetch` to fetch information about files from the server (*i.e.,* origin/main) and compare to our local files (*i.e.,* main) to see if we need to pull down new copies of the files. In practice, its a good idea to *always* run `git pull` anyway before starting work for the day, to make sure you have the most up to date files. Git fetch will not change any of your local files.
+
+#### Example 
+***Demo only*** - *at this stage in the workshop you will not have any changes between your local copy and the copy on the server*:
+
+```bash
+git fetch origin
+git diff main origin/main
+```
+
+```
+diff --git a/guacamole.qmd b/guacamole.qmd
+index 6249f4c..2dc69fb 100644
+--- a/guacamole.qmd
++++ b/guacamole.qmd
+@@ -4,11 +4,12 @@
+ - Avocado  
+ - Coriander  
+ - Red onion  
+-- Lemon juice  
++- Lemon juice
++- Lime juice  
+ - Salt  
+ 
+ ## Instructions
+ 1. Mash the avocado
+ 2. Finely chop the coriander and red onion
+-3. Add salt and lemon juice to taste  
++3. Add salt,lemon and lime juice to taste  
+ 4. Enjoy!
+```
+
+The output shows there are lines that are different between our local **main** (a/guacamole.qmd) and our server **origin/main** (b/guacamole.qmd).  
+
+`git fetch` does not touch your local files, so we now need to pull down the new file:
+
+```bash
+git pull origin main 
+```
+
+Double check your local files match the server:
+
+```bash
+git fetch origin
+git diff main origin/main
+```
+
+`git diff` gives no output now - so all good to continue!
+
+
 
 ### Issues
 
@@ -121,95 +173,8 @@ Now go back to your issue, paste the permalink in the description, and add whate
 
 Our `guacamole.qmd`{style="color:blue"} file is not very big, so specifying the exact line is not really necessary, but if you have a file with hundreds of lines of code then being able to track and note exactly where typos are is really handy!
 
-Now, go back to your terminal and move back into your recipes dir:
+Now, go back to your terminal and open the file in `nano` to make the change you specified in your issue.
 
-```bash
-cd ~/Desktop/recipes
-```
-
-Quick safety checks:
-
-```bash
-git status
-git branch
-```
-
-Before you go any further, are you on the right branch? To change existing branches:
-
-```bash
-git checkout <branch-name>
-```
-
-Change your branch back to `main`{style="color:darkorange"}. But wait, we merged a pull request earlier on GitHub, but these changes were made locally on `test-new-recipe`{style="color:darkorange"} before pushing to GitHub. Now that we are back on main, what does our `guacamole.qmd`{style="color:blue"} file look like locally?
-
-```bash
-cat guacamole.qmd
-```
-
-```
-# Guacamole recipe
-
-## Ingredients
-- Avocado  
-- Coriander  
-- Red onion  
-- Lemon juice
-- Salt  
-
-## Instructions
-1. Mash the avocado
-2. Finely chop the coriander and red onion
-3. Add salt and lemon juice to taste  
-4. Enjoy!
-```
-
-It's our original recipe, without the added lime juice. We need the new one! 
-
-Safety checks: We can use `git fetch` to fetch information about files from the server (*i.e.,* origin/main) and compare to our local files (*i.e.,* main) to see if we need to pull down new copies of the files:
-
-```bash
-git fetch origin
-git diff main origin/main
-```
-
-```
-diff --git a/guacamole.qmd b/guacamole.qmd
-index 6249f4c..2dc69fb 100644
---- a/guacamole.qmd
-+++ b/guacamole.qmd
-@@ -4,11 +4,12 @@
- - Avocado  
- - Coriander  
- - Red onion  
--- Lemon juice  
-+- Lemon juice
-+- Lime juice  
- - Salt  
- 
- ## Instructions
- 1. Mash the avocado
- 2. Finely chop the coriander and red onion
--3. Add salt and lemon juice to taste  
-+3. Add salt,lemon and lime juice to taste  
- 4. Enjoy!
-```
-
-The output shows there are lines that are different between our local **main** and our server **origin/main**.  
-
-`git fetch` does not touch your local files, so we now need to pull down the new file:
-
-```bash
-git pull origin main 
-```
-
-Double check your local files match the server:
-
-```bash
-git fetch origin
-git diff main origin/main
-```
-
-`git diff` gave no output - so all good to continue!
 
 ```bash
 nano guacamole.qmd
@@ -222,28 +187,28 @@ nano guacamole.qmd
 - Avocado x 2
 - Coriander
 - Red onion
-- Lemon juice
 - Lime juice
+- Lemon juice
 - Salt
+- Pepper
 
 ## Instructions
 1. Mash the avocado
 2. Finely chop the coriander and red onion
-3. Add salt,lemon and lime juice to taste
+3. Add salt, pepper, and lemon juice to taste
 4. Enjoy!
+
 ```
+
+
 In the above file I have now specified the number of avocados. Write out and close nano.
 
-Check the file is now 'modified':
 
-```bash
-git status
-```
 Now add and commit the file, importantly, reference the issue!:
 
 ```bash
-git add .
-git commit -m "specified number of avos #2"
+git add guacamole.qmd
+git commit -m "fix #2 specified number of avocados"
 ```
 
 ::: {.callout-important}
@@ -255,7 +220,23 @@ Issues and pull requests share a numbering system. Because we did a pull request
 git push origin main
 ```
 
-Go back to your GitHub repo and have a look at the commit message - you'll see the issue number is automatically linked. You can now click through and "Close issue". 
+Go back to your GitHub repo and have a look at the commit message, you'll see the issue number is automatically linked. You can now click through and "Close issue" -- or you may see that the issue is automatically closed because you referenced it in the commit message with the [magic word **fix**!](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/using-keywords-in-issues-and-pull-requests)
+
+### Ignoring files with .gitignore
+
+`.gitignore` is a file that you can add to your repository to specify files or directories that you want Git to ignore. This is useful for files that are generated during the workflow, such as log files, temporary files, or large data files that you don't want to track in version control.
+This way when you bulk add files with `git add .` you won't accidentally add files that you don't want to track. It is a text file and each line specifies which file/s or directories to ignore.
+
+Example contents of a `.gitignore` file:
+
+```
+*.log
+*.tmp
+data/
+```
+
+For more info, check out the [GitHub docs on .gitignore here](https://docs.github.com/en/get-started/git-basics/ignoring-files)
+and the [software carpentry lesson here](https://swcarpentry.github.io/git-novice/06-ignore.html).
 
 
 
@@ -273,8 +254,7 @@ Here is an example of the Project we use at Genomics Aotearoa to track workshop 
 
 ### Organisations
 
-*"Organisations are shared accounts where businesses and open-source projects can collaborate across many projects at once, with sophisticated security and administrative features."*   
-    - GitHub docs
+GitHub docs describe organsiations as *"... shared accounts where businesses and open-source projects can collaborate across many projects at once, with sophisticated security and administrative features."*   
 
 There are many great features of using an Organisation account. You can view the [Genomics Aotearoa Organisation account here.](https://github.com/GenomicsAotearoa) This is where we house all our workshop material and research project repos for workflows or scripts associated with a project. Members are assigned different roles, which allow different levels of read/write permissions and other things such as admin access or security management.
 

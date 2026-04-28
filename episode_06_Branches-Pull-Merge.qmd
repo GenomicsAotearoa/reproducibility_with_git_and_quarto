@@ -423,18 +423,42 @@ cat guacamole.qmd
 
 
 
-The golden rule is "make the file look how you want it to look". Save and exit nano.
+The ✨`golden rule`{style="color:gold"}✨ is to *"make the file look how you want it to look".* 
+
+Open the file in `nano` and edit it to look how you want it to look. You can keep both the pepper and lime juice, or you can choose one or the other, or you can change the recipe however you like.
 
 ```bash
 nano guacamole.qmd
 ```
 
+Save and exit nano, then:
+
 ```bash
-git add guacamole.qmd 
+git add guacamole.qmd
+```
+
+Check the status again:
+
+```bash
+git status
+```
+
+```
+On branch main
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+	modified:   guacamole.qmd
+```
+
+Commit the merge conflict resolution:
+
+```bash
 git commit -m "merge conflict resolve, keep pepper and lime"
 ```
 
-review your commit history to see the merge commit:
+Review your commit history to see the merge commit:
 
 ```bash
 git log
