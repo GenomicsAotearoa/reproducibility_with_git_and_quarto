@@ -102,15 +102,16 @@ button:hover, .nav-button:hover {
 
 /* Callouts */
 
-/* callout font size */
-.callout-note,
-.callout-tip,
-.callout-warning,
-.callout-important,
-.callout-caution,
-.callout-question {
-  font-size: 1em; /* or your preferred size */
-  padding: 0em;      /* optional: adjust padding as needed */
+
+.callout .callout-body-container,
+.callout .callout-body {
+  font-size: 1.1rem !important;
+}
+
+.callout .callout-title-container,
+.callout .callout-title-container .callout-title,
+.callout .callout-title p {
+  font-size: 1.1rem !important;
 }
 
 

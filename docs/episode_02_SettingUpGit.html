@@ -185,7 +185,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./episode_04_Track-Add-Commit-Changes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tracking, adding and committing changes</span></a>
+ <span class="menu-text">Tracking, adding, committing, restoring changes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -420,9 +420,9 @@ Branches
 </div>
 </div>
 <p>We should also configure the way git recognises line endings. Different operating systems use different character(s) to represent the end of a line. (You may also hear these referred to as newlines or line breaks.) Because Git uses these characters to compare files, it may cause unexpected issues when editing a file on different machines. Though it is beyond the scope of this lesson, you can read more about this issue in the <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf">Pro Git book.</a></p>
-<p>On macOS and Linux:</p>
+<p>On <strong>macOS and Linux:</strong></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.autocrlf input</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>On Windows:</p>
+<p>On <strong>Windows:</strong></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.autocrlf true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The commands we just ran above only need to be run once: the flag <code>--global</code> tells Git to use the settings for every project, in your user account, on this computer</p>
 <p>We can review these settings and change the configuration if needed.</p>
@@ -445,7 +445,6 @@ Re-configuring
 <p>This will give you an output like this:</p>
 <pre><code>user.name=yourusername
 user.email=your_email@example.com
-user.emaill=your_email@example.com
 init.defaultbranch=main
 core.editor=nano -w</code></pre>
 <p>We can make edits using:</p>

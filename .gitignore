@@ -1,7 +1,6 @@
 /.quarto/
 .Rproj.user
 .DS_Store
-docs/*.qmd
-docs/**/*.qmd
+
 
 

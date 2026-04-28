@@ -105,13 +105,13 @@ Source file changes are associated with a “branch.” In 2020, most Git code h
 
 We should also configure the way git recognises line endings. Different operating systems use different character(s) to represent the end of a line. (You may also hear these referred to as newlines or line breaks.) Because Git uses these characters to compare files, it may cause unexpected issues when editing a file on different machines. Though it is beyond the scope of this lesson, you can read more about this issue in the [Pro Git book.](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf)
 
-On macOS and Linux:
+On **macOS and Linux:**
 
 ```bash
 git config --global core.autocrlf input
 ```
 
-On Windows:
+On **Windows:**
 ```bash
 git config --global core.autocrlf true
 ```
@@ -140,7 +140,6 @@ This will give you an output like this:
 ```
 user.name=yourusername
 user.email=your_email@example.com
-user.emaill=your_email@example.com
 init.defaultbranch=main
 core.editor=nano -w
 ```
