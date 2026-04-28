@@ -110,6 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Git Overview – Reproducibility with Git and Quarto">
 <meta property="og:description" content="">
+<meta property="og:image" content="figures/nano-setup.png">
 <meta property="og:site_name" content="Reproducibility with Git and Quarto">
 </head>
 
@@ -273,7 +274,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#install-the-latest-version-of-r" id="toc-install-the-latest-version-of-r" class="nav-link" data-scroll-target="#install-the-latest-version-of-r">1. Install the latest version of R</a></li>
   <li><a href="#install-the-latest-version-of-rstudio" id="toc-install-the-latest-version-of-rstudio" class="nav-link" data-scroll-target="#install-the-latest-version-of-rstudio">2. Install the latest version of RStudio</a></li>
   <li><a href="#install-git" id="toc-install-git" class="nav-link" data-scroll-target="#install-git">3. Install Git</a></li>
-  <li><a href="#make-a-github-account" id="toc-make-a-github-account" class="nav-link" data-scroll-target="#make-a-github-account">4. Make a Github account</a></li>
+  <li><a href="#check-nano-is-working" id="toc-check-nano-is-working" class="nav-link" data-scroll-target="#check-nano-is-working">4. Check nano is working</a></li>
+  <li><a href="#make-a-github-account" id="toc-make-a-github-account" class="nav-link" data-scroll-target="#make-a-github-account">5. Make a Github account</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -446,8 +448,22 @@ Access denied message in RStudio?
 </div>
 </section>
 </section>
+<section id="check-nano-is-working" class="level4">
+<h4 class="anchored" data-anchor-id="check-nano-is-working">4. Check nano is working</h4>
+<p>We will be using the nano text editor in this workshop. To check that it is working, open a terminal (either Terminal on macOS, Git Bash on Windows, or RStudio terminal) and type:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If the terminal changes to show a blank file called “test”, that looks like this, then nano is working.</p>
+<p><img src="figures/nano-setup.png" class="img-fluid"></p>
+<p>You can exit nano by pressing <code>Ctrl + X</code> and then pressing <code>N</code> when it asks if you want to save the file.</p>
+<p>If you get an error message that nano is not found, you may need to install it.</p>
+<ul>
+<li><strong>Mac:</strong> nano should be pre-installed on macOS, so if you get an error message, you may need to update your operating system.<br>
+</li>
+<li><strong>Windows:</strong> nano is included in Git Bash, so if you get an error message, you may need to re-install Git for Windows and ensure that you select the “Use Windows’ default console window” option during installation (see step 3 above).</li>
+</ul>
+</section>
 <section id="make-a-github-account" class="level4">
-<h4 class="anchored" data-anchor-id="make-a-github-account">4. Make a Github account</h4>
+<h4 class="anchored" data-anchor-id="make-a-github-account">5. Make a Github account</h4>
 <ol type="1">
 <li>Go to <a href="https://github.com">https://github.com</a> and follow the “Sign up” link at the top-right of the window.</li>
 <li>Follow the instructions to create an account.</li>
