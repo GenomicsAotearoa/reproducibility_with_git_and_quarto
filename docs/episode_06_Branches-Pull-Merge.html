@@ -280,6 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#merging-into-our-main-branch" id="toc-merging-into-our-main-branch" class="nav-link" data-scroll-target="#merging-into-our-main-branch">Merging into our main branch</a></li>
   </ul></li>
+  <li><a href="#merge-conflicts" id="toc-merge-conflicts" class="nav-link" data-scroll-target="#merge-conflicts">Merge conflicts</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -359,19 +360,19 @@ Fast-forward
 <p>Run <code>ls</code> to see the files in your directory and confirm we now have the README file locally.</p>
 <section id="how-does-pull-work" class="level4">
 <h4 class="anchored" data-anchor-id="how-does-pull-work">How does pull work?</h4>
-<p><code>git pull</code> does not blindly overwrite uncommitted local changes. When we pull everything from the server, the most common scenario is the “fast-forward”, such as we have done here. Git checks if you have changes that haven’t been committed yet. If you do, Git will try to merge the changes from the server with your local changes. If there’s a conflict (for example, if you and someone else changed the same line in a file), Git will stop and ask you to resolve the conflict before continuing. In the most common case (when you haven’t made any local changes or your local changes are already committed) Git can just add the new changes from the server on top of your work. This is called a “fast-forward” update, and it’s what happened in our example. Our local directory now matches the content in the Github server. There are different scenarios if your local file is behind and if there are merge conflicts. In this workshop, we will not cover how to deal with conflicts; you can <a href="https://swcarpentry.github.io/git-novice/09-conflict.html">read more about it here</a> and more on recovering files and <a href="https://swcarpentry.github.io/git-novice/05-history.html">exploring history here.</a></p>
+<p><code>git pull</code> does not blindly overwrite uncommitted local changes. When we pull everything from the server, the most common scenario is the “fast-forward”, such as we have done here. Git checks if you have changes that haven’t been committed yet. If you do, Git will try to merge the changes from the server with your local changes. If there’s a conflict (for example, if you and someone else changed the same line in a file), Git will stop and ask you to resolve the conflict before continuing. In the most common case (when you haven’t made any local changes or your local changes are already committed) Git can just add the new changes from the server on top of your work. This is called a “fast-forward” update, and it’s what happened in our example. Our local directory now matches the content in the Github server. There are different scenarios if your local file is behind and if there are merge conflicts. In this workshop, we will soon cover how to deal with one kind of conflict resolution.</p>
 </section>
 </section>
 </section>
 <section id="branches" class="level2">
 <h2 class="anchored" data-anchor-id="branches">Branches</h2>
-<p>So far, we have been working on one branch, called main. We can add more branches to our tree, make any changes we wish safely without affecting the main branch and when we are ready we can ‘Compare and pull’ these changes into the main branch. Generally, we want to make branches to work on when we are doing bug fixes of our code or testing out major restructuring or styling and we don’t want these to be pushed to the main branch just yet.</p>
+<p>So far, we have been working on one branch, called <code style="color:darkorange">main</code>. We can add more branches to our tree, make any changes we wish safely without affecting the main branch and when we are ready we can ‘Compare and pull’ these changes into the main branch. Generally, we want to make branches to work on when we are doing bug fixes of our code or testing out major restructuring or styling and we don’t want these to be pushed to the main branch just yet.</p>
 <p>Let’s practise making a new branch.</p>
 <p>Back in RStudio, type the following into terminal to see what branch you are currently on:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>As we have been working on one branch, main, you should see this output:</p>
 <pre><code>* main</code></pre>
-<p>Now we can make a new branch and switch to it. You can name it anything you like, but its best to pick something that describes what you are doing with that branch. You may even want to name it after the ‘Issue’ you are addressing – more on ‘Issues’ in the <a href="./episode_07_Collaborate-Organise.html#issues">next episode!</a></p>
+<p>Now we can make a new branch and switch to it. You can name it anything you like (no spaces in the name), but its best to pick something that describes what you are doing with that branch. You may even want to name it after the ‘Issue’ you are addressing – more on ‘Issues’ in the <a href="./episode_07_Collaborate-Organise.html#issues">next episode!</a></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> test-new-recipe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>Switched to a new branch 'test-new-recipe'</code></pre>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -455,13 +456,152 @@ To github.com:username/recipes.git
 <p>Have a look back at your main repo now. You’ll see the commit message has updated to the most recent one you used when you committed the changes to <code style="color:blue">guacamole.qmd</code> on the new branch.</p>
 <p><img src="images_git/github-pullrequest-05.png" class="img-fluid"></p>
 <p>By default, other people cannot make branches directly on your repository, unless you have added them as collaborators. You can assign roles to collaborators to control if they are able to push directly onto main, or if you want to personally approve all pull requests. Other people <strong>can</strong> however fork your public repository (making a copy on their own account) and submit a pull request back to your original repository, which you can then decide to merge or not. You can switch your repository to private in settings – note that you cannot turn private repositories into a website via GitHub pages.</p>
-<section id="merge-conflicts" class="level5">
-<h5 class="anchored" data-anchor-id="merge-conflicts">Merge conflicts</h5>
-<p>In this workshop we will not be covering how to deal with merge conflicts <em>i.e.,</em> when the remote repository has changes that have not been incorporated into the local repository. Git will reject the push/pull if it detects merge conflicts, and you may then need to tell Git how to resolve these. The Carpentries lesson has a section on how to deal with <a href="https://swcarpentry.github.io/git-novice/09-conflict.html">Conflicts.</a></p>
-
-
 </section>
 </section>
+<section id="merge-conflicts" class="level2">
+<h2 class="anchored" data-anchor-id="merge-conflicts">Merge conflicts</h2>
+<p>Merge conflicts happen when the remote repository has changes that have not been incorporated into the local repository. Git will reject the push/pull if it detects merge conflicts, and you may then need to tell Git how to resolve these. Further reading on merge conflicts in the <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-conflicts">Git documentation here.</a></p>
+<p>Let’s create a merge conflict here and see how we can resolve it with git.</p>
+<p>After we merged our <code style="color:darkorange">test-new-recipe</code> branch into <code style="color:darkorange">main</code>, we now have a situation where the <code style="color:darkorange">main</code> branch has changes that are not in our local repository. If we try to push or pull any changes we make to <code style="color:blue">guacamole.qmd</code> now, we will get an error message about merge conflicts.</p>
+<p>First, let’s swap to <code style="color:darkorange">main</code> branch and make a change to <code style="color:blue">guacamole.qmd</code>:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>Switched to branch 'main'</code></pre>
+<p>Let’s sanity check our local guacamole recipe file to see what it looks like locally:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code># Guacamole recipe
+
+## Ingredients
+- Avocado  
+- Coriander  
+- Red onion  
+- Lemon juice  
+- Salt  
+
+## Instructions
+1. Mash the avocado
+2. Finely chop the coriander and red onion
+3. Add salt and lemon juice to taste  
+4. Enjoy! </code></pre>
+<p>The lime juice we added in the <code style="color:darkorange">test-new-recipe</code> branch is not in our local <code style="color:darkorange">main</code> branch, even though it is in the <code style="color:darkorange">main</code> branch on the server. This is because we haven’t pulled the changes down to our local computer yet.</p>
+<p>Before we pull the changes down, let’s make a change to our local version to create a conflict.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Make a change to the file, e.g.&nbsp;add “Pepper” to the ingredients list, then save and exit.</p>
+<pre><code># Guacamole recipe
+
+## Ingredients
+- Avocado
+- Coriander
+- Red onion
+- Lemon juice
+- Salt
+- Pepper
+
+## Instructions
+1. Mash the avocado
+2. Finely chop the coriander and red onion
+3. Add salt, pepper and lemon juice to taste
+4. Enjoy!</code></pre>
+<p>Now we have <strong><em>pepper in our local version of the file</em></strong>, but not in the version on the server. The version <strong><em>on the server has lime juice</em></strong>, but NOT pepper. This is a <strong>merge conflict.</strong></p>
+<p>Let’s try pushing this change to the server:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.qmd</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"add pepper to guacamole recipe"</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>To github.com:username/recipes.git
+ ! [rejected]        main -&gt; main (fetch first)
+error: failed to push some refs to 'github.com:username/recipes.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.</code></pre>
+<p>Git is telling us that we cannot push our changes because there are changes on the server that we do not have locally. We need to pull the changes down first, but if we do this, we will get a merge conflict because of the pepper and lime juice issue.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 909 bytes | 303.00 KiB/s, done.
+From github.com:username/recipes
+ * branch            main       -&gt; FETCH_HEAD
+   cd23c85..830a54c  main       -&gt; origin/main
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint:
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint:
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.</code></pre>
+<p>Uh oh, another message! git is telling us that we have divergent branches and we need to specify how to reconcile them. This is because of the merge conflict. We can choose to either <strong>merge, rebase or fast-forward</strong>.</p>
+<p>This is now a good time to run <code>git status</code> and see what the merge conflict looks like!</p>
+<pre><code>On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add &lt;file&gt;..." to mark resolution)
+    both modified:   guacamole.qmd
+
+no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
+<p>The most common option is to <strong>merge</strong>, which will create a new commit that combines the changes from both branches. This is the default option, so we can run:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config pull.rebase false</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>Note: without the <code>--global</code> flag, this command only sets the merge option for this repository. If you want to set it as the default for all repositories, you can add the <code>--global</code> flag.</p>
+</blockquote>
+<p>Now try git pulling again:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>From github.com:username/recipes
+ * branch            main       -&gt; FETCH_HEAD
+Auto-merging recipes/guacamole.qmd
+CONFLICT (content): Merge conflict in recipes/guacamole.qmd
+Automatic merge failed; fix conflicts and then commit the result.</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> guacamole.qmd </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code># Guacamole recipe
+
+## Ingredients
+- Avocado  
+- Coriander  
+- Red onion  
+- Lime juice  
+- Lemon juice  
+- Salt  
+- Pepper
+
+## Instructions
+1. Mash the avocado
+2. Finely chop the coriander and red onion
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+3. Add salt, pepper and lemon juice to taste  
+=======
+3. Add salt, lemon and lime juice to taste  
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 830a54cb09c5d8fb5e1820d8e5bd722524db3cb2
+4. Enjoy!</code></pre>
+<p>The ✨<code style="color:gold">golden rule</code>✨ is to <em>“make the file look how you want it to look”.</em></p>
+<p>Open the file in <code>nano</code> and edit it to look how you want it to look. You can keep both the pepper and lime juice, or you can choose one or the other, or you can change the recipe however you like.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Save and exit nano, then:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Check the status again:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>On branch main
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+    modified:   guacamole.qmd</code></pre>
+<p>Commit the merge conflict resolution:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"merge conflict resolve, keep pepper and lime"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Review your commit history to see the merge commit:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now finally we can push our changes to the server:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
 </section>
 </section>
 

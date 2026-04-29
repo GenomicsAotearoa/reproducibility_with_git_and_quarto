@@ -115,8 +115,26 @@ If you get an access denied error message, you will need to tell RStudio to use 
 -> `Global Options`{style="color:black"} -> `Terminal`{style="color:black"} and under Shell choose New terminals open with: Git Bash. Click Apply and OK. You may then need to close and re-open the Terminal tab (next to Console) to refresh it. 
 :::
 
+#### 4. Check nano is working
 
-#### 4. Make a Github account
+We will be using the nano text editor in this workshop. To check that it is working, open a terminal (either Terminal on macOS, Git Bash on Windows, or RStudio terminal) and type:
+
+```bash
+nano test
+```
+If the terminal changes to show a blank file called "test", that looks like this, then nano is working. 
+
+![](figures/nano-setup.png)
+
+You can exit nano by pressing `Ctrl + X`  and then pressing `N` when it asks if you want to save the file.
+
+If you get an error message that nano is not found, you may need to install it.    
+
+- **Mac:** nano should be pre-installed on macOS, so if you get an error message, you may need to update your operating system.  
+- **Windows:** nano is included in Git Bash, so if you get an error message, you may need to re-install Git for Windows and ensure that you select the "Use Windows' default console window" option during installation (see step 3 above).
+
+
+#### 5. Make a Github account
 
 1. Go to [https://github.com](https://github.com) and follow the “Sign up” link at the top-right of the window.
 2. Follow the instructions to create an account.

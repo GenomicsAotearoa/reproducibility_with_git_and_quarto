@@ -30,13 +30,15 @@ This workshop **does** cover:
 * Setting up git, creating a new repository and connecting your local repo to the GitHub Server.
 * Tracking, adding, committing, restoring files.  
 * Basic pushing, pulling and merging new branches. 
+* Basic merge conflict resolution.  
 * Collaboration and workflow tools (issues, projects).
+
 
 This workshop **does not** cover:  
 
-* Forking, merge conflicts and different kinds of merges.  
-* Extensive file recovery, log details and commit history (basics are covered) .    
-* Using `git rebase` and `git ignore`.  
+* Forking, resbasing, advanced merge strategies.  
+* Extensive file recovery, log details and commit history (basics are covered).   
+* `git reset` and `git revert` for undoing commits.     
 * How to connect Git/GitHub and RStudio (see [The Carpentries lesson here](https://swcarpentry.github.io/git-novice/14-supplemental-rstudio.html) or the Chapter from Happy Git with R on [connecting these tools here.](https://happygitwithr.com/connect-intro)) 
 * Further GitHub tools such as Releases and Actions.    
 
@@ -53,8 +55,8 @@ This workshop **does** cover:
 
 This workshop **does not** cover: 
 
-* Using callouts.    
-* Using HTML or CSS syntax in Quarto documents/projects.   
+* Using HTML or CSS syntax in Quarto documents/projects.  
+* Quarto books and more complex multi-document project types.    
 * Extensive tool integration beyond RStudio (e.g., Jupyter, Visual Studio Code, Netlify, Shiny).  
 * Behind the scenes of Quarto (e.g., knitr execution, pandoc markdown and conversion).  
 
@@ -64,7 +66,7 @@ This workshop **does not** cover:
 
 For this workshop you will need to have a number of different software installed on your local computer, as well as an account made with GitHub. 
 
-See [Part One - Git: Setup on local machine](git_overview.qmd#setup-on-local-machine) for setup instructions. Quarto is a part of RStudio, therefore you will not need to setup anything extra for Part Two - Quarto. 
+See [Part One - Git: Setup on local machine](git_overview.qmd#setup-on-local-machine) for setup instructions. Quarto is a part of RStudio, therefore you will not need to setup anything extra for Part Two - Quarto. Optionally you can download and install the [Quarto CLI](https://quarto.org/docs/get-started/), which will allow you to render quarto documents without RStudio.
   
 
 

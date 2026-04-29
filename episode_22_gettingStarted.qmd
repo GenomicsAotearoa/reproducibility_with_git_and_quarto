@@ -117,7 +117,7 @@ Once you have completed these tasks, **switch back and forth** between the **Vis
 
 
 
-### Other syntax options and notes:
+### Other syntax options:
 
 We can also use super^script^ and sub~script~, by surrounding text with \^ or \~ respectively, and ~~strikeout~~  text using double \~\~ on either side of the word. 
 
@@ -138,6 +138,40 @@ If you are writing lists manually (*i.e.,* not using the Visual editor option) y
 - Note that any number works (try writing a bullet point list with `1. 2. 2. 4. 5.`{style="color:green"}  to start each line!). Quarto will automatically sort the numbers, which means you can number lists and then easily add additional points anywhere along the list.  
 - Sometimes an 'Enter' or 'Return' to make a new line is not enough. You may also need to add two spaces at the end of the top line, if the subsequent line is appearing on the preceding. 
 :::
+
+
+::: {.callout-warning appearance="minimal" collapse="true"}
+# Bonus! Callouts and Note boxes
+
+We can also add "callouts" to our documents, which are boxes that can be used to highlight important information, tips, warnings, or notes.
+To add a note callout, we use the following syntax:
+
+```
+::: {.callout-note}
+# Callout title  
+
+Callout content goes here.
+
+:::
+```
+
+You may realise that this text itself is in a callout!
+
+Optionally you can add arguments such as collapse="true" and change the appearance to simple or minimal. Try a few of the following:
+
+```
+{.callout-tip appearance="simple"}
+{.callout-warning appearance="minimal" collapse="true"}
+```
+
+> You can also add information in a note, like this text here. Start your line with a <KBD>></KBD> and then add your note text. (Hint, you need a space between the <KBD>></KBD> and the text for this to work).
+
+See more info on [Callout blocks here.](https://quarto.org/docs/authoring/callouts.html) 
+
+
+
+:::
+
  
 ### Save and Render document
 

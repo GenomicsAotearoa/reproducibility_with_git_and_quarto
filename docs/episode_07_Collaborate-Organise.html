@@ -271,7 +271,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#cloning-remote-repositories" id="toc-cloning-remote-repositories" class="nav-link" data-scroll-target="#cloning-remote-repositories">Cloning remote repositories</a></li>
   <li><a href="#improving-your-workflow" id="toc-improving-your-workflow" class="nav-link" data-scroll-target="#improving-your-workflow">Improving your workflow</a>
   <ul class="collapse">
+  <li><a href="#safety-checks" id="toc-safety-checks" class="nav-link" data-scroll-target="#safety-checks">Safety checks</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
   <li><a href="#issues" id="toc-issues" class="nav-link" data-scroll-target="#issues">Issues</a></li>
+  <li><a href="#ignoring-files-with-.gitignore" id="toc-ignoring-files-with-.gitignore" class="nav-link" data-scroll-target="#ignoring-files-with-.gitignore">Ignoring files with .gitignore</a></li>
   <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects">Projects</a></li>
   <li><a href="#organisations" id="toc-organisations" class="nav-link" data-scroll-target="#organisations">Organisations</a></li>
   </ul></li>
@@ -364,50 +369,14 @@ Can I push changes I have made locally to this repo back to the GitHub server?
 </section>
 <section id="improving-your-workflow" class="level2">
 <h2 class="anchored" data-anchor-id="improving-your-workflow">Improving your workflow</h2>
-<section id="issues" class="level3">
-<h3 class="anchored" data-anchor-id="issues">Issues</h3>
-<p>Issues are a fantastic way to track what you want to change. You can open an issue for each change you want to make (<em>i.e.,</em> typos, bug fixes, adding images, stylisation - anything!) and when you commit changes you can reference the issue number (<em>e.g.,</em> <code>git commit -m "Bug fixes issue #1"</code>) which links up the commit with the addressed issue automatically. Other people can also see and add issues to your repo – a great way to track progress!</p>
-<p>There are a few other tips and tricks with ‘Issues’, but one of the most useful ones is being able to reference exact lines where you want to make changes using ‘permalinks’.</p>
-<blockquote class="blockquote">
-<p>Note: If you cannot see the ‘Issues’ tab on your repo, you may need to go to General Settings and enable the tickbox for ‘Issues’.</p>
-</blockquote>
-<p>Have a go at adding an issue for a change you want to make in your guacamole recipe, then make the change locally, add and commit the change, referencing the issue in the commit message.</p>
-<p>Go to your recipes repo on GitHub, find ‘Issues’ tab and click “New issue”.</p>
-<p><img src="images_git/github-issues-01.png" class="img-fluid"></p>
-<p>Then add a title, e.g.,:</p>
-<p><img src="images_git/github-issue-02.png" class="img-fluid"></p>
-<p>Before you create the issue, right click your recipes repo in the top left, and open it in a new tab. Then, click on <code style="color:blue">guacamole.qmd</code> to bring up the code. On the left of the line you want to change, click to get the three dots to appear, click the dots, and click ‘Copy permalink’.</p>
-<p><img src="images_git/github-issue-03.png" class="img-fluid"></p>
-<p>Now go back to your issue, paste the permalink in the description, and add whatever descriptive text you want and create the issue:</p>
-<p><img src="images_git/github-issue-04.png" class="img-fluid"></p>
-<p>Our <code style="color:blue">guacamole.qmd</code> file is not very big, so specifying the exact line is not really necessary, but if you have a file with hundreds of lines of code then being able to track and note exactly where typos are is really handy!</p>
-<p>Now, go back to your terminal and move back into your recipes dir:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Quick safety checks:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Before you go any further, are you on the right branch? To change existing branches:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Change your branch back to <code style="color:darkorange">main</code>. But wait, we merged a pull request earlier on GitHub, but these changes were made locally on <code style="color:darkorange">test-new-recipe</code> before pushing to GitHub. Now that we are back on main, what does our <code style="color:blue">guacamole.qmd</code> file look like locally?</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code># Guacamole recipe
-
-## Ingredients
-- Avocado  
-- Coriander  
-- Red onion  
-- Lemon juice
-- Salt  
-
-## Instructions
-1. Mash the avocado
-2. Finely chop the coriander and red onion
-3. Add salt and lemon juice to taste  
-4. Enjoy!</code></pre>
-<p>It’s our original recipe, without the added lime juice. We need the new one!</p>
-<p>Safety checks: We can use <code>git fetch</code> to fetch information about files from the server (<em>i.e.,</em> origin/main) and compare to our local files (<em>i.e.,</em> main) to see if we need to pull down new copies of the files:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch origin</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff main origin/main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="safety-checks" class="level3">
+<h3 class="anchored" data-anchor-id="safety-checks">Safety checks</h3>
+<p>We can use <code>git fetch</code> to fetch information about files from the server (<em>i.e.,</em> origin/main) and compare to our local files (<em>i.e.,</em> main) to see if we need to pull down new copies of the files. In practice, its a good idea to <em>always</em> run <code>git pull</code> anyway before starting work for the day, to make sure you have the most up to date files. Git fetch will not change any of your local files.</p>
+<section id="example" class="level4">
+<h4 class="anchored" data-anchor-id="example">Example</h4>
+<p><strong><em>Demo only</em></strong> - <em>at this stage in the workshop you will not have any changes between your local copy and the copy on the server</em>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch origin</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff main origin/main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>diff --git a/guacamole.qmd b/guacamole.qmd
 index 6249f4c..2dc69fb 100644
 --- a/guacamole.qmd
@@ -427,35 +396,55 @@ index 6249f4c..2dc69fb 100644
 -3. Add salt and lemon juice to taste  
 +3. Add salt,lemon and lime juice to taste  
  4. Enjoy!</code></pre>
-<p>The output shows there are lines that are different between our local <strong>main</strong> and our server <strong>origin/main</strong>.</p>
+<p>The output shows there are lines that are different between our local <strong>main</strong> (a/guacamole.qmd) and our server <strong>origin/main</strong> (b/guacamole.qmd).</p>
 <p><code>git fetch</code> does not touch your local files, so we now need to pull down the new file:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Double check your local files match the server:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch origin</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff main origin/main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>git diff</code> gave no output - so all good to continue!</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch origin</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff main origin/main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>git diff</code> gives no output now - so all good to continue!</p>
+</section>
+</section>
+<section id="issues" class="level3">
+<h3 class="anchored" data-anchor-id="issues">Issues</h3>
+<p>Issues are a fantastic way to track what you want to change. You can open an issue for each change you want to make (<em>i.e.,</em> typos, bug fixes, adding images, stylisation - anything!) and when you commit changes you can reference the issue number (<em>e.g.,</em> <code>git commit -m "Bug fixes issue #1"</code>) which links up the commit with the addressed issue automatically. Other people can also see and add issues to your repo – a great way to track progress!</p>
+<p>There are a few other tips and tricks with ‘Issues’, but one of the most useful ones is being able to reference exact lines where you want to make changes using ‘permalinks’.</p>
+<blockquote class="blockquote">
+<p>Note: If you cannot see the ‘Issues’ tab on your repo, you may need to go to General Settings and enable the tickbox for ‘Issues’.</p>
+</blockquote>
+<p>Have a go at adding an issue for a change you want to make in your guacamole recipe, then make the change locally, add and commit the change, referencing the issue in the commit message.</p>
+<p>Go to your recipes repo on GitHub, find ‘Issues’ tab and click “New issue”.</p>
+<p><img src="images_git/github-issues-01.png" class="img-fluid"></p>
+<p>Then add a title, e.g.,:</p>
+<p><img src="images_git/github-issue-02.png" class="img-fluid"></p>
+<p>Before you create the issue, right click your recipes repo in the top left, and open it in a new tab. Then, click on <code style="color:blue">guacamole.qmd</code> to bring up the code. On the left of the line you want to change, click to get the three dots to appear, click the dots, and click ‘Copy permalink’.</p>
+<p><img src="images_git/github-issue-03.png" class="img-fluid"></p>
+<p>Now go back to your issue, paste the permalink in the description, and add whatever descriptive text you want and create the issue:</p>
+<p><img src="images_git/github-issue-04.png" class="img-fluid"></p>
+<p>Our <code style="color:blue">guacamole.qmd</code> file is not very big, so specifying the exact line is not really necessary, but if you have a file with hundreds of lines of code then being able to track and note exactly where typos are is really handy!</p>
+<p>Now, go back to your terminal and open the file in <code>nano</code> to make the change you specified in your issue.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code># Guacamole recipe
 
 ## Ingredients
 - Avocado x 2
 - Coriander
 - Red onion
-- Lemon juice
 - Lime juice
+- Lemon juice
 - Salt
+- Pepper
 
 ## Instructions
 1. Mash the avocado
 2. Finely chop the coriander and red onion
-3. Add salt,lemon and lime juice to taste
-4. Enjoy!</code></pre>
+3. Add salt, pepper, and lemon juice to taste
+4. Enjoy!
+</code></pre>
 <p>In the above file I have now specified the number of avocados. Write out and close nano.</p>
-<p>Check the file is now ‘modified’:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now add and commit the file, importantly, reference the issue!:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"specified number of avos #2"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.qmd</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"fix #2 specified number of avocados"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -469,8 +458,17 @@ Wait, why is it #2 if this was my first issue?
 <p>Issues and pull requests share a numbering system. Because we did a pull request earlier, that got designated as #1. Therefore GitHub has automatically named this issue #2.</p>
 </div>
 </div>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Go back to your GitHub repo and have a look at the commit message - you’ll see the issue number is automatically linked. You can now click through and “Close issue”.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Go back to your GitHub repo and have a look at the commit message, you’ll see the issue number is automatically linked. You can now click through and “Close issue” – or you may see that the issue is automatically closed because you referenced it in the commit message with the <a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/using-keywords-in-issues-and-pull-requests">magic word <strong>fix</strong>!</a></p>
+</section>
+<section id="ignoring-files-with-.gitignore" class="level3">
+<h3 class="anchored" data-anchor-id="ignoring-files-with-.gitignore">Ignoring files with .gitignore</h3>
+<p><code>.gitignore</code> is a file that you can add to your repository to specify files or directories that you want Git to ignore. This is useful for files that are generated during the workflow, such as log files, temporary files, or large data files that you don’t want to track in version control. This way when you bulk add files with <code>git add .</code> you won’t accidentally add files that you don’t want to track. It is a text file and each line specifies which file/s or directories to ignore.</p>
+<p>Example contents of a <code>.gitignore</code> file:</p>
+<pre><code>*.log
+*.tmp
+data/</code></pre>
+<p>For more info, check out the <a href="https://docs.github.com/en/get-started/git-basics/ignoring-files">GitHub docs on .gitignore here</a> and the <a href="https://swcarpentry.github.io/git-novice/06-ignore.html">software carpentry lesson here</a>.</p>
 </section>
 <section id="projects" class="level3">
 <h3 class="anchored" data-anchor-id="projects">Projects</h3>
@@ -481,8 +479,7 @@ Wait, why is it #2 if this was my first issue?
 </section>
 <section id="organisations" class="level3">
 <h3 class="anchored" data-anchor-id="organisations">Organisations</h3>
-<p><em>“Organisations are shared accounts where businesses and open-source projects can collaborate across many projects at once, with sophisticated security and administrative features.”</em><br>
-- GitHub docs</p>
+<p>GitHub docs describe organsiations as <em>“… shared accounts where businesses and open-source projects can collaborate across many projects at once, with sophisticated security and administrative features.”</em></p>
 <p>There are many great features of using an Organisation account. You can view the <a href="https://github.com/GenomicsAotearoa">Genomics Aotearoa Organisation account here.</a> This is where we house all our workshop material and research project repos for workflows or scripts associated with a project. Members are assigned different roles, which allow different levels of read/write permissions and other things such as admin access or security management.</p>
 <p>For further information on Organisations, see the <a href="https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations">GitHub docs here.</a></p>
 </section>
