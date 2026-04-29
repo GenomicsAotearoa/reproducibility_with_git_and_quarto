@@ -277,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#visual-or-source-editor" id="toc-visual-or-source-editor" class="nav-link" data-scroll-target="#visual-or-source-editor">Visual or Source Editor</a>
   <ul class="collapse">
   <li><a href="#exercise-visual-and-source-editors-5-min" id="toc-exercise-visual-and-source-editors-5-min" class="nav-link" data-scroll-target="#exercise-visual-and-source-editors-5-min"><strong>Exercise: Visual and Source Editors</strong> (5 min)</a></li>
-  <li><a href="#other-syntax-options-and-notes" id="toc-other-syntax-options-and-notes" class="nav-link" data-scroll-target="#other-syntax-options-and-notes">Other syntax options and notes:</a></li>
+  <li><a href="#other-syntax-options" id="toc-other-syntax-options" class="nav-link" data-scroll-target="#other-syntax-options">Other syntax options:</a></li>
   <li><a href="#save-and-render-document" id="toc-save-and-render-document" class="nav-link" data-scroll-target="#save-and-render-document">Save and Render document</a></li>
   </ul></li>
   <li><a href="#yaml-headers" id="toc-yaml-headers" class="nav-link" data-scroll-target="#yaml-headers">YAML headers</a>
@@ -429,8 +429,8 @@ Extra for experts
 </ul>
 <p>Once you have completed these tasks, <strong>switch back and forth</strong> between the <strong>Visual</strong> and <strong>Source</strong> Editor to see how these different effects are done with markdown.</p>
 </section>
-<section id="other-syntax-options-and-notes" class="level3">
-<h3 class="anchored" data-anchor-id="other-syntax-options-and-notes">Other syntax options and notes:</h3>
+<section id="other-syntax-options" class="level3">
+<h3 class="anchored" data-anchor-id="other-syntax-options">Other syntax options:</h3>
 <p>We can also use super<sup>script</sup> and sub<sub>script</sub>, by surrounding text with ^ or ~ respectively, and <del>strikeout</del> text using double ~~ on either side of the word.</p>
 <table class="caption-top table">
 <thead>
@@ -473,6 +473,36 @@ Hints:
 </ul>
 </div>
 </div>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Bonus! Callouts and Note boxes
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We can also add “callouts” to our documents, which are boxes that can be used to highlight important information, tips, warnings, or notes. To add a note callout, we use the following syntax:</p>
+<pre><code>::: {.callout-note}
+# Callout title  
+
+Callout content goes here.
+
+:::</code></pre>
+<p>You may realise that this text itself is in a callout!</p>
+<p>Optionally you can add arguments such as collapse=“true” and change the appearance to simple or minimal. Try a few of the following:</p>
+<pre><code>{.callout-tip appearance="simple"}
+{.callout-warning appearance="minimal" collapse="true"}</code></pre>
+<blockquote class="blockquote">
+<p>You can also add information in a note, like this text here. Start your line with a <kbd>&gt;</kbd> and then add your note text. (Hint, you need a space between the <kbd>&gt;</kbd> and the text for this to work).</p>
+</blockquote>
+<p>See more info on <a href="https://quarto.org/docs/authoring/callouts.html">Callout blocks here.</a></p>
+</div>
+</div>
+</div>
 </section>
 <section id="save-and-render-document" class="level3">
 <h3 class="anchored" data-anchor-id="save-and-render-document">Save and Render document</h3>
@@ -480,7 +510,7 @@ Hints:
 <p>Now back in RStudio, click the ‘Render’ button, which will simultaneously open up a Preview. You can change the Preview settings by clicking the settings button next to the Render button. The Preview can either be viewed in a new window or in a panel in RStudio.</p>
 <p><img src="images-quarto/quarto-render-01.png" class="img-fluid" style="width:70.0%"></p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -489,14 +519,14 @@ Want to render and preview using a command line interface?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Alternatively, you can <code>preview</code> and <code>render</code> a document on the command line (<em>e.g.,</em> in terminal in RStudio)</p>
 <p>You may first need to download the Quarto CLI. Try type first in terminal:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If you get a version number, you’re good to go. If you get a “commnand not found” output, <a href="https://quarto.org/docs/get-started/">install the Quarto CLI from here.</a> It should automatically add quarto to your PATH.</p>
 <p>type:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview getting-started.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview getting-started.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This should also open a Preview window automatically in your browser.</p>
 <p>As you make changes on your <code style="color:blue">.qmd</code> file, every time you save the document the Preview will update.</p>
 <p>Hit <kbd>CTRL</kbd> + <kbd>C</kbd> back in terminal to exit preview mode.</p>
@@ -528,7 +558,7 @@ Want to render and preview using a command line interface?
 <p><code>author: Barbara McClintock</code></p>
 <p>Add your own name as the author of the document, render or preview the document and confirm it has worked.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -537,7 +567,7 @@ Adding multiple authors
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>There are two ways for this to work, and more ways for it to fail.</p>
 <p>One way to add authors is to include them on the same line, separated by commas:</p>
@@ -590,7 +620,7 @@ YYYY-MM-DDTHH:mm:ssZ</code></pre>
 <p><code>format: html</code></p>
 <p>We can easily change the format after rendering to create a new document which duplicates the format <em>e.g.,</em> you could generate a slideshow and a static pdf/html as a backup (this is recommended if you might be presenting on a shared machine).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -599,7 +629,7 @@ PDF format
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Quarto can also render your documents into PDF, but you will need to first install LaTeX, if you do not already have it.</p>
 <p>In r, you can install TinyTeX:</p>
