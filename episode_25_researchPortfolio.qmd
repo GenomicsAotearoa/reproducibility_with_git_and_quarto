@@ -295,13 +295,13 @@ Add the code below to a new line in the `website` section of the `_quarto.yml`{s
 
 #### Footer
 
-Add a footer with: 
+Add a footer under the website section with: 
 
 ```bash
   page-footer:
     center:
       - text: "Built with love and Quarto"
-      - href: https://quarto.org
+        href: https://quarto.org
 ```
 
 #### Themes light and dark
@@ -322,7 +322,7 @@ In addition to the pre-built format that themes can provide we can also customis
 
 The `styles.css`{style="color:blue"}  file is written in css - it is not Quarto specific, and requires reasonably detailed knowledge. We recommend using templates sourced online or chatGPT equivalents for building a `styles.css`{style="color:blue"} template which you can then work from. 
 
-Styles.css is stored in the top level of the directory. In the `_quarto.yml`{style="color:blue"} document under `format`, we can add a new line at the same indentation level as theme and added `css: styles.css` 
+Styles.css is stored in the top level of the directory. In the `_quarto.yml`{style="color:blue"} document under `format`, we can add a new line at the same indentation level as theme and added `css: styles.css` (remove the theme argument). 
 
 ```bash
 format:
@@ -546,7 +546,7 @@ git add .
 
 
 ```bash
-git commit -m "publish to docs/"
+git commit -m "publish website"
 ```
 
 ```bash

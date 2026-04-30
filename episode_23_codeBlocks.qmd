@@ -212,6 +212,7 @@ Here, the `@fig-penguinBills`{style="color:green"} automatically gets converted 
 For cross referencing tables it is very similar to figures, but instead we use the `tbl` prefix, and we can also add a Table caption using `#| tbl-cap:` For example:
 
 ```{r}
+#| message: false
 #| label: 'tbl-penguin-mass-summary'
 #| tbl-cap: 'Penguin Mean Body Weights'
 
@@ -326,7 +327,7 @@ To streamline the above with inline code we need to do three things:
 
 This is demonstrated below, using quotation marks in place of backticks so that it is human readable:
 
-```bash
+```
 The mean bill length of penguins in the dataset is "r round(mean(na.omit(penguins$bill_length_mm)),2)"mm.
 ```
 

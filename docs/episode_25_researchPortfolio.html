@@ -650,11 +650,11 @@ Example sidebar and section .yml
 </section>
 <section id="footer" class="level4">
 <h4 class="anchored" data-anchor-id="footer">Footer</h4>
-<p>Add a footer with:</p>
+<p>Add a footer under the website section with:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">page-footer:</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">center:</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> text: <span class="st">"Built with love and Quarto"</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> href: https://quarto.org</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="ex">href:</span> https://quarto.org</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="themes-light-and-dark" class="level4">
 <h4 class="anchored" data-anchor-id="themes-light-and-dark">Themes light and dark</h4>
@@ -669,7 +669,7 @@ Example sidebar and section .yml
 <h3 class="anchored" data-anchor-id="styles.css">styles.css</h3>
 <p>In addition to the pre-built format that themes can provide we can also customise our sites with a <code style="color:blue">styles.css</code> file. This a “Cascading Style Sheets” document, which can be used to override all of the Quarto defaults for HTML documents. The .css file is used to manipulate fonts, choose colours, layout, background for code cells, side and navbar aesthetics, table text alignment - <em>almost every visual aspect</em> can be changed with a styles.css file.</p>
 <p>The <code style="color:blue">styles.css</code> file is written in css - it is not Quarto specific, and requires reasonably detailed knowledge. We recommend using templates sourced online or chatGPT equivalents for building a <code style="color:blue">styles.css</code> template which you can then work from.</p>
-<p>Styles.css is stored in the top level of the directory. In the <code style="color:blue">_quarto.yml</code> document under <code>format</code>, we can add a new line at the same indentation level as theme and added <code>css: styles.css</code></p>
+<p>Styles.css is stored in the top level of the directory. In the <code style="color:blue">_quarto.yml</code> document under <code>format</code>, we can add a new line at the same indentation level as theme and added <code>css: styles.css</code> (remove the theme argument).</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">format:</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">html:</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">css:</span> styles.css</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -884,7 +884,7 @@ Example styles.css
 <p>While still in RStudio terminal, run:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add . </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>(The <code style="color:green">.</code> adds everything, alternatively type: <code>git add docs</code>)</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"publish to docs/"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"publish website"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>(If you get an error message here, you might need to type <code>git push origin main</code>)</p>
 <p>Our new rendered docs should now be stored safely in our repo on the GitHub server.</p>
