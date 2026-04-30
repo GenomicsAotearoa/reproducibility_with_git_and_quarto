@@ -12,6 +12,18 @@ The aims of this section are to:
 - Generate an `html`{style="color:blue"} document with well-documented code and embedded output.  
 - Reinforce and expand the syntax skills from the previous episode and learn to apply good commenting/documentation habits when working in Quarto.  
 
+### Prep
+
+We need a few packages for this episode. If you need to install these, you can do it now if you wish with the following code:
+
+```{r}
+#| eval: false
+install.packages("palmerpenguins")
+install.packages("ggplot2")
+install.packages("dplyr")
+install.packages("gt")
+```
+
 
 
 ## Code cells
@@ -219,6 +231,7 @@ For cross referencing tables it is very similar to figures, but instead we use t
 #| label: 'tbl-penguin-mass-summary'
 #| tbl-cap: 'Penguin Mean Body Weights'
 
+#install.packages("gt")
 library(dplyr)
 library(gt)
 
