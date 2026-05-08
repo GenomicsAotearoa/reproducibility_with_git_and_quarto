@@ -352,6 +352,16 @@ hint: invocation.
 fatal: Need to specify how to reconcile divergent branches.
 ```
 
+
+::: {.callout-note}
+# Merge conflict
+
+![](images_git/conflict.svg)
+
+:::
+
+
+
 Uh oh, another message!  git is telling us that we have divergent branches and we need to specify how to reconcile them. This is because of the merge conflict. We can choose to either **merge, rebase or fast-forward**.
 
 

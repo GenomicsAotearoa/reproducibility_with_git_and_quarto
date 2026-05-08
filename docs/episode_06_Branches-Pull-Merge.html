@@ -536,6 +536,19 @@ hint: preference for all repositories. You can also pass --rebase, --no-rebase,
 hint: or --ff-only on the command line to override the configured default per
 hint: invocation.
 fatal: Need to specify how to reconcile divergent branches.</code></pre>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merge conflict
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="images_git/conflict.svg" class="img-fluid"></p>
+</div>
+</div>
 <p>Uh oh, another message! git is telling us that we have divergent branches and we need to specify how to reconcile them. This is because of the merge conflict. We can choose to either <strong>merge, rebase or fast-forward</strong>.</p>
 <p>The most common option is to <strong>merge</strong>, which will create a new commit that combines the changes from both branches. This is the default option, so we can run:</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config pull.rebase false</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
