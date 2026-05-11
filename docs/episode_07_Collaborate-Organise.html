@@ -458,6 +458,16 @@ Wait, why is it #2 if this was my first issue?
 <p>Issues and pull requests share a numbering system. Because we did a pull request earlier, that got designated as #1. Therefore GitHub has automatically named this issue #2.</p>
 </div>
 </div>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Hint:</strong> now try run <code>git fetch origin</code> then <code>git diff main origin/main</code> to see the changes you have made locally that are not yet on the server. The a/ file and b/ file are designated by order of the arguments in the <code>git diff</code> command. So, if you run <code>git diff origin/main main</code> instead, the a/ file will be the server version and the b/ file will be your local version.</p>
+</div>
+</div>
+</div>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Go back to your GitHub repo and have a look at the commit message, you’ll see the issue number is automatically linked. You can now click through and “Close issue” – or you may see that the issue is automatically closed because you referenced it in the commit message with the <a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/using-keywords-in-issues-and-pull-requests">magic word <strong>fix</strong>!</a></p>
 </section>

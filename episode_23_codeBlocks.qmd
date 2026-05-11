@@ -40,7 +40,17 @@ We can also insert a code cell using an in-built button in RStudio (the "+" and 
 
 ![Insert New Code cell button](figures/newCodeChunkButton.png){width=400}
 
-There are also keyboard shortcuts: `shift`{style="color:black"} + `command`{style="color:black"} + `I`{style="color:black"} for mac, or `windows`{style="color:black"} + `alt`{style="color:black"} + `I`{style="color:black"} for a Windows machine. 
+There are also keyboard shortcuts: 
+
+RStudio (most common for Quarto workshops):
+
+Mac: <KBD>Command</KBD> + <KBD>Option</KBD> + <KBD>I</KBD>  
+Windows/Linux: <KBD>Ctrl</KBD> + <KBD>Alt</KBD> + <KBD>I</KBD>   
+
+VS Code (with the Quarto extension):
+
+Mac: <KBD>Command</KBD> + <KBD>Shift</KBD> + <KBD>I</KBD>  
+Windows/Linux: <KBD>Ctrl</KBD> + <KBD>Shift</KBD> + <KBD>I</KBD>  
 
 #### Exercise: Insert a code cell (5 min)
 
@@ -326,7 +336,7 @@ Inline code refers to code that is used within the document but is not stored se
 For example, if we wanted to describe the mean bill length for the Adelie species of penguins in the penguins object, we could manually calculate the value and then add a written statement:
 
 ```{r}
-round(mean(na.omit(penguins$bill_length_mm)),2)
+round(mean(na.omit(penguins$bill_length_mm, na.rm = TRUE)),2)
 # The mean bill length of penguins in the dataset is 43.92mm.
 ```
 
@@ -338,16 +348,16 @@ To streamline the above with inline code we need to do three things:
 
 3. Include the code to be evaluated. 
 
-This is demonstrated below, using quotation marks in place of backticks so that it is human readable:
+**This is demonstrated below, using quotation marks in place of backticks so that it is human readable:**
 
-```
-The mean bill length of penguins in the dataset is "r round(mean(na.omit(penguins$bill_length_mm)),2)"mm.
+```bash
+The mean bill length of penguins in the dataset is "r round(mean(na.omit(penguins$bill_length_mm, na.rm = TRUE)),2)"mm.
 ```
 
 **The same line of code above but with backticks in place of quotation marks is rendered as:**
 
 ```bash
-The mean bill length of penguins in the dataset is `r round(mean(na.omit(penguins$bill_length_mm)),2)`mm.
+The mean bill length of penguins in the dataset is `r round(mean(na.omit(penguins$bill_length_mm, na.rm = TRUE)),2)`mm.
 ```
 
 ### Why use inline code? 

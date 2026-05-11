@@ -216,6 +216,14 @@ git commit -m "fix #2 specified number of avocados"
 Issues and pull requests share a numbering system. Because we did a pull request earlier, that got designated as #1. Therefore GitHub has automatically named this issue #2. 
 :::
 
+
+::: {.callout-caution appearance="minimal"}
+**Hint:** now try run `git fetch origin` then `git diff main origin/main` to see the changes you have made locally that are not yet on the server. The a/ file and b/ file are designated by order of the arguments in the `git diff` command. So, if you run `git diff origin/main main` instead, the a/ file will be the server version and the b/ file will be your local version. 
+
+:::
+
+
+
 ```bash
 git push origin main
 ```
