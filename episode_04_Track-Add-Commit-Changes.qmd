@@ -241,9 +241,10 @@ index ad0d963..6249f4c 100644
 The output is cryptic because it is actually a series of commands for tools like editors and patch telling them how to reconstruct one file given the other. If we break it down into pieces:
 
 1. The first line tells us that Git is producing output similar to the Unix diff command comparing the old and new versions of the file.
-2. The second line tells exactly which versions of the file Git is comparing; ad0d963 and 6249f4c are unique computer-generated labels for those versions.
-3. The third and fourth lines once again show the name of the file being changed.
-4. The remaining lines are the most interesting, they show us the actual differences and the lines on which they occur. In particular, the + marker in the first column shows where we added a line.
+2. The second line tells exactly which versions of the file Git is comparing; ad0d963 and 6249f4c are unique computer-generated labels for those versions. 100644 is a file mode, indicating a regular non-executable file.  
+3. The third and fourth lines once again show the name of the file being changed and their designated markers (`---` or `+++`).  
+4. The fifth line, wrapped by the @@ symbols, is the chunk header. In the chunk header `-8,3` means the `a` version excerpt starts at line 8 and spans 3 lines; `+8,7` means the `b` version excerpt starts at line 8 and spans 7 lines. The growing line count (3 → 7) reflects the four lines added.   
+5. The remaining lines show the actual content. Lines with no prefix are context lines present in both versions. Lines prefixed with `+` belong only to the `b` version; in this case, the four new instructions added to the recipe.
 
 ```bash
 git add guacamole.qmd
@@ -317,7 +318,7 @@ Date:   Sat Apr 25 13:05:57 1953 +1200
 ```
 
 
-We can use `git diff` with either HEAD~1 or the commit ID to see the differences between the current state of the working file and the referenced commit.
+We can use `git diff` with either HEAD/HEAD~# or the commit ID to see the differences between the current state of the working file and the referenced commit.
 
 For example, let's use the first commit ID to see the differences between the current state of the working file and that commit (you will need to use yours!):
 
@@ -356,7 +357,7 @@ git diff HEAD
 
 Our most recent commit is the one we just made, and there are no differences between the current state of the working file and the last commit -- so no output!
 
-Let's look at the differences between the current state of the working file and the previous commit (the one before the most recent commit). We can use `HEAD~1` to refer to the commit one before the most recent commit:
+Let's look at the differences between the current state of the working file and the previous commit (the one before the most recent commit). We can use `HEAD~1` to refer to the commit *one before* the most recent commit:
 
 ```bash
 git diff HEAD~1
@@ -378,7 +379,7 @@ index ad0d963..6249f4c 100644
 +4. Enjoy!
 ```
 
-You can use `HEAD~1`, `HEAD~2`, `HEAD~3` etc. to refer to earlier commits.
+You can use `HEAD~1`, `HEAD~2`, `HEAD~3` etc. to refer to 1 before HEAD, 2 before HEAD, 3 before HEAD, etc.  
 
 ### Restore files to a previous state
 

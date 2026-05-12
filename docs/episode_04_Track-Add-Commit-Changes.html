@@ -461,9 +461,13 @@ index ad0d963..6249f4c 100644
 <p>The output is cryptic because it is actually a series of commands for tools like editors and patch telling them how to reconstruct one file given the other. If we break it down into pieces:</p>
 <ol type="1">
 <li>The first line tells us that Git is producing output similar to the Unix diff command comparing the old and new versions of the file.</li>
-<li>The second line tells exactly which versions of the file Git is comparing; ad0d963 and 6249f4c are unique computer-generated labels for those versions.</li>
-<li>The third and fourth lines once again show the name of the file being changed.</li>
-<li>The remaining lines are the most interesting, they show us the actual differences and the lines on which they occur. In particular, the + marker in the first column shows where we added a line.</li>
+<li>The second line tells exactly which versions of the file Git is comparing; ad0d963 and 6249f4c are unique computer-generated labels for those versions. 100644 is a file mode, indicating a regular non-executable file.<br>
+</li>
+<li>The third and fourth lines once again show the name of the file being changed and their designated markers (<code>---</code> or <code>+++</code>).<br>
+</li>
+<li>The fifth line, wrapped by the @@ symbols, is the chunk header. In the chunk header <code>-8,3</code> means the <code>a</code> version excerpt starts at line 8 and spans 3 lines; <code>+8,7</code> means the <code>b</code> version excerpt starts at line 8 and spans 7 lines. The growing line count (3 → 7) reflects the four lines added.<br>
+</li>
+<li>The remaining lines show the actual content. Lines with no prefix are context lines present in both versions. Lines prefixed with <code>+</code> belong only to the <code>b</code> version; in this case, the four new instructions added to the recipe.</li>
 </ol>
 <div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -503,7 +507,7 @@ Author: username &lt;useremail@email.com&gt;
 Date:   Sat Apr 25 13:05:57 1953 +1200
 
     Create initial structure for a Guacamole recipe</code></pre>
-<p>We can use <code>git diff</code> with either HEAD~1 or the commit ID to see the differences between the current state of the working file and the referenced commit.</p>
+<p>We can use <code>git diff</code> with either HEAD/HEAD~# or the commit ID to see the differences between the current state of the working file and the referenced commit.</p>
 <p>For example, let’s use the first commit ID to see the differences between the current state of the working file and that commit (you will need to use yours!):</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff 6d366b34965525200eeb4b2e8ec3252e4f875a34</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>or use the 7 first characters of the commit ID:</p>
@@ -524,7 +528,7 @@ index ad0d963..6249f4c 100644
 <p>Or we can use <code>HEAD</code>. <code>HEAD</code> is a special reference that always points to the most recent commit on the current branch. So, if we want to see the differences between the current state of the working file and the most recent commit, we can use:</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff HEAD</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Our most recent commit is the one we just made, and there are no differences between the current state of the working file and the last commit – so no output!</p>
-<p>Let’s look at the differences between the current state of the working file and the previous commit (the one before the most recent commit). We can use <code>HEAD~1</code> to refer to the commit one before the most recent commit:</p>
+<p>Let’s look at the differences between the current state of the working file and the previous commit (the one before the most recent commit). We can use <code>HEAD~1</code> to refer to the commit <em>one before</em> the most recent commit:</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff HEAD~1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code># Output - same as earlier
 diff --git a/guacamole.qmd b/guacamole.qmd
@@ -539,7 +543,7 @@ index ad0d963..6249f4c 100644
 +2. Finely chop the coriander and red onion
 +3. Add salt and lemon juice to taste  
 +4. Enjoy!</code></pre>
-<p>You can use <code>HEAD~1</code>, <code>HEAD~2</code>, <code>HEAD~3</code> etc. to refer to earlier commits.</p>
+<p>You can use <code>HEAD~1</code>, <code>HEAD~2</code>, <code>HEAD~3</code> etc. to refer to 1 before HEAD, 2 before HEAD, 3 before HEAD, etc.</p>
 </section>
 <section id="restore-files-to-a-previous-state" class="level3">
 <h3 class="anchored" data-anchor-id="restore-files-to-a-previous-state">Restore files to a previous state</h3>
