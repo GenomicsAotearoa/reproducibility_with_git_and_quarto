@@ -495,10 +495,11 @@ ED25519 key fingerprint is SHA256:SOME-KEY-ID
 This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])?</code></pre>
 <p>This is a standard first-connection prompt that happens for any new host.</p>
+<p><strong>You may want to be extra-safe and check the ssh key matches one of <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints">GitHub’s known public ssh keys.</a></strong></p>
 <p>Type <code>yes</code></p>
 <p>Then, you’ll see a message like this.</p>
 <pre><code>Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.</code></pre>
-<p>You may then also get asked for your passphrase:</p>
+<p>If you set a passphrase, you’ll get asked for that now:</p>
 <pre><code>Enter passphrase for key '/Users/username/.ssh/id_ed25519': </code></pre>
 <p>Enter your passphrase, then you should get a success message.</p>
 </div>
