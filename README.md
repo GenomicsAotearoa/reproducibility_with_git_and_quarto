@@ -38,7 +38,7 @@ Finish time: 2:30 pm
 | **BREAK** | 10 mins | 11:20–11:30 am |
 | Pushing local changes to GitHub | 40 mins | 11:30–12:10 pm |
 | **LUNCH** | 50 mins | 12:10–1:00 pm |
-| Branches, pulling and merging | 40 mins | 1:00–1 1:40 pm |
+| Branches, pulling and merging | 40 mins | 1:00–1:40 pm |
 | Collaborating and organising your workflow | 20 mins | 1:40–2:00 pm |
 
 ---
@@ -52,7 +52,7 @@ Finish time: 2:30 pm
 | **BREAK** | 10 mins | 10:25–10:35 am |
 | Code in qmd files | 45 mins | 10:35–11:20 am |
 | **BREAK** | 10 mins | 11:20–11:30 am |
-| Projects: books and websites | 30 mins | 11:30–12:00 am |
+| Projects: books and websites | 30 mins | 11:30–12:00 pm |
 | **LUNCH** | 50 mins | 12:00–12:50 pm |
 | Building our own research portfolio | 50 mins | 12:50–1:40 pm |
 | OPTIONAL: extra time | — | 1:40-2:30 pm |
