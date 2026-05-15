@@ -26,7 +26,7 @@ To get a better understanding of why I am recommending this and what we are tryi
 We are going to take some of the advice from that talk, which says that all of your github should be used to *actively* demonstrate your skills and tell your story, and we are going to compress it down to a single github repo which will convey (or at least introduce) your story. We will Pin this repo so that it's the first thing people see when they visit your github page, and publish it as a working website so that you also have a link you can drop into LinkedIn or Bluesky posts, incorporate into your email signatures, whenever you feel it's appropriate to do some self-marketing. 
 
 
-## Initial setup 
+### Initial setup 
 
 Using skills from yesterday and today's workshops:
 
@@ -36,11 +36,11 @@ Using skills from yesterday and today's workshops:
 
 - Create three .qmd files. For each file, set the YAML header to include an appropriate title and add at least one header and a piece of sample text to each document: 
 
-    - `index.qmd`{style="color:blue"}. Index.qmd will work as the landing page for the site, and could include something like the short blurb found at the top of a CV.
+    - `index.qmd`{style="color:blue"}. Index.qmd will work as the landing page for the site, and could include something like the short blurb found at the top of a CV. 
     
     - `portfolio.qmd`{style="color:blue"}. Portfolio will contain hyperlinks to your work - either to other github repos, publications, google scholar account, LinkedIn account *etc.,* (it will be the definitive, exhaustive set of your work).
     
-    - `research_focus.qmd`{style="color:blue"}. Research_focus.qmd will include a written statement about your focus as a researcher.
+    - `research_focus.qmd`{style="color:blue"}. Research focus will include a written statement about your focus as a researcher.
 
     - Create a `_quarto.yml`{style="color:blue"} file using the template from the previous section. Include `index.qmd`{style="color:blue"} first, then `research_focus.qmd`{style="color:blue"} and then `portfolio.qmd`{style="color:blue"}.  
 
@@ -218,11 +218,24 @@ Below is a curated selection of my key scientific works and contributions to gen
 
 :::
 
-## Refining the site
+### Use RStudio Build to render website
 
-Here we will look at a number of options through the `_quarto.yml`{style="color:blue"} file to improve the look of the website. 
+Now is a good time to show a handy feature of having an RStudio project.  Note that this only works if you made an RStudio project first (we did this in Intial setup).
 
-### Improved navigation and layout
+1. Save all your `.qmd`{style="color:blue"} files and `_quarto.yml`{style="color:blue"} file.
+
+2. Close the RStudio project  
+3. Reopen the RStudio project file (e.,g by clicign on the file `Work-portfolio.Rproj`{style="color:blue"}) to refresh the RStudio session.  
+4. In the top right panel, there should now be a tab **Build**  
+5. Click the Build tab, then click the button **Render website**. The qmd files don't need to be open in RStudio.  
+
+![](images-quarto/quarto-render-02.png)
+
+
+
+
+### Refining the site: improving navigation, layout and features
+
 
 #### Sidebar navigation
 
@@ -277,7 +290,6 @@ Sections are very useful for *e.g.,* a website that focuses on discrete aspects 
 
 :::
 
-### Adding personal details: github icons, footer, light and dark
 
 #### Site icons
 
@@ -300,7 +312,7 @@ Add a footer under the website section with:
 ```bash
   page-footer:
     center:
-      - text: "Built with love and Quarto"
+      - text: "Made with love and Quarto"
         href: https://quarto.org
 ```
 
@@ -316,7 +328,7 @@ theme:
   dark: darkly
 ```
 
-### styles.css
+#### Extra for experts: styles.css
 
 In addition to the pre-built format that themes can provide we can also customise our sites with a `styles.css`{style="color:blue"} file. This a "Cascading Style Sheets" document, which can be used to override all of the Quarto defaults for HTML documents. The .css file is used to manipulate fonts, choose colours, layout, background for code cells, side and navbar aesthetics, table text alignment - *almost every visual aspect* can be changed with a styles.css file. 
 
@@ -535,14 +547,18 @@ The file is not rendered - starting with a `.`{style="color:green"} means that t
 
 ### 2. Render, add, commit, push
 
-First, save all your open `.qmd`{style="color:blue"} files.  Then, click the 'Render' button on **every single `.qmd`{style="color:blue"} file.** This will create a `html`{style="color:blue"} file in `docs/`{style="color:blue"} for each qmd file. 
+First, save all your open `.qmd`{style="color:blue"} and `_quarto.yml`{style="color:blue"} files.  Then either:  
 
-While still in RStudio terminal, run:
+- Click the <KBD>Render website</KBD> button  
+- Click the <KBD>Render</KBD> button on **every single `.qmd`{style="color:blue"} file.** This will create a `html`{style="color:blue"} file in `docs/`{style="color:blue"} for each qmd file.  
+
+
+While in RStudio terminal, run:
 
 ```bash
 git add . 
 ```
-(The `.`{style="color:green"} adds everything, alternatively type: `git add docs`)
+(The `.`{style="color:green"} adds everything in the current directory and subdirectories to the staging area)
 
 
 ```bash
@@ -550,29 +566,27 @@ git commit -m "publish website"
 ```
 
 ```bash
-git push
+git push origin main
 ```
 
-(If you get an error message here, you might need to type `git push origin main`)
+
+> Hint: type `git push -u origin main` to set the upstream as origin main, next time you push you can type only `git push`)
 
 Our new rendered docs should now be stored safely in our repo on the GitHub server. 
 
 ::: {.callout-tip collapse="true"}
-# Is there a faster way to render all my files?
+# Render from the command line
 
-Yes there is!
+You can also render and preview using the command line.
 
-There are two ways you could do this:
+First, install [Quarto CLI tools](https://quarto.org/docs/get-started/). Type `quarto --version` to check.    
 
-**1. Save all files, close RStudio, re-open RStudio.**  
-  a) You will now see a tab appear that says 'Build'.  
-  b) Click the button that says 'Render Website' and all your qmd files in the directory will be rendered. The qmd files don't need to be open in RStudio. Note that this only works if you made an RStudio project first (we did this in  ["Intial setup"](#initial-setup)).
+Commands to type in terminal:  
 
-![](images-quarto/quarto-render-02.png)
-
-**2. Render from the command line**  
-  a) Make sure you have [Quarto CLI tools installed first](https://quarto.org/docs/get-started/). Type `quarto --version` to check.  
-  b) Type `quarto render` in terminal. All qmd files will render. You can confirm this by checking that recent html files have appeared in docs, and by running `quarto preview` in terminal to confirm your website looks how you expect it to. 
+- `quarto render` - renders all qmd files if you have a quarto project.  
+- `quarto render filename.qmd` - render only one file.  
+- `quarto preview` - brings up a preview of your quarto project.   
+- `quarto preview filename.qmd` - preview  only one file.  
 
 :::
 

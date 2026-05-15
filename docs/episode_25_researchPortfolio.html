@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Building our own research portfolio – Reproducibility with Git and Quarto">
 <meta property="og:description" content="">
-<meta property="og:image" content="figures/sidebar_and_sections.png">
+<meta property="og:image" content="images-quarto/quarto-render-02.png">
 <meta property="og:site_name" content="Reproducibility with Git and Quarto">
 </head>
 
@@ -268,22 +268,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#aims" id="toc-aims" class="nav-link active" data-scroll-target="#aims">Aims</a></li>
-  <li><a href="#why-a-portfolio-website" id="toc-why-a-portfolio-website" class="nav-link" data-scroll-target="#why-a-portfolio-website">Why a portfolio website?</a></li>
-  <li><a href="#initial-setup" id="toc-initial-setup" class="nav-link" data-scroll-target="#initial-setup">Initial setup</a></li>
-  <li><a href="#refining-the-site" id="toc-refining-the-site" class="nav-link" data-scroll-target="#refining-the-site">Refining the site</a>
+  <li><a href="#why-a-portfolio-website" id="toc-why-a-portfolio-website" class="nav-link" data-scroll-target="#why-a-portfolio-website">Why a portfolio website?</a>
   <ul>
-  <li><a href="#improved-navigation-and-layout" id="toc-improved-navigation-and-layout" class="nav-link" data-scroll-target="#improved-navigation-and-layout">Improved navigation and layout</a>
+  <li><a href="#initial-setup" id="toc-initial-setup" class="nav-link" data-scroll-target="#initial-setup">Initial setup</a></li>
+  <li><a href="#use-rstudio-build-to-render-website" id="toc-use-rstudio-build-to-render-website" class="nav-link" data-scroll-target="#use-rstudio-build-to-render-website">Use RStudio Build to render website</a></li>
+  <li><a href="#refining-the-site-improving-navigation-layout-and-features" id="toc-refining-the-site-improving-navigation-layout-and-features" class="nav-link" data-scroll-target="#refining-the-site-improving-navigation-layout-and-features">Refining the site: improving navigation, layout and features</a>
   <ul class="collapse">
   <li><a href="#sidebar-navigation" id="toc-sidebar-navigation" class="nav-link" data-scroll-target="#sidebar-navigation">Sidebar navigation</a></li>
   <li><a href="#sections" id="toc-sections" class="nav-link" data-scroll-target="#sections">Sections</a></li>
-  </ul></li>
-  <li><a href="#adding-personal-details-github-icons-footer-light-and-dark" id="toc-adding-personal-details-github-icons-footer-light-and-dark" class="nav-link" data-scroll-target="#adding-personal-details-github-icons-footer-light-and-dark">Adding personal details: github icons, footer, light and dark</a>
-  <ul class="collapse">
   <li><a href="#site-icons" id="toc-site-icons" class="nav-link" data-scroll-target="#site-icons">Site icons</a></li>
   <li><a href="#footer" id="toc-footer" class="nav-link" data-scroll-target="#footer">Footer</a></li>
   <li><a href="#themes-light-and-dark" id="toc-themes-light-and-dark" class="nav-link" data-scroll-target="#themes-light-and-dark">Themes light and dark</a></li>
+  <li><a href="#extra-for-experts-styles.css" id="toc-extra-for-experts-styles.css" class="nav-link" data-scroll-target="#extra-for-experts-styles.css">Extra for experts: styles.css</a></li>
   </ul></li>
-  <li><a href="#styles.css" id="toc-styles.css" class="nav-link" data-scroll-target="#styles.css">styles.css</a></li>
   </ul></li>
   <li><a href="#publishing-the-site-using-github-pages" id="toc-publishing-the-site-using-github-pages" class="nav-link" data-scroll-target="#publishing-the-site-using-github-pages">Publishing the site using GitHub Pages</a>
   <ul>
@@ -334,9 +331,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Aside from github repos it can be useful to create websites as a way to market either yourself and your work, or the work of your lab group. Quarto can make this easy. <a href="https://jadeyryan.com/">Jadey Ryan</a> has a great website that really showcases what a Quarto website can look like.</p>
 <p>To get a better understanding of why I am recommending this and what we are trying to do, we recommend this talk from posit::conf(2024) titled “<a href="https://www.youtube.com/watch?v=R-bPjavai5A&amp;list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn&amp;index=20">Github - How to tell your professional story</a>”. In this talk, Dr.&nbsp;Abigail Haddad outlines how Github can be used to demonstrate not just the raw coding skills you use frequently, but also the auxilliary skills that define how you work - your problem solving skills, your practices, and how you communicate.</p>
 <p>We are going to take some of the advice from that talk, which says that all of your github should be used to <em>actively</em> demonstrate your skills and tell your story, and we are going to compress it down to a single github repo which will convey (or at least introduce) your story. We will Pin this repo so that it’s the first thing people see when they visit your github page, and publish it as a working website so that you also have a link you can drop into LinkedIn or Bluesky posts, incorporate into your email signatures, whenever you feel it’s appropriate to do some self-marketing.</p>
-</section>
-<section id="initial-setup" class="level2">
-<h2 class="anchored" data-anchor-id="initial-setup">Initial setup</h2>
+<section id="initial-setup" class="level3">
+<h3 class="anchored" data-anchor-id="initial-setup">Initial setup</h3>
 <p>Using skills from yesterday and today’s workshops:</p>
 <ul>
 <li><p>Initiate a new, public github repo with a name like “Work Portfolio” or equivalent.</p></li>
@@ -345,7 +341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><p><code style="color:blue">index.qmd</code>. Index.qmd will work as the landing page for the site, and could include something like the short blurb found at the top of a CV.</p></li>
 <li><p><code style="color:blue">portfolio.qmd</code>. Portfolio will contain hyperlinks to your work - either to other github repos, publications, google scholar account, LinkedIn account <em>etc.,</em> (it will be the definitive, exhaustive set of your work).</p></li>
-<li><p><code style="color:blue">research_focus.qmd</code>. Research_focus.qmd will include a written statement about your focus as a researcher.</p></li>
+<li><p><code style="color:blue">research_focus.qmd</code>. Research focus will include a written statement about your focus as a researcher.</p></li>
 <li><p>Create a <code style="color:blue">_quarto.yml</code> file using the template from the previous section. Include <code style="color:blue">index.qmd</code> first, then <code style="color:blue">research_focus.qmd</code> and then <code style="color:blue">portfolio.qmd</code>.</p></li>
 </ul></li>
 </ul>
@@ -560,11 +556,23 @@ portfolio.qmd
 </div>
 </div>
 </section>
-<section id="refining-the-site" class="level2">
-<h2 class="anchored" data-anchor-id="refining-the-site">Refining the site</h2>
-<p>Here we will look at a number of options through the <code style="color:blue">_quarto.yml</code> file to improve the look of the website.</p>
-<section id="improved-navigation-and-layout" class="level3">
-<h3 class="anchored" data-anchor-id="improved-navigation-and-layout">Improved navigation and layout</h3>
+<section id="use-rstudio-build-to-render-website" class="level3">
+<h3 class="anchored" data-anchor-id="use-rstudio-build-to-render-website">Use RStudio Build to render website</h3>
+<p>Now is a good time to show a handy feature of having an RStudio project. Note that this only works if you made an RStudio project first (we did this in Intial setup).</p>
+<ol type="1">
+<li><p>Save all your <code style="color:blue">.qmd</code> files and <code style="color:blue">_quarto.yml</code> file.</p></li>
+<li><p>Close the RStudio project<br>
+</p></li>
+<li><p>Reopen the RStudio project file (e.,g by clicign on the file <code style="color:blue">Work-portfolio.Rproj</code>) to refresh the RStudio session.<br>
+</p></li>
+<li><p>In the top right panel, there should now be a tab <strong>Build</strong><br>
+</p></li>
+<li><p>Click the Build tab, then click the button <strong>Render website</strong>. The qmd files don’t need to be open in RStudio.</p></li>
+</ol>
+<p><img src="images-quarto/quarto-render-02.png" class="img-fluid"></p>
+</section>
+<section id="refining-the-site-improving-navigation-layout-and-features" class="level3">
+<h3 class="anchored" data-anchor-id="refining-the-site-improving-navigation-layout-and-features">Refining the site: improving navigation, layout and features</h3>
 <section id="sidebar-navigation" class="level4">
 <h4 class="anchored" data-anchor-id="sidebar-navigation">Sidebar navigation</h4>
 <p>In the last section we added a navbar along the top of the page for website navigation. An alternative to this is sidebar navigation:</p>
@@ -635,9 +643,6 @@ Example sidebar and section .yml
 </div>
 </div>
 </section>
-</section>
-<section id="adding-personal-details-github-icons-footer-light-and-dark" class="level3">
-<h3 class="anchored" data-anchor-id="adding-personal-details-github-icons-footer-light-and-dark">Adding personal details: github icons, footer, light and dark</h3>
 <section id="site-icons" class="level4">
 <h4 class="anchored" data-anchor-id="site-icons">Site icons</h4>
 <p>We can add a range of icons to our navigation menu and provide links for these icons. This provides an easy and clear way for site visitors to view your other, more commonly used accounts. Commonly used icons include github/linkedIn/bluesky, with <a href="https://icons.getbootstrap.com/">thousands of icons</a> available for use.</p>
@@ -653,7 +658,7 @@ Example sidebar and section .yml
 <p>Add a footer under the website section with:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">page-footer:</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">center:</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> text: <span class="st">"Built with love and Quarto"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> text: <span class="st">"Made with love and Quarto"</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="ex">href:</span> https://quarto.org</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="themes-light-and-dark" class="level4">
@@ -664,9 +669,8 @@ Example sidebar and section .yml
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">light:</span> flatly</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">dark:</span> darkly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</section>
-<section id="styles.css" class="level3">
-<h3 class="anchored" data-anchor-id="styles.css">styles.css</h3>
+<section id="extra-for-experts-styles.css" class="level4">
+<h4 class="anchored" data-anchor-id="extra-for-experts-styles.css">Extra for experts: styles.css</h4>
 <p>In addition to the pre-built format that themes can provide we can also customise our sites with a <code style="color:blue">styles.css</code> file. This a “Cascading Style Sheets” document, which can be used to override all of the Quarto defaults for HTML documents. The .css file is used to manipulate fonts, choose colours, layout, background for code cells, side and navbar aesthetics, table text alignment - <em>almost every visual aspect</em> can be changed with a styles.css file.</p>
 <p>The <code style="color:blue">styles.css</code> file is written in css - it is not Quarto specific, and requires reasonably detailed knowledge. We recommend using templates sourced online or chatGPT equivalents for building a <code style="color:blue">styles.css</code> template which you can then work from.</p>
 <p>Styles.css is stored in the top level of the directory. In the <code style="color:blue">_quarto.yml</code> document under <code>format</code>, we can add a new line at the same indentation level as theme and added <code>css: styles.css</code> (remove the theme argument).</p>
@@ -866,6 +870,7 @@ Example styles.css
 </div>
 </section>
 </section>
+</section>
 <section id="publishing-the-site-using-github-pages" class="level2">
 <h2 class="anchored" data-anchor-id="publishing-the-site-using-github-pages">Publishing the site using GitHub Pages</h2>
 <p>To publish a website - that is, to take it from the local-only html file to a hosted site that is accessible via url - <a href="https://quarto.org/docs/publishing/">there are a number of options</a>. Today we will focus on publishing through GitHub Pages. Within GitHub Pages there are three options for publishing (render to docs and publish, using the quarto publish command, or using a Github Action). We will use the simplest option, render to docs and then instruct GitHub to publish from the docs directory.</p>
@@ -880,13 +885,20 @@ Example styles.css
 </section>
 <section id="render-add-commit-push" class="level3">
 <h3 class="anchored" data-anchor-id="render-add-commit-push">2. Render, add, commit, push</h3>
-<p>First, save all your open <code style="color:blue">.qmd</code> files. Then, click the ‘Render’ button on <strong>every single <code style="color:blue">.qmd</code> file.</strong> This will create a <code style="color:blue">html</code> file in <code style="color:blue">docs/</code> for each qmd file.</p>
-<p>While still in RStudio terminal, run:</p>
+<p>First, save all your open <code style="color:blue">.qmd</code> and <code style="color:blue">_quarto.yml</code> files. Then either:</p>
+<ul>
+<li>Click the <kbd>Render website</kbd> button<br>
+</li>
+<li>Click the <kbd>Render</kbd> button on <strong>every single <code style="color:blue">.qmd</code> file.</strong> This will create a <code style="color:blue">html</code> file in <code style="color:blue">docs/</code> for each qmd file.</li>
+</ul>
+<p>While in RStudio terminal, run:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add . </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>(The <code style="color:green">.</code> adds everything, alternatively type: <code>git add docs</code>)</p>
+<p>(The <code style="color:green">.</code> adds everything in the current directory and subdirectories to the staging area)</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"publish website"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>(If you get an error message here, you might need to type <code>git push origin main</code>)</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>Hint: type <code>git push -u origin main</code> to set the upstream as origin main, next time you push you can type only <code>git push</code>)</p>
+</blockquote>
 <p>Our new rendered docs should now be stored safely in our repo on the GitHub server.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
@@ -894,21 +906,24 @@ Example styles.css
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Is there a faster way to render all my files?
+Render from the command line
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Yes there is!</p>
-<p>There are two ways you could do this:</p>
-<p><strong>1. Save all files, close RStudio, re-open RStudio.</strong><br>
-a) You will now see a tab appear that says ‘Build’.<br>
-b) Click the button that says ‘Render Website’ and all your qmd files in the directory will be rendered. The qmd files don’t need to be open in RStudio. Note that this only works if you made an RStudio project first (we did this in <a href="#initial-setup">“Intial setup”</a>).</p>
-<p><img src="images-quarto/quarto-render-02.png" class="img-fluid"></p>
-<p><strong>2. Render from the command line</strong><br>
-a) Make sure you have <a href="https://quarto.org/docs/get-started/">Quarto CLI tools installed first</a>. Type <code>quarto --version</code> to check.<br>
-b) Type <code>quarto render</code> in terminal. All qmd files will render. You can confirm this by checking that recent html files have appeared in docs, and by running <code>quarto preview</code> in terminal to confirm your website looks how you expect it to.</p>
+<p>You can also render and preview using the command line.</p>
+<p>First, install <a href="https://quarto.org/docs/get-started/">Quarto CLI tools</a>. Type <code>quarto --version</code> to check.</p>
+<p>Commands to type in terminal:</p>
+<ul>
+<li><code>quarto render</code> - renders all qmd files if you have a quarto project.<br>
+</li>
+<li><code>quarto render filename.qmd</code> - render only one file.<br>
+</li>
+<li><code>quarto preview</code> - brings up a preview of your quarto project.<br>
+</li>
+<li><code>quarto preview filename.qmd</code> - preview only one file.</li>
+</ul>
 </div>
 </div>
 </div>

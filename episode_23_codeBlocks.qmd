@@ -52,7 +52,7 @@ VS Code (with the Quarto extension):
 Mac: <KBD>Command</KBD> + <KBD>Shift</KBD> + <KBD>I</KBD>  
 Windows/Linux: <KBD>Ctrl</KBD> + <KBD>Shift</KBD> + <KBD>I</KBD>  
 
-#### Exercise: Insert a code cell (5 min)
+#### EXERCISE 🧠🏋️‍♀️: Insert a code cell (2 min)
 
 ```{r}
 #| message: false
@@ -234,12 +234,11 @@ Here, the `@fig-penguinBills`{style="color:green"} automatically gets converted 
 For cross referencing tables it is very similar to figures, but instead we use the `tbl` prefix, and we can also add a Table caption using `#| tbl-cap:` For example:
 
 ```{r}
-#| message: false
-#| label: 'tbl-penguin-mass-summary'
-#| tbl-cap: 'Penguin Mean Body Weights'
+#| label: tbl-penguin-mass-summary
+#| tbl-cap: Penguin Mean Body Weights
 
-#| label: 'tbl-penguin-mass-summary'
-#| tbl-cap: 'Penguin Mean Body Weights'
+#| label: tbl-penguin-mass-summary
+#| tbl-cap: Penguin Mean Body Weights
 
 #install.packages("gt")
 library(dplyr)
@@ -272,7 +271,7 @@ We can suppress warning and other messages from code outputs by adding:
 
 `#| message: false` will suppress all messages, for example attached packages and masked package messages.
 
-#####  Exercise: remove messages and warnings (2 min)
+#####  EXERCISE 🧠🏋️‍♀️: remove messages and warnings (2 min)
 In the above examples for tables and figures we saw both warning and messages. Try adding either `#| warning: false` or `#| message:false` to the ggplot code cells above, and re-render the document to confirm warnings/messages have disappeared.
 
 ::: {.callout-note collapse="true"}
@@ -280,12 +279,14 @@ In the above examples for tables and figures we saw both warning and messages. T
 
 **Figure without warning:**
 
+This hides the warning we saw before about the 2 rows containing missing values
+
 ```{r}
 #| label: fig-penguinBillsNoWarning
 #| warning: false
 
-#| label: fig-penguinBillsNoWarning
 #| warning: false
+#| label: fig-penguinBills
 
 library(ggplot2)
 ggplot(data = penguins,
@@ -296,17 +297,22 @@ ggplot(data = penguins,
          geom_point()
 ```
 
-Note that we cannot use the same label twice within a document, so we need to use a new label (penguinBillsNoWarning) or the render will fail. 
 
 
 **Table without message:**
 
+This hides the messages from loading dplyr
+
 ```{r}
 #| message: false 
-#| label: 'tbl-penguin-mass-summary-NoMessage'
+#| label: tbl-penguin-mass-summary-NoMessage
+#| tbl-cap: Penguin Mean Body Weights
 
-#| message: false # hide the messages from loading dplyr
-#| label: 'tbl-penguin-mass-summary-NoMessage'
+
+#| message: false 
+#| label: tbl-penguin-mass-summary
+#| tbl-cap: Penguin Mean Body Weights
+
 
 library(dplyr)
 library(gt)
@@ -325,6 +331,9 @@ penguins |>
 
 :::
 
+> Note: You cannot use the same label twice within a document. 
+
+
 ### Set figure dimensions
 
 `#| fig-width: x` and `#| fig-length: y` can be used to manually set the dimension of embedded figures, in inches. 
@@ -333,32 +342,41 @@ penguins |>
 
 Inline code refers to code that is used within the document but is not stored separately in a code cell. The purpose of inline code is to embed the output directly into the document text. 
 
-For example, if we wanted to describe the mean bill length for the Adelie species of penguins in the penguins object, we could manually calculate the value and then add a written statement:
+For example, if we wanted to describe the mean bill length for the Adelie species of penguins in the penguins object, we could manually calculate the value:
 
 ```{r}
-round(mean(na.omit(penguins$bill_length_mm, na.rm = TRUE)),2)
-# The mean bill length of penguins in the dataset is 43.92mm.
+round(mean(na.omit(penguins$bill_length_mm)),2)
+```
+
+and then add a written statement:
+
+```bash
+The mean bill length of penguins in the dataset is 43.92mm.
 ```
 
 To streamline the above with inline code we need to do three things:
 
 1. Write the text statement and open a set of backticks (\`). 
 
-2. Specify the language (in this case, R).
+2. Specify the language (in this case, R), immediately after the first backtick, then add a space.  
 
 3. Include the code to be evaluated. 
 
-**This is demonstrated below, using quotation marks in place of backticks so that it is human readable:**
+**This is demonstrated below as inline code:**
 
-```bash
-The mean bill length of penguins in the dataset is "r round(mean(na.omit(penguins$bill_length_mm, na.rm = TRUE)),2)"mm.
+```{r}
+#| eval: false
+
+The mean bill length of penguins in the dataset is `r round(mean(na.omit(penguins$bill_length_mm)),2)`mm.
 ```
 
-**The same line of code above but with backticks in place of quotation marks is rendered as:**
+**The same line of code above will render as:**
 
 ```bash
-The mean bill length of penguins in the dataset is `r round(mean(na.omit(penguins$bill_length_mm, na.rm = TRUE)),2)`mm.
+The mean bill length of penguins in the dataset is `r round(mean(na.omit(penguins$bill_length_mm)),2)`mm.
 ```
+
+
 
 ### Why use inline code? 
 

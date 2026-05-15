@@ -130,7 +130,7 @@ An example `_quarto.yml`{style="color:blue"}  file looks like:
 Remember, the _quarto.yml file is essentially a YAML header for the whole document and is very fussy about indentation, spacing (between key-value pairs), and all format arguments.
 
 
-#### **Exercise:** Create your own _quarto.yml, add themes and options (8 min)
+#### **EXERCISE 🧠🏋️‍♀️:** Create your own _quarto.yml, add themes and options (5 min)
 
 1. Create a text document in RStudio
 2. Copy-paste the following text (change file names to your file names!):
