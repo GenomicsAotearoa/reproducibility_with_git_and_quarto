@@ -64,6 +64,28 @@ If you get a version number as an output, you are good to go.
 
 > **Note:** If it is not already installed, [follow instructions here for macOS](https://git-scm.com/downloads/mac)  
 
+::: {.callout-important collapse="true"}
+# xcode-select: No developer tools were found error?
+
+This message means Xcode Command Line Tools aren't installed on your Mac. Many tools (like git, compilers, make, etc.) depend on them.
+
+Fix this by running the following in Terminal:
+
+```bash
+xcode-select --install
+```
+
+To verify it worked:
+
+```bash
+xcode-select -p
+# Should output something like: /Library/Developer/CommandLineTools
+```
+
+Alternatively, XCode Command Line Tools can be installed using [Homebrew](https://mac.install.guide/commandlinetools/3)
+
+:::
+
 ##### **Windows:**  
 
 Follow the "Installing Git for Windows" instructions [here on the software carpentry page](https://carpentries.github.io/workshop-template/install_instructions/#the-bash-shell) (Instructions may be hiding under "The Bash Shell" section, tab for "Git for Windows".)
