@@ -20,7 +20,7 @@ Finish time: 2:30 pm
 
 **DAY 2**  
 Start time: 9:30 am  
-Finish time: 12:30 pm  
+Finish time: 2:30 pm  
 
 
 ## Workshop Schedule
@@ -34,14 +34,12 @@ Finish time: 12:30 pm
 | Setting up Git | 10 mins | 10:00–10:10 am |
 | Create a repository | 10 mins | 10:10–10:20 am |
 | **BREAK** | 10 mins | 10:20–10:30 am |
-| Tracking, adding and committing changes | 40 mins | 10:30–11:10 am |
-| Pushing local changes to GitHub | 20 mins | 11:10–11:30 am |
-| **BREAK** | 10 mins | 11:30–11:40 am |
-| Pushing local changes to GitHub | … | 11:40–12:10 pm |
-| Branches, pulling and merging | 50 mins | 12:10–12:30 pm |
-| **LUNCH** | 45 mins | 12:30–1:15 pm |
-| Branches, pulling and merging | … | 1:15–1:45 pm |
-| Collaborating and organising your workflow | 45 mins | 1:45–2:30 pm |
+| Tracking, adding, committing and restoring changes | 50 mins | 10:30–11:20 am |
+| **BREAK** | 10 mins | 11:20–11:30 am |
+| Pushing local changes to GitHub | 40 mins | 11:30–12:10 pm |
+| **LUNCH** | 50 mins | 12:10–1:00 pm |
+| Branches, pulling and merging | 40 mins | 1:00–1 1:40 pm |
+| Collaborating and organising your workflow | 20 mins | 1:40–2:00 pm |
 
 ---
 
@@ -50,13 +48,11 @@ Finish time: 12:30 pm
 | **Episode** | **Duration** | **Approx. Time** |
 |:--|:--|:--|
 | Introduction to Quarto | 10 mins | 9:30–9:40 am |
-| Getting started | 30 mins | 9:40–10:10 am |
-| Code in qmd files | 40 mins | 10:10–10:40 am |
-| **BREAK** | 10 mins | 10:40–10:50 am |
-| Code in qmd files | … | 10:50–11:00 am |
-| Projects: books and websites | 40 mins | 11:00–11:30 am |
-| **BREAK** | 10 mins | 11:30–11:40 am |
-| Projects: books and websites | … | 11:40–11:50 am |
-| Building our own research portfolio | 40 mins | 11:50–12:30 pm |
-| **LUNCH** | 1 hr | 12:30–1:30 pm |
-| OPTIONAL: free-form discussion | — | 1:30 pm |
+| Getting started | 45 mins | 9:40–10:25 am |
+| **BREAK** | 10 mins | 10:25–10:35 am |
+| Code in qmd files | 45 mins | 10:35–11:20 am |
+| **BREAK** | 10 mins | 11:20–11:30 am |
+| Projects: books and websites | 30 mins | 11:30–12:00 am |
+| **LUNCH** | 50 mins | 12:00–12:50 pm |
+| Building our own research portfolio | 50 mins | 12:50–1:40 pm |
+| OPTIONAL: extra time | — | 1:40-2:30 pm |
