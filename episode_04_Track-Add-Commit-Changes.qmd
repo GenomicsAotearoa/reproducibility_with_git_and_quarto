@@ -21,13 +21,13 @@ First let’s make sure we’re still in the right directory. You should be in t
 cd ~/Desktop/recipes
 ```
 
-Let’s create a file called `guacamole.qmd`{style="color:blue"} that contains the basic structure of our first recipe. We’ll use nano to edit the file; you can use whatever editor you like. In particular, this does not have to be the core.editor you set globally earlier. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out [“Which Editor?”](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in The Carpentries Unix Shell lesson.
+Let’s create a file called `guacamole.md`{style="color:blue"} that contains the basic structure of our first recipe. We’ll use nano to edit the file; you can use whatever editor you like. In particular, this does not have to be the core.editor you set globally earlier. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out [“Which Editor?”](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in The Carpentries Unix Shell lesson.
 
 ```bash
-nano guacamole.qmd
+nano guacamole.md
 ```
 
-Put some text in your `guacamole.qmd`{style="color:blue"} file, for example:   
+Put some text in your `guacamole.md`{style="color:blue"} file, for example:   
 *(I am leaving instructions blank here to add in an example later of file modification)*
 
 ```
@@ -63,7 +63,7 @@ No commits yet
 Untracked files:
    (use "git add <file>..." to include in what will be committed)
 
-	guacamole.qmd
+	guacamole.md
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -71,7 +71,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 The “untracked files” message means that there’s a file in the directory that Git isn’t keeping track of. We can tell Git to track a file using `git add`:
 
 ```bash
-git add guacamole.qmd
+git add guacamole.md
 ```
 
 and then check that the right thing happened:
@@ -89,10 +89,10 @@ No commits yet
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
-	new file:   guacamole.qmd
+	new file:   guacamole.md
 ```
 
-Git now knows that it’s supposed to keep track of guacamole.qmd, but it hasn’t recorded these changes as a commit yet. The file is in what is called the 'staging area'.
+Git now knows that it’s supposed to keep track of guacamole.md, but it hasn’t recorded these changes as a commit yet. The file is in what is called the 'staging area'.
 
 ::: {.callout-note collapse="false"}
 ## What is the staging area?
@@ -135,7 +135,7 @@ it tells us everything is up to date. If we want to know what we’ve done recen
 Now suppose we add more information to the file. (Again, we’ll edit with `nano` and then `cat` the file to show its contents; you may use a different editor, and don’t need to `cat`)
 
 ```bash
-nano guacamole.qmd
+nano guacamole.md
 ```
 
 Add some text (here I have now added instructions):
@@ -169,7 +169,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
 
-	modified:   guacamole.qmd
+	modified:   guacamole.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -182,7 +182,7 @@ The last line is the key phrase: “no changes added to commit”. We have chang
 We can also add multiple files at once to the staging area, by specifiying all the files in one command:
 
 ```bash
-git add guacamole.qmd groceries.qmd
+git add guacamole.md groceries.md
 ```
 
 Or, by using `git add .` to add all files (new, modified, deleted files) in the **current directory and subdirectories** to the staging area:
@@ -201,12 +201,12 @@ If you need to delete a file that has already been added to the staging area, (w
 
 ```bash
 # stops tracking and deletes the file
-git rm file.qmd 
+git rm file.md 
 ```
 
 ```bash
 # stops tracking but keeps the file
-git rm --cached file.qmd 
+git rm --cached file.md 
 ```
 
 Don't forget to then `commit` your staged changes!
@@ -223,10 +223,10 @@ git diff
 ```
 
 ```
-diff --git a/guacamole.qmd b/guacamole.qmd
+diff --git a/guacamole.md b/guacamole.md
 index ad0d963..6249f4c 100644
---- a/guacamole.qmd
-+++ b/guacamole.qmd
+--- a/guacamole.md
++++ b/guacamole.md
 @@ -8,3 +8,7 @@
  - Salt  
  
@@ -247,7 +247,7 @@ The output is cryptic because it is actually a series of commands for tools like
 5. The remaining lines show the actual content. Lines with no prefix are context lines present in both versions. Lines prefixed with `+` belong only to the `b` version; in this case, the four new instructions added to the recipe.
 
 ```bash
-git add guacamole.qmd
+git add guacamole.md
 ```
 
 ```bash
@@ -268,10 +268,10 @@ The output will now be the same as we saw earlier:
 
 
 ```bash
-diff --git a/guacamole.qmd b/guacamole.qmd
+diff --git a/guacamole.md b/guacamole.md
 index ad0d963..6249f4c 100644
---- a/guacamole.qmd
-+++ b/guacamole.qmd
+--- a/guacamole.md
++++ b/guacamole.md
 @@ -8,3 +8,7 @@
  - Salt  
  
@@ -335,10 +335,10 @@ git diff 6d366b3
 
 ```
 # Output - same as earlier
-diff --git a/guacamole.qmd b/guacamole.qmd
+diff --git a/guacamole.md b/guacamole.md
 index ad0d963..6249f4c 100644
---- a/guacamole.qmd
-+++ b/guacamole.qmd
+--- a/guacamole.md
++++ b/guacamole.md
 @@ -8,3 +8,7 @@
  - Salt  
  
@@ -365,10 +365,10 @@ git diff HEAD~1
 
 ```
 # Output - same as earlier
-diff --git a/guacamole.qmd b/guacamole.qmd
+diff --git a/guacamole.md b/guacamole.md
 index ad0d963..6249f4c 100644
---- a/guacamole.qmd
-+++ b/guacamole.qmd
+--- a/guacamole.md
++++ b/guacamole.md
 @@ -8,3 +8,7 @@
  - Salt  
  
@@ -391,16 +391,16 @@ We use `git restore` to do this. To restore a file to the state it was in at a s
 git restore --source <commit-id> <filename>
 ```
 
-Let's restore `guacamole.qmd` to how it looked at our first commit — before we added the instructions. We can use the first 7 characters of the commit ID:
+Let's restore `guacamole.md` to how it looked at our first commit — before we added the instructions. We can use the first 7 characters of the commit ID:
 
 ```bash
-git restore --source 6d366b3 guacamole.qmd
+git restore --source 6d366b3 guacamole.md
 ```
 
-Now open  or `cat` `guacamole.qmd` and you'll see the instructions section is gone — the file is back to just the ingredients list. Git hasn't deleted any history, it has simply replaced the working file with the older version.
+Now open  or `cat` `guacamole.md` and you'll see the instructions section is gone — the file is back to just the ingredients list. Git hasn't deleted any history, it has simply replaced the working file with the older version.
 
 ```bash
-cat guacamole.qmd
+cat guacamole.md
 ```
 
 ```
@@ -423,10 +423,10 @@ git diff HEAD
 ```
 
 ```
-diff --git a/guacamole.qmd b/guacamole.qmd
+diff --git a/guacamole.md b/guacamole.md
 index 6249f4c..ad0d963 100644
---- a/guacamole.qmd
-+++ b/guacamole.qmd
+--- a/guacamole.md
++++ b/guacamole.md
 @@ -8,7 +8,3 @@
  - Salt  
  
@@ -442,7 +442,7 @@ The `-` markers show that the instructions lines are in the HEAD version of the 
 Now let's restore the file back to the most recent commit so we can continue working. We can use `HEAD` to refer to the most recent commit:
 
 ```bash
-git restore --source HEAD guacamole.qmd
+git restore --source HEAD guacamole.md
 ```
 
 We can confirm there are no differences between the working file and the latest commit:
@@ -451,10 +451,10 @@ We can confirm there are no differences between the working file and the latest 
 git diff HEAD
 ```
 
-No output — our working file matches the latest commit and we're ready to continue. We can `cat` our guacamole.qmd to confirm our instructions are back:
+No output — our working file matches the latest commit and we're ready to continue. We can `cat` our guacamole.md to confirm our instructions are back:
 
 ```bash
-cat guacamole.qmd
+cat guacamole.md
 ```
 
 ```

@@ -54,4 +54,5 @@ format:
     css: styles.css
     navigation: true
     page-navigation: true
+    link-external-newwindow: true
 

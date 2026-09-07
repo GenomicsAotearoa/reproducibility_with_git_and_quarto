@@ -400,7 +400,7 @@ If you run <code>git checkout</code> with no arguments, it will show you which f
 * test-new-recipe</code></pre>
 <p>And you can see we are now on a new branch, indicated with an asterisk. We haven’t pushed our changes yet to the GitHub server, so you won’t see the branch there yet. Let’s make some modifications, then push those up to the server.</p>
 <p>Open your guacamole recipe with <code>nano</code> and make a new change to the recipe.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>I’m going to edit mine to add lime juice, you can do any change you like :)</p>
 <pre><code># Guacamole recipe
 
@@ -418,12 +418,12 @@ If you run <code>git checkout</code> with no arguments, it will show you which f
 3. Add salt,lemon and lime juice to taste  
 4. Enjoy!</code></pre>
 <p>Now, add, commit and push your new changes:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.qmd</span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.md</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>On branch test-new-recipe
 Changes to be committed:
   (use "git restore --staged &lt;file&gt;..." to unstage)
-        modified:   guacamole.qmd</code></pre>
+        modified:   guacamole.md</code></pre>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"recipe updates"</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin test-new-recipe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>Enumerating objects: 5, done.
@@ -453,7 +453,7 @@ To github.com:username/recipes.git
 <p>Optionally add a comment, or otherwise click ‘Merge pull request’ to merge your <code style="color:darkorange">test-new-recipe</code> branch into <code style="color:darkorange">main</code>. GitHub will give you a default commit message, which you can leave as is. Click ‘Confirm merge’.</p>
 <p><img src="images_git/github-pullrequest-04.png" class="img-fluid"></p>
 <p>It’s good practice to ‘trim your tree’ and remove branches that you no longer need. You can click through to branches and safely delete the <code style="color:darkorange">test-new-recipe</code> branch.</p>
-<p>Have a look back at your main repo now. You’ll see the commit message has updated to the most recent one you used when you committed the changes to <code style="color:blue">guacamole.qmd</code> on the new branch.</p>
+<p>Have a look back at your main repo now. You’ll see the commit message has updated to the most recent one you used when you committed the changes to <code style="color:blue">guacamole.md</code> on the new branch.</p>
 <p><img src="images_git/github-pullrequest-05.png" class="img-fluid"></p>
 <p>By default, other people cannot make branches directly on your repository, unless you have added them as collaborators. You can assign roles to collaborators to control if they are able to push directly onto main, or if you want to personally approve all pull requests. Other people <strong>can</strong> however fork your public repository (making a copy on their own account) and submit a pull request back to your original repository, which you can then decide to merge or not. You can switch your repository to private in settings – note that you cannot turn private repositories into a website via GitHub pages.</p>
 </section>
@@ -462,12 +462,12 @@ To github.com:username/recipes.git
 <h2 class="anchored" data-anchor-id="merge-conflicts">Merge conflicts</h2>
 <p>Merge conflicts happen when the remote repository has changes that have not been incorporated into the local repository. Git will reject the push/pull if it detects merge conflicts, and you may then need to tell Git how to resolve these. Further reading on merge conflicts in the <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-conflicts">Git documentation here.</a></p>
 <p>Let’s create a merge conflict here and see how we can resolve it with git.</p>
-<p>After we merged our <code style="color:darkorange">test-new-recipe</code> branch into <code style="color:darkorange">main</code>, we now have a situation where the <code style="color:darkorange">main</code> branch has changes that are not in our local repository. If we try to push or pull any changes we make to <code style="color:blue">guacamole.qmd</code> now, we will get an error message about merge conflicts.</p>
-<p>First, let’s swap to <code style="color:darkorange">main</code> branch and make a change to <code style="color:blue">guacamole.qmd</code>:</p>
+<p>After we merged our <code style="color:darkorange">test-new-recipe</code> branch into <code style="color:darkorange">main</code>, we now have a situation where the <code style="color:darkorange">main</code> branch has changes that are not in our local repository. If we try to push or pull any changes we make to <code style="color:blue">guacamole.md</code> now, we will get an error message about merge conflicts.</p>
+<p>First, let’s swap to <code style="color:darkorange">main</code> branch and make a change to <code style="color:blue">guacamole.md</code>:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>Switched to branch 'main'</code></pre>
 <p>Let’s sanity check our local guacamole recipe file to see what it looks like locally:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> guacamole.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code># Guacamole recipe
 
 ## Ingredients
@@ -484,7 +484,7 @@ To github.com:username/recipes.git
 4. Enjoy! </code></pre>
 <p>The lime juice we added in the <code style="color:darkorange">test-new-recipe</code> branch is not in our local <code style="color:darkorange">main</code> branch, even though it is in the <code style="color:darkorange">main</code> branch on the server. This is because we haven’t pulled the changes down to our local computer yet.</p>
 <p>Before we pull the changes down, let’s make a change to our local version to create a conflict.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Make a change to the file, e.g.&nbsp;add “Pepper” to the ingredients list, then save and exit.</p>
 <pre><code># Guacamole recipe
 
@@ -503,7 +503,7 @@ To github.com:username/recipes.git
 4. Enjoy!</code></pre>
 <p>Now we have <strong><em>pepper in our local version of the file</em></strong>, but not in the version on the server. The version <strong><em>on the server has lime juice</em></strong>, but NOT pepper. This is a <strong>merge conflict.</strong></p>
 <p>Let’s try pushing this change to the server:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.qmd</span>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.md</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"add pepper to guacamole recipe"</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>To github.com:username/recipes.git
@@ -559,8 +559,8 @@ Merge conflict
 <div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>From github.com:username/recipes
  * branch            main       -&gt; FETCH_HEAD
-Auto-merging recipes/guacamole.qmd
-CONFLICT (content): Merge conflict in recipes/guacamole.qmd
+Auto-merging recipes/guacamole.md
+CONFLICT (content): Merge conflict in recipes/guacamole.md
 Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 <p>This is now a good time to run <code>git status</code> and see what the merge conflict looks like!</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -571,10 +571,10 @@ You have unmerged paths.
 
 Unmerged paths:
   (use "git add &lt;file&gt;..." to mark resolution)
-    both modified:   guacamole.qmd
+    both modified:   guacamole.md
 
 no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> guacamole.qmd </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> guacamole.md </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code># Guacamole recipe
 
 ## Ingredients
@@ -597,9 +597,9 @@ no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 4. Enjoy!</code></pre>
 <p>The ✨<code style="color:gold">golden rule</code>✨ is to <em>“make the file look how you want it to look”.</em></p>
 <p>Open the file in <code>nano</code> and edit it to look how you want it to look. You can keep both the pepper and lime juice, or you can choose one or the other, or you can change the recipe however you like.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Save and exit nano, then:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Check the status again:</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>On branch main
@@ -607,7 +607,7 @@ All conflicts fixed but you are still merging.
   (use "git commit" to conclude merge)
 
 Changes to be committed:
-    modified:   guacamole.qmd</code></pre>
+    modified:   guacamole.md</code></pre>
 <p>Commit the merge conflict resolution:</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"merge conflict resolve, keep pepper and lime"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Review your commit history to see the merge commit:</p>
@@ -706,6 +706,11 @@ Changes to be committed:
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

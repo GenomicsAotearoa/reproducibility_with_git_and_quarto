@@ -377,10 +377,10 @@ Can I push changes I have made locally to this repo back to the GitHub server?
 <p><strong><em>Demo only</em></strong> - <em>at this stage in the workshop you will not have any changes between your local copy and the copy on the server</em>:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch origin</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff main origin/main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>diff --git a/guacamole.qmd b/guacamole.qmd
+<pre><code>diff --git a/guacamole.md b/guacamole.md
 index 6249f4c..2dc69fb 100644
---- a/guacamole.qmd
-+++ b/guacamole.qmd
+--- a/guacamole.md
++++ b/guacamole.md
 @@ -4,11 +4,12 @@
  - Avocado  
  - Coriander  
@@ -396,7 +396,7 @@ index 6249f4c..2dc69fb 100644
 -3. Add salt and lemon juice to taste  
 +3. Add salt,lemon and lime juice to taste  
  4. Enjoy!</code></pre>
-<p>The output shows there are lines that are different between our local <strong>main</strong> (a/guacamole.qmd) and our server <strong>origin/main</strong> (b/guacamole.qmd).</p>
+<p>The output shows there are lines that are different between our local <strong>main</strong> (a/guacamole.md) and our server <strong>origin/main</strong> (b/guacamole.md).</p>
 <p><code>git fetch</code> does not touch your local files, so we now need to pull down the new file:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Double check your local files match the server:</p>
@@ -417,13 +417,13 @@ index 6249f4c..2dc69fb 100644
 <p><img src="images_git/github-issues-01.png" class="img-fluid"></p>
 <p>Then add a title, e.g.,:</p>
 <p><img src="images_git/github-issue-02.png" class="img-fluid"></p>
-<p>Before you create the issue, right click your recipes repo in the top left, and open it in a new tab. Then, click on <code style="color:blue">guacamole.qmd</code> to bring up the code. On the left of the line you want to change, click to get the three dots to appear, click the dots, and click ‘Copy permalink’.</p>
+<p>Before you create the issue, right click your recipes repo in the top left, and open it in a new tab. Then, click on <code style="color:blue">guacamole.md</code> to bring up the code. On the left of the line you want to change, click to get the three dots to appear, click the dots, and click ‘Copy permalink’.</p>
 <p><img src="images_git/github-issue-03.png" class="img-fluid"></p>
 <p>Now go back to your issue, paste the permalink in the description, and add whatever descriptive text you want and create the issue:</p>
 <p><img src="images_git/github-issue-04.png" class="img-fluid"></p>
-<p>Our <code style="color:blue">guacamole.qmd</code> file is not very big, so specifying the exact line is not really necessary, but if you have a file with hundreds of lines of code then being able to track and note exactly where typos are is really handy!</p>
+<p>Our <code style="color:blue">guacamole.md</code> file is not very big, so specifying the exact line is not really necessary, but if you have a file with hundreds of lines of code then being able to track and note exactly where typos are is really handy!</p>
 <p>Now, go back to your terminal and open the file in <code>nano</code> to make the change you specified in your issue.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> guacamole.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code># Guacamole recipe
 
 ## Ingredients
@@ -443,7 +443,7 @@ index 6249f4c..2dc69fb 100644
 </code></pre>
 <p>In the above file I have now specified the number of avocados. Write out and close nano.</p>
 <p>Now add and commit the file, importantly, reference the issue!:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.qmd</span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add guacamole.md</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"fix #2 specified number of avocados"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -612,6 +612,11 @@ data/</code></pre>
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

@@ -133,7 +133,7 @@ Let's make some modifications, then push those up to the server.
 Open your guacamole recipe with `nano` and make a new change to the recipe.
 
 ```bash
-nano guacamole.qmd
+nano guacamole.md
 ```
 
 I'm going to edit mine to add lime juice, you can do any change you like :)
@@ -159,7 +159,7 @@ I'm going to edit mine to add lime juice, you can do any change you like :)
 Now, add, commit and push your new changes:
 
 ```bash
-git add guacamole.qmd
+git add guacamole.md
 git status
 ```
 
@@ -167,7 +167,7 @@ git status
 On branch test-new-recipe
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
-        modified:   guacamole.qmd
+        modified:   guacamole.md
 ```
 
 ```bash
@@ -220,7 +220,7 @@ Optionally add a comment, or otherwise click 'Merge pull request'  to merge your
 
 It's good practice to 'trim your tree' and remove branches that you no longer need. You can click through to branches and safely delete the `test-new-recipe`{style="color:darkorange"} branch. 
 
-Have a look back at your main repo now. You'll see the commit message has updated to the most recent one you used when you committed the changes to `guacamole.qmd`{style="color:blue"} on the new branch.
+Have a look back at your main repo now. You'll see the commit message has updated to the most recent one you used when you committed the changes to `guacamole.md`{style="color:blue"} on the new branch.
 
 ![](images_git/github-pullrequest-05.png)
 
@@ -235,9 +235,9 @@ Merge conflicts happen when the remote repository has changes that have not been
 
 Let's create a merge conflict here and see how we can resolve it with git. 
 
-After we merged our `test-new-recipe`{style="color:darkorange"} branch into `main`{style="color:darkorange"}, we now have a situation where the `main`{style="color:darkorange"} branch has changes that are not in our local repository. If we try to push or pull any changes we make to `guacamole.qmd`{style="color:blue"} now, we will get an error message about merge conflicts.
+After we merged our `test-new-recipe`{style="color:darkorange"} branch into `main`{style="color:darkorange"}, we now have a situation where the `main`{style="color:darkorange"} branch has changes that are not in our local repository. If we try to push or pull any changes we make to `guacamole.md`{style="color:blue"} now, we will get an error message about merge conflicts.
 
-First, let's swap to `main`{style="color:darkorange"} branch and make a change to `guacamole.qmd`{style="color:blue"}:
+First, let's swap to `main`{style="color:darkorange"} branch and make a change to `guacamole.md`{style="color:blue"}:
 
 ```bash
 git checkout main
@@ -250,7 +250,7 @@ Switched to branch 'main'
 Let's sanity check our local guacamole recipe file to see what it looks like locally:
 
 ```bash
-cat guacamole.qmd
+cat guacamole.md
 ```
 
 ```
@@ -275,7 +275,7 @@ The lime juice we added in the `test-new-recipe`{style="color:darkorange"} branc
 Before we pull the changes down, let's make a change to our local version to create a conflict. 
 
 ```bash
-nano guacamole.qmd
+nano guacamole.md
 ```
 
 Make a change to the file, e.g. add "Pepper" to the ingredients list, then save and exit. 
@@ -305,7 +305,7 @@ Now we have ***pepper in our local version of the file***, but not in the versio
 Let's try pushing this change to the server:
 
 ```bash
-git add guacamole.qmd
+git add guacamole.md
 git commit -m "add pepper to guacamole recipe"
 git push origin main
 ```
@@ -382,8 +382,8 @@ git pull origin main
 ```
 From github.com:username/recipes
  * branch            main       -> FETCH_HEAD
-Auto-merging recipes/guacamole.qmd
-CONFLICT (content): Merge conflict in recipes/guacamole.qmd
+Auto-merging recipes/guacamole.md
+CONFLICT (content): Merge conflict in recipes/guacamole.md
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
@@ -401,14 +401,14 @@ You have unmerged paths.
 
 Unmerged paths:
   (use "git add <file>..." to mark resolution)
-	both modified:   guacamole.qmd
+	both modified:   guacamole.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 
 ```bash
-cat guacamole.qmd 
+cat guacamole.md 
 ```
 
 ```
@@ -441,13 +441,13 @@ The ✨`golden rule`{style="color:gold"}✨ is to *"make the file look how you w
 Open the file in `nano` and edit it to look how you want it to look. You can keep both the pepper and lime juice, or you can choose one or the other, or you can change the recipe however you like.
 
 ```bash
-nano guacamole.qmd
+nano guacamole.md
 ```
 
 Save and exit nano, then:
 
 ```bash
-git add guacamole.qmd
+git add guacamole.md
 ```
 
 Check the status again:
@@ -462,7 +462,7 @@ All conflicts fixed but you are still merging.
   (use "git commit" to conclude merge)
 
 Changes to be committed:
-	modified:   guacamole.qmd
+	modified:   guacamole.md
 ```
 
 Commit the merge conflict resolution:

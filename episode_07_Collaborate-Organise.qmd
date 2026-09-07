@@ -99,10 +99,10 @@ git diff main origin/main
 ```
 
 ```
-diff --git a/guacamole.qmd b/guacamole.qmd
+diff --git a/guacamole.md b/guacamole.md
 index 6249f4c..2dc69fb 100644
---- a/guacamole.qmd
-+++ b/guacamole.qmd
+--- a/guacamole.md
++++ b/guacamole.md
 @@ -4,11 +4,12 @@
  - Avocado  
  - Coriander  
@@ -120,7 +120,7 @@ index 6249f4c..2dc69fb 100644
  4. Enjoy!
 ```
 
-The output shows there are lines that are different between our local **main** (a/guacamole.qmd) and our server **origin/main** (b/guacamole.qmd).  
+The output shows there are lines that are different between our local **main** (a/guacamole.md) and our server **origin/main** (b/guacamole.md).  
 
 `git fetch` does not touch your local files, so we now need to pull down the new file:
 
@@ -161,7 +161,7 @@ Then add a title, e.g.,:
 
 ![](images_git/github-issue-02.png)
 
-Before you create the issue, right click your recipes repo in the top left, and open it in a new tab. Then, click on `guacamole.qmd`{style="color:blue"} to bring up the code. On the left of the line you want to change, click to get the three dots to appear, click the dots, and click 'Copy permalink'. 
+Before you create the issue, right click your recipes repo in the top left, and open it in a new tab. Then, click on `guacamole.md`{style="color:blue"} to bring up the code. On the left of the line you want to change, click to get the three dots to appear, click the dots, and click 'Copy permalink'. 
 
 ![](images_git/github-issue-03.png)
 
@@ -171,13 +171,13 @@ Now go back to your issue, paste the permalink in the description, and add whate
 ![](images_git/github-issue-04.png)
 
 
-Our `guacamole.qmd`{style="color:blue"} file is not very big, so specifying the exact line is not really necessary, but if you have a file with hundreds of lines of code then being able to track and note exactly where typos are is really handy!
+Our `guacamole.md`{style="color:blue"} file is not very big, so specifying the exact line is not really necessary, but if you have a file with hundreds of lines of code then being able to track and note exactly where typos are is really handy!
 
 Now, go back to your terminal and open the file in `nano` to make the change you specified in your issue.
 
 
 ```bash
-nano guacamole.qmd
+nano guacamole.md
 ```
 
 ```
@@ -207,7 +207,7 @@ In the above file I have now specified the number of avocados. Write out and clo
 Now add and commit the file, importantly, reference the issue!:
 
 ```bash
-git add guacamole.qmd
+git add guacamole.md
 git commit -m "fix #2 specified number of avocados"
 ```
 

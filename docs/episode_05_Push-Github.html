@@ -555,7 +555,7 @@ Total 16 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), done.
 To github.com/:username/recipes.git
  * [new branch]      main -&gt; main</code></pre>
-<p>Now go to your github and have a look - your new recipe repository with the <code style="color:blue">guacamole.qmd</code> file should be online!</p>
+<p>Now go to your github and have a look - your new recipe repository with the <code style="color:blue">guacamole.md</code> file should be online!</p>
 
 
 </section>
@@ -648,6 +648,11 @@ To github.com/:username/recipes.git
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

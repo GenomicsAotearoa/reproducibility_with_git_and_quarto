@@ -354,5 +354,5 @@ To github.com/:username/recipes.git
  * [new branch]      main -> main
 ```
 
-Now go to your github and have a look - your new recipe repository with the `guacamole.qmd`{style="color:blue"} file should be online!
+Now go to your github and have a look - your new recipe repository with the `guacamole.md`{style="color:blue"} file should be online!
 
