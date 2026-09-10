@@ -3,7 +3,7 @@ title: "Git Overview"
 toc: true
 ---
 
-# What is Git/Github and why do I want to use it? 
+# What is Git/GitHub and why do I want to use it? 
 
 **Git** is a version control system. It lets you track changes to your code and documents over time, so you can:
 
@@ -23,8 +23,10 @@ In short: Git keeps your work organised and versioned on your local computer, an
 ::: {.callout-tip appearance="simple"}
 # Some cool examples of how people use git/github:
 - The [Kākāpō genome project](https://github.com/GenomicsAotearoa/Kakapo), with all the scripts and workflows needed for the genome assembly.  
-- The website for the [Genomics Aotearoa Bioinformatics Training Programme](https://github.com/GenomicsAotearoa/BioinformaticsTrainingProgramme) is hosted on github, written in Quarto and displayed using [github pages.](https://docs.github.com/en/pages)  
-- A curated list of [awesome ggplot2 packages](https://github.com/erikgahner/awesome-ggplot2)  
+- The website for the [Genomics Aotearoa Bioinformatics Training Programme](https://github.com/GenomicsAotearoa/BioinformaticsTrainingProgramme) is hosted on GitHub, written in Quarto and displayed using [GitHub Pages.](https://docs.github.com/en/pages)  
+- A curated list of [awesome ggplot2 packages](https://github.com/erikgahner/awesome-ggplot2)   
+- The [Linux kernel source tree](https://github.com/torvalds/linux) is on GitHub (both Git and Linux were developed by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds))
+- And if you really want to get into the weeds, the source code for both [Git](https://github.com/git/git) and [GitHub](https://github.com/github) are on GitHub!
 :::
 
 ### Setup on local machine  

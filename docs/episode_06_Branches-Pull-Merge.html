@@ -311,11 +311,11 @@ Key points
 </div>
 <section id="pulling-repositories-from-the-server-to-our-local-computer" class="level2">
 <h2 class="anchored" data-anchor-id="pulling-repositories-from-the-server-to-our-local-computer">Pulling repositories from the server to our local computer</h2>
-<p>Pulling takes changes made on a remote repository and brings them down into your local repository. For example, say you are collaborating on a project and your partner has made some changes and pushed them up to the github repo. You now want to pull down all those changes and keep working on the project locally.</p>
+<p>Pulling takes changes made on a remote repository and brings them down into your local repository. For example, say you are collaborating on a project and your partner has made some changes and pushed them up to the GitHub repo. You now want to pull down all those changes and keep working on the project locally.</p>
 <p>Let’s have a go at this.</p>
 <section id="add-a-readme-file" class="level3">
 <h3 class="anchored" data-anchor-id="add-a-readme-file">1. Add a README file</h3>
-<p>Go to the recipes repository page on github. You will see an option to add a “README” file.</p>
+<p>Go to the recipes repository page on GitHub. You will see an option to add a “README” file.</p>
 <p><img src="images_git/github-pull-01.png" class="img-fluid"></p>
 <p>Click “Add a README” and add some info, e.g.:</p>
 <pre><code>This repo is to house all my favourite recipes :)</code></pre>
@@ -360,7 +360,7 @@ Fast-forward
 <p>Run <code>ls</code> to see the files in your directory and confirm we now have the README file locally.</p>
 <section id="how-does-pull-work" class="level4">
 <h4 class="anchored" data-anchor-id="how-does-pull-work">How does pull work?</h4>
-<p><code>git pull</code> does not blindly overwrite uncommitted local changes. When we pull everything from the server, the most common scenario is the “fast-forward”, such as we have done here. Git checks if you have changes that haven’t been committed yet. If you do, Git will try to merge the changes from the server with your local changes. If there’s a conflict (for example, if you and someone else changed the same line in a file), Git will stop and ask you to resolve the conflict before continuing. In the most common case (when you haven’t made any local changes or your local changes are already committed) Git can just add the new changes from the server on top of your work. This is called a “fast-forward” update, and it’s what happened in our example. Our local directory now matches the content in the Github server. There are different scenarios if your local file is behind and if there are merge conflicts. In this workshop, we will soon cover how to deal with one kind of conflict resolution.</p>
+<p><code>git pull</code> does not blindly overwrite uncommitted local changes. When we pull everything from the server, the most common scenario is the “fast-forward”, such as we have done here. Git checks if you have changes that haven’t been committed yet. If you do, Git will try to merge the changes from the server with your local changes. If there’s a conflict (for example, if you and someone else changed the same line in a file), Git will stop and ask you to resolve the conflict before continuing. In the most common case (when you haven’t made any local changes or your local changes are already committed) Git can just add the new changes from the server on top of your work. This is called a “fast-forward” update, and it’s what happened in our example. Our local directory now matches the content in the GitHub server. There are different scenarios if your local file is behind and if there are merge conflicts. In this workshop, we will soon cover how to deal with one kind of conflict resolution.</p>
 </section>
 </section>
 </section>
@@ -549,7 +549,7 @@ Merge conflict
 <p><img src="images_git/conflict.svg" class="img-fluid"></p>
 </div>
 </div>
-<p>Uh oh, another message! git is telling us that we have divergent branches and we need to specify how to reconcile them. This is because of the merge conflict. We can choose to either <strong>merge, rebase or fast-forward</strong>.</p>
+<p>Uh oh, another message! Git is telling us that we have divergent branches and we need to specify how to reconcile them. This is because of the merge conflict. We can choose to either <strong>merge, rebase or fast-forward</strong>.</p>
 <p>The most common option is to <strong>merge</strong>, which will create a new commit that combines the changes from both branches. This is the default option, so we can run:</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config pull.rebase false</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
