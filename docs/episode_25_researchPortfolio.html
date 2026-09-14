@@ -329,22 +329,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="why-a-portfolio-website">Why a portfolio website?</h2>
 <p>If you want to progress in bioinformatics, you should assume that people (future employers) will look at your github. Having a set of tidy repos that document your workflow is the minimum you should aim for. In addition to these tidy repos, we can build a single repo that directs and guides viewers through our github and highlights our key skills.</p>
 <p>Aside from github repos it can be useful to create websites as a way to market either yourself and your work, or the work of your lab group. Quarto can make this easy. <a href="https://jadeyryan.com/">Jadey Ryan</a> has a great website that really showcases what a Quarto website can look like.</p>
-<p>To get a better understanding of why I am recommending this and what we are trying to do, we recommend this talk from posit::conf(2024) titled “<a href="https://www.youtube.com/watch?v=R-bPjavai5A&amp;list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn&amp;index=20">Github - How to tell your professional story</a>”. In this talk, Dr.&nbsp;Abigail Haddad outlines how Github can be used to demonstrate not just the raw coding skills you use frequently, but also the auxilliary skills that define how you work - your problem solving skills, your practices, and how you communicate.</p>
+<p>To get a better understanding of why we are recommending this and what we are trying to do, we recommend this talk from posit::conf(2024) titled “<a href="https://www.youtube.com/watch?v=R-bPjavai5A&amp;list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn&amp;index=20">Github - How to tell your professional story</a>”. In this talk, Dr.&nbsp;Abigail Haddad outlines how Github can be used to demonstrate not just the raw coding skills you use frequently, but also the auxilliary skills that define how you work - your problem solving skills, your practices, and how you communicate.</p>
 <p>We are going to take some of the advice from that talk, which says that all of your github should be used to <em>actively</em> demonstrate your skills and tell your story, and we are going to compress it down to a single github repo which will convey (or at least introduce) your story. We will Pin this repo so that it’s the first thing people see when they visit your github page, and publish it as a working website so that you also have a link you can drop into LinkedIn or Bluesky posts, incorporate into your email signatures, whenever you feel it’s appropriate to do some self-marketing.</p>
 <section id="initial-setup" class="level3">
 <h3 class="anchored" data-anchor-id="initial-setup">Initial setup</h3>
 <p>Using skills from yesterday and today’s workshops:</p>
-<ul>
-<li><p>Initiate a new, public github repo with a name like “Work Portfolio” or equivalent.</p></li>
-<li><p>In RStudio, start a New Project, and use the Version Control option to link it to the new repo, and select where you want the directory to be (e.g., select ‘Desktop’, and your new directory will appear on your desktop)</p></li>
-<li><p>Create three .qmd files. For each file, set the YAML header to include an appropriate title and add at least one header and a piece of sample text to each document:</p>
+<ol type="1">
+<li><p>Initiate a new, public github repo with a name like “Work-Portfolio” or equivalent (no spaces allowed in repo names). Copy the ssh line.</p></li>
+<li><p>In RStudio, start a New Project, and use the Version Control option to link it to the new repo, pasting in the ssh line, and select where you want the directory to be (e.g., select ‘Desktop’, and your new directory will appear on your desktop)</p></li>
+<li><p>Create three empty <code style="color:blue">.qmd</code> files. For each file, set the YAML header to include an appropriate title and add at least one header and a piece of sample text to each document:</p>
 <ul>
 <li><p><code style="color:blue">index.qmd</code>. Index.qmd will work as the landing page for the site, and could include something like the short blurb found at the top of a CV.</p></li>
 <li><p><code style="color:blue">portfolio.qmd</code>. Portfolio will contain hyperlinks to your work - either to other github repos, publications, google scholar account, LinkedIn account <em>etc.,</em> (it will be the definitive, exhaustive set of your work).</p></li>
 <li><p><code style="color:blue">research_focus.qmd</code>. Research focus will include a written statement about your focus as a researcher.</p></li>
 <li><p>Create a <code style="color:blue">_quarto.yml</code> file using the template from the previous section. Include <code style="color:blue">index.qmd</code> first, then <code style="color:blue">research_focus.qmd</code> and then <code style="color:blue">portfolio.qmd</code>.</p></li>
 </ul></li>
-</ul>
+</ol>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -558,12 +558,12 @@ portfolio.qmd
 </section>
 <section id="use-rstudio-build-to-render-website" class="level3">
 <h3 class="anchored" data-anchor-id="use-rstudio-build-to-render-website">Use RStudio Build to render website</h3>
-<p>Now is a good time to show a handy feature of having an RStudio project. Note that this only works if you made an RStudio project first (we did this in Intial setup).</p>
+<p>Now is a good time to show a handy feature of having an RStudio project. Note that this only works if you made an RStudio project first (we did this in ‘Intial setup’).</p>
 <ol type="1">
 <li><p>Save all your <code style="color:blue">.qmd</code> files and <code style="color:blue">_quarto.yml</code> file.</p></li>
 <li><p>Close the RStudio project<br>
 </p></li>
-<li><p>Reopen the RStudio project file (e.,g by clicign on the file <code style="color:blue">Work-portfolio.Rproj</code>) to refresh the RStudio session.<br>
+<li><p>Reopen the RStudio project file (e.g., by clicking on the file <code style="color:blue">Work-portfolio.Rproj</code>) to refresh the RStudio session.<br>
 </p></li>
 <li><p>In the top right panel, there should now be a tab <strong>Build</strong><br>
 </p></li>

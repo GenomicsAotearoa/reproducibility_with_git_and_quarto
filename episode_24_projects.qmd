@@ -55,9 +55,13 @@ my-genomics-project/
 
 ├── _quarto.yml
 
-├── index.qmd                # Project overview or README
+├── index.qmd                # Project overview, landing page 
 
-├── about.qmd                # Team/project info
+├── about.qmd               # Team/project info
+
+├── README.md           # Specific project readme, recommended when using GitHub.    
+
+├── styles.css               # Styling sheet
 
 ├── data/
 
@@ -71,7 +75,7 @@ my-genomics-project/
 
        ├── analysis/
 
-       └── visualizations/
+       └── visualisations/
 
 ├── results/
 
@@ -81,7 +85,7 @@ my-genomics-project/
 
 ├── images/                  # Diagrams, logos
 
-└── docs/                    # Optional: exported PDFs or other formats
+└── docs/                    # Exported PDFs, HTMLs, or other formats
 
 #### Group discussion exercise (5 min)
 

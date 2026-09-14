@@ -21,7 +21,7 @@ If you want to progress in bioinformatics, you should assume that people (future
 
 Aside from github repos it can be useful to create websites as a way to market either yourself and your work, or the work of your lab group. Quarto can make this easy. [Jadey Ryan](https://jadeyryan.com/) has a great website that really showcases what a Quarto website can look like.
 
-To get a better understanding of why I am recommending this and what we are trying to do, we recommend this talk from posit::conf(2024) titled "[Github - How to tell your professional story](https://www.youtube.com/watch?v=R-bPjavai5A&list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn&index=20)". In this talk, Dr. Abigail Haddad outlines how Github can be used to demonstrate not just the raw coding skills you use frequently, but also the auxilliary skills that define how you work - your problem solving skills, your practices, and how you communicate. 
+To get a better understanding of why we are recommending this and what we are trying to do, we recommend this talk from posit::conf(2024) titled "[Github - How to tell your professional story](https://www.youtube.com/watch?v=R-bPjavai5A&list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn&index=20)". In this talk, Dr. Abigail Haddad outlines how Github can be used to demonstrate not just the raw coding skills you use frequently, but also the auxilliary skills that define how you work - your problem solving skills, your practices, and how you communicate. 
 
 We are going to take some of the advice from that talk, which says that all of your github should be used to *actively* demonstrate your skills and tell your story, and we are going to compress it down to a single github repo which will convey (or at least introduce) your story. We will Pin this repo so that it's the first thing people see when they visit your github page, and publish it as a working website so that you also have a link you can drop into LinkedIn or Bluesky posts, incorporate into your email signatures, whenever you feel it's appropriate to do some self-marketing. 
 
@@ -30,11 +30,11 @@ We are going to take some of the advice from that talk, which says that all of y
 
 Using skills from yesterday and today's workshops:
 
-- Initiate a new, public github repo with a name like "Work Portfolio" or equivalent. 
+1.  Initiate a new, public github repo with a name like "Work-Portfolio" or equivalent (no spaces allowed in repo names). Copy the ssh line.  
 
-- In RStudio, start a New Project, and use the Version Control option to link it to the new repo, and select where you want the directory to be (e.g., select 'Desktop', and your new directory will appear on your desktop) 
+2.  In RStudio, start a New Project, and use the Version Control option to link it to the new repo, pasting in the ssh line, and select where you want the directory to be (e.g., select 'Desktop', and your new directory will appear on your desktop) 
 
-- Create three .qmd files. For each file, set the YAML header to include an appropriate title and add at least one header and a piece of sample text to each document: 
+3.  Create three empty `.qmd`{style="color:blue"} files. For each file, set the YAML header to include an appropriate title and add at least one header and a piece of sample text to each document: 
 
     - `index.qmd`{style="color:blue"}. Index.qmd will work as the landing page for the site, and could include something like the short blurb found at the top of a CV. 
     
@@ -220,12 +220,12 @@ Below is a curated selection of my key scientific works and contributions to gen
 
 ### Use RStudio Build to render website
 
-Now is a good time to show a handy feature of having an RStudio project.  Note that this only works if you made an RStudio project first (we did this in Intial setup).
+Now is a good time to show a handy feature of having an RStudio project.  Note that this only works if you made an RStudio project first (we did this in 'Intial setup').
 
 1. Save all your `.qmd`{style="color:blue"} files and `_quarto.yml`{style="color:blue"} file.
 
 2. Close the RStudio project  
-3. Reopen the RStudio project file (e.,g by clicign on the file `Work-portfolio.Rproj`{style="color:blue"}) to refresh the RStudio session.  
+3. Reopen the RStudio project file (e.g., by clicking on the file `Work-portfolio.Rproj`{style="color:blue"}) to refresh the RStudio session.  
 4. In the top right panel, there should now be a tab **Build**  
 5. Click the Build tab, then click the button **Render website**. The qmd files don't need to be open in RStudio.  
 
