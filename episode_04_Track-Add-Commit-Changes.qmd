@@ -439,10 +439,26 @@ index 6249f4c..ad0d963 100644
 
 The `-` markers show that the instructions lines are in the HEAD version of the file (a), but not in the working file (b). Importantly, while in this case it is true that the lines are removed from the working file, but it is more correct to say the markers designate which file version the lines belong to.
 
-Now let's restore the file back to the most recent commit so we can continue working. We can use `HEAD` to refer to the most recent commit:
+Now let's restore the file back to the *most recent commit* so we can continue working. 
+
+We can do this in three different ways.
+
+1. We can use `HEAD` to refer to the most recent commit.  
+2. We can use the commit ID -- you need to fill in your own ID!    
+3. We can use `git restore` with no additional flags, which will by default restore the given file to HEAD (the latest commit).    
+
+Chose one of these three options and run the code to restore the file (`-s` is same as `--source`) .  
 
 ```bash
-git restore --source HEAD guacamole.md
+# Option 1
+git restore -s HEAD guacamole.md
+
+# Option 2
+git restore -s <commit-id> guacamole.md
+
+# Option 3
+git restore guacamole.md
+
 ```
 
 We can confirm there are no differences between the working file and the latest commit:

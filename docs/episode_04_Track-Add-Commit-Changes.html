@@ -579,8 +579,24 @@ index 6249f4c..ad0d963 100644
 -3. Add salt and lemon juice to taste  
 -4. Enjoy!</code></pre>
 <p>The <code>-</code> markers show that the instructions lines are in the HEAD version of the file (a), but not in the working file (b). Importantly, while in this case it is true that the lines are removed from the working file, but it is more correct to say the markers designate which file version the lines belong to.</p>
-<p>Now let’s restore the file back to the most recent commit so we can continue working. We can use <code>HEAD</code> to refer to the most recent commit:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">--source</span> HEAD guacamole.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now let’s restore the file back to the <em>most recent commit</em> so we can continue working.</p>
+<p>We can do this in three different ways.</p>
+<ol type="1">
+<li>We can use <code>HEAD</code> to refer to the most recent commit.<br>
+</li>
+<li>We can use the commit ID – you need to fill in your own ID!<br>
+</li>
+<li>We can use <code>git restore</code> with no additional flags, which will by default restore the given file to HEAD (the latest commit).</li>
+</ol>
+<p>Chose one of these three options and run the code to restore the file (<code>-s</code> is same as <code>--source</code>) .</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 1</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">-s</span> HEAD guacamole.md</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 2</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">-s</span> <span class="op">&lt;</span>commit-id<span class="op">&gt;</span> guacamole.md</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 3</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore guacamole.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We can confirm there are no differences between the working file and the latest commit:</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff HEAD</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>No output — our working file matches the latest commit and we’re ready to continue. We can <code>cat</code> our guacamole.md to confirm our instructions are back:</p>
