@@ -24,7 +24,7 @@ We can now create our first quarto (`.qmd`{style="color:blue"}) file.
 
 Under `File > New File`{style="color:black"}, click Quarto Document. Alternatively, use the button that looks like a blank page with a white "+" inside a green circle, and select Quarto Document. This will bring up a panel for creating a new quarto document:
 
-![New Quarto doc panel](figures/newQuartoDoc.png)
+![New Quarto doc panel](images-quarto/quarto-setup-03.png)  
 
 On the left hand side we can see three options: Document, Presentation, and Interactive, and for each of these we can see there are different outputs. We can change these outputs later, but for now, select Document and HTML (this is the recommended format for working in). Give this document a title, something like "Basic About Page". Before we create the document, we can see a couple of other options: **Engine** (leave this as Knitr), **Editor** (we will keep the visual editor box ticked), and then we can either click `Create`{style="color:black"} or `Create Empty Document`{style="color:black"}. 
 

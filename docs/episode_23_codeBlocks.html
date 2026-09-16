@@ -275,12 +275,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#exercise-insert-a-code-cell-2-min" id="toc-exercise-insert-a-code-cell-2-min" class="nav-link" data-scroll-target="#exercise-insert-a-code-cell-2-min">EXERCISE 🧠🏋️‍♀️: Insert a code cell (2 min)</a></li>
   </ul></li>
+  <li><a href="#global-code-options" id="toc-global-code-options" class="nav-link" data-scroll-target="#global-code-options">Global code options</a></li>
   <li><a href="#code-cell-options" id="toc-code-cell-options" class="nav-link" data-scroll-target="#code-cell-options">Code cell options</a>
   <ul>
-  <li><a href="#global-code-options" id="toc-global-code-options" class="nav-link" data-scroll-target="#global-code-options">Global code options</a>
-  <ul class="collapse">
   <li><a href="#echo-and-eval" id="toc-echo-and-eval" class="nav-link" data-scroll-target="#echo-and-eval">Echo and Eval</a></li>
-  <li><a href="#cross-referencing-figures-and-tables" id="toc-cross-referencing-figures-and-tables" class="nav-link" data-scroll-target="#cross-referencing-figures-and-tables">Cross-referencing: figures and tables</a></li>
+  <li><a href="#cross-referencing-figures-and-tables" id="toc-cross-referencing-figures-and-tables" class="nav-link" data-scroll-target="#cross-referencing-figures-and-tables">Cross-referencing: figures and tables</a>
+  <ul class="collapse">
   <li><a href="#warnings-and-messages" id="toc-warnings-and-messages" class="nav-link" data-scroll-target="#warnings-and-messages">Warnings and messages</a></li>
   </ul></li>
   <li><a href="#set-figure-dimensions" id="toc-set-figure-dimensions" class="nav-link" data-scroll-target="#set-figure-dimensions">Set figure dimensions</a></li>
@@ -412,19 +412,20 @@ Windows/Linux: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd></p>
 </div>
 </section>
 </section>
-<section id="code-cell-options" class="level2">
-<h2 class="anchored" data-anchor-id="code-cell-options">Code cell options</h2>
-<p>Within each code cell we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code cell with <code style="color:green">#|</code> (called the hash pipe).</p>
-<section id="global-code-options" class="level3">
-<h3 class="anchored" data-anchor-id="global-code-options">Global code options</h3>
+<section id="global-code-options" class="level2">
+<h2 class="anchored" data-anchor-id="global-code-options">Global code options</h2>
 <p>Code options included in the YAML header are global - they will be applied to all code cells in this document. As we will cover below, individual code cells (chunks or blocks of code) can be controlled separately.</p>
 <p>Some useful global options we might want to set in the YAML header are:</p>
 <p><code>code-fold: true</code></p>
 <p><code>code-tools: true</code></p>
 <p>When <code>code-fold</code> is set to <code>true</code>, all code blocks will be automatically collapsed. This is useful when you want code to be available but would otherwise distract from the flow of the document <em>e.g.,</em> when teaching/training, presenting at lab meetings.</p>
 <p>The option <code>code-tools: true</code>, used in conjunction with <code>code-fold: true</code>, provides a simple button at the top of the html that can then be used to toggle all code to open/closed (an easy ‘reset’ of all code blocks). This also provides an option to see all the qmd source code.</p>
-<section id="echo-and-eval" class="level4">
-<h4 class="anchored" data-anchor-id="echo-and-eval">Echo and Eval</h4>
+</section>
+<section id="code-cell-options" class="level2">
+<h2 class="anchored" data-anchor-id="code-cell-options">Code cell options</h2>
+<p>Within each code cell we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code cell with <code style="color:green">#|</code> (called the hash pipe).</p>
+<section id="echo-and-eval" class="level3">
+<h3 class="anchored" data-anchor-id="echo-and-eval">Echo and Eval</h3>
 <p>Here we will use the <code>#| echo: false</code> command to hide the R code itself from the final doc, while the output is still displayed.</p>
 <p>The code cell looks like this:</p>
 <p><img src="images-quarto/quarto-codecell-02.png" class="img-fluid"></p>
@@ -454,14 +455,19 @@ Windows/Linux: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd></p>
 </div>
 <p>Now see for yourself! Try using <code>#| eval: false</code> and <code>#| echo: false</code> and render the document.</p>
 </section>
-<section id="cross-referencing-figures-and-tables" class="level4">
-<h4 class="anchored" data-anchor-id="cross-referencing-figures-and-tables">Cross-referencing: figures and tables</h4>
+<section id="cross-referencing-figures-and-tables" class="level3">
+<h3 class="anchored" data-anchor-id="cross-referencing-figures-and-tables">Cross-referencing: figures and tables</h3>
 <p>Quarto allows easy cross-referencing to figures and tables.</p>
 <p>We can attach a label to a code block with <code>#| label:</code>, followed by a given label. We can then use <code>@label</code> to cross-reference.</p>
 <section id="figures-example" class="level5">
 <h5 class="anchored" data-anchor-id="figures-example">Figures example:</h5>
-<p>Open a code block.</p>
-<p>Directly under the header line of your code block, add the text <code>#| label: fig-penguinBills</code>. Then, add some <code>ggplot</code> code to make a figure. We’ll do a simple <code>geom_point()</code> plot here using the palmerpenguins dataset as an example. Then, underneath your code block, write some text cross-referencing the figure label. See our examples below:</p>
+<ol type="1">
+<li>Open a code block.<br>
+</li>
+<li>Directly under the header line of your code block, add the text <code>#| label: fig-penguinBills</code>.<br>
+</li>
+<li>Then, add some <code>ggplot</code> code to make a figure. We’ll do a simple <code>geom_point()</code> plot here using the palmerpenguins dataset as an example. Then, underneath your code block, write some text cross-referencing the figure label. See our examples below:</li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-penguinBills</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -521,7 +527,14 @@ What is happening above (behind the scenes)?
 </section>
 <section id="tables-example" class="level5">
 <h5 class="anchored" data-anchor-id="tables-example">Tables example:</h5>
-<p>For cross referencing tables it is very similar to figures, but instead we use the <code>tbl</code> prefix, and we can also add a Table caption using <code>#| tbl-cap:</code> For example:</p>
+<p>For cross referencing tables it is very similar to figures, but instead we use the <code>tbl</code> prefix. We’ll also add a Table caption using <code>#| tbl-cap:</code> (This works for figures too! Use <code>#| fig-cap</code>).</p>
+<ol type="1">
+<li>Open a code block.<br>
+</li>
+<li>Directly under the header line of your code block, add the text <code>#| label: tbl-penguin-mass-summary</code><br>
+</li>
+<li>On the next line also add a caption <code>#| tbl-cap: tbl-penguin-mass-summary</code></li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-penguin-mass-summary</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Penguin Mean Body Weights</span></span>
@@ -560,23 +573,23 @@ Table&nbsp;1: Penguin Mean Body Weights
 </figcaption>
 <div aria-describedby="tbl-penguin-mass-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="khogxcuqna" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#khogxcuqna table {
+<div id="xohcnvhide" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xohcnvhide table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#khogxcuqna thead, #khogxcuqna tbody, #khogxcuqna tfoot, #khogxcuqna tr, #khogxcuqna td, #khogxcuqna th {
+#xohcnvhide thead, #xohcnvhide tbody, #xohcnvhide tfoot, #xohcnvhide tr, #xohcnvhide td, #xohcnvhide th {
   border-style: none;
 }
 
-#khogxcuqna p {
+#xohcnvhide p {
   margin: 0;
   padding: 0;
 }
 
-#khogxcuqna .gt_table {
+#xohcnvhide .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -602,12 +615,12 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-left-color: #D3D3D3;
 }
 
-#khogxcuqna .gt_caption {
+#xohcnvhide .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#khogxcuqna .gt_title {
+#xohcnvhide .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -619,7 +632,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-width: 0;
 }
 
-#khogxcuqna .gt_subtitle {
+#xohcnvhide .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -631,7 +644,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-top-width: 0;
 }
 
-#khogxcuqna .gt_heading {
+#xohcnvhide .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -643,13 +656,13 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#khogxcuqna .gt_bottom_border {
+#xohcnvhide .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#khogxcuqna .gt_col_headings {
+#xohcnvhide .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -664,7 +677,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#khogxcuqna .gt_col_heading {
+#xohcnvhide .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -684,7 +697,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#khogxcuqna .gt_column_spanner_outer {
+#xohcnvhide .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -696,15 +709,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 4px;
 }
 
-#khogxcuqna .gt_column_spanner_outer:first-child {
+#xohcnvhide .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#khogxcuqna .gt_column_spanner_outer:last-child {
+#xohcnvhide .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#khogxcuqna .gt_column_spanner {
+#xohcnvhide .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -716,11 +729,11 @@ Table&nbsp;1: Penguin Mean Body Weights
   width: 100%;
 }
 
-#khogxcuqna .gt_spanner_row {
+#xohcnvhide .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#khogxcuqna .gt_group_heading {
+#xohcnvhide .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -746,7 +759,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   text-align: left;
 }
 
-#khogxcuqna .gt_empty_group_heading {
+#xohcnvhide .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -761,15 +774,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   vertical-align: middle;
 }
 
-#khogxcuqna .gt_from_md > :first-child {
+#xohcnvhide .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#khogxcuqna .gt_from_md > :last-child {
+#xohcnvhide .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#khogxcuqna .gt_row {
+#xohcnvhide .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -788,7 +801,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#khogxcuqna .gt_stub {
+#xohcnvhide .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -801,7 +814,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#khogxcuqna .gt_stub_row_group {
+#xohcnvhide .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -815,15 +828,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   vertical-align: top;
 }
 
-#khogxcuqna .gt_row_group_first td {
+#xohcnvhide .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#khogxcuqna .gt_row_group_first th {
+#xohcnvhide .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#khogxcuqna .gt_summary_row {
+#xohcnvhide .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -833,16 +846,16 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#khogxcuqna .gt_first_summary_row {
+#xohcnvhide .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#khogxcuqna .gt_first_summary_row.thick {
+#xohcnvhide .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#khogxcuqna .gt_last_summary_row {
+#xohcnvhide .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -852,7 +865,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#khogxcuqna .gt_grand_summary_row {
+#xohcnvhide .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -862,7 +875,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#khogxcuqna .gt_first_grand_summary_row {
+#xohcnvhide .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -872,7 +885,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-top-color: #D3D3D3;
 }
 
-#khogxcuqna .gt_last_grand_summary_row_top {
+#xohcnvhide .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -882,11 +895,11 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#khogxcuqna .gt_striped {
+#xohcnvhide .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#khogxcuqna .gt_table_body {
+#xohcnvhide .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -895,7 +908,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#khogxcuqna .gt_footnotes {
+#xohcnvhide .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -909,7 +922,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#khogxcuqna .gt_footnote {
+#xohcnvhide .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -918,7 +931,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#khogxcuqna .gt_sourcenotes {
+#xohcnvhide .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -932,7 +945,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#khogxcuqna .gt_sourcenote {
+#xohcnvhide .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -940,72 +953,72 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#khogxcuqna .gt_left {
+#xohcnvhide .gt_left {
   text-align: left;
 }
 
-#khogxcuqna .gt_center {
+#xohcnvhide .gt_center {
   text-align: center;
 }
 
-#khogxcuqna .gt_right {
+#xohcnvhide .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#khogxcuqna .gt_font_normal {
+#xohcnvhide .gt_font_normal {
   font-weight: normal;
 }
 
-#khogxcuqna .gt_font_bold {
+#xohcnvhide .gt_font_bold {
   font-weight: bold;
 }
 
-#khogxcuqna .gt_font_italic {
+#xohcnvhide .gt_font_italic {
   font-style: italic;
 }
 
-#khogxcuqna .gt_super {
+#xohcnvhide .gt_super {
   font-size: 65%;
 }
 
-#khogxcuqna .gt_footnote_marks {
+#xohcnvhide .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#khogxcuqna .gt_asterisk {
+#xohcnvhide .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#khogxcuqna .gt_indent_1 {
+#xohcnvhide .gt_indent_1 {
   text-indent: 5px;
 }
 
-#khogxcuqna .gt_indent_2 {
+#xohcnvhide .gt_indent_2 {
   text-indent: 10px;
 }
 
-#khogxcuqna .gt_indent_3 {
+#xohcnvhide .gt_indent_3 {
   text-indent: 15px;
 }
 
-#khogxcuqna .gt_indent_4 {
+#xohcnvhide .gt_indent_4 {
   text-indent: 20px;
 }
 
-#khogxcuqna .gt_indent_5 {
+#xohcnvhide .gt_indent_5 {
   text-indent: 25px;
 }
 
-#khogxcuqna .katex-display {
+#xohcnvhide .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#khogxcuqna div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xohcnvhide div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1044,7 +1057,6 @@ Table&nbsp;1: Penguin Mean Body Weights
 <blockquote class="blockquote">
 <p>Want more? For more ways to cross-reference, <a href="https://quarto.org/docs/authoring/cross-references.html">see the Quarto docs here.</a></p>
 </blockquote>
-</section>
 </section>
 <section id="warnings-and-messages" class="level4">
 <h4 class="anchored" data-anchor-id="warnings-and-messages">Warnings and messages</h4>
@@ -1118,23 +1130,23 @@ Table&nbsp;2: Penguin Mean Body Weights
 </figcaption>
 <div aria-describedby="tbl-penguin-mass-summary-NoMessage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="twthvqaanx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#twthvqaanx table {
+<div id="asbvbdqlut" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#asbvbdqlut table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#twthvqaanx thead, #twthvqaanx tbody, #twthvqaanx tfoot, #twthvqaanx tr, #twthvqaanx td, #twthvqaanx th {
+#asbvbdqlut thead, #asbvbdqlut tbody, #asbvbdqlut tfoot, #asbvbdqlut tr, #asbvbdqlut td, #asbvbdqlut th {
   border-style: none;
 }
 
-#twthvqaanx p {
+#asbvbdqlut p {
   margin: 0;
   padding: 0;
 }
 
-#twthvqaanx .gt_table {
+#asbvbdqlut .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1160,12 +1172,12 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-left-color: #D3D3D3;
 }
 
-#twthvqaanx .gt_caption {
+#asbvbdqlut .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#twthvqaanx .gt_title {
+#asbvbdqlut .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1177,7 +1189,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-bottom-width: 0;
 }
 
-#twthvqaanx .gt_subtitle {
+#asbvbdqlut .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1189,7 +1201,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-top-width: 0;
 }
 
-#twthvqaanx .gt_heading {
+#asbvbdqlut .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1201,13 +1213,13 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#twthvqaanx .gt_bottom_border {
+#asbvbdqlut .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#twthvqaanx .gt_col_headings {
+#asbvbdqlut .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1222,7 +1234,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#twthvqaanx .gt_col_heading {
+#asbvbdqlut .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1242,7 +1254,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#twthvqaanx .gt_column_spanner_outer {
+#asbvbdqlut .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1254,15 +1266,15 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 4px;
 }
 
-#twthvqaanx .gt_column_spanner_outer:first-child {
+#asbvbdqlut .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#twthvqaanx .gt_column_spanner_outer:last-child {
+#asbvbdqlut .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#twthvqaanx .gt_column_spanner {
+#asbvbdqlut .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1274,11 +1286,11 @@ Table&nbsp;2: Penguin Mean Body Weights
   width: 100%;
 }
 
-#twthvqaanx .gt_spanner_row {
+#asbvbdqlut .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#twthvqaanx .gt_group_heading {
+#asbvbdqlut .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1304,7 +1316,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   text-align: left;
 }
 
-#twthvqaanx .gt_empty_group_heading {
+#asbvbdqlut .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1319,15 +1331,15 @@ Table&nbsp;2: Penguin Mean Body Weights
   vertical-align: middle;
 }
 
-#twthvqaanx .gt_from_md > :first-child {
+#asbvbdqlut .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#twthvqaanx .gt_from_md > :last-child {
+#asbvbdqlut .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#twthvqaanx .gt_row {
+#asbvbdqlut .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1346,7 +1358,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#twthvqaanx .gt_stub {
+#asbvbdqlut .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1359,7 +1371,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#twthvqaanx .gt_stub_row_group {
+#asbvbdqlut .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1373,15 +1385,15 @@ Table&nbsp;2: Penguin Mean Body Weights
   vertical-align: top;
 }
 
-#twthvqaanx .gt_row_group_first td {
+#asbvbdqlut .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#twthvqaanx .gt_row_group_first th {
+#asbvbdqlut .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#twthvqaanx .gt_summary_row {
+#asbvbdqlut .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1391,16 +1403,16 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#twthvqaanx .gt_first_summary_row {
+#asbvbdqlut .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#twthvqaanx .gt_first_summary_row.thick {
+#asbvbdqlut .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#twthvqaanx .gt_last_summary_row {
+#asbvbdqlut .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1410,7 +1422,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#twthvqaanx .gt_grand_summary_row {
+#asbvbdqlut .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1420,7 +1432,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#twthvqaanx .gt_first_grand_summary_row {
+#asbvbdqlut .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1430,7 +1442,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-top-color: #D3D3D3;
 }
 
-#twthvqaanx .gt_last_grand_summary_row_top {
+#asbvbdqlut .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1440,11 +1452,11 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#twthvqaanx .gt_striped {
+#asbvbdqlut .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#twthvqaanx .gt_table_body {
+#asbvbdqlut .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1453,7 +1465,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#twthvqaanx .gt_footnotes {
+#asbvbdqlut .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1467,7 +1479,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#twthvqaanx .gt_footnote {
+#asbvbdqlut .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1476,7 +1488,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#twthvqaanx .gt_sourcenotes {
+#asbvbdqlut .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1490,7 +1502,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#twthvqaanx .gt_sourcenote {
+#asbvbdqlut .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1498,72 +1510,72 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#twthvqaanx .gt_left {
+#asbvbdqlut .gt_left {
   text-align: left;
 }
 
-#twthvqaanx .gt_center {
+#asbvbdqlut .gt_center {
   text-align: center;
 }
 
-#twthvqaanx .gt_right {
+#asbvbdqlut .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#twthvqaanx .gt_font_normal {
+#asbvbdqlut .gt_font_normal {
   font-weight: normal;
 }
 
-#twthvqaanx .gt_font_bold {
+#asbvbdqlut .gt_font_bold {
   font-weight: bold;
 }
 
-#twthvqaanx .gt_font_italic {
+#asbvbdqlut .gt_font_italic {
   font-style: italic;
 }
 
-#twthvqaanx .gt_super {
+#asbvbdqlut .gt_super {
   font-size: 65%;
 }
 
-#twthvqaanx .gt_footnote_marks {
+#asbvbdqlut .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#twthvqaanx .gt_asterisk {
+#asbvbdqlut .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#twthvqaanx .gt_indent_1 {
+#asbvbdqlut .gt_indent_1 {
   text-indent: 5px;
 }
 
-#twthvqaanx .gt_indent_2 {
+#asbvbdqlut .gt_indent_2 {
   text-indent: 10px;
 }
 
-#twthvqaanx .gt_indent_3 {
+#asbvbdqlut .gt_indent_3 {
   text-indent: 15px;
 }
 
-#twthvqaanx .gt_indent_4 {
+#asbvbdqlut .gt_indent_4 {
   text-indent: 20px;
 }
 
-#twthvqaanx .gt_indent_5 {
+#asbvbdqlut .gt_indent_5 {
   text-indent: 25px;
 }
 
-#twthvqaanx .katex-display {
+#asbvbdqlut .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#twthvqaanx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#asbvbdqlut div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>

@@ -99,12 +99,9 @@ In the output document you should see both the code *and* the output of that cod
 head(penguins)
 ```
 
-## Code cell options
-
-Within each code cell we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code cell with `#|`{style="color:green"} (called the hash pipe). 
 
 
-### Global code options
+## Global code options
 
 Code options included in the YAML header are global - they will be applied to all code cells in this document. As we will cover below, individual code cells (chunks or blocks of code) can be controlled separately. 
 
@@ -118,7 +115,11 @@ When `code-fold` is set to `true`, all code blocks will be automatically collaps
 
 The option `code-tools: true`, used in conjunction with `code-fold: true`, provides a simple button at the top of the html that can then be used to toggle all code to open/closed (an easy 'reset' of all code blocks). This also provides an option to see all the qmd source code.  
 
-#### Echo and Eval
+## Code cell options
+
+Within each code cell we can add arguments that modify how the code is interpreted or displayed in the rendered document. We will add this information at the start of the code cell with `#|`{style="color:green"} (called the hash pipe). 
+
+### Echo and Eval
 
 Here we will use the `#| echo: false` command to hide the R code itself from the final doc, while the output is still displayed.
 
@@ -154,7 +155,7 @@ tail(penguins)
 Now see for yourself! Try using `#| eval: false` and `#| echo: false` and render the document.
 
 
-#### Cross-referencing: figures and tables
+### Cross-referencing: figures and tables
 
 Quarto allows easy cross-referencing to figures and tables. 
 
@@ -163,9 +164,9 @@ We can attach a label to a code block with `#| label:`, followed by a given labe
 
 ##### Figures example:
 
-Open a code block.
-
-Directly under the header line of your code block, add the text `#| label: fig-penguinBills`. Then, add some `ggplot` code to make a figure. We'll do a simple `geom_point()` plot here using the palmerpenguins dataset as an example. Then, underneath your code block, write some text cross-referencing the figure label. See our examples below:
+1. Open a code block.  
+2. Directly under the header line of your code block, add the text `#| label: fig-penguinBills`.   
+3. Then, add some `ggplot` code to make a figure. We'll do a simple `geom_point()` plot here using the palmerpenguins dataset as an example. Then, underneath your code block, write some text cross-referencing the figure label. See our examples below:
 
 
 ```{r}
@@ -226,7 +227,12 @@ Here, the `@fig-penguinBills`{style="color:green"} automatically gets converted 
 ##### Tables example:
 
 
-For cross referencing tables it is very similar to figures, but instead we use the `tbl` prefix, and we can also add a Table caption using `#| tbl-cap:` For example:
+For cross referencing tables it is very similar to figures, but instead we use the `tbl` prefix. We'll also add a Table caption using `#| tbl-cap:` (This works for figures too! Use `#| fig-cap`).   
+
+1. Open a code block.    
+2. Directly under the header line of your code block, add the text `#| label: tbl-penguin-mass-summary`  
+3. On the next line also add a caption `#| tbl-cap: tbl-penguin-mass-summary` 
+
 
 ```{r}
 #| label: tbl-penguin-mass-summary

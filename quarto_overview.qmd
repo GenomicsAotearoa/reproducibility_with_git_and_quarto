@@ -1,30 +1,18 @@
 ---
-title: Quarto Overview
+title: Part two - Quarto
 toc: true
 ---
 
-## What is Quarto? 
+## What will we do today with Quarto?
 
-What is the purpose of Quarto (and it's equivalent systems)?
+ **Key Objectives and Learning Outcomes** ✨
 
-- How does Quarto improve reproducibility? What are some examples?
-
-Basic syntax (generate a pdf) 
-
-- A basic CV or "About me" document  
-- Formatting: headings, lists, bold and italics  
-- Embed an image, generate a table, headings, italics and bold face  
-
-
-Upgrading to a website
-
-- Minimal changes required due to Quarto's cross-output capabilities  
-- A website could: be an about page (your elevator pitch - an ideal pinned repo), a lab on-boarding page, or a walkthrough of a method with output ("showcasing your story").  
-
-Preview and Render, git and Publishing
-
-- Practice practice practice! Theme, styles.
-- Publishing with github pages.
+- Understand about the purpose of Quarto and how it improves reproducibility
+- Learn basic syntax of the Quarto markdown language, such as formatting headings, lists, bold and italics  
+- Showcase how to render Quarto documents as html, slideshow, pdf 
+- Learn how to link multiple Quarto documents as a Quarto "Project" and render as a website
+- Explore different ways to customise theming, styles, output formatting etc.
+- Publish a website with GitHub pages.
 
 
 
