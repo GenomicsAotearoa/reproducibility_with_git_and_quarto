@@ -84,11 +84,6 @@ library(palmerpenguins)
 head(penguins) 
 ```
 
-Also add in comments (this is good reproducibility practise!), for example:  
-```{r}
-# this function loads the library
-# this shows first 6 lines of the penguin dataframe
-```
 
 > Note: the palmerpenguins R package has a built-in object called penguins, which is what we are viewing with the head function.
 
@@ -101,8 +96,6 @@ For example, if you do not have the palmerpenguins package installed, this cell 
 In the output document you should see both the code *and* the output of that code - in this case, the first six rows of the penguin object:
 
 ```{r}
-library(palmerpenguins)
-
 head(penguins)
 ```
 
@@ -121,7 +114,9 @@ Some useful global options we might want to set in the YAML header are:
 
 `code-tools: true`
 
-When `code-fold` is set to `true`, all code blocks will be automatically collapsed. This is useful when you want code to be available but would otherwise distract from the flow of the document *e.g.,* when teaching/training, presenting at lab meetings. `code-tools` provides a simple button at the top of the html that can then be used to toggle all code to open/closed (an easy 'reset' of all code blocks). 
+When `code-fold` is set to `true`, all code blocks will be automatically collapsed. This is useful when you want code to be available but would otherwise distract from the flow of the document *e.g.,* when teaching/training, presenting at lab meetings. 
+
+The option `code-tools: true`, used in conjunction with `code-fold: true`, provides a simple button at the top of the html that can then be used to toggle all code to open/closed (an easy 'reset' of all code blocks). This also provides an option to see all the qmd source code.  
 
 #### Echo and Eval
 
@@ -178,7 +173,7 @@ Directly under the header line of your code block, add the text `#| label: fig-p
 
 #| label: fig-penguinBills
 
-# install.packages("tidyverse")
+# install.packages("ggplot2")
 library(ggplot2)
 ggplot(data = penguins,
        mapping = aes(x = bill_depth_mm,
@@ -240,7 +235,8 @@ For cross referencing tables it is very similar to figures, but instead we use t
 #| label: tbl-penguin-mass-summary
 #| tbl-cap: Penguin Mean Body Weights
 
-#install.packages("gt")
+# install.packages("gt")
+# install.packages("dplyr")
 library(dplyr)
 library(gt)
 

@@ -33,6 +33,10 @@ It is important to note that `git init` will create a repository that can includ
 
 If we use `ls -a` to show everything, we can see that Git has created a hidden directory within recipes called .git:
 
+```bash
+ls -a
+```
+
 ```
 . .. .git
 ```

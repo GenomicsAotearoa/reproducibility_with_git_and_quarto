@@ -388,11 +388,6 @@ Windows/Linux: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd></p>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins) </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Also add in comments (this is good reproducibility practise!), for example:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this function loads the library</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this shows first 6 lines of the penguin dataframe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <blockquote class="blockquote">
 <p>Note: the palmerpenguins R package has a built-in object called penguins, which is what we are viewing with the head function.</p>
 </blockquote>
@@ -401,9 +396,7 @@ Windows/Linux: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd></p>
 <p>For example, if you do not have the palmerpenguins package installed, this cell cannot successfully execute and the render process will fail. Using the <code style="color:green">#</code> symbol within a code cell will cause that line of text to be ‘commented out’ (<em>i.e.,</em> it will be interpreted as plain text, rather than code).</p>
 <p>In the output document you should see both the code <em>and</em> the output of that code - in this case, the first six rows of the penguin object:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -428,7 +421,8 @@ Windows/Linux: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd></p>
 <p>Some useful global options we might want to set in the YAML header are:</p>
 <p><code>code-fold: true</code></p>
 <p><code>code-tools: true</code></p>
-<p>When <code>code-fold</code> is set to <code>true</code>, all code blocks will be automatically collapsed. This is useful when you want code to be available but would otherwise distract from the flow of the document <em>e.g.,</em> when teaching/training, presenting at lab meetings. <code>code-tools</code> provides a simple button at the top of the html that can then be used to toggle all code to open/closed (an easy ‘reset’ of all code blocks).</p>
+<p>When <code>code-fold</code> is set to <code>true</code>, all code blocks will be automatically collapsed. This is useful when you want code to be available but would otherwise distract from the flow of the document <em>e.g.,</em> when teaching/training, presenting at lab meetings.</p>
+<p>The option <code>code-tools: true</code>, used in conjunction with <code>code-fold: true</code>, provides a simple button at the top of the html that can then be used to toggle all code to open/closed (an easy ‘reset’ of all code blocks). This also provides an option to see all the qmd source code.</p>
 <section id="echo-and-eval" class="level4">
 <h4 class="anchored" data-anchor-id="echo-and-eval">Echo and Eval</h4>
 <p>Here we will use the <code>#| echo: false</code> command to hide the R code itself from the final doc, while the output is still displayed.</p>
@@ -456,7 +450,7 @@ Windows/Linux: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd></p>
 <p><img src="images-quarto/quarto-codecell-03.png" class="img-fluid"></p>
 <p>And the rendered document looks like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now see for yourself! Try using <code>#| eval: false</code> and <code>#| echo: false</code> and render the document.</p>
 </section>
@@ -469,16 +463,16 @@ Windows/Linux: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd></p>
 <p>Open a code block.</p>
 <p>Directly under the header line of your code block, add the text <code>#| label: fig-penguinBills</code>. Then, add some <code>ggplot</code> code to make a figure. We’ll do a simple <code>geom_point()</code> plot here using the palmerpenguins dataset as an example. Then, underneath your code block, write some text cross-referencing the figure label. See our examples below:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-penguinBills</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyverse")</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_depth_mm,</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_length_mm,</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">colour =</span> species,</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-penguinBills</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("ggplot2")</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_depth_mm,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_length_mm,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">colour =</span> species,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).</code></pre>
@@ -529,11 +523,12 @@ What is happening above (behind the scenes)?
 <h5 class="anchored" data-anchor-id="tables-example">Tables example:</h5>
 <p>For cross referencing tables it is very similar to figures, but instead we use the <code>tbl</code> prefix, and we can also add a Table caption using <code>#| tbl-cap:</code> For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-penguin-mass-summary</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Penguin Mean Body Weights</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("gt")</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-penguin-mass-summary</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Penguin Mean Body Weights</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("gt")</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("dplyr")</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'dplyr'</code></pre>
@@ -548,16 +543,16 @@ Attaching package: 'dplyr'</code></pre>
 
     intersect, setdiff, setequal, union</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island) <span class="sc">|&gt;</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_body_mass_g =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(mean_body_mass_g) <span class="sc">|&gt;</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">island =</span><span class="st">"Island"</span>, </span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">mean_body_mass_g =</span> <span class="st">"Mean Body Mass (g)"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">columns =</span> island, <span class="at">align =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island) <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_body_mass_g =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(mean_body_mass_g) <span class="sc">|&gt;</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">island =</span><span class="st">"Island"</span>, </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">mean_body_mass_g =</span> <span class="st">"Mean Body Mass (g)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">columns =</span> island, <span class="at">align =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-penguin-mass-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-penguin-mass-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -565,23 +560,23 @@ Table&nbsp;1: Penguin Mean Body Weights
 </figcaption>
 <div aria-describedby="tbl-penguin-mass-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="bfkugmsdve" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bfkugmsdve table {
+<div id="khogxcuqna" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#khogxcuqna table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bfkugmsdve thead, #bfkugmsdve tbody, #bfkugmsdve tfoot, #bfkugmsdve tr, #bfkugmsdve td, #bfkugmsdve th {
+#khogxcuqna thead, #khogxcuqna tbody, #khogxcuqna tfoot, #khogxcuqna tr, #khogxcuqna td, #khogxcuqna th {
   border-style: none;
 }
 
-#bfkugmsdve p {
+#khogxcuqna p {
   margin: 0;
   padding: 0;
 }
 
-#bfkugmsdve .gt_table {
+#khogxcuqna .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -607,12 +602,12 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-left-color: #D3D3D3;
 }
 
-#bfkugmsdve .gt_caption {
+#khogxcuqna .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bfkugmsdve .gt_title {
+#khogxcuqna .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -624,7 +619,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-width: 0;
 }
 
-#bfkugmsdve .gt_subtitle {
+#khogxcuqna .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -636,7 +631,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-top-width: 0;
 }
 
-#bfkugmsdve .gt_heading {
+#khogxcuqna .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -648,13 +643,13 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#bfkugmsdve .gt_bottom_border {
+#khogxcuqna .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bfkugmsdve .gt_col_headings {
+#khogxcuqna .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -669,7 +664,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#bfkugmsdve .gt_col_heading {
+#khogxcuqna .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -689,7 +684,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#bfkugmsdve .gt_column_spanner_outer {
+#khogxcuqna .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -701,15 +696,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 4px;
 }
 
-#bfkugmsdve .gt_column_spanner_outer:first-child {
+#khogxcuqna .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bfkugmsdve .gt_column_spanner_outer:last-child {
+#khogxcuqna .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bfkugmsdve .gt_column_spanner {
+#khogxcuqna .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -721,11 +716,11 @@ Table&nbsp;1: Penguin Mean Body Weights
   width: 100%;
 }
 
-#bfkugmsdve .gt_spanner_row {
+#khogxcuqna .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bfkugmsdve .gt_group_heading {
+#khogxcuqna .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -751,7 +746,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   text-align: left;
 }
 
-#bfkugmsdve .gt_empty_group_heading {
+#khogxcuqna .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -766,15 +761,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   vertical-align: middle;
 }
 
-#bfkugmsdve .gt_from_md > :first-child {
+#khogxcuqna .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bfkugmsdve .gt_from_md > :last-child {
+#khogxcuqna .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bfkugmsdve .gt_row {
+#khogxcuqna .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -793,7 +788,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#bfkugmsdve .gt_stub {
+#khogxcuqna .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -806,7 +801,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#bfkugmsdve .gt_stub_row_group {
+#khogxcuqna .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -820,15 +815,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   vertical-align: top;
 }
 
-#bfkugmsdve .gt_row_group_first td {
+#khogxcuqna .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bfkugmsdve .gt_row_group_first th {
+#khogxcuqna .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bfkugmsdve .gt_summary_row {
+#khogxcuqna .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -838,16 +833,16 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#bfkugmsdve .gt_first_summary_row {
+#khogxcuqna .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bfkugmsdve .gt_first_summary_row.thick {
+#khogxcuqna .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bfkugmsdve .gt_last_summary_row {
+#khogxcuqna .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -857,7 +852,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#bfkugmsdve .gt_grand_summary_row {
+#khogxcuqna .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -867,7 +862,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#bfkugmsdve .gt_first_grand_summary_row {
+#khogxcuqna .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -877,7 +872,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-top-color: #D3D3D3;
 }
 
-#bfkugmsdve .gt_last_grand_summary_row_top {
+#khogxcuqna .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -887,11 +882,11 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#bfkugmsdve .gt_striped {
+#khogxcuqna .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bfkugmsdve .gt_table_body {
+#khogxcuqna .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -900,7 +895,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#bfkugmsdve .gt_footnotes {
+#khogxcuqna .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -914,7 +909,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#bfkugmsdve .gt_footnote {
+#khogxcuqna .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -923,7 +918,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#bfkugmsdve .gt_sourcenotes {
+#khogxcuqna .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -937,7 +932,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#bfkugmsdve .gt_sourcenote {
+#khogxcuqna .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -945,72 +940,72 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#bfkugmsdve .gt_left {
+#khogxcuqna .gt_left {
   text-align: left;
 }
 
-#bfkugmsdve .gt_center {
+#khogxcuqna .gt_center {
   text-align: center;
 }
 
-#bfkugmsdve .gt_right {
+#khogxcuqna .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bfkugmsdve .gt_font_normal {
+#khogxcuqna .gt_font_normal {
   font-weight: normal;
 }
 
-#bfkugmsdve .gt_font_bold {
+#khogxcuqna .gt_font_bold {
   font-weight: bold;
 }
 
-#bfkugmsdve .gt_font_italic {
+#khogxcuqna .gt_font_italic {
   font-style: italic;
 }
 
-#bfkugmsdve .gt_super {
+#khogxcuqna .gt_super {
   font-size: 65%;
 }
 
-#bfkugmsdve .gt_footnote_marks {
+#khogxcuqna .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bfkugmsdve .gt_asterisk {
+#khogxcuqna .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bfkugmsdve .gt_indent_1 {
+#khogxcuqna .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bfkugmsdve .gt_indent_2 {
+#khogxcuqna .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bfkugmsdve .gt_indent_3 {
+#khogxcuqna .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bfkugmsdve .gt_indent_4 {
+#khogxcuqna .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bfkugmsdve .gt_indent_5 {
+#khogxcuqna .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bfkugmsdve .katex-display {
+#khogxcuqna .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bfkugmsdve div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#khogxcuqna div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1074,16 +1069,16 @@ Solution
 <p><strong>Figure without warning:</strong></p>
 <p>This hides the warning we saw before about the 2 rows containing missing values</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-penguinBills</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_depth_mm,</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_length_mm,</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">colour =</span> species,</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-penguinBills</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_depth_mm,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_length_mm,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">colour =</span> species,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-penguinBillsNoWarning" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1100,22 +1095,22 @@ Figure&nbsp;2
 <p><strong>Table without message:</strong></p>
 <p>This hides the messages from loading dplyr</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false </span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-penguin-mass-summary</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Penguin Mean Body Weights</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island) <span class="sc">|&gt;</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_body_mass_g =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(mean_body_mass_g) <span class="sc">|&gt;</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">island =</span><span class="st">"Island"</span>, </span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>              <span class="at">mean_body_mass_g =</span> <span class="st">"Mean Body Mass (g)"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">columns =</span> island, <span class="at">align =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false </span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-penguin-mass-summary</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Penguin Mean Body Weights</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island) <span class="sc">|&gt;</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_body_mass_g =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(mean_body_mass_g) <span class="sc">|&gt;</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">island =</span><span class="st">"Island"</span>, </span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>              <span class="at">mean_body_mass_g =</span> <span class="st">"Mean Body Mass (g)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">columns =</span> island, <span class="at">align =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-penguin-mass-summary-NoMessage" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-penguin-mass-summary-NoMessage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1123,23 +1118,23 @@ Table&nbsp;2: Penguin Mean Body Weights
 </figcaption>
 <div aria-describedby="tbl-penguin-mass-summary-NoMessage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="vkpuppbwby" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vkpuppbwby table {
+<div id="twthvqaanx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#twthvqaanx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vkpuppbwby thead, #vkpuppbwby tbody, #vkpuppbwby tfoot, #vkpuppbwby tr, #vkpuppbwby td, #vkpuppbwby th {
+#twthvqaanx thead, #twthvqaanx tbody, #twthvqaanx tfoot, #twthvqaanx tr, #twthvqaanx td, #twthvqaanx th {
   border-style: none;
 }
 
-#vkpuppbwby p {
+#twthvqaanx p {
   margin: 0;
   padding: 0;
 }
 
-#vkpuppbwby .gt_table {
+#twthvqaanx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1165,12 +1160,12 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-left-color: #D3D3D3;
 }
 
-#vkpuppbwby .gt_caption {
+#twthvqaanx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vkpuppbwby .gt_title {
+#twthvqaanx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1182,7 +1177,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-bottom-width: 0;
 }
 
-#vkpuppbwby .gt_subtitle {
+#twthvqaanx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1194,7 +1189,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-top-width: 0;
 }
 
-#vkpuppbwby .gt_heading {
+#twthvqaanx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1206,13 +1201,13 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#vkpuppbwby .gt_bottom_border {
+#twthvqaanx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vkpuppbwby .gt_col_headings {
+#twthvqaanx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1227,7 +1222,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#vkpuppbwby .gt_col_heading {
+#twthvqaanx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1247,7 +1242,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#vkpuppbwby .gt_column_spanner_outer {
+#twthvqaanx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1259,15 +1254,15 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 4px;
 }
 
-#vkpuppbwby .gt_column_spanner_outer:first-child {
+#twthvqaanx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vkpuppbwby .gt_column_spanner_outer:last-child {
+#twthvqaanx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vkpuppbwby .gt_column_spanner {
+#twthvqaanx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1279,11 +1274,11 @@ Table&nbsp;2: Penguin Mean Body Weights
   width: 100%;
 }
 
-#vkpuppbwby .gt_spanner_row {
+#twthvqaanx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vkpuppbwby .gt_group_heading {
+#twthvqaanx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1309,7 +1304,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   text-align: left;
 }
 
-#vkpuppbwby .gt_empty_group_heading {
+#twthvqaanx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1324,15 +1319,15 @@ Table&nbsp;2: Penguin Mean Body Weights
   vertical-align: middle;
 }
 
-#vkpuppbwby .gt_from_md > :first-child {
+#twthvqaanx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vkpuppbwby .gt_from_md > :last-child {
+#twthvqaanx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vkpuppbwby .gt_row {
+#twthvqaanx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1351,7 +1346,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#vkpuppbwby .gt_stub {
+#twthvqaanx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1364,7 +1359,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#vkpuppbwby .gt_stub_row_group {
+#twthvqaanx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1378,15 +1373,15 @@ Table&nbsp;2: Penguin Mean Body Weights
   vertical-align: top;
 }
 
-#vkpuppbwby .gt_row_group_first td {
+#twthvqaanx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vkpuppbwby .gt_row_group_first th {
+#twthvqaanx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vkpuppbwby .gt_summary_row {
+#twthvqaanx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1396,16 +1391,16 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#vkpuppbwby .gt_first_summary_row {
+#twthvqaanx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vkpuppbwby .gt_first_summary_row.thick {
+#twthvqaanx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vkpuppbwby .gt_last_summary_row {
+#twthvqaanx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1415,7 +1410,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#vkpuppbwby .gt_grand_summary_row {
+#twthvqaanx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1425,7 +1420,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#vkpuppbwby .gt_first_grand_summary_row {
+#twthvqaanx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1435,7 +1430,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-top-color: #D3D3D3;
 }
 
-#vkpuppbwby .gt_last_grand_summary_row_top {
+#twthvqaanx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1445,11 +1440,11 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#vkpuppbwby .gt_striped {
+#twthvqaanx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vkpuppbwby .gt_table_body {
+#twthvqaanx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1458,7 +1453,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#vkpuppbwby .gt_footnotes {
+#twthvqaanx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1472,7 +1467,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#vkpuppbwby .gt_footnote {
+#twthvqaanx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1481,7 +1476,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#vkpuppbwby .gt_sourcenotes {
+#twthvqaanx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1495,7 +1490,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#vkpuppbwby .gt_sourcenote {
+#twthvqaanx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1503,72 +1498,72 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#vkpuppbwby .gt_left {
+#twthvqaanx .gt_left {
   text-align: left;
 }
 
-#vkpuppbwby .gt_center {
+#twthvqaanx .gt_center {
   text-align: center;
 }
 
-#vkpuppbwby .gt_right {
+#twthvqaanx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vkpuppbwby .gt_font_normal {
+#twthvqaanx .gt_font_normal {
   font-weight: normal;
 }
 
-#vkpuppbwby .gt_font_bold {
+#twthvqaanx .gt_font_bold {
   font-weight: bold;
 }
 
-#vkpuppbwby .gt_font_italic {
+#twthvqaanx .gt_font_italic {
   font-style: italic;
 }
 
-#vkpuppbwby .gt_super {
+#twthvqaanx .gt_super {
   font-size: 65%;
 }
 
-#vkpuppbwby .gt_footnote_marks {
+#twthvqaanx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vkpuppbwby .gt_asterisk {
+#twthvqaanx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vkpuppbwby .gt_indent_1 {
+#twthvqaanx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vkpuppbwby .gt_indent_2 {
+#twthvqaanx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vkpuppbwby .gt_indent_3 {
+#twthvqaanx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vkpuppbwby .gt_indent_4 {
+#twthvqaanx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vkpuppbwby .gt_indent_5 {
+#twthvqaanx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#vkpuppbwby .katex-display {
+#twthvqaanx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#vkpuppbwby div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#twthvqaanx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1621,13 +1616,13 @@ Table&nbsp;2: Penguin Mean Body Weights
 <p>Inline code refers to code that is used within the document but is not stored separately in a code cell. The purpose of inline code is to embed the output directly into the document text.</p>
 <p>For example, if we wanted to describe the mean bill length for the Adelie species of penguins in the penguins object, we could manually calculate the value:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(<span class="fu">na.omit</span>(penguins<span class="sc">$</span>bill_length_mm)),<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(<span class="fu">na.omit</span>(penguins<span class="sc">$</span>bill_length_mm)),<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 43.92</code></pre>
 </div>
 </div>
 <p>and then add a written statement:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> mean bill length of penguins in the dataset is 43.92mm.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> mean bill length of penguins in the dataset is 43.92mm.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To streamline the above with inline code we need to do three things:</p>
 <ol type="1">
 <li><p>Write the text statement and open a set of backticks (`).</p></li>
@@ -1636,10 +1631,10 @@ Table&nbsp;2: Penguin Mean Body Weights
 </ol>
 <p><strong>This is demonstrated below as inline code:</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>The mean bill length of penguins <span class="cf">in</span> the dataset is <span class="st">`</span><span class="at">r round(mean(na.omit(penguins$bill_length_mm)),2)</span><span class="st">`</span>mm.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>The mean bill length of penguins <span class="cf">in</span> the dataset is <span class="st">`</span><span class="at">r round(mean(na.omit(penguins$bill_length_mm)),2)</span><span class="st">`</span>mm.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>The same line of code above will render as:</strong></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> mean bill length of penguins in the dataset is 43.92mm.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> mean bill length of penguins in the dataset is 43.92mm.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="why-use-inline-code" class="level3">
 <h3 class="anchored" data-anchor-id="why-use-inline-code">Why use inline code?</h3>
 <p>The key reason for using inline code is reproducibility. If you need to re-run your analysis, or update an input file, your statements will automatically be updated to reflect the new data. This has the additional benefit of reducing human error: avoids copy-paste errors (or copy and writing errors) between the calculated values and the value stated in text and ensures that all instances of this value are identical (<em>e.g.,</em> if this value is referred to repeatedly).</p>

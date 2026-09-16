@@ -9,26 +9,13 @@ In this workshop we will need to work publicly (which is *scary*). We will creat
 
 ## Open an R project
 
-First, make a new directory on your Desktop and call it `Learning-quarto`{style="color:blue"}. 
+First, make a new directory on your Desktop and call it `Learning-quarto`{style="color:blue"}. (**No spaces!**) 
 
 Go to RStudio and click on `File > New Project > Existing Directory`{style="color:black"}, then use browse to select your `Learning-quarto`{style="color:blue"} folder. Click `Create Project.`{style="color:black"} 
 
 ![](images-quarto/quarto-setup-02.png){width=80%}
 
 
-::: {.callout-note appearance="simple" collapse="true"}
-# Optional alternative: Start a new GitHub repo 
-Go to GitHub, under "Repositories", click New, give your new repo a name and description. 
-
-We won't need this beyond today, so you can call it something like `my-test-repo`{style="color:blue"} if you like. Make sure the "public" box is checked (this should occur by default). 
-
-Click on the green "Code" button, and copy the url for the repo. 
-
-From RStudio, go `File > New Project > Version Control > Git`{style="color:black"}. Paste in the repo URL, provide a project directory name, and select the location for the project. Click `Create Project`{style="color:black"} 
-
-![](images-quarto/quarto-setup-01.png){width=80%}
-
-:::
 
 
 ## First quarto doc
@@ -39,7 +26,9 @@ Under `File > New File`{style="color:black"}, click Quarto Document. Alternative
 
 ![New Quarto doc panel](figures/newQuartoDoc.png)
 
-On the left hand side we can see three options: Document, Presentation, and Interactive, and for each of these we can see there are different outputs. We can change these outputs later, but for now, select Document and HTML (this is the recommended format for working in). Give this document a title, something like "Basic About Page". Before we create the document, we can see a couple of other options: **Engine** (leave this as Knitr), **Editor** (we will keep the visual editor box ticked), and then we can either click `Create`{style="color:black"} or `Create Empty Document`{style="color:black"}. For now, click on `Create`{style="color:black"}
+On the left hand side we can see three options: Document, Presentation, and Interactive, and for each of these we can see there are different outputs. We can change these outputs later, but for now, select Document and HTML (this is the recommended format for working in). Give this document a title, something like "Basic About Page". Before we create the document, we can see a couple of other options: **Engine** (leave this as Knitr), **Editor** (we will keep the visual editor box ticked), and then we can either click `Create`{style="color:black"} or `Create Empty Document`{style="color:black"}. 
+
+For now, click on `Create`{style="color:black"}.
 
 This creates and opens a new document for us to write in. We can note three things:
 
@@ -210,6 +199,26 @@ Hit <KBD>CTRL</KBD>  + <KBD>C</KBD> back in terminal to exit preview mode.
 
 :::
 
+
+::: {.callout-important collapse="true" appearance="minimal"}
+# Rendering issue? 
+
+Quarto is a built-in tool within RStudio, so if rendering is not working you may need to update your R and RStudio to the latest version from posit.
+
+If you do not have admin rights over your computer (*i.e.,* if you are using a University, Institutional or Organisation issued computer) you may need to first see if an update is available through your organisation's software management system. 
+
+If you are still having an issue rendering, this may be because you need to install R markdown and dependancies.
+
+Try running the following (this may take a few minutes to download all the packages)  
+
+```{r}
+#| eval: false
+
+install.packages("rmarkdown", dep = TRUE)
+```
+
+
+:::
 
 
 
