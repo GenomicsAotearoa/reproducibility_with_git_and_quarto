@@ -14,7 +14,9 @@ The aims of this section are to:
 
 ### Prep
 
-We need a few packages for this episode. If you need to install these, you can do it now if you wish with the following code:
+1. Create a new quarto document `(File > New File > Quarto Document)`{style="color:black"}, give it the title "Code in Quarto" and select `Create Empty Document`{style="color:black"}. Save the file as `code-in-quarto.qmd`{style="color:blue"}
+
+2. We need a few packages for this episode. If you need to install these, you can do it now if you wish with the following code (you can run this directly in your console):  
 
 ```{r}
 #| eval: false
@@ -60,7 +62,7 @@ Windows/Linux: <KBD>Ctrl</KBD> + <KBD>Shift</KBD> + <KBD>I</KBD>
 library(palmerpenguins)
 ```
 
-Create a new quarto document `(File > New File > Quarto Document)`{style="color:black"}, give it the title "Code in Quarto" and select `Create Empty Document`{style="color:black"}
+
 
 Insert a new R code cell. You do this by either:  
 

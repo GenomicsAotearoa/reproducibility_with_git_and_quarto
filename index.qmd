@@ -66,8 +66,7 @@ This workshop **does not** cover:
 
 For this workshop you will need to have a number of different software installed on your local computer, as well as an account made with GitHub. 
 
-See [Part One - Git: Setup on local machine](git_overview.qmd#setup-on-local-machine) for setup instructions. Quarto is a part of RStudio, therefore you will not need to setup anything extra for Part Two - Quarto. Optionally you can download and install the [Quarto CLI](https://quarto.org/docs/get-started/), which will allow you to render quarto documents without RStudio.
-  
+See [Setup on local machine](setup.qmd) for setup instructions and checks. Git is run on the command line. For MacOS users you likely will not need to install anything extra for this to work. For Windows users you will need to download Git Bash. All learners will need to download RStudio, which comes with Quarto natively. Optionally you can download and install the [Quarto CLI](https://quarto.org/docs/get-started/), which will allow you to render Quarto documents without RStudio.
 
 
 ## Attribution

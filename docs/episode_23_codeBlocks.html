@@ -157,6 +157,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Home</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./git_overview.html" class="sidebar-item-text sidebar-link">
@@ -333,7 +339,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="prep" class="level3">
 <h3 class="anchored" data-anchor-id="prep">Prep</h3>
-<p>We need a few packages for this episode. If you need to install these, you can do it now if you wish with the following code:</p>
+<ol type="1">
+<li><p>Create a new quarto document <code style="color:black">(File &gt; New File &gt; Quarto Document)</code>, give it the title “Code in Quarto” and select <code style="color:black">Create Empty Document</code>. Save the file as <code style="color:blue">code-in-quarto.qmd</code></p></li>
+<li><p>We need a few packages for this episode. If you need to install these, you can do it now if you wish with the following code (you can run this directly in your console):</p></li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"palmerpenguins"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
@@ -371,7 +380,6 @@ Windows/Linux: <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>I</kbd></p>
 Windows/Linux: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd></p>
 <section id="exercise-insert-a-code-cell-2-min" class="level4">
 <h4 class="anchored" data-anchor-id="exercise-insert-a-code-cell-2-min">EXERCISE 🧠🏋️‍♀️: Insert a code cell (2 min)</h4>
-<p>Create a new quarto document <code style="color:black">(File &gt; New File &gt; Quarto Document)</code>, give it the title “Code in Quarto” and select <code style="color:black">Create Empty Document</code></p>
 <p>Insert a new R code cell. You do this by either:</p>
 <ul>
 <li>Using the new code cell button in Visual editor (click the “+” and letter “C” in a green box)<br>
@@ -573,23 +581,23 @@ Table&nbsp;1: Penguin Mean Body Weights
 </figcaption>
 <div aria-describedby="tbl-penguin-mass-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="xohcnvhide" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xohcnvhide table {
+<div id="senmfgiuvu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#senmfgiuvu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xohcnvhide thead, #xohcnvhide tbody, #xohcnvhide tfoot, #xohcnvhide tr, #xohcnvhide td, #xohcnvhide th {
+#senmfgiuvu thead, #senmfgiuvu tbody, #senmfgiuvu tfoot, #senmfgiuvu tr, #senmfgiuvu td, #senmfgiuvu th {
   border-style: none;
 }
 
-#xohcnvhide p {
+#senmfgiuvu p {
   margin: 0;
   padding: 0;
 }
 
-#xohcnvhide .gt_table {
+#senmfgiuvu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -615,12 +623,12 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-left-color: #D3D3D3;
 }
 
-#xohcnvhide .gt_caption {
+#senmfgiuvu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xohcnvhide .gt_title {
+#senmfgiuvu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -632,7 +640,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-width: 0;
 }
 
-#xohcnvhide .gt_subtitle {
+#senmfgiuvu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -644,7 +652,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-top-width: 0;
 }
 
-#xohcnvhide .gt_heading {
+#senmfgiuvu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -656,13 +664,13 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#xohcnvhide .gt_bottom_border {
+#senmfgiuvu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xohcnvhide .gt_col_headings {
+#senmfgiuvu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -677,7 +685,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#xohcnvhide .gt_col_heading {
+#senmfgiuvu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -697,7 +705,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#xohcnvhide .gt_column_spanner_outer {
+#senmfgiuvu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -709,15 +717,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 4px;
 }
 
-#xohcnvhide .gt_column_spanner_outer:first-child {
+#senmfgiuvu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xohcnvhide .gt_column_spanner_outer:last-child {
+#senmfgiuvu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xohcnvhide .gt_column_spanner {
+#senmfgiuvu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -729,11 +737,11 @@ Table&nbsp;1: Penguin Mean Body Weights
   width: 100%;
 }
 
-#xohcnvhide .gt_spanner_row {
+#senmfgiuvu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xohcnvhide .gt_group_heading {
+#senmfgiuvu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -759,7 +767,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   text-align: left;
 }
 
-#xohcnvhide .gt_empty_group_heading {
+#senmfgiuvu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -774,15 +782,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   vertical-align: middle;
 }
 
-#xohcnvhide .gt_from_md > :first-child {
+#senmfgiuvu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xohcnvhide .gt_from_md > :last-child {
+#senmfgiuvu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xohcnvhide .gt_row {
+#senmfgiuvu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -801,7 +809,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#xohcnvhide .gt_stub {
+#senmfgiuvu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -814,7 +822,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#xohcnvhide .gt_stub_row_group {
+#senmfgiuvu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -828,15 +836,15 @@ Table&nbsp;1: Penguin Mean Body Weights
   vertical-align: top;
 }
 
-#xohcnvhide .gt_row_group_first td {
+#senmfgiuvu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xohcnvhide .gt_row_group_first th {
+#senmfgiuvu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xohcnvhide .gt_summary_row {
+#senmfgiuvu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -846,16 +854,16 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#xohcnvhide .gt_first_summary_row {
+#senmfgiuvu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xohcnvhide .gt_first_summary_row.thick {
+#senmfgiuvu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xohcnvhide .gt_last_summary_row {
+#senmfgiuvu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -865,7 +873,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#xohcnvhide .gt_grand_summary_row {
+#senmfgiuvu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -875,7 +883,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#xohcnvhide .gt_first_grand_summary_row {
+#senmfgiuvu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -885,7 +893,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-top-color: #D3D3D3;
 }
 
-#xohcnvhide .gt_last_grand_summary_row_top {
+#senmfgiuvu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -895,11 +903,11 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#xohcnvhide .gt_striped {
+#senmfgiuvu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xohcnvhide .gt_table_body {
+#senmfgiuvu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -908,7 +916,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#xohcnvhide .gt_footnotes {
+#senmfgiuvu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -922,7 +930,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#xohcnvhide .gt_footnote {
+#senmfgiuvu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -931,7 +939,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#xohcnvhide .gt_sourcenotes {
+#senmfgiuvu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -945,7 +953,7 @@ Table&nbsp;1: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#xohcnvhide .gt_sourcenote {
+#senmfgiuvu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -953,72 +961,72 @@ Table&nbsp;1: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#xohcnvhide .gt_left {
+#senmfgiuvu .gt_left {
   text-align: left;
 }
 
-#xohcnvhide .gt_center {
+#senmfgiuvu .gt_center {
   text-align: center;
 }
 
-#xohcnvhide .gt_right {
+#senmfgiuvu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xohcnvhide .gt_font_normal {
+#senmfgiuvu .gt_font_normal {
   font-weight: normal;
 }
 
-#xohcnvhide .gt_font_bold {
+#senmfgiuvu .gt_font_bold {
   font-weight: bold;
 }
 
-#xohcnvhide .gt_font_italic {
+#senmfgiuvu .gt_font_italic {
   font-style: italic;
 }
 
-#xohcnvhide .gt_super {
+#senmfgiuvu .gt_super {
   font-size: 65%;
 }
 
-#xohcnvhide .gt_footnote_marks {
+#senmfgiuvu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xohcnvhide .gt_asterisk {
+#senmfgiuvu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xohcnvhide .gt_indent_1 {
+#senmfgiuvu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xohcnvhide .gt_indent_2 {
+#senmfgiuvu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xohcnvhide .gt_indent_3 {
+#senmfgiuvu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xohcnvhide .gt_indent_4 {
+#senmfgiuvu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xohcnvhide .gt_indent_5 {
+#senmfgiuvu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xohcnvhide .katex-display {
+#senmfgiuvu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xohcnvhide div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#senmfgiuvu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1130,23 +1138,23 @@ Table&nbsp;2: Penguin Mean Body Weights
 </figcaption>
 <div aria-describedby="tbl-penguin-mass-summary-NoMessage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="asbvbdqlut" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#asbvbdqlut table {
+<div id="ispvlxebdv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ispvlxebdv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#asbvbdqlut thead, #asbvbdqlut tbody, #asbvbdqlut tfoot, #asbvbdqlut tr, #asbvbdqlut td, #asbvbdqlut th {
+#ispvlxebdv thead, #ispvlxebdv tbody, #ispvlxebdv tfoot, #ispvlxebdv tr, #ispvlxebdv td, #ispvlxebdv th {
   border-style: none;
 }
 
-#asbvbdqlut p {
+#ispvlxebdv p {
   margin: 0;
   padding: 0;
 }
 
-#asbvbdqlut .gt_table {
+#ispvlxebdv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1172,12 +1180,12 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-left-color: #D3D3D3;
 }
 
-#asbvbdqlut .gt_caption {
+#ispvlxebdv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#asbvbdqlut .gt_title {
+#ispvlxebdv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1189,7 +1197,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-bottom-width: 0;
 }
 
-#asbvbdqlut .gt_subtitle {
+#ispvlxebdv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1201,7 +1209,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-top-width: 0;
 }
 
-#asbvbdqlut .gt_heading {
+#ispvlxebdv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1213,13 +1221,13 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#asbvbdqlut .gt_bottom_border {
+#ispvlxebdv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#asbvbdqlut .gt_col_headings {
+#ispvlxebdv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1234,7 +1242,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#asbvbdqlut .gt_col_heading {
+#ispvlxebdv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1254,7 +1262,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#asbvbdqlut .gt_column_spanner_outer {
+#ispvlxebdv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1266,15 +1274,15 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 4px;
 }
 
-#asbvbdqlut .gt_column_spanner_outer:first-child {
+#ispvlxebdv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#asbvbdqlut .gt_column_spanner_outer:last-child {
+#ispvlxebdv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#asbvbdqlut .gt_column_spanner {
+#ispvlxebdv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1286,11 +1294,11 @@ Table&nbsp;2: Penguin Mean Body Weights
   width: 100%;
 }
 
-#asbvbdqlut .gt_spanner_row {
+#ispvlxebdv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#asbvbdqlut .gt_group_heading {
+#ispvlxebdv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1316,7 +1324,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   text-align: left;
 }
 
-#asbvbdqlut .gt_empty_group_heading {
+#ispvlxebdv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1331,15 +1339,15 @@ Table&nbsp;2: Penguin Mean Body Weights
   vertical-align: middle;
 }
 
-#asbvbdqlut .gt_from_md > :first-child {
+#ispvlxebdv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#asbvbdqlut .gt_from_md > :last-child {
+#ispvlxebdv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#asbvbdqlut .gt_row {
+#ispvlxebdv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1358,7 +1366,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   overflow-x: hidden;
 }
 
-#asbvbdqlut .gt_stub {
+#ispvlxebdv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1371,7 +1379,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#asbvbdqlut .gt_stub_row_group {
+#ispvlxebdv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1385,15 +1393,15 @@ Table&nbsp;2: Penguin Mean Body Weights
   vertical-align: top;
 }
 
-#asbvbdqlut .gt_row_group_first td {
+#ispvlxebdv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#asbvbdqlut .gt_row_group_first th {
+#ispvlxebdv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#asbvbdqlut .gt_summary_row {
+#ispvlxebdv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1403,16 +1411,16 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#asbvbdqlut .gt_first_summary_row {
+#ispvlxebdv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#asbvbdqlut .gt_first_summary_row.thick {
+#ispvlxebdv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#asbvbdqlut .gt_last_summary_row {
+#ispvlxebdv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1422,7 +1430,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#asbvbdqlut .gt_grand_summary_row {
+#ispvlxebdv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1432,7 +1440,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#asbvbdqlut .gt_first_grand_summary_row {
+#ispvlxebdv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1442,7 +1450,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-top-color: #D3D3D3;
 }
 
-#asbvbdqlut .gt_last_grand_summary_row_top {
+#ispvlxebdv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1452,11 +1460,11 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#asbvbdqlut .gt_striped {
+#ispvlxebdv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#asbvbdqlut .gt_table_body {
+#ispvlxebdv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1465,7 +1473,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-bottom-color: #D3D3D3;
 }
 
-#asbvbdqlut .gt_footnotes {
+#ispvlxebdv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1479,7 +1487,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#asbvbdqlut .gt_footnote {
+#ispvlxebdv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1488,7 +1496,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#asbvbdqlut .gt_sourcenotes {
+#ispvlxebdv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1502,7 +1510,7 @@ Table&nbsp;2: Penguin Mean Body Weights
   border-right-color: #D3D3D3;
 }
 
-#asbvbdqlut .gt_sourcenote {
+#ispvlxebdv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1510,72 +1518,72 @@ Table&nbsp;2: Penguin Mean Body Weights
   padding-right: 5px;
 }
 
-#asbvbdqlut .gt_left {
+#ispvlxebdv .gt_left {
   text-align: left;
 }
 
-#asbvbdqlut .gt_center {
+#ispvlxebdv .gt_center {
   text-align: center;
 }
 
-#asbvbdqlut .gt_right {
+#ispvlxebdv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#asbvbdqlut .gt_font_normal {
+#ispvlxebdv .gt_font_normal {
   font-weight: normal;
 }
 
-#asbvbdqlut .gt_font_bold {
+#ispvlxebdv .gt_font_bold {
   font-weight: bold;
 }
 
-#asbvbdqlut .gt_font_italic {
+#ispvlxebdv .gt_font_italic {
   font-style: italic;
 }
 
-#asbvbdqlut .gt_super {
+#ispvlxebdv .gt_super {
   font-size: 65%;
 }
 
-#asbvbdqlut .gt_footnote_marks {
+#ispvlxebdv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#asbvbdqlut .gt_asterisk {
+#ispvlxebdv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#asbvbdqlut .gt_indent_1 {
+#ispvlxebdv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#asbvbdqlut .gt_indent_2 {
+#ispvlxebdv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#asbvbdqlut .gt_indent_3 {
+#ispvlxebdv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#asbvbdqlut .gt_indent_4 {
+#ispvlxebdv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#asbvbdqlut .gt_indent_5 {
+#ispvlxebdv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#asbvbdqlut .katex-display {
+#ispvlxebdv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#asbvbdqlut div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ispvlxebdv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>

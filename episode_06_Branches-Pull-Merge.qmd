@@ -324,6 +324,16 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 Git is telling us that we cannot push our changes because there are changes on the server that we do not have locally. We need to pull the changes down first, but if we do this, we will get a merge conflict because of the pepper and lime juice issue.
 
+::: {.callout-note}
+# Merge conflict
+
+![](images_git/conflict.svg)
+
+:::
+
+
+Let's try pull down the remote version.
+
 
 ```bash
 git pull origin main 
@@ -353,16 +363,39 @@ fatal: Need to specify how to reconcile divergent branches.
 ```
 
 
-::: {.callout-note}
-# Merge conflict
 
-![](images_git/conflict.svg)
+::: {.callout-note collapse="true"}
+# Did you get a different output to the above?
 
+The above is the newer git output -- the merge strategy is not built in and allows you to chose how you want to merge.
+
+In older git versions (before Git 2.27.0), the merge strategy defaults to merging the upstream branch into your local branch automatically.  
+
+Your output may look like this:
+
+```
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/alflin/recipes
+ * branch            main     -> FETCH_HEAD
+    29aba7c..dabb4c8  main     -> origin/main
+Auto-merging guacamole.md
+CONFLICT (content): Merge conflict in guacamole.md
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+You can check your git version with `git --version` and see the [setup](setup.qmd) page for instructions to update git.  
 :::
 
 
 
 Uh oh, another message!  Git is telling us that we have divergent branches and we need to specify how to reconcile them. This is because of the merge conflict. We can choose to either **merge, rebase or fast-forward**.
+
+
+
 
 
 The most common option is to **merge**, which will create a new commit that combines the changes from both branches. This is the default option, so we can run:  
