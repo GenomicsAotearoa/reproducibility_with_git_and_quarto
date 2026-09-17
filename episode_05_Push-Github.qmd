@@ -84,23 +84,44 @@ We will run the list command to check what key pairs already exist on your compu
 ls -al ~/.ssh
 ```
 
-Your output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using.  
+Your output is going to look a little different depending on whether or not the `.ssh`{style="color:black"}  directory has ever been set up on the computer you are using and if you already have the SSH key pairs.  
 
-If you **have not** set up SSH before on your computer, you will get an output something like this:
+##### Output option 1 
+If you **have not set up SSH** before on your computer, you will get an output something like this:
 
 ```
 ls: cannot access '/c/Users/username/.ssh': No such file or directory
 ```
 
-If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either `id_ed25519`{style="color:blue"}/`id_ed25519.pub`{style="color:blue"} or `id_rsa`{style="color:blue"}/`id_rsa.pub`{style="color:blue"} depending on how the key pairs were set up.  
+*If you get this, proceed with step 3.1 Create an SSH key pair.*
 
-If you **have** set up SSH before on your computer, you will get an output something like this:
+##### Output option 2
+If you **have set up SSH** before on your computer, but **do not have any ssh key pairs**, you will get an output something like this:
 
 ```
-drwxr-xr-x  1 Username   197121   0 Jul 16 14:48 ./
-drwxr-xr-x  1 Username   197121   0 Jul 16 14:48 ../
--rw-------@ 1 Username  staff   467 Sep 25 16:10 config
+drwxr-xr-x  1 Username  Group   0 25 Sep  2025 ./
+drwxr-xr-x  1 Username  Group   0 25 Sep  2025 ../
+-rw-------@ 1 Username  Group  467 25 Sep  2025 config
 ```
+*If you get this, proceed with step 3.1 Create an SSH key pair.*
+
+##### Output option 3
+
+If you **have set up SSH** before on your computer, **and you have also previously generated public and private key pairs** , you will get an output similar to below. You may have different files to these, but what we are looking for are the ssh keys. 
+
+The file names are either `id_ed25519`{style="color:blue"}/`id_ed25519.pub`{style="color:blue"} or `id_rsa`{style="color:blue"}/`id_rsa.pub`{style="color:blue"} depending on how the key pairs were set up.  
+
+```
+drwx------  3 Username  Group    96B 25 Sep  2025 agent
+-rw-------@ 1 Username  Group   467B 25 Sep  2025 config
+-rw-------@ 1 Username  Group   419B 25 Sep  2025 id_ed25519
+-rw-r--r--@ 1 Username  Group   110B 25 Sep  2025 id_ed25519.pub
+-rw-------  1 Username  Group   3.9K 25 Sep  2025 known_hosts
+-rw-------@ 1 Username  Group   3.2K 25 Sep  2025 known_hosts.old
+drwxr-xr-x@ 2 Username  Group    64B 25 Sep  2025 sockets
+```
+*If you get this, you do not need to proceed with step 3.1 Create an SSH key pair. You can jump to step 3.2 Copy the public key to GitHub.* 
+
 
 ### 3.1 Create an SSH key pair
 
@@ -238,6 +259,11 @@ First, we need to copy the public key. Be sure to include the .pub at the end, o
 ```bash
 cat ~/.ssh/id_ed25519.pub
 ```
+Copy the entire output. Avoid copying your prompt or other shell information. It should look something like this:
+
+```
+ssh-ed25519 AAAAC3NzaC1lZDl1NTE5AAAAlDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBlu2qKl your_email@example.com
+```
 
 Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu. Click “Settings”, then on the settings page, click “SSH and GPG keys”, on the left side “Access” menu. Click the “New SSH key” button on the right side. 
 
@@ -253,14 +279,7 @@ Now we have a SSH key pair and we can run this command to check if GitHub can re
 ssh -T git@github.com
 ```
 
-```
-Hi username! You've successfully authenticated, but GitHub does not provide shell access.
-```
-
-::: {.callout-note collapse="true"}
-## See a "The authenticity of host...can't be established" message?
-
-If you see a message like this:
+You will most likely then see this message, with the words SOME-KEY-ID replaced by one of GitHubs SSH keys.  
 
 ```
 The authenticity of host 'github.com (4.237.22.38)' can't be established.
@@ -271,26 +290,23 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
 This is a standard first-connection prompt that happens for any new host.
 
-**You may want to be extra-safe and check the ssh key matches one of [GitHub's known public ssh keys.](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints)** 
+**You may want to be extra-safe and check the ssh key matches one of [GitHub's known public ssh keys listed here.](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints)** 
 
 Type `yes`
 
-Then, you'll see a message like this.
+Then, you'll see a message like this:
 
 ```
 Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
 ```
 
-If you set a passphrase, you'll get asked for that now:
+(If you set a passphrase, you'll get asked to enter that now too)
+
+Then you should get this success message:
 
 ```
-Enter passphrase for key '/Users/username/.ssh/id_ed25519': 
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
 ```
-
-Enter your passphrase, then you should get a success message.
-:::
-
-
 
 
 Good! This output confirms that the SSH key works as intended. We are now ready to push our work to the remote repository.
@@ -303,7 +319,7 @@ Good! This output confirms that the SSH key works as intended. We are now ready 
 
 ## 4. Push local changes to a remote
 
-Now that authentication is setup, we can return to the remote. This command will push the changes from our **local repository** to the **repository on GitHub:**
+Now that authentication is setup, we can return to the command line. This command will push all committed files from our **local repository** to the **repository on GitHub:**
 
 
 ```bash
