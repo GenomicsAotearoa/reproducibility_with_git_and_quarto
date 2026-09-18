@@ -297,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#output-format" id="toc-output-format" class="nav-link" data-scroll-target="#output-format">Output format</a>
   <ul class="collapse">
-  <li><a href="#exercise-exploring-revealjs-2-min" id="toc-exercise-exploring-revealjs-2-min" class="nav-link" data-scroll-target="#exercise-exploring-revealjs-2-min"><strong>Exercise:</strong> Exploring revealjs (2 min)</a></li>
+  <li><a href="#exercise-exploring-revealjs-and-pdf-3-min" id="toc-exercise-exploring-revealjs-and-pdf-3-min" class="nav-link" data-scroll-target="#exercise-exploring-revealjs-and-pdf-3-min"><strong>Exercise:</strong> Exploring revealjs and pdf (3 min)</a></li>
   </ul></li>
   <li><a href="#useful-features" id="toc-useful-features" class="nav-link" data-scroll-target="#useful-features">Useful features</a></li>
   </ul></li>
@@ -628,6 +628,17 @@ YYYY-MM-DDTHH:mm:ssZ</code></pre>
 <p>When we want to output our document as a single format we use the basic key-value pair:</p>
 <p><code>format: html</code></p>
 <p>We can easily change the format after rendering to create a new document which duplicates the format <em>e.g.,</em> you could generate a slideshow and a static pdf/html as a backup (this is recommended if you might be presenting on a shared machine).</p>
+<section id="exercise-exploring-revealjs-and-pdf-3-min" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-exploring-revealjs-and-pdf-3-min"><strong>Exercise:</strong> Exploring revealjs and pdf (3 min)</h4>
+<ol type="1">
+<li>Change the format of the output from <code>html</code> to <code>revealjs</code> and render. Explore the revealjs (slideshow) format! 🤠</li>
+</ol>
+<blockquote class="blockquote">
+<p>Hint: to see multiple slides, you need multiple headers. Add in new headings in the <code style="color:blue">.qmd</code> document using either the Visual Editor to select and format text to Header 2, or in the Source Editor type two # symbols then type the name of your header (<em>e.g.,</em> <code style="color:black">## Header name</code>).</p>
+</blockquote>
+<ol start="2" type="1">
+<li>Change the format of the output from <code>revealjs</code> to <code>typst</code> and render. Enjoy your new pdf! 🥳</li>
+</ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -640,8 +651,9 @@ PDF format
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Quarto can also render your documents into PDF, but you will need to first install LaTeX, if you do not already have it.</p>
-<p>In r, you can install TinyTeX:</p>
+<p>There are many ways to format your pdf using typst, including changing the font, adding in columns, even making a scientific poster. See the <a href="https://quarto.org/docs/output-formats/typst.html">Quarto docs on typst here</a> for more options.</p>
+<p>Quarto can also render your documents into PDF using LaTeX, which you will need to install if you do not already have it.</p>
+<p>In R, you can install TinyTeX:</p>
 <p><code>install.packages("tinytex")</code><br>
 <code>tinytex::install_tinytex()</code></p>
 <p>Or you can install full distribution like TeX Live (Linux), MacTeX (Mac), MikTeX (Windows).</p>
@@ -649,11 +661,6 @@ PDF format
 </div>
 </div>
 </div>
-<section id="exercise-exploring-revealjs-2-min" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-exploring-revealjs-2-min"><strong>Exercise:</strong> Exploring revealjs (2 min)</h4>
-<p>Add a new heading in the <code style="color:blue">.qmd</code> document (either set the line to Header 2 in Visual Editor or type two # symbols) and call it “Section 3”. Add in more sections if you like!</p>
-<p>Change the format of the output from <code>html</code> to <code>revealjs</code> and render.</p>
-<p>Explore the revealjs (slideshow) format! 🤠</p>
 </section>
 </section>
 <section id="useful-features" class="level3">

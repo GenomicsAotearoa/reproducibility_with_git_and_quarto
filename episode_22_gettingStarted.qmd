@@ -333,12 +333,24 @@ When we want to output our document as a single format we use the basic key-valu
 
 We can easily change the format after rendering to create a new document which duplicates the format *e.g.,* you could generate a slideshow and a static pdf/html as a backup (this is recommended if you might be presenting on a shared machine).
 
+
+
+#### **Exercise:** Exploring revealjs and pdf (3 min)
+
+1. Change the format of the output from `html` to `revealjs` and render.  Explore the revealjs (slideshow) format! 🤠   
+
+> Hint: to see multiple slides, you need multiple headers. Add in new headings in the `.qmd`{style="color:blue"} document using either the Visual Editor to select and format text to Header 2,  or in the Source Editor type two # symbols then type the name of your header (*e.g.,* `## Header name`{style="color:black"}).   
+
+2. Change the format of the output from `revealjs` to `typst` and render. Enjoy your new pdf! 🥳  
+
 ::: {.callout-note collapse="true"}
 # PDF format
 
-Quarto can also render your documents into PDF, but you will need to first install LaTeX, if you do not already have it.
+There are many ways to format your pdf using typst, including changing the font, adding in columns, even making a scientific poster. See the [Quarto docs on typst here](https://quarto.org/docs/output-formats/typst.html) for more options.  
 
-In r, you can install TinyTeX:
+Quarto can also render your documents into PDF using LaTeX, which you will need to install if you do not already have it.
+
+In R, you can install TinyTeX:
 
 `install.packages("tinytex")`  
 `tinytex::install_tinytex()`
@@ -348,15 +360,6 @@ Or you can install full distribution like TeX Live (Linux), MacTeX (Mac), MikTeX
 Then you can set your YAML header to `format: pdf` and click render.
 
 :::
-
-#### **Exercise:** Exploring revealjs (2 min)
-
-Add a new heading in the `.qmd`{style="color:blue"} document (either set the line to Header 2 in Visual Editor or type two \# symbols) and call it "Section 3". Add in more sections if you like!
-
-Change the format of the output from `html` to `revealjs` and render. 
-
-Explore the revealjs (slideshow) format! 🤠  
-
 
 ### Useful features
 
